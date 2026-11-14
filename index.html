@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phạm Nhật Vượng &amp; Văn hóa Doanh nhân Việt Nam — Bài giảng Tương tác UTEHY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Subtle Persistent Cultural & Architectural Motif Layer -->
+  <div class="ambient-motifs" aria-hidden="true">
+    <div class="ambient-particles">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <svg class="dongson-corner dongson-tl" viewBox="0 0 240 240" fill="none">
+      <circle cx="0" cy="0" r="220" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="6 4"/>
+      <circle cx="0" cy="0" r="180" stroke="url(#goldGrad)" stroke-width="0.8"/>
+      <circle cx="0" cy="0" r="140" stroke="url(#goldGrad)" stroke-width="1.2" stroke-dasharray="2 6"/>
+      <circle cx="0" cy="0" r="96" stroke="url(#goldGrad)" stroke-width="0.8"/>
+      <defs>
+        <linearGradient id="goldGrad" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.42"/>
+          <stop offset="100%" stop-color="#0D9488" stop-opacity="0.08"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <svg class="dongson-corner dongson-br" viewBox="0 0 240 240" fill="none">
+      <circle cx="240" cy="240" r="215" stroke="#FBBF24" stroke-opacity="0.16" stroke-width="1" stroke-dasharray="8 6"/>
+      <circle cx="240" cy="240" r="165" stroke="#0D9488" stroke-opacity="0.18" stroke-width="1"/>
+      <circle cx="240" cy="240" r="110" stroke="#FBBF24" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="3 5"/>
+    </svg>
+  </div>
+
+  <!-- Top Floating Navigation HUD -->
+  <header class="hud-top" role="banner">
+    <div class="hud-brand">
+      <span class="hud-seal" title="Bài giảng UTEHY">UTEHY</span>
+      <div class="hud-titles">
+        <span class="hud-course">Văn hóa Kinh doanh · Chương 5</span>
+        <span id="hud-section-label" class="hud-section">Phần I · Dẫn nhập &amp; Khung Lý thuyết</span>
+      </div>
+    </div>
+
+    <div class="hud-controls">
+      <div class="hud-progress-wrap" aria-label="Tiến độ bài trình bày">
+        <span id="hud-slide-counter" class="hud-counter">01 / 40</span>
+        <div class="hud-progress-track">
+          <div id="hud-progress-bar" class="hud-progress-fill" style="width: 2.5%;"></div>
+        </div>
+      </div>
+
+      <button type="button" id="btn-toc" class="hud-btn" title="Mở Mục lục 40 màn (Phím G)" aria-label="Mục lục">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
+        <span class="hud-btn-label">Mục lục</span>
+      </button>
+
+      <button type="button" id="btn-notes" class="hud-btn" title="Bật/Tắt Lời dẫn Thuyết trình (Phím N)" aria-label="Ghi chú thuyết trình">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <span class="hud-btn-label">Lời dẫn</span>
+      </button>
+
+      <button type="button" id="btn-fullscreen" class="hud-btn" title="Toàn màn hình (Phím F)" aria-label="Toàn màn hình">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Right Vertical Pagination Rail (TikTok Scrollytelling Signature) -->
+  <nav id="side-rail" class="side-rail" aria-label="Điều hướng nhanh 40 màn"></nav>
+
+  <!-- Bottom Floating Navigation Bar -->
+  <div class="hud-bottom" role="navigation" aria-label="Chuyển màn trước hoặc sau">
+    <button type="button" id="btn-prev" class="nav-pill" title="Màn trước (↑ hoặc ←)">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      <span>Trước</span>
+    </button>
+    <span id="hud-hint" class="hud-hint">Cuộn hoặc bấm ↑ ↓ / ← → để chuyển màn · Nhấn vào ảnh Polaroid để phóng to</span>
+    <button type="button" id="btn-next" class="nav-pill nav-pill-primary" title="Màn tiếp theo (↓, → hoặc Space)">
+      <span>Tiếp</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Main Scrollytelling Presentation Viewport -->
+  <main id="deck" class="deck-viewport" tabindex="0"></main>
+
+  <!-- Lightbox Modal for Polaroid / Photo Zoom -->
+  <div id="lightbox" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-card">
+      <button type="button" id="lightbox-close" class="modal-close" aria-label="Đóng ảnh phóng to">✕</button>
+      <div class="lightbox-frame">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-meta">
+        <h3 id="lightbox-title" class="lightbox-title"></h3>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <p id="lightbox-credit" class="lightbox-credit"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick 40-Slide Grid Table of Contents Modal -->
+  <div id="toc-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="toc-heading">
+    <div class="toc-dialog">
+      <div class="toc-head">
+        <div>
+          <span class="eyebrow">CHUYỂN NHANH 40 MÀN TRÌNH CHIẾU</span>
+          <h2 id="toc-heading">Mục lục Toàn bài · Phạm Nhật Vượng &amp; Văn hóa Doanh nhân</h2>
+        </div>
+        <button type="button" id="toc-close" class="modal-close" aria-label="Đóng mục lục">✕</button>
+      </div>
+      <div id="toc-filters" class="toc-filters">
+        <button type="button" class="toc-chip active" data-part="all">Tất cả (40)</button>
+        <button type="button" class="toc-chip" data-part="1">Phần 1 · Lý thuyết UTEHY (01–08)</button>
+        <button type="button" class="toc-chip" data-part="2">Phần 2 · Tiểu sử &amp; Vingroup (09–20)</button>
+        <button type="button" class="toc-chip" data-part="3">Phần 3 · 5.1 Năng lực &amp; 5.2 Tố chất (21–29)</button>
+        <button type="button" class="toc-chip" data-part="4">Phần 4 · 5.3 Đạo đức &amp; 5.4 Phong cách (30–36)</button>
+        <button type="button" class="toc-chip" data-part="5">Phần 5 · Tổng hợp &amp; Sinh viên (37–40)</button>
+        <button type="button" class="toc-chip" data-part="video">Chỉ 5 Video YouTube</button>
+      </div>
+      <div id="toc-grid" class="toc-grid"></div>
+    </div>
+  </div>
+
+  <!-- Presenter Speaker Notes Slide-up Drawer -->
+  <aside id="notes-panel" class="notes-drawer" hidden aria-label="Lời dẫn thuyết trình">
+    <div class="notes-header">
+      <div>
+        <span class="notes-badge">GỢI Ý THUYẾT TRÌNH GIẢNG ĐƯỜNG</span>
+        <strong id="notes-slide-title"></strong>
+      </div>
+      <button type="button" id="notes-close" class="modal-close" aria-label="Đóng lời dẫn">✕</button>
+    </div>
+    <p id="notes-body" class="notes-body"></p>
+  </aside>
+
+  <script src="slides-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
