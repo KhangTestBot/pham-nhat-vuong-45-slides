@@ -210,9 +210,9 @@
                   <span class="tag-pill">${esc(st.range)}</span>
                 </div>
                 <div class="card-title">${esc(st.title)}</div>
-                <p style="font-size:0.88rem;color:#FDE68A;opacity:0.88;line-height:1.5;">${esc(st.desc)}</p>
+                <p style="font-size:1rem;color:#FFFFFF;line-height:1.5;">${esc(st.desc)}</p>
               </div>
-              <div style="font-size:0.8rem;font-weight:700;color:${esc(accent)};">Màn ${pad2(st.target)} →</div>
+              <div style="font-size:0.9rem;font-weight:700;color:${esc(accent)};">Màn ${pad2(st.target)} →</div>
             </button>
           `;
           }).join("")}
@@ -256,12 +256,12 @@
               <span class="card-kicker" data-utehy-code>BỘ PHẬN ${esc(first.code)}</span>
               <h3 class="card-title" data-utehy-title style="font-size:1.38rem;">${esc(first.label)}</h3>
               <div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:4px solid #F87171;">
-                <div style="font-size:0.74rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;">Lý thuyết</div>
-                <p data-utehy-theory style="font-size:0.94rem;color:#FFFBEB;margin-top:4px;">${esc(first.theory)}</p>
+                <div style="font-size:0.84rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;">Lý thuyết</div>
+                <p data-utehy-theory style="font-size:1.04rem;color:#FFFFFF;margin-top:4px;">${esc(first.theory)}</p>
               </div>
               <div style="margin-top:12px;padding:12px 14px;background:rgba(251,191,36,0.09);border-radius:8px;border-left:4px solid #FBBF24;">
-                <div style="font-size:0.74rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Thực tiễn Phạm Nhật Vượng</div>
-                <p data-utehy-pnv style="font-size:0.94rem;color:#FEF3C7;margin-top:4px;">${esc(first.pnv)}</p>
+                <div style="font-size:0.84rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Thực tiễn Phạm Nhật Vượng</div>
+                <p data-utehy-pnv style="font-size:1.04rem;color:#FEF3C7;margin-top:4px;">${esc(first.pnv)}</p>
               </div>
             </div>
             <div style="margin-top:16px;">
@@ -337,7 +337,7 @@
               <div class="card-kicker">${esc(c.tag)}</div>
               <h3 class="card-title">${esc(c.title)}</h3>
               ${c.highlight ? `<div class="kpi-teal" style="font-weight:800;font-size:0.95rem;margin-bottom:10px;">${esc(c.highlight)}</div>` : ""}
-              <p style="font-size:0.94rem;line-height:1.58;opacity:0.92;">${esc(c.desc)}</p>
+              <p style="font-size:1.04rem;line-height:1.6;color:#FFFFFF;">${esc(c.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -371,8 +371,8 @@
                   <span class="tag-pill">${esc(p.essence)}</span>
                 </div>
                 <div class="card-title" style="margin-top:8px;">${esc(p.title)}</div>
-                <p style="font-size:0.86rem;color:#CBD5E1;line-height:1.48;">${esc(p.detail)}</p>
-                <div style="margin-top:10px;font-size:0.78rem;font-weight:700;color:${esc(accent)};">Xem Màn ${pad2(p.target)} →</div>
+                <p style="font-size:0.98rem;color:#FFFFFF;line-height:1.48;">${esc(p.detail)}</p>
+                <div style="margin-top:10px;font-size:0.9rem;font-weight:700;color:${esc(accent)};">Xem Màn ${pad2(p.target)} →</div>
               </button>
             `;
             }).join("")}
@@ -441,7 +441,7 @@
                 <span class="stamp-seal" style="flex-shrink:0;transform:none;">${esc(t.period)}</span>
                 <div>
                   <div style="font-weight:700;color:#FEF3C7;">${esc(t.label)}</div>
-                  <div style="font-size:0.88rem;color:#CBD5E1;">${esc(t.desc)}</div>
+                  <div style="font-size:1rem;color:#FFFFFF;">${esc(t.desc)}</div>
                 </div>
               </div>
             `).join("")}
@@ -460,7 +460,7 @@
             ${s.kpis.map((k) => `
               <div class="${cardClass(s.theme, "gold")}" style="padding:12px 14px;text-align:center;">
                 <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:#FBBF24">${esc(k.val)}</div>
-                <div style="font-size:0.78rem;color:#CBD5E1;">${esc(k.lbl)}</div>
+                <div style="font-size:0.9rem;color:#FEF3C7;">${esc(k.lbl)}</div>
               </div>
             `).join("")}
           </div>
@@ -492,7 +492,7 @@
           <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}">
             <div class="card-kicker">ĐIỂM NHẤN ${esc(l.num)}</div>
             <h3 class="card-title">${esc(l.title)}</h3>
-            <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(l.desc)}</p>
+            <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(l.desc)}</p>
           </div>
         `).join("")}
       </div>
@@ -511,7 +511,7 @@
               ${(s.lessons || []).map((l, idx) => `
                 <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}" style="padding:14px 18px;">
                   <div class="card-kicker">BƯỚC NGOẶT ${esc(l.num)} · ${esc(l.title)}</div>
-                  <p style="font-size:0.9rem;color:#CBD5E1;">${esc(l.desc)}</p>
+                  <p style="font-size:1rem;color:#FFFFFF;">${esc(l.desc)}</p>
                 </div>
               `).join("")}
             </div>
@@ -602,7 +602,7 @@
             <div class="glass-card" style="border-top:4px solid #FBBF24;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
               <div class="card-kicker" data-wheel-kicker>TRỤ CỘT HỆ SINH THÁI (1/4)</div>
               <h3 class="card-title" data-wheel-title style="color:#FEF3C7;font-size:1.35rem;">${esc(first.icon)} ${esc(first.title)}</h3>
-              <p data-wheel-desc style="font-size:0.96rem;color:#FFFBEB;line-height:1.6;">${esc(first.desc)}</p>
+              <p data-wheel-desc style="font-size:1.05rem;color:#FFFFFF;line-height:1.6;">${esc(first.desc)}</p>
             </div>
             <div>
               ${renderPolaroid(s, {
@@ -649,25 +649,25 @@
 
         <!-- Legend -->
         <rect x="278" y="14" width="12" height="12" rx="3" fill="url(#bar24)"/>
-        <text x="296" y="24" font-size="11" font-weight="700" fill="#FDE68A">Năm 2024</text>
+        <text x="296" y="24" font-size="15" font-weight="700" fill="#FDE68A">Năm 2024</text>
         <rect x="372" y="14" width="12" height="12" rx="3" fill="url(#bar25Car)"/>
-        <text x="390" y="24" font-size="11" font-weight="700" fill="#FEF3C7">2025 (+102% / +473%)</text>
+        <text x="390" y="24" font-size="15" font-weight="700" fill="#FEF3C7">2025 (+102% / +473%)</text>
 
         <!-- Group 1: Cars -->
         <rect class="anim-bar" x="92" y="${228 - hCar24}" width="64" height="${hCar24}" rx="6" fill="url(#bar24)"/>
-        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="12" font-weight="700" fill="#F5D0D6">97.399</text>
+        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="14" font-weight="700" fill="#F5D0D6">97.399</text>
 
         <rect class="anim-bar b2" x="172" y="${228 - hCar25}" width="64" height="${hCar25}" rx="6" fill="url(#bar25Car)"/>
-        <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="13" font-weight="800" fill="#FBBF24">196.919 (+102%)</text>
-        <text x="164" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFBEB">Ô tô điện VinFast</text>
+        <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="15" font-weight="800" fill="#FBBF24">196.919 (+102%)</text>
+        <text x="164" y="252" text-anchor="middle" font-size="15" font-weight="800" fill="#FFFBEB">Ô tô điện VinFast</text>
 
         <!-- Group 2: E-bikes -->
         <rect class="anim-bar b3" x="322" y="${228 - hBike24}" width="64" height="${hBike24}" rx="6" fill="url(#bar24)"/>
-        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="11" font-weight="700" fill="#F5D0D6">Nền 2024</text>
+        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="15" font-weight="700" fill="#F5D0D6">Nền 2024</text>
 
         <rect class="anim-bar b4" x="402" y="${228 - hBike25}" width="64" height="${hBike25}" rx="6" fill="url(#bar25Bike)"/>
-        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="13" font-weight="800" fill="#FCA5A5">406.498 (+473%)</text>
-        <text x="394" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFBEB">Xe máy &amp; Xe đạp điện</text>
+        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="15" font-weight="800" fill="#FCA5A5">406.498 (+473%)</text>
+        <text x="394" y="252" text-anchor="middle" font-size="15" font-weight="800" fill="#FFFBEB">Xe máy &amp; Xe đạp điện</text>
       </svg>
     `;
 
@@ -729,8 +729,8 @@
                 return `
                   <circle class="beacon-ring" cx="${c.x}" cy="${c.y}" r="9" fill="none" stroke="#FBBF24" stroke-width="2" style="animation-delay:${i * 0.4}s"/>
                   <circle cx="${c.x}" cy="${c.y}" r="8" fill="#3A0810" stroke="#FBBF24" stroke-width="3.5"/>
-                  <text x="${c.x}" y="${c.y - 16}" text-anchor="middle" font-size="13" font-weight="800" fill="#FEF3C7">${esc(m.display)}</text>
-                  <text x="${c.x}" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#FCA5A5">${esc(m.year)}</text>
+                  <text x="${c.x}" y="${c.y - 16}" text-anchor="middle" font-size="15" font-weight="800" fill="#FEF3C7">${esc(m.display)}</text>
+                  <text x="${c.x}" y="258" text-anchor="middle" font-size="14" font-weight="700" fill="#FCA5A5">${esc(m.year)}</text>
                 `;
               }).join("")}
             </svg>
@@ -742,7 +742,7 @@
                   <span style="font-weight:800;color:#FBBF24;">${esc(m.year)}</span>
                   <span style="font-family:var(--font-serif);font-size:1.15rem;font-weight:800;color:#FFFFFF;">${esc(m.display)}</span>
                 </div>
-                <div style="font-size:0.84rem;color:#FDE68A;margin-top:4px;">${esc(m.rank)}</div>
+                <div style="font-size:0.95rem;color:#FEF3C7;margin-top:4px;">${esc(m.rank)}</div>
               </div>
             `).join("")}
           </div>
@@ -787,7 +787,7 @@
             <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"}">
               <div class="card-kicker">THÀNH TỐ ${esc(c.num)}</div>
               <h3 class="card-title" style="color:#FEF3C7;">${esc(c.title)}</h3>
-              <p style="font-size:0.95rem;color:#FFFBEB;opacity:0.9;line-height:1.58;">${esc(c.desc)}</p>
+              <p style="font-size:1.04rem;color:#FFFFFF;line-height:1.58;">${esc(c.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -805,7 +805,7 @@
             <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"};display:flex;flex-direction:column;gap:8px;">
               <div style="font-family:var(--font-serif);font-size:1.75rem;font-weight:800;color:#FBBF24;">${esc(it.idx)}</div>
               <h3 class="card-title" style="font-size:1.05rem;color:#FFFFFF;margin:0;">${esc(it.title)}</h3>
-              <p style="font-size:0.86rem;color:#FDE68A;opacity:0.9;line-height:1.52;">${esc(it.desc)}</p>
+              <p style="font-size:0.98rem;color:#FEF3C7;line-height:1.52;">${esc(it.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -838,7 +838,7 @@
                 </div>
                 <h3 class="card-title" style="margin-top:8px;">${esc(st.title)}</h3>
               </div>
-              <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(st.desc)}</p>
+              <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(st.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -855,13 +855,13 @@
             <div class="card-kicker">QUY MÔ ĐÓNG GÓP QUỸ THIỆN TÂM</div>
             <div class="kpi-big" data-rollup="${esc(s.heroStat)}" style="color:#FBBF24;">${esc(s.heroStat)}</div>
           </div>
-          <p style="max-width:52ch;font-size:0.98rem;font-weight:600;color:#FEF3C7;">${esc(s.heroSub)}</p>
+          <p style="max-width:52ch;font-size:1.06rem;font-weight:600;color:#FEF3C7;">${esc(s.heroSub)}</p>
         </div>
         <div class="grid-4 reveal d3">
           ${(s.cards || []).map((c, idx) => `
             <div class="edit-card ${idx % 2 === 1 ? "teal" : ""}">
               <h3 class="card-title" style="font-size:1.05rem;">${esc(c.title)}</h3>
-              <p style="font-size:0.88rem;color:#CBD5E1;line-height:1.52;">${esc(c.desc)}</p>
+              <p style="font-size:1rem;color:#FFFFFF;line-height:1.52;">${esc(c.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -884,7 +884,7 @@
             <div class="edit-card ${idx % 2 === 0 ? "gold" : "teal"}">
               <div class="card-kicker">NHÂN TỐ</div>
               <h3 class="card-title">${esc(f.name)}</h3>
-              <p style="font-size:0.92rem;color:#FFFBEB;opacity:0.9;line-height:1.55;">${esc(f.desc)}</p>
+              <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(f.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -926,7 +926,7 @@
       return `
         <circle class="beacon-ring" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="6" fill="none" stroke="#FBBF24" stroke-width="1.8" style="animation-delay:${i * 0.35}s"/>
         <circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.5" fill="#FBBF24" stroke="#140407" stroke-width="2"/>
-        <text x="${lx.toFixed(1)}" y="${yAdj.toFixed(1)}" text-anchor="${anchor}" font-size="11.5" font-weight="700" fill="#FEF3C7">${esc(ax.label)} (${ax.score})</text>
+        <text x="${lx.toFixed(1)}" y="${yAdj.toFixed(1)}" text-anchor="${anchor}" font-size="13.5" font-weight="700" fill="#FEF3C7">${esc(ax.label)} (${ax.score})</text>
       `;
     }).join("");
 
@@ -949,7 +949,7 @@
                   <strong style="color:#FEF3C7;">${esc(ax.label)}</strong>
                   <span style="font-family:var(--font-serif);font-weight:800;color:#FBBF24;">${ax.score} / 10</span>
                 </div>
-                <div style="font-size:0.86rem;color:#FDE68A;opacity:0.9;margin-top:3px;">${esc(ax.note)}</div>
+                <div style="font-size:0.98rem;color:#FEF3C7;margin-top:3px;">${esc(ax.note)}</div>
               </div>
             `).join("")}
           </div>
@@ -1019,13 +1019,13 @@
             ${(s.videos || []).map((v) => `
               <div class="conclusion-vid-card">
                 <div>
-                  <div style="font-size:0.72rem;font-weight:800;color:#FBBF24;">VIDEO 0${v.n} · ${esc(v.dur)}</div>
-                  <div style="font-size:0.84rem;font-weight:700;margin-top:4px;line-height:1.35;">${esc(v.title)}</div>
-                  <div style="font-size:0.74rem;color:#FCA5A5;margin-top:4px;">${esc(v.ch)}</div>
+                  <div style="font-size:0.8rem;font-weight:800;color:#FBBF24;">VIDEO 0${v.n} · ${esc(v.dur)}</div>
+                  <div style="font-size:0.98rem;font-weight:700;margin-top:6px;line-height:1.38;color:#FFFFFF;">${esc(v.title)}</div>
+                  <div style="font-size:0.85rem;color:#FDE68A;margin-top:4px;">${esc(v.ch)}</div>
                 </div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap;">
-                  <button type="button" class="btn-gold" style="padding:5px 9px;font-size:0.74rem;" data-jump="${Number(v.slide)}">Màn ${pad2(v.slide)}</button>
-                  <a class="btn-outline-light" style="padding:4px 8px;font-size:0.72rem;" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">YT ↗</a>
+                  <button type="button" class="btn-gold" style="padding:6px 11px;font-size:0.84rem;" data-jump="${Number(v.slide)}">Màn ${pad2(v.slide)}</button>
+                  <a class="btn-outline-light" style="padding:5px 10px;font-size:0.82rem;" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">YT ↗</a>
                 </div>
               </div>
             `).join("")}
@@ -1033,7 +1033,7 @@
         </div>
 
         <div class="reveal d4" style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
-          <div style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:#FDE68A;">${esc(s.closing)}</div>
+          <div style="font-family:var(--font-serif);font-size:1.18rem;font-weight:700;color:#FDE68A;">${esc(s.closing)}</div>
           <button type="button" class="btn-gold" data-jump="1">↺ Quay lại Màn 01</button>
         </div>
       </div>
