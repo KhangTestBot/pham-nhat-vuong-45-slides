@@ -1,4 +1,4 @@
-/* Dữ liệu 40 màn trình chiếu — Phạm Nhật Vượng (Tone Đỏ - Vàng) */
+/* Dữ liệu 42 màn trình chiếu — Phạm Nhật Vượng (Tone Đỏ - Vàng + 3D Showcase) */
 window.DECK_SLIDES = [
   {
     "id": 1,
@@ -18,33 +18,136 @@ window.DECK_SLIDES = [
         "name": "Năng lực Doanh nhân",
         "tag": "Phần Tài & Trí",
         "color": "#FBBF24",
-        "target": 21
+        "target": 23
       },
       {
         "code": "5.2",
         "name": "Tố chất Doanh nhân",
         "tag": "Bản lĩnh mở đường",
         "color": "#F59E0B",
-        "target": 25
+        "target": 27
       },
       {
         "code": "5.3",
         "name": "Đạo đức Doanh nhân",
         "tag": "Cái Tâm bền vững",
         "color": "#FBBF24",
-        "target": 30
+        "target": 32
       },
       {
         "code": "5.4",
         "name": "Phong cách Doanh nhân",
         "tag": "Kỷ luật thực thi",
         "color": "#F87171",
-        "target": 35
+        "target": 37
+      }
+    ],
+    "hero3d": {
+      "image": "assets/pnv_3d_executive.jpg",
+      "caption": "Chủ tịch Vingroup · Nhà sáng lập VinFast",
+      "badge": "3D Spotlight"
+    }
+  },
+  {
+    "id": 2,
+    "part": 1,
+    "kind": "bio_profile",
+    "theme": "dark",
+    "section": "Phần 1 · Giới thiệu Phạm Nhật Vượng",
+    "kicker": "THÔNG TIN CƠ BẢN · HỒ SƠ DOANH NHÂN",
+    "scriptAccent": "Từ Hà Nội đến Top 100 Forbes",
+    "title": "Phạm Nhật Vượng: Chân dung & Thông tin Cơ bản",
+    "lead": "Tỷ phú USD đầu tiên của Việt Nam, nhà sáng lập hệ sinh thái đa ngành lớn bậc nhất cả nước.",
+    "image": "assets/pnv_3d_visionary.jpg",
+    "imageCaption": "Từ khởi nghiệp Đông Âu đến niêm yết Nasdaq (VFS)",
+    "badge3d": "3D Nhân vật",
+    "highlights": [
+      "Sinh năm 1968 · Hà Nội",
+      "Chủ tịch Vingroup (VIC)",
+      "CEO Toàn cầu VinFast"
+    ],
+    "facts": [
+      {
+        "label": "Họ tên & Năm sinh",
+        "value": "Phạm Nhật Vượng (05/08/1968)",
+        "sub": "Sinh tại Hà Nội, nguyên quán Hà Tĩnh.",
+        "color": "#FBBF24"
+      },
+      {
+        "label": "Học vấn",
+        "value": "ĐH Địa chất Moscow (1992)",
+        "sub": "Cựu HS THPT Kim Liên, học bổng ngành Kinh tế Địa chất tại Nga.",
+        "color": "#EF4444"
+      },
+      {
+        "label": "Gia đình & Đồng hành",
+        "value": "Bà Phạm Thu Hương",
+        "sub": "Bạn đời & đồng sáng lập Tập đoàn Vingroup, Quỹ VinFuture.",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Bước khởi nghiệp đầu",
+        "value": "Technocom · Mivina (1993)",
+        "sub": "97% thị phần mì ăn liền Ukraine; bán cho Nestlé $150M (2010).",
+        "color": "#F87171"
+      },
+      {
+        "label": "Cương vị Hiện tại",
+        "value": "Chủ tịch Tập đoàn Vingroup",
+        "sub": "Trực tiếp điều hành Tập đoàn (VIC) và hãng xe điện VinFast.",
+        "color": "#FBBF24"
+      },
+      {
+        "label": "Vị thế Quốc tế",
+        "value": "Top 100 Tỷ phú Forbes",
+        "sub": "Tỷ phú USD đầu tiên của VN (2013 → 2026).",
+        "color": "#EF4444"
+      }
+    ],
+    "bridge": "Dấu ấn tiêu biểu: Kiến tạo Vincom, Vinhomes, Vinpearl, VinFast, Xanh SM & 46.000 tỷ đồng Quỹ Thiện Tâm."
+  },
+  {
+    "id": 3,
+    "part": 1,
+    "kind": "brand_showcase_3d",
+    "theme": "dark",
+    "section": "Phần 1 · Các Doanh nghiệp Tiêu biểu",
+    "kicker": "HỆ SINH THÁI 3D · NHỮNG THƯƠNG HIỆU DẪN DẮT",
+    "scriptAccent": "Trụ cột thương hiệu Việt",
+    "title": "Các Doanh nghiệp Tiêu biểu trong Hệ sinh thái Vingroup",
+    "lead": "Nhấp vào từng mô hình 3D để phóng to xem chuỗi thương hiệu từ bán lẻ đô thị đến xe điện xanh.",
+    "brands": [
+      {
+        "tag": "BÁN LẺ & ĐÔ THỊ",
+        "title": "Vincom & Vinhomes",
+        "image": "assets/vincom_3d_tower.jpg",
+        "caption": "Mô hình 3D Tổ hợp TTTM Vincom & Tòa tháp Đô thị",
+        "desc": "Mạng lưới trung tâm thương mại Vincom phủ rộng toàn quốc cùng đại đô thị Vinhomes và tòa tháp Landmark 81.",
+        "highlight": "Biểu tượng bán lẻ & đô thị hiện đại",
+        "color": "#FBBF24"
+      },
+      {
+        "tag": "DI CHUYỂN XANH",
+        "title": "Xanh SM & VinFast",
+        "image": "assets/xanhsm_vinfast_3d.jpg",
+        "caption": "Mô hình 3D Hãng taxi thuần điện Xanh SM & Hệ sinh thái VinFast",
+        "desc": "Hãng xe điện VinFast (niêm yết Nasdaq VFS), mạng lưới trạm sạc V-GREEN và dịch vụ taxi điện Xanh SM tiên phong.",
+        "highlight": "196.919 ô tô EV giao trong năm 2025",
+        "color": "#EF4444"
+      },
+      {
+        "tag": "DU LỊCH · Y TẾ · GIÁO DỤC",
+        "title": "Vinpearl · Vinmec · VinUni",
+        "image": "assets/vingroup_ecosystem_3d.jpg",
+        "caption": "Mô hình 3D Tổ hợp Nghỉ dưỡng Vinpearl, Y tế Vinmec & Đại học VinUni",
+        "desc": "Hệ sinh thái hoàn chỉnh từ du lịch Vinpearl, bệnh viện quốc tế Vinmec, Vinschool – VinUni tới Quỹ Thiện Tâm.",
+        "highlight": "Chuỗi giá trị phụng sự toàn diện",
+        "color": "#F59E0B"
       }
     ]
   },
   {
-    "id": 2,
+    "id": 4,
     "part": 1,
     "kind": "toc",
     "theme": "dark",
@@ -56,67 +159,67 @@ window.DECK_SLIDES = [
     "stages": [
       {
         "num": "01",
-        "range": "Màn 03–08",
+        "range": "Màn 05–10",
         "title": "Khung Phân tích Văn hóa Doanh nhân",
         "desc": "5 nhân tố tác động & 4 trụ cột 5.1–5.4.",
-        "target": 3,
+        "target": 5,
         "color": "#EF4444"
       },
       {
         "num": "02",
-        "range": "Màn 09–20",
+        "range": "Màn 11–22",
         "title": "Tiểu sử, Mivina, Vingroup, VinFast & Forbes",
         "desc": "Bao cấp Hà Nội → Mivina (150 triệu USD) → Vingroup → Nasdaq.",
-        "target": 9,
+        "target": 11,
         "color": "#D97706"
       },
       {
         "num": "03",
-        "range": "Màn 21–29",
+        "range": "Màn 23–31",
         "title": "Giải mã 5.1 Năng lực & 5.2 Tố chất",
         "desc": "Năng lực thực thi (5.1) & Tố chất đặt cược lớn (5.2).",
-        "target": 21,
+        "target": 23,
         "color": "#EF4444"
       },
       {
         "num": "04",
-        "range": "Màn 30–36",
+        "range": "Màn 32–38",
         "title": "Giải mã 5.3 Đạo đức & 5.4 Phong cách",
         "desc": "46.000 tỷ đồng Quỹ Thiện Tâm (5.3) & Phong cách kỷ luật (5.4).",
-        "target": 30,
+        "target": 32,
         "color": "#F59E0B"
       },
       {
         "num": "05",
-        "range": "Màn 37–40",
+        "range": "Màn 39–42",
         "title": "Tổng hợp Mô hình & Bài học Sinh viên",
         "desc": "Radar tổng hợp, thách thức và bài học thực tiễn.",
-        "target": 37,
+        "target": 39,
         "color": "#D97706"
       }
     ],
     "bgImage": "assets/utehy_framework_backdrop.png",
     "gallery": [
       {
-        "src": "assets/pnv_vingroup_meeting.jpg",
-        "cap": "Doanh nhân Phạm Nhật Vượng"
+        "src": "assets/pnv_3d_executive.jpg",
+        "cap": "3D Phạm Nhật Vượng"
       },
       {
-        "src": "assets/mivina_kharkov.jpg",
-        "cap": "Thương hiệu Mivina tại Ukraine (1993)"
+        "src": "assets/vincom_3d_tower.jpg",
+        "cap": "3D Vincom & Đô thị"
       },
       {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "cap": "Vinpearl Nha Trang — bước đặt cược 2001"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "cap": "3D Xanh SM & VinFast"
       },
       {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "cap": "VinFast VF 8 trên thị trường Hoa Kỳ"
+        "src": "assets/vingroup_ecosystem_3d.jpg",
+        "cap": "3D Hệ sinh thái"
       }
     ]
   },
   {
-    "id": 3,
+    "id": 5,
     "part": 1,
     "kind": "utehy_facsimile",
     "theme": "dark",
@@ -130,7 +233,7 @@ window.DECK_SLIDES = [
         "code": "5.1",
         "cls": "b51",
         "label": "5.1. Năng lực của doanh nhân",
-        "target": 21,
+        "target": 23,
         "theory": "Trình độ chuyên môn, quản lý điều hành, lãnh đạo và đổi mới sáng tạo (Phần Tài & Trí).",
         "pnv": "Đưa Mivina đạt 97% thị phần Ukraine, quản trị hệ sinh thái Vingroup và đưa VinFast lên sàn Nasdaq."
       },
@@ -138,7 +241,7 @@ window.DECK_SLIDES = [
         "code": "5.2",
         "cls": "b52",
         "label": "5.2. Tố chất của doanh nhân",
-        "target": 25,
+        "target": 27,
         "theory": "Tầm nhìn chiến lược, sự quyết đoán độc lập, dám chấp nhận mạo hiểm và nhu cầu thành đạt cao.",
         "pnv": "Đứng dậy sau phá sản ở Moscow, bán Technocom 150 triệu USD về nước, dấn thân làm ô tô thuần điện."
       },
@@ -146,7 +249,7 @@ window.DECK_SLIDES = [
         "code": "5.3",
         "cls": "b53",
         "label": "5.3. Đạo đức của doanh nhân",
-        "target": 30,
+        "target": 32,
         "theory": "Chính trực, giữ chữ tín, thượng tôn pháp luật và thực thi trách nhiệm xã hội (CSR).",
         "pnv": "20 năm Quỹ Thiện Tâm (46.000 tỷ đồng) và Quỹ VinFuture (2.000 tỷ đồng, giải chính 3 triệu USD)."
       },
@@ -154,7 +257,7 @@ window.DECK_SLIDES = [
         "code": "5.4",
         "cls": "b54",
         "label": "5.4. Phong cách của doanh nhân",
-        "target": 35,
+        "target": 37,
         "theory": "Phương thức lãnh đạo, cách giao tiếp ứng xử và kỷ luật tác phong công việc hàng ngày.",
         "pnv": "Tư duy tốc độ thần tốc, thẳng thắn thực chất tại Đại hội cổ đông, đời tư kín tiếng."
       }
@@ -162,7 +265,7 @@ window.DECK_SLIDES = [
     "bgImage": "assets/utehy_framework_backdrop.png"
   },
   {
-    "id": 4,
+    "id": 6,
     "part": 1,
     "kind": "contrast_split",
     "theme": "dark",
@@ -208,7 +311,7 @@ window.DECK_SLIDES = [
     "emblemImage": "assets/vietnam_flag.png"
   },
   {
-    "id": 5,
+    "id": 7,
     "part": 1,
     "kind": "strata",
     "theme": "dark",
@@ -251,7 +354,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 6,
+    "id": 8,
     "part": 1,
     "kind": "trifold_cards",
     "theme": "dark",
@@ -293,7 +396,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 7,
+    "id": 9,
     "part": 1,
     "kind": "pillar_hub",
     "theme": "dark",
@@ -309,7 +412,7 @@ window.DECK_SLIDES = [
         "title": "Năng lực Doanh nhân",
         "essence": "Phần TÀI & TRÍ",
         "color": "#D97706",
-        "target": 21,
+        "target": 23,
         "detail": "Chuyên môn · Quản trị điều hành · Lãnh đạo · Đổi mới sáng tạo."
       },
       {
@@ -317,7 +420,7 @@ window.DECK_SLIDES = [
         "title": "Tố chất Doanh nhân",
         "essence": "CHẤT RIÊNG mở đường",
         "color": "#D97706",
-        "target": 25,
+        "target": 27,
         "detail": "Tầm nhìn xa · Quyết đoán · Chấp nhận rủi ro · Khát vọng cao."
       },
       {
@@ -325,7 +428,7 @@ window.DECK_SLIDES = [
         "title": "Đạo đức Doanh nhân",
         "essence": "Cái TÂM phụng sự",
         "color": "#EF4444",
-        "target": 30,
+        "target": 32,
         "detail": "Chính trực · Chữ tín · Thượng tôn pháp luật · Trách nhiệm CSR."
       },
       {
@@ -333,13 +436,13 @@ window.DECK_SLIDES = [
         "title": "Phong cách Doanh nhân",
         "essence": "Dấu ấn HÀNH VI",
         "color": "#EF4444",
-        "target": 35,
+        "target": 37,
         "detail": "Lãnh đạo tầm nhìn · Giao tiếp thẳng thắn · Kỷ luật thép."
       }
     ]
   },
   {
-    "id": 8,
+    "id": 10,
     "part": 1,
     "kind": "matrix_table",
     "theme": "dark",
@@ -396,7 +499,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 9,
+    "id": 11,
     "part": 2,
     "kind": "chapter_divider",
     "theme": "dark",
@@ -432,7 +535,7 @@ window.DECK_SLIDES = [
     "image": "assets/pnv_vingroup_meeting.jpg"
   },
   {
-    "id": 10,
+    "id": 12,
     "part": 2,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -465,7 +568,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 11,
+    "id": 13,
     "part": 2,
     "kind": "breathing_quote",
     "theme": "dark",
@@ -497,7 +600,7 @@ window.DECK_SLIDES = [
     "polaroidCaption": "Bối cảnh Nga hậu Xô Viết — nơi hình thành bản lĩnh không lùi bước"
   },
   {
-    "id": 12,
+    "id": 14,
     "part": 2,
     "kind": "video_cinema",
     "theme": "dark",
@@ -519,7 +622,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 13,
+    "id": 15,
     "part": 2,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -557,7 +660,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 14,
+    "id": 16,
     "part": 2,
     "kind": "video_cinema",
     "theme": "dark",
@@ -579,7 +682,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 15,
+    "id": 17,
     "part": 2,
     "kind": "strata",
     "theme": "dark",
@@ -612,25 +715,25 @@ window.DECK_SLIDES = [
     "bgImage": "assets/vinpearl_hotel.jpg",
     "gallery": [
       {
-        "src": "assets/vinpearl_hotel.jpg",
-        "cap": "Quần thể nghỉ dưỡng Vinpearl Nha Trang (2001)"
-      },
-      {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "cap": "Tuyến cáp treo vượt biển tại Vinpearl Nha Trang"
+        "src": "assets/vincom_3d_tower.jpg",
+        "cap": "3D Vincom & Đô thị"
       },
       {
         "src": "assets/vincom_timescity.jpg",
-        "cap": "Khu đô thị & TTTM Vincom Mega Mall Times City"
+        "cap": "Vincom Mega Mall"
+      },
+      {
+        "src": "assets/vinpearl_nhatrang.jpg",
+        "cap": "Vinpearl Nha Trang"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
-        "cap": "Tòa tháp Landmark 81 — dấu ấn hợp nhất Vingroup"
+        "cap": "Landmark 81"
       }
     ]
   },
   {
-    "id": 16,
+    "id": 18,
     "part": 2,
     "kind": "ecosystem_wheel",
     "theme": "dark",
@@ -639,8 +742,8 @@ window.DECK_SLIDES = [
     "scriptAccent": "Kiến tạo chuẩn sống Việt",
     "title": "Vòng xoay Hệ sinh thái Vingroup: Khép kín Chuỗi Giá trị",
     "lead": "Chọn từng trụ cột trên vòng tròn để xem bức tranh hệ sinh thái Vingroup.",
-    "image": "assets/landmark81_vingroup.jpg",
-    "imageCaption": "Landmark 81 & Vinhomes Central Park",
+    "image": "assets/vingroup_ecosystem_3d.jpg",
+    "imageCaption": "Mô hình 3D Hệ sinh thái Vingroup",
     "hubLabel": "VINGROUP (VIC)",
     "hubSub": "Chọn một mảnh ghép",
     "spokes": [
@@ -672,10 +775,12 @@ window.DECK_SLIDES = [
         "title": "Y tế & Giáo dục Tinh hoa (Vinmec · Vinschool · VinUni)",
         "desc": "Trụ cột an sinh xã hội chất lượng cao: bệnh viện chuẩn quốc tế, hệ thống trường liên cấp và đại học tinh hoa."
       }
-    ]
+    ],
+    "is3d": true,
+    "badge3d": "3D Vingroup"
   },
   {
-    "id": 17,
+    "id": 19,
     "part": 2,
     "kind": "video_cinema",
     "theme": "dark",
@@ -697,7 +802,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 18,
+    "id": 20,
     "part": 2,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -706,8 +811,8 @@ window.DECK_SLIDES = [
     "scriptAccent": "Giấc mơ ô tô Việt",
     "title": "VinFast (2017–2023): Chuyển Thuần điện & Tiếng chuông Nasdaq",
     "lead": "15/08/2023: VinFast (VFS) rung chuông niêm yết sàn Nasdaq Hoa Kỳ.",
-    "image": "assets/vinfast_ev_factory.jpg",
-    "polaroidCaption": "Xe điện VinFast VF 6 lăn bánh tại Hà Nội",
+    "image": "assets/xanhsm_vinfast_3d.jpg",
+    "polaroidCaption": "Hệ sinh thái VinFast, Xanh SM & Trạm sạc V-GREEN",
     "tilt": "-2deg",
     "points": [
       {
@@ -722,10 +827,12 @@ window.DECK_SLIDES = [
         "bold": "15/08/2023 — Sàn Nasdaq (Mỹ)",
         "text": "VinFast (Mã: VFS) chính thức rung chuông niêm yết tại Mỹ, mở rộng sang Bắc Mỹ, châu Âu, Indonesia, Ấn Độ."
       }
-    ]
+    ],
+    "is3d": true,
+    "badge3d": "3D Xanh SM · VinFast"
   },
   {
-    "id": 19,
+    "id": 21,
     "part": 2,
     "kind": "bar_chart",
     "theme": "dark",
@@ -757,17 +864,17 @@ window.DECK_SLIDES = [
     "bgImage": "assets/vinfast_ev_factory.jpg",
     "gallery": [
       {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "cap": "Mẫu SUV điện VinFast VF 8 trưng bày quốc tế"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "cap": "3D Xanh SM & VinFast"
       },
       {
-        "src": "assets/green_ev_global_ambition.jpg",
-        "cap": "Khát vọng đưa xe điện xanh vươn ra cầu nối toàn cầu"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "cap": "Tổ hợp Cát Hải"
       }
     ]
   },
   {
-    "id": 20,
+    "id": 22,
     "part": 2,
     "kind": "area_chart",
     "theme": "dark",
@@ -802,10 +909,10 @@ window.DECK_SLIDES = [
         "rank": "Biến động Top 54–93 toàn cầu theo thị giá VIC/VHM"
       }
     ],
-    "bgImage": "assets/landmark81_vingroup.jpg"
+    "bgImage": "assets/vincom_3d_tower.jpg"
   },
   {
-    "id": 21,
+    "id": 23,
     "part": 3,
     "kind": "pillar_intro",
     "theme": "dark",
@@ -825,7 +932,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 22,
+    "id": 24,
     "part": 3,
     "kind": "grid4_theory",
     "theme": "dark",
@@ -873,7 +980,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 23,
+    "id": 25,
     "part": 3,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -901,7 +1008,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 24,
+    "id": 26,
     "part": 3,
     "kind": "trifold_cards",
     "theme": "dark",
@@ -933,17 +1040,17 @@ window.DECK_SLIDES = [
     "bgImage": "assets/green_ev_global_ambition.jpg",
     "gallery": [
       {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "cap": "VinFast VF 8 tiếp cận khách hàng Bắc Mỹ"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "cap": "3D Trạm sạc & Xanh SM"
       },
       {
-        "src": "assets/green_ev_global_ambition.jpg",
-        "cap": "Chuyển đổi từ bất động sản sang xe điện thuần túy"
+        "src": "assets/vinfast_vf8_us.jpg",
+        "cap": "VinFast Toàn cầu"
       }
     ]
   },
   {
-    "id": 25,
+    "id": 27,
     "part": 3,
     "kind": "pillar_intro",
     "theme": "dark",
@@ -964,7 +1071,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 26,
+    "id": 28,
     "part": 3,
     "kind": "grid5_qualities",
     "theme": "dark",
@@ -1003,7 +1110,7 @@ window.DECK_SLIDES = [
     "bgImage": "assets/moscow_grit_backdrop.jpg"
   },
   {
-    "id": 27,
+    "id": 29,
     "part": 3,
     "kind": "staircase_bets",
     "theme": "dark",
@@ -1038,10 +1145,10 @@ window.DECK_SLIDES = [
         "img": "assets/vinfast_ev_factory.jpg"
       }
     ],
-    "bgImage": "assets/green_ev_global_ambition.jpg"
+    "bgImage": "assets/vincom_3d_tower.jpg"
   },
   {
-    "id": 28,
+    "id": 30,
     "part": 3,
     "kind": "breathing_quote",
     "theme": "dark",
@@ -1071,7 +1178,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 29,
+    "id": 31,
     "part": 3,
     "kind": "video_cinema",
     "theme": "dark",
@@ -1093,7 +1200,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 30,
+    "id": 32,
     "part": 4,
     "kind": "pillar_intro",
     "theme": "dark",
@@ -1113,7 +1220,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 31,
+    "id": 33,
     "part": 4,
     "kind": "trifold_cards",
     "theme": "dark",
@@ -1145,7 +1252,7 @@ window.DECK_SLIDES = [
     "bgImage": "assets/humanitarian_thientam_glow.jpg"
   },
   {
-    "id": 32,
+    "id": 34,
     "part": 4,
     "kind": "stat_showcase",
     "theme": "dark",
@@ -1187,7 +1294,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 33,
+    "id": 35,
     "part": 4,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -1225,7 +1332,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 34,
+    "id": 36,
     "part": 4,
     "kind": "video_cinema",
     "theme": "dark",
@@ -1247,7 +1354,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 35,
+    "id": 37,
     "part": 4,
     "kind": "pillar_intro",
     "theme": "dark",
@@ -1266,7 +1373,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 36,
+    "id": 38,
     "part": 4,
     "kind": "polaroid_story",
     "theme": "dark",
@@ -1295,7 +1402,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 37,
+    "id": 39,
     "part": 5,
     "kind": "synthesis_factors",
     "theme": "dark",
@@ -1331,7 +1438,7 @@ window.DECK_SLIDES = [
     "bgImage": "assets/vietnam_heritage_culture.jpg"
   },
   {
-    "id": 38,
+    "id": 40,
     "part": 5,
     "kind": "radar_chart",
     "theme": "dark",
@@ -1370,7 +1477,7 @@ window.DECK_SLIDES = [
     "bgImage": "assets/cover_editorial_horizon.png"
   },
   {
-    "id": 39,
+    "id": 41,
     "part": 5,
     "kind": "lessons_table",
     "theme": "dark",
@@ -1416,7 +1523,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 40,
+    "id": 42,
     "part": 5,
     "kind": "conclusion_hub",
     "theme": "dark",
@@ -1435,7 +1542,7 @@ window.DECK_SLIDES = [
     "videos": [
       {
         "n": 1,
-        "slide": 12,
+        "slide": 14,
         "title": "Tiểu sử & Điều bạn chưa biết",
         "ch": "KIẾN THỨC THÚ VỊ Official",
         "dur": "6:14",
@@ -1443,7 +1550,7 @@ window.DECK_SLIDES = [
       },
       {
         "n": 2,
-        "slide": 14,
+        "slide": 16,
         "title": "Người Ukraine nói gì về Mivina & VinFast",
         "ch": "TDS Media",
         "dur": "6:22",
@@ -1451,7 +1558,7 @@ window.DECK_SLIDES = [
       },
       {
         "n": 3,
-        "slide": 17,
+        "slide": 19,
         "title": "Hành trình Đế chế Vingroup (Hoạt hình)",
         "ch": "Chuyện Thỏ Đần",
         "dur": "9:57",
@@ -1459,7 +1566,7 @@ window.DECK_SLIDES = [
       },
       {
         "n": 4,
-        "slide": 29,
+        "slide": 31,
         "title": "Người định nghĩa lại sự giàu có ở VN",
         "ch": "BLV Anh Quân Discovery",
         "dur": "9:08",
@@ -1467,7 +1574,7 @@ window.DECK_SLIDES = [
       },
       {
         "n": 5,
-        "slide": 34,
+        "slide": 36,
         "title": "20 Năm Quỹ Thiện Tâm: 46.000 tỷ đồng",
         "ch": "Độc Đáo TV",
         "dur": "7:28",

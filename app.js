@@ -86,13 +86,37 @@
     `;
   }
 
+  function render3dFrame({ image, caption, badge = "3D", title = "" }) {
+    return `
+      <div class="card-3d-frame"
+           role="button"
+           tabindex="0"
+           data-lightbox="true"
+           data-src="${esc(image)}"
+           data-title="${esc(title || caption)}"
+           data-caption="${esc(caption)}"
+           data-credit=""
+           aria-label="Phóng to hình 3D: ${esc(caption)}">
+        <img src="${esc(image)}" alt="${esc(caption)}" loading="lazy" />
+        <div class="card-3d-cap">
+          <span>${esc(caption)}</span>
+          <span class="card-3d-pill">${esc(badge)}</span>
+        </div>
+      </div>
+    `;
+  }
+
   function renderPolaroid(s, {
     image = s.image,
     caption = s.polaroidCaption || s.imageCaption || s.title,
     tilt = s.tilt ?? -1.5,
     portrait = Boolean(s.portrait),
-    title = s.title
+    title = s.title,
+    is3d = Boolean(s.is3d)
   } = {}) {
+    if (is3d) {
+      return render3dFrame({ image, caption, badge: s.badge3d || "3D", title });
+    }
     return `
       <div class="polaroid ${portrait ? "polaroid-portrait" : ""}"
            style="--tilt: ${Number(tilt) || 0}deg"
@@ -170,12 +194,8 @@
     `;
     }).join("");
 
-    return `
-      <div class="cover-backdrop">
-        <img src="${esc(s.image)}" alt="Nền trang bìa Phạm Nhật Vượng" />
-      </div>
-      <div class="cover-scrim"></div>
-      <div class="slide-inner">
+    const heroTextHtml = `
+      <div>
         <div class="reveal d1">
           <span class="eyebrow">${esc(s.kicker)}</span>
         </div>
@@ -187,7 +207,99 @@
           <span style="font-size:0.68em;color:#FFFBEB;">${esc(s.subtitleHighlight || "")}</span>
         </h1>
         ${s.lead ? `<p class="slide-lead reveal d3">${esc(s.lead)}</p>` : ""}
+      </div>
+    `;
+
+    const heroVisualHtml = s.hero3d ? `
+      <div class="reveal r-right d3">
+        ${render3dFrame({
+          image: s.hero3d.image,
+          caption: s.hero3d.caption,
+          badge: s.hero3d.badge || "3D",
+          title: s.title
+        })}
+      </div>
+    ` : "";
+
+    return `
+      <div class="cover-backdrop">
+        <img src="${esc(s.image)}" alt="Nền trang bìa Phạm Nhật Vượng" />
+      </div>
+      <div class="cover-scrim"></div>
+      <div class="slide-inner">
+        ${s.hero3d ? `<div class="cover-split">${heroTextHtml}${heroVisualHtml}</div>` : heroTextHtml}
         <div class="cover-pillars reveal d4">${pillarsHtml}</div>
+      </div>
+    `;
+  }
+
+  function renderBioProfile(s) {
+    return `
+      <div class="slide-inner">
+        ${renderHeader(s)}
+        <div class="bio-layout reveal d2">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            ${render3dFrame({
+              image: s.image,
+              caption: s.imageCaption || s.title,
+              badge: s.badge3d || "3D Profile",
+              title: s.title
+            })}
+            ${Array.isArray(s.highlights) && s.highlights.length ? `
+              <div class="tag-cloud" style="margin-top:2px;">
+                ${s.highlights.map((h) => `<span class="tag-pill">${esc(h)}</span>`).join("")}
+              </div>
+            ` : ""}
+          </div>
+          <div>
+            <div class="bio-facts-grid">
+              ${(s.facts || []).map((f) => {
+                const accent = safeAccentColor(f.color);
+                return `
+                <div class="bio-fact-card" style="border-top-color:${esc(accent)};">
+                  <div class="bio-fact-label" style="color:${esc(accent)};">${esc(f.label)}</div>
+                  <div class="bio-fact-val">${esc(f.value)}</div>
+                  ${f.sub ? `<div class="bio-fact-sub">${esc(f.sub)}</div>` : ""}
+                </div>
+              `;
+              }).join("")}
+            </div>
+            ${s.bridge ? `<div class="bridge-callout" style="margin-top:16px;">${esc(s.bridge)}</div>` : ""}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderBrandShowcase3d(s) {
+    return `
+      <div class="slide-inner">
+        ${renderHeader(s)}
+        <div class="brand-3d-grid reveal d2">
+          ${(s.brands || []).map((b) => {
+            const accent = safeAccentColor(b.color);
+            return `
+            <div class="brand-3d-card" style="border-top-color:${esc(accent)};">
+              <div class="brand-3d-media"
+                   role="button"
+                   tabindex="0"
+                   data-lightbox="true"
+                   data-src="${esc(b.image)}"
+                   data-title="${esc(b.title)}"
+                   data-caption="${esc(b.caption || b.title)}"
+                   data-credit="">
+                <img src="${esc(b.image)}" alt="${esc(b.title)}" loading="lazy" />
+              </div>
+              <div class="brand-3d-body">
+                <div class="card-kicker" style="color:${esc(accent)};margin-bottom:2px;">${esc(b.tag)}</div>
+                <h3 class="card-title" style="margin-bottom:4px;">${esc(b.title)}</h3>
+                <p style="font-size:0.98rem;color:#FFFFFF;line-height:1.52;">${esc(b.desc)}</p>
+                ${b.highlight ? `<div style="margin-top:auto;padding-top:8px;font-weight:800;font-size:0.94rem;color:#FBBF24;">${esc(b.highlight)}</div>` : ""}
+              </div>
+            </div>
+          `;
+          }).join("")}
+        </div>
       </div>
     `;
   }
@@ -1044,6 +1156,8 @@
     let body = "";
     switch (s.kind) {
       case "cover": body = renderCover(s); break;
+      case "bio_profile": body = renderBioProfile(s); break;
+      case "brand_showcase_3d": body = renderBrandShowcase3d(s); break;
       case "toc": body = renderToc(s); break;
       case "utehy_facsimile": body = renderUtehyFacsimile(s); break;
       case "contrast_split": body = renderContrastSplit(s); break;
@@ -1384,7 +1498,7 @@
 
     // Subtle 3D perspective tilt on interactive photo frames & cards
     deckEl.addEventListener("mousemove", (e) => {
-      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn");
+      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn, .card-3d-frame, .brand-3d-card");
       if (!card) return;
       const r = card.getBoundingClientRect();
       const nx = (e.clientX - r.left) / r.width - 0.5;
@@ -1393,7 +1507,7 @@
     });
 
     deckEl.addEventListener("mouseleave", (e) => {
-      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn");
+      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn, .card-3d-frame, .brand-3d-card");
       if (card) card.style.transform = "";
     }, true);
 
