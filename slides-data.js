@@ -1,4 +1,4 @@
-/* Dữ liệu 42 màn trình chiếu — Phạm Nhật Vượng (Tone Đỏ - Vàng + 3D Showcase) */
+/* Dữ liệu 42 màn trình chiếu — Phạm Nhật Vượng (Editorial Đỏ - Vàng) */
 window.DECK_SLIDES = [
   {
     "id": 1,
@@ -6,11 +6,10 @@ window.DECK_SLIDES = [
     "kind": "cover",
     "theme": "dark",
     "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
-    "kicker": "CHÂN DUNG & VĂN HÓA DOANH NHÂN VIỆT NAM",
-    "scriptAccent": "Từ Kharkov đến sàn Nasdaq...",
+    "kicker": "NGHIÊN CỨU TÌNH HUỐNG · VĂN HÓA DOANH NHÂN",
     "title": "PHẠM NHẬT VƯỢNG",
     "subtitleHighlight": "& Văn hóa Doanh nhân Việt Nam",
-    "lead": "Hành trình từ Mivina tại Đông Âu đến hệ sinh thái xe điện toàn cầu VinFast.",
+    "lead": "Từ doanh nghiệp thực phẩm Technocom tại Ukraine đến tổ hợp công nghiệp – công nghệ Vingroup và VinFast.",
     "image": "assets/cover_editorial_horizon.png",
     "pillars": [
       {
@@ -45,7 +44,7 @@ window.DECK_SLIDES = [
     "hero3d": {
       "image": "assets/pnv_3d_executive.jpg",
       "caption": "Chủ tịch Vingroup · Nhà sáng lập VinFast",
-      "badge": "3D Spotlight"
+      "badge": "Vingroup"
     }
   },
   {
@@ -55,12 +54,10 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 1 · Giới thiệu Phạm Nhật Vượng",
     "kicker": "THÔNG TIN CƠ BẢN · HỒ SƠ DOANH NHÂN",
-    "scriptAccent": "Từ Hà Nội đến Top 100 Forbes",
     "title": "Phạm Nhật Vượng: Chân dung & Thông tin Cơ bản",
     "lead": "Tỷ phú USD đầu tiên của Việt Nam, nhà sáng lập hệ sinh thái đa ngành lớn bậc nhất cả nước.",
     "image": "assets/pnv_3d_visionary.jpg",
     "imageCaption": "Từ khởi nghiệp Đông Âu đến niêm yết Nasdaq (VFS)",
-    "badge3d": "3D Nhân vật",
     "highlights": [
       "Sinh năm 1968 · Hà Nội",
       "Chủ tịch Vingroup (VIC)",
@@ -112,10 +109,9 @@ window.DECK_SLIDES = [
     "kind": "brand_showcase_3d",
     "theme": "dark",
     "section": "Phần 1 · Các Doanh nghiệp Tiêu biểu",
-    "kicker": "HỆ SINH THÁI 3D · NHỮNG THƯƠNG HIỆU DẪN DẮT",
-    "scriptAccent": "Trụ cột thương hiệu Việt",
+    "kicker": "HỆ SINH THÁI DOANH NGHIỆP",
     "title": "Các Doanh nghiệp Tiêu biểu trong Hệ sinh thái Vingroup",
-    "lead": "Nhấp vào từng mô hình 3D để phóng to xem chuỗi thương hiệu từ bán lẻ đô thị đến xe điện xanh.",
+    "lead": "Nhấp vào từng thẻ để phóng to các mảng kinh doanh chủ lực từ bán lẻ đô thị đến xe điện.",
     "brands": [
       {
         "tag": "BÁN LẺ & ĐÔ THỊ",
@@ -152,9 +148,8 @@ window.DECK_SLIDES = [
     "kind": "toc",
     "theme": "dark",
     "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
-    "kicker": "CẤU TRÚC BÀI THUYẾT TRÌNH 40 MÀN",
-    "scriptAccent": "Mạch dẫn lý thuyết — thực chứng",
-    "title": "Lộ trình 5 Chặng từ tư duy đến thực tiễn",
+    "kicker": "MỤC LỤC 42 MÀN",
+    "title": "Cấu trúc Nội dung 5 Phần",
     "lead": "Chọn bất kỳ chặng nào để chuyển nhanh; 5 màn gắn thẻ Đỏ phát video trực tiếp.",
     "stages": [
       {
@@ -231,7 +226,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
     "kicker": "KHUNG PHÂN TÍCH CẤU TRÚC",
-    "scriptAccent": "Hệ quy chiếu trung tâm",
     "title": "Các Nhân tố Ảnh hưởng & 4 Bộ phận Cấu thành",
     "lead": "Chọn từng trụ cột 5.1–5.4 để xem bản chất và dẫn chứng thực tiễn.",
     "bars": [
@@ -277,9 +271,8 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 1 · Các nhân tố ảnh hưởng",
     "kicker": "NHÂN TỐ 1 / 5 · VĂN HÓA DÂN TỘC",
-    "scriptAccent": "Bản sắc & Hội nhập",
-    "title": "Văn hóa Dân tộc: Bệ phóng Tự tôn & Phép thử Hội nhập",
-    "lead": "Tinh thần tự cường dân tộc kết hợp chuẩn quản trị quốc tế, vượt tâm lý tiểu nông.",
+    "title": "Văn hóa Dân tộc & Chuẩn Quản trị Quốc tế",
+    "lead": "Kết hợp tinh thần tự chủ dân tộc với quy trình quản trị công nghiệp hiện đại.",
     "leftTitle": "Bệ phóng Tích cực Cần Phát huy",
     "leftBadge": "Tài sản tinh thần",
     "leftPoints": [
@@ -329,7 +322,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 1 · Các nhân tố ảnh hưởng",
     "kicker": "NHÂN TỐ 2 & 3 / 5 · KINH TẾ & THỂ CHẾ",
-    "scriptAccent": "Động lực thị trường",
     "title": "Bối cảnh Kinh tế Thị trường & Hành lang Pháp luật",
     "lead": "Kinh tế mở cửa thúc đẩy đổi mới; thể chế pháp luật bảo vệ đầu tư dài hạn.",
     "blocks": [
@@ -378,8 +370,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 1 · Các nhân tố ảnh hưởng",
     "kicker": "NHÂN TỐ 4 & 5 / 5 · GIÁO DỤC, GIA ĐÌNH & CÁ NHÂN",
-    "scriptAccent": "Nội lực tự thân",
-    "title": "Hệ thống Giáo dục, Gia đình & Bản lĩnh Chủ quan",
+    "title": "Giáo dục, Gia đình & Ý chí Cá nhân",
     "lead": "Học vấn trao tư duy nền; gia đình và thương trường rèn bản lĩnh cá nhân.",
     "cards": [
       {
@@ -419,9 +410,8 @@ window.DECK_SLIDES = [
     "kind": "pillar_hub",
     "theme": "dark",
     "section": "Phần 1 · Khung Mục 5 Văn hóa Doanh nhân",
-    "kicker": "TRỌNG TÂM CHƯƠNG 5 · BỐN BỘ PHẬN CẤU THÀNH",
-    "scriptAccent": "Tài · Chất · Tâm · Phong cách",
-    "title": "Kiến trúc 4 Trụ cột Văn hóa Doanh nhân",
+    "kicker": "CHƯƠNG 5 · BỐN TRỤ CỘT CẤU THÀNH",
+    "title": "4 Trụ cột Văn hóa Doanh nhân",
     "lead": "Năng lực để làm được, Tố chất để dám làm, Đạo đức để đi xa, Phong cách để dẫn dắt.",
     "image": "assets/utehy_framework_backdrop.png",
     "pillars": [
@@ -471,9 +461,8 @@ window.DECK_SLIDES = [
     "kind": "matrix_table",
     "theme": "dark",
     "section": "Phần 1 · Khung Mục 5 Văn hóa Doanh nhân",
-    "kicker": "MA TRẬN ĐỐI CHIẾU LÝ THUYẾT – THỰC TIỄN",
-    "scriptAccent": "Soi chiếu trực diện",
-    "title": "Bản đồ Ánh xạ 5.1–5.4 Vào Trường hợp Phạm Nhật Vượng",
+    "kicker": "MA TRẬN ĐỐI CHIẾU",
+    "title": "Đối chiếu Mục 5.1–5.4 Với Thực tiễn Phạm Nhật Vượng",
     "lead": "Đối chiếu trực diện 4 trụ cột văn hóa doanh nhân với dấu ấn thực tế của Phạm Nhật Vượng.",
     "headers": [
       "Bộ phận (5.1–5.4)",
@@ -534,9 +523,8 @@ window.DECK_SLIDES = [
     "kind": "chapter_divider",
     "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
-    "kicker": "PHẦN II · BẰNG CHỨNG THỰC TIỄN",
-    "scriptAccent": "Chặng đường hơn ba thập kỷ",
-    "title": "Tiểu sử & Hành trình Kiến tạo Đế chế Kinh doanh",
+    "kicker": "PHẦN II · DỮ LIỆU LỊCH SỬ",
+    "title": "Tiểu sử & Quá trình Xây dựng Vingroup",
     "bigNumber": "II",
     "lead": "4 cột mốc chuyển mình từ Hà Nội đến tập đoàn tư nhân hàng đầu Việt Nam.",
     "timeline": [
@@ -577,8 +565,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "CHẶNG 1 · 1968–1992",
-    "scriptAccent": "Gốc rễ kỷ luật",
-    "title": "Xuất thân & Học vấn: Nội lực Từ Thời Bao cấp Đến Moscow",
+    "title": "Xuất thân & Học vấn: Hà Nội đến Moscow (1968–1992)",
     "lead": "Gia cảnh thanh bạch rèn ý chí vượt khó; học bổng Moscow mở cánh cửa kinh doanh.",
     "image": "assets/pnv_vingroup_meeting.jpg",
     "portrait": false,
@@ -610,8 +597,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "BƯỚC NGOẶT TÂM LÝ · MOSCOW 1992",
-    "scriptAccent": "Bài học trước vinh quang",
-    "title": "Cú Vấp ngã Đầu đời tại Moscow: Phép thử Bản lĩnh",
+    "title": "Thất bại Đầu tiên tại Moscow (1992)",
     "quote": "Trước khi được gọi là “Vua mì gói” tại Đông Âu, ông từng nếm trải vỡ nợ và phá sản ngay trong những thương vụ buôn bán đầu tiên sau khi ra trường.",
     "quoteAttr": "Phân tích từ tư liệu khởi nghiệp Đông Âu sau năm 1992",
     "lessons": [
@@ -642,7 +628,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Video Tư liệu #1",
     "kicker": "VIDEO TƯ LIỆU #1 · THỜI LƯỢNG 06:14",
-    "scriptAccent": "Góc nhìn chân thực",
     "title": "Tiểu sử & Những Điều Bạn Chưa Biết Về Phạm Nhật Vượng",
     "lead": "Phóng sự 6 phút 14 giây về tuổi trẻ và bước ngoặt khởi nghiệp của Phạm Nhật Vượng.",
     "videoId": "2A-MNpVHpN4",
@@ -664,7 +649,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "CHẶNG 2 · TECHNOCOM & MIVINA (1993–2010)",
-    "scriptAccent": "Huyền thoại nơi xứ người",
     "title": "Mivina Tại Ukraine: 97% Thị phần & Thương vụ 150 Triệu USD",
     "lead": "Khởi nghiệp với Technocom (Mivina 97% thị phần), bán cho Nestlé 150 triệu USD (2010).",
     "image": "assets/mivina_kharkov.jpg",
@@ -702,7 +686,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Video Tư liệu #2",
     "kicker": "VIDEO TƯ LIỆU #2 · THỜI LƯỢNG 06:22",
-    "scriptAccent": "Nhân chứng quốc tế",
     "title": "Người Ukraine Nói Gì Về “Mivina” và VinFast?",
     "lead": "Dấu ấn thương hiệu Mivina tại Ukraine và bước tiến toàn cầu của VinFast.",
     "videoId": "JMykclAmGW8",
@@ -724,8 +707,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "CHẶNG 3 · HỒI HƯƠNG & HỢP NHẤT (2001–2012)",
-    "scriptAccent": "Đặt móng đế chế mới",
-    "title": "Từ Vinpearl (2001), Vincom (2002) Đến Hợp nhất Vingroup (2012)",
+    "title": "Từ Vinpearl (2001), Vincom (2002) đến Vingroup (2012)",
     "lead": "Đầu tư vốn từ Đông Âu vào bất động sản – du lịch, đặt nền móng cho Vingroup.",
     "blocks": [
       {
@@ -781,8 +763,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Hệ sinh thái Vingroup",
     "kicker": "TƯƠNG TÁC HỆ SINH THÁI ĐA NGÀNH",
-    "scriptAccent": "Kiến tạo chuẩn sống Việt",
-    "title": "Vòng xoay Hệ sinh thái Vingroup: Khép kín Chuỗi Giá trị",
+    "title": "Cấu trúc Hệ sinh thái Vingroup",
     "lead": "Chọn từng trụ cột trên vòng tròn để xem bức tranh hệ sinh thái Vingroup.",
     "image": "assets/vingroup_ecosystem_3d.jpg",
     "imageCaption": "Mô hình 3D Hệ sinh thái Vingroup",
@@ -792,34 +773,33 @@ window.DECK_SLIDES = [
       {
         "id": "realestate",
         "short": "Vinhomes",
-        "icon": "🏢",
+        "icon": "01 ·",
         "title": "Bất động sản & Đô thị (Vinhomes)",
         "desc": "Kiến tạo các đại đô thị thông minh từ Hà Nội đến TP.HCM — nổi bật với biểu tượng Landmark 81 và hạ tầng tiện ích đồng bộ."
       },
       {
         "id": "hospitality",
         "short": "Vinpearl",
-        "icon": "🏝️",
+        "icon": "02 ·",
         "title": "Du lịch & Vui chơi Giải trí (Vinpearl / VinWonders)",
         "desc": "Chuỗi khu nghỉ dưỡng, khách sạn và công viên chủ đề trải dài tại Nha Trang, Phú Quốc, Đà Nẵng – Hội An, Hạ Long."
       },
       {
         "id": "ev",
         "short": "VinFast",
-        "icon": "⚡",
+        "icon": "03 ·",
         "title": "Công nghiệp & Di chuyển Xanh (VinFast · GSM · V-GREEN)",
         "desc": "Đầu tàu công nghệ xe điện toàn cầu kết hợp hãng taxi thuần điện Xanh SM và hạ tầng trạm sạc V-GREEN."
       },
       {
         "id": "edu_med",
         "short": "Vinmec & VinUni",
-        "icon": "🎓",
+        "icon": "04 ·",
         "title": "Y tế & Giáo dục Tinh hoa (Vinmec · Vinschool · VinUni)",
         "desc": "Trụ cột an sinh xã hội chất lượng cao: bệnh viện chuẩn quốc tế, hệ thống trường liên cấp và đại học tinh hoa."
       }
     ],
     "is3d": true,
-    "badge3d": "3D Vingroup",
     "cornerModel": {
       "src": "assets/vingroup_3d_model.webp",
       "side": "left",
@@ -834,8 +814,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Video Tư liệu #3",
     "kicker": "VIDEO TƯ LIỆU #3 · THỜI LƯỢNG 09:57",
-    "scriptAccent": "Toàn cảnh 10 phút",
-    "title": "Hành trình Xây dựng Đế chế Vingroup Bằng Hoạt hình",
+    "title": "Quá trình Chuyển dịch của Tập đoàn Vingroup",
     "lead": "Bước chuyển từ bất động sản sang công nghiệp xe điện công nghệ cao (8 phút 53 giây).",
     "videoId": "lbifzWm9Dgg",
     "videoUrl": "https://www.youtube.com/watch?v=lbifzWm9Dgg",
@@ -856,7 +835,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Bước ngoặt VinFast",
     "kicker": "CHẶNG 4 · VINFAST & NASDAQ (2017–2023)",
-    "scriptAccent": "Giấc mơ ô tô Việt",
     "title": "VinFast (2017–2023): Chuyển Thuần điện & Tiếng chuông Nasdaq",
     "lead": "15/08/2023: VinFast (VFS) rung chuông niêm yết sàn Nasdaq Hoa Kỳ.",
     "image": "assets/xanhsm_vinfast_3d.jpg",
@@ -876,8 +854,7 @@ window.DECK_SLIDES = [
         "text": "VinFast (Mã: VFS) chính thức rung chuông niêm yết tại Mỹ, mở rộng sang Bắc Mỹ, châu Âu, Indonesia, Ấn Độ."
       }
     ],
-    "is3d": true,
-    "badge3d": "3D Xanh SM · VinFast"
+    "is3d": true
   },
   {
     "id": 21,
@@ -886,7 +863,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Dữ liệu Thực chứng VinFast",
     "kicker": "BỨT PHÁ KỶ LỤC NĂM 2025",
-    "scriptAccent": "Con số biết nói",
     "title": "VinFast 2024 vs 2025: Giao Gần 200.000 Ô tô Điện & Doanh thu Gấp đôi",
     "lead": "Bước nhảy công nghiệp 2024–2025: 196.919 ô tô điện, 406.498 xe máy điện và doanh thu 90.427,6 tỷ đồng.",
     "kpis": [
@@ -934,7 +910,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 2 · Vị thế Toàn cầu Forbes",
     "kicker": "QUỸ ĐẠO TÀI SẢN RÒNG FORBES (2013–2026)",
-    "scriptAccent": "Tỷ phú Số 1 Việt Nam",
     "title": "Thăng hạng Tài sản Forbes (2013–2026): Top 100 Giàu nhất Hành tinh",
     "lead": "Từ tỷ phú USD đầu tiên của Việt Nam (2013) vươn vào Top 100 người giàu nhất thế giới (2025–2026).",
     "milestones": [
@@ -978,7 +953,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực & 5.2 Tố chất",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.1 · PHẦN \"TÀI\" VÀ \"TRÍ\"",
-    "scriptAccent": "Năng lực tạo thành quả",
     "title": "5.1. Năng lực của Doanh nhân",
     "code": "5.1",
     "accentColor": "#D97706",
@@ -1004,7 +978,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực của Doanh nhân",
     "kicker": "CƠ SỞ LÝ THUYẾT 5.1",
-    "scriptAccent": "Bốn thước đo năng lực",
     "title": "Bốn Cấu phần Tạo nên Năng lực Doanh nhân",
     "lead": "Bốn năng lực thành phần liên hoàn tạo nên sức mạnh thực thi của doanh nhân.",
     "cards": [
@@ -1052,8 +1025,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực của Doanh nhân",
     "kicker": "5.1 THỰC CHỨNG · CHUYÊN MÔN & ĐIỀU HÀNH",
-    "scriptAccent": "Kỷ luật tiến độ thần tốc",
-    "title": "Năng lực Quản trị Đa ngành & Tốc độ Thực thi Kỷ lục",
+    "title": "Quản trị Đa ngành & Tiến độ Triển khai Công nghiệp",
     "lead": "Từ dây chuyền Mivina tới tổ hợp tự động hóa VinFast Cát Hải tốc độ kỷ lục.",
     "image": "assets/pnv_vinfast_tour.jpg",
     "polaroidCaption": "Chỉ đạo trực tiếp tại tổ hợp sản xuất ô tô VinFast Hải Phòng",
@@ -1080,8 +1052,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực của Doanh nhân",
     "kicker": "5.1 THỰC CHỨNG · LÃNH ĐẠO & ĐỔI MỚI",
-    "scriptAccent": "Kiến tạo hệ sinh thái xanh",
-    "title": "Đổi mới Mô hình Kinh doanh & Lãnh đạo Chuyển đổi Xanh",
+    "title": "Đổi mới Mô hình Hạ tầng & Xe điện Xanh",
     "lead": "Tự xây hệ sinh thái hạ tầng trạm sạc V-GREEN và Xanh SM giải bài toán xe điện.",
     "cards": [
       {
@@ -1127,8 +1098,7 @@ window.DECK_SLIDES = [
     "kind": "pillar_intro",
     "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
-    "kicker": "CHUYÊN SÂU BỘ PHẬN 5.2 · BẢN LĨNH MỞ ĐƯỜNG",
-    "scriptAccent": "Chất riêng tạo khác biệt",
+    "kicker": "MỤC 5.2 · TỐ CHẤT DOANH NHÂN",
     "title": "5.2. Tố chất của Doanh nhân",
     "code": "5.2",
     "accentColor": "#D97706",
@@ -1155,7 +1125,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
     "kicker": "CƠ SỞ LÝ THUYẾT 5.2",
-    "scriptAccent": "Năm phẩm chất tâm lý",
     "title": "Năm Tố chất Cốt lõi Cấu thành Chân dung Doanh nhân",
     "lead": "Năm tố chất cốt lõi tạo nên bước nhảy vọt thay vì chỉ giữ hiện trạng.",
     "items": [
@@ -1194,8 +1163,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
     "kicker": "5.2 THỰC CHỨNG · BA CÚ ĐẶT CƯỢC LỊCH SỬ",
-    "scriptAccent": "Luôn bước ra vùng an toàn",
-    "title": "Ba Quyết định Đặt cược Vượt Lên Mọi Vùng An toàn",
+    "title": "3 Quyết định Chuyển hướng Chiến lược Lớn",
     "lead": "Mỗi thập kỷ đều từ bỏ vùng an toàn đang sinh lời để chinh phục đỉnh cao mới.",
     "steps": [
       {
@@ -1238,8 +1206,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
     "kicker": "5.2 THỰC CHỨNG · TUYÊN NGÔN KHÁT VỌNG",
-    "scriptAccent": "Tinh thần đến cùng",
-    "title": "Khát vọng Đỉnh cao & Cam kết Không Từ bỏ",
+    "title": "Mục tiêu Dài hạn & Cam kết Nguồn lực",
     "quote": "“Đã làm gì thì phải làm đến cùng và làm cho xuất sắc.” — “Không bao giờ buông bỏ VinFast.”",
     "quoteAttr": "Phạm Nhật Vượng · Tuyên ngôn về chuẩn mực và cam kết chiến lược",
     "image": "assets/pnv_vinfast_tour.jpg",
@@ -1268,7 +1235,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 3 · Video Tư liệu #4",
     "kicker": "VIDEO TƯ LIỆU #4 · THỜI LƯỢNG 09:08",
-    "scriptAccent": "Định nghĩa lại giá trị",
     "title": "Người Định nghĩa Lại Sự Giàu có Ở Việt Nam",
     "lead": "Phân tích 9 phút 08 giây về khát vọng công nghiệp hóa và định nghĩa mới về sự giàu có.",
     "videoId": "KNUV7ZuMTTw",
@@ -1289,8 +1255,7 @@ window.DECK_SLIDES = [
     "kind": "pillar_intro",
     "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức & 5.4 Phong cách",
-    "kicker": "CHUYÊN SÂU BỘ PHẬN 5.3 · CÁI \"TÂM\" BỀN VỮNG",
-    "scriptAccent": "Gốc rễ trường tồn",
+    "kicker": "MỤC 5.3 · ĐẠO ĐỨC DOANH NHÂN",
     "title": "5.3. Đạo đức của Doanh nhân",
     "code": "5.3",
     "accentColor": "#EF4444",
@@ -1316,7 +1281,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức của Doanh nhân",
     "kicker": "CƠ SỞ LÝ THUYẾT & TRIẾT LÝ CSR (5.3)",
-    "scriptAccent": "Từ chữ tín đến cộng đồng",
     "title": "Ba Vòng tròn Chuẩn mực Đạo đức Doanh nhân",
     "lead": "Thiện nguyện tại Vingroup được tổ chức bài bản như một trụ cột song hành lâu dài.",
     "cards": [
@@ -1348,8 +1312,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức của Doanh nhân",
     "kicker": "5.3 THỰC CHỨNG · 20 NĂM QUỸ THIỆN TÂM (2006–2026)",
-    "scriptAccent": "Anh hùng từ thiện châu Á",
-    "title": "Quỹ Thiện Tâm: Dấu ấn 46.000 Tỷ đồng & Triết lý “Trao Cần câu”",
+    "title": "Quỹ Thiện Tâm (2006–2026): 46.000 Tỷ đồng Cho Cộng đồng",
     "heroStat": "46.000 TỶ ĐỒNG",
     "heroSub": "Tổng nguồn lực triển khai suốt 20 năm phụng sự cộng đồng — được Forbes vinh danh Anh hùng từ thiện châu Á.",
     "lead": "20 năm Quỹ Thiện Tâm (2006–2026): 46.000 tỷ đồng phân bổ vào 4 mũi nhọn sinh kế & cứu trợ.",
@@ -1395,9 +1358,8 @@ window.DECK_SLIDES = [
     "kind": "polaroid_story",
     "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức của Doanh nhân",
-    "kicker": "5.3 THỰC CHỨNG · TẦM VÓC NHÂN LOẠI",
-    "scriptAccent": "Khoa học phụng sự nhân loại",
-    "title": "Quỹ & Giải thưởng VinFuture: Kết nối Trí tuệ Toàn cầu",
+    "kicker": "MỤC 5.3 · KHOA HỌC & CÔNG NGHỆ",
+    "title": "Quỹ & Giải thưởng Khoa học VinFuture",
     "lead": "Quỹ & Giải thưởng VinFuture do vợ chồng Phạm Nhật Vượng sáng lập kết nối trí tuệ toàn cầu.",
     "image": "assets/vinfuture_thientam.jpg",
     "polaroidCaption": "Lễ trao Giải thưởng Khoa học Công nghệ VinFuture tại Nhà hát Hồ Gươm",
@@ -1434,7 +1396,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 4 · Video Tư liệu #5",
     "kicker": "VIDEO TƯ LIỆU #5 · THỜI LƯỢNG 07:28",
-    "scriptAccent": "Thiện nguyện không ồn ào",
     "title": "20 Năm Quỹ Thiện Tâm: 46.000 Tỷ đồng Đi Về Đâu?",
     "lead": "Phóng sự 7 phút 28 giây về mô hình vận hành minh bạch của Quỹ Thiện Tâm.",
     "videoId": "FaPiGnhHv1k",
@@ -1456,7 +1417,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 4 · 5.4 Phong cách của Doanh nhân",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.4 · DẤU ẤN HÀNH VI",
-    "scriptAccent": "Biến chiến lược thành văn hóa",
     "title": "5.4. Phong cách của Doanh nhân",
     "code": "5.4",
     "accentColor": "#EF4444",
@@ -1480,9 +1440,8 @@ window.DECK_SLIDES = [
     "kind": "polaroid_story",
     "theme": "dark",
     "section": "Phần 4 · 5.4 Phong cách của Doanh nhân",
-    "kicker": "5.4 THỰC CHỨNG · KỶ LUẬT THÉP & KÍN TIẾNG",
-    "scriptAccent": "Hiệu quả trên hết",
-    "title": "Lãnh đạo Sâu sát, Thẳng thắn Thực chất & Đời tư Giản dị",
+    "kicker": "MỤC 5.4 · KỶ LUẬT & TÁC PHONG",
+    "title": "Điều hành Thực tế, Thẳng thắn & Đời tư Kín tiếng",
     "lead": "Chuẩn mực kỷ luật khắt khe trong công việc song hành với đời tư giản dị, kín tiếng.",
     "image": "assets/pnv_joko_vinfast.jpg",
     "portrait": false,
@@ -1510,8 +1469,7 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 5 · Tổng hợp Mô hình Văn hóa Doanh nhân",
     "kicker": "KẾT NỐI TRỌN VẸN PHẦN ĐẦU & MỤC 5",
-    "scriptAccent": "Vòng tròn hội tụ",
-    "title": "Năm Nhân tố Nhào nặn Văn hóa Doanh nhân Phạm Nhật Vượng",
+    "title": "5 Nhân tố Hình thành Văn hóa Doanh nhân Phạm Nhật Vượng",
     "lead": "Năm nhân tố khách quan – chủ quan cùng hội tụ nhào nặn chân dung 5.1–5.4.",
     "centerLabel": "VĂN HÓA PHẠM NHẬT VƯỢNG",
     "centerSub": "5.1 Năng lực · 5.2 Tố chất · 5.3 Đạo đức · 5.4 Phong cách",
@@ -1552,7 +1510,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 5 · Đánh giá Toàn diện",
     "kicker": "HỒ SƠ ĐỊNH TÍNH CẤU TRÚC 5.1–5.4",
-    "scriptAccent": "Cộng hưởng cân bằng",
     "title": "Biểu đồ Radar Hội tụ Bốn Trụ cột Văn hóa Doanh nhân",
     "lead": "Cộng hưởng đồng đều giữa Tài (5.1), Chất (5.2), Tâm (5.3) và Phong cách (5.4).",
     "axes": [
@@ -1591,7 +1548,6 @@ window.DECK_SLIDES = [
     "theme": "dark",
     "section": "Phần 5 · Thách thức & Bài học",
     "kicker": "GÓC NHÌN KHÁCH QUAN & RÈN LUYỆN",
-    "scriptAccent": "Hành trang thế hệ trẻ",
     "title": "Thách thức Thực tế & 4 Bài học Hành động",
     "lead": "Nhìn thẳng thách thức áp lực vốn và 4 bài học hành động thực tiễn.",
     "challenge": "Thách thức: Đầu tư công nghiệp nặng và xe điện đòi hỏi vốn lớn, chịu lỗ kế hoạch ngắn hạn và cạnh tranh trực diện tại Bắc Mỹ – châu Âu.",
@@ -1636,10 +1592,9 @@ window.DECK_SLIDES = [
     "kind": "conclusion_hub",
     "theme": "dark",
     "section": "Phần 5 · Kết luận & Video Hub",
-    "kicker": "TỔNG KẾT BÀI THUYẾT TRÌNH & HẸN GẶP LẠI",
-    "scriptAccent": "Mãi mãi tinh thần khởi nghiệp",
-    "title": "Kết luận: Di sản Văn hóa Doanh nhân & 5 Video Tư liệu",
-    "lead": "Văn hóa doanh nhân bền vững khi khát vọng cá nhân hòa cùng khát vọng quốc gia.",
+    "kicker": "TỔNG KẾT NỘI DUNG",
+    "title": "Tổng kết: 4 Trụ cột Văn hóa Doanh nhân & 5 Video Tư liệu",
+    "lead": "Sự gắn kết giữa năng lực tổ chức, quyết tâm đầu tư dài hạn và trách nhiệm xã hội.",
     "image": "assets/student_future_horizon.png",
     "seals": [
       "TÀI · 5.1",

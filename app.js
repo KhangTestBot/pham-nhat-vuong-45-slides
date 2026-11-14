@@ -75,10 +75,7 @@
       : "slide-title-serif";
     return `
       <div class="reveal d1">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-          <span class="eyebrow">${esc(s.kicker)}</span>
-          ${s.scriptAccent ? `<span class="script-accent">${esc(s.scriptAccent)}</span>` : ""}
-        </div>
+        <span class="eyebrow">${esc(s.kicker)}</span>
         <h2 class="${titleClass}">${esc(s.title)}</h2>
         <div class="gold-rule"></div>
         ${showLead && s.lead ? `<p class="slide-lead">${esc(s.lead)}</p>` : ""}
@@ -86,7 +83,7 @@
     `;
   }
 
-  function render3dFrame({ image, caption, badge = "3D", title = "" }) {
+  function render3dFrame({ image, caption, title = "" }) {
     return `
       <div class="card-3d-frame"
            role="button"
@@ -96,11 +93,10 @@
            data-title="${esc(title || caption)}"
            data-caption="${esc(caption)}"
            data-credit=""
-           aria-label="Phóng to hình 3D: ${esc(caption)}">
+           aria-label="Phóng to hình: ${esc(caption)}">
         <img src="${esc(image)}" alt="${esc(caption)}" loading="lazy" />
         <div class="card-3d-cap">
           <span>${esc(caption)}</span>
-          <span class="card-3d-pill">${esc(badge)}</span>
         </div>
       </div>
     `;
@@ -109,17 +105,16 @@
   function renderPolaroid(s, {
     image = s.image,
     caption = s.polaroidCaption || s.imageCaption || s.title,
-    tilt = s.tilt ?? -1.5,
     portrait = Boolean(s.portrait),
     title = s.title,
     is3d = Boolean(s.is3d)
   } = {}) {
     if (is3d) {
-      return render3dFrame({ image, caption, badge: s.badge3d || "3D", title });
+      return render3dFrame({ image, caption, title });
     }
     return `
       <div class="polaroid ${portrait ? "polaroid-portrait" : ""}"
-           style="--tilt: ${Number(tilt) || 0}deg"
+           style="--tilt: 0deg"
            role="button"
            tabindex="0"
            data-lightbox="true"
@@ -163,7 +158,7 @@
 
   function renderGalleryStrip(gallery, title) {
     if (!Array.isArray(gallery) || !gallery.length) return "";
-    const tilts = [-1.6, 1.4, -1.1, 1.6];
+    const tilts = [0];
     return `
       <div class="mini-gallery reveal d4">
         ${gallery.map((g, i) => `
@@ -207,12 +202,9 @@
         <div class="reveal d1">
           <span class="eyebrow">${esc(s.kicker)}</span>
         </div>
-        <div class="reveal d1" style="margin-top:10px;">
-          <span class="script-accent">${esc(s.scriptAccent)}</span>
-        </div>
         <h1 class="cover-hero-h1 reveal d2">
           <span class="gold-metallic-text">${esc(s.title)}</span><br />
-          <span style="font-size:0.68em;color:#FFFBEB;">${esc(s.subtitleHighlight || "")}</span>
+          <span style="font-size:0.68em;color:#FFFDF7;">${esc(s.subtitleHighlight || "")}</span>
         </h1>
         ${s.lead ? `<p class="slide-lead reveal d3">${esc(s.lead)}</p>` : ""}
       </div>
@@ -535,7 +527,7 @@
               <div class="big-chapter-badge gold-metallic-text" style="margin:0;">${esc(s.bigNumber)}</div>
               ${s.image ? `
                 <div class="polaroid polaroid-portrait"
-                     style="--tilt: -2deg; max-width: 170px; padding: 8px 8px 10px;"
+                     style="--tilt: 0deg; max-width: 170px; padding: 8px 8px 10px;"
                      role="button"
                      tabindex="0"
                      data-lightbox="true"
@@ -550,7 +542,6 @@
                 </div>
               ` : ""}
             </div>
-            <div class="script-accent">${esc(s.scriptAccent || "")}</div>
             <h2 class="slide-title-serif">${esc(s.title)}</h2>
             <div class="gold-rule"></div>
             <p class="slide-lead">${esc(s.lead)}</p>
@@ -878,7 +869,6 @@
           <div class="reveal d1">
             <span class="eyebrow">${esc(s.kicker)}</span>
             <div class="big-chapter-badge" style="color:${esc(safeAccentColor(s.accentColor))};margin:8px 0;">${esc(s.code)}</div>
-            <div class="script-accent">${esc(s.scriptAccent || "")}</div>
             <h2 class="slide-title-serif">${esc(s.title)}</h2>
             <div class="gold-rule"></div>
             <p class="slide-lead">${esc(s.lead)}</p>
@@ -1111,11 +1101,10 @@
       <div class="slide-inner">
         <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
           <div style="flex:1;min-width:280px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <div>
               <span class="eyebrow">${esc(s.kicker)}</span>
-              <span class="script-accent">${esc(s.scriptAccent || "")}</span>
+              <h2 class="slide-title-serif"><span class="gold-metallic-text">${esc(s.title)}</span></h2>
             </div>
-            <h2 class="slide-title-serif"><span class="gold-metallic-text">${esc(s.title)}</span></h2>
             <p class="slide-lead">${esc(s.lead)}</p>
           </div>
           ${s.flagEmblem ? `
@@ -1518,21 +1507,6 @@
         e.target.click();
       }
     });
-
-    // Subtle 3D perspective tilt on interactive photo frames & cards
-    deckEl.addEventListener("mousemove", (e) => {
-      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn, .card-3d-frame, .brand-3d-card");
-      if (!card) return;
-      const r = card.getBoundingClientRect();
-      const nx = (e.clientX - r.left) / r.width - 0.5;
-      const ny = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(700px) rotateY(${(nx * 7).toFixed(2)}deg) rotateX(${(-ny * 7).toFixed(2)}deg) translateY(-5px) scale(1.02)`;
-    });
-
-    deckEl.addEventListener("mouseleave", (e) => {
-      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn, .card-3d-frame, .brand-3d-card");
-      if (card) card.style.transform = "";
-    }, true);
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
