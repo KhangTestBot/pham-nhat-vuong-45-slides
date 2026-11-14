@@ -22,15 +22,15 @@
       <circle cx="0" cy="0" r="96" stroke="url(#goldGrad)" stroke-width="0.8"/>
       <defs>
         <linearGradient id="goldGrad" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.42"/>
-          <stop offset="100%" stop-color="#0D9488" stop-opacity="0.08"/>
+          <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#DC2626" stop-opacity="0.12"/>
         </linearGradient>
       </defs>
     </svg>
     <svg class="dongson-corner dongson-br" viewBox="0 0 240 240" fill="none">
-      <circle cx="240" cy="240" r="215" stroke="#FBBF24" stroke-opacity="0.16" stroke-width="1" stroke-dasharray="8 6"/>
-      <circle cx="240" cy="240" r="165" stroke="#0D9488" stroke-opacity="0.18" stroke-width="1"/>
-      <circle cx="240" cy="240" r="110" stroke="#FBBF24" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="3 5"/>
+      <circle cx="240" cy="240" r="215" stroke="#FBBF24" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="8 6"/>
+      <circle cx="240" cy="240" r="165" stroke="#EF4444" stroke-opacity="0.22" stroke-width="1"/>
+      <circle cx="240" cy="240" r="110" stroke="#FBBF24" stroke-opacity="0.14" stroke-width="1" stroke-dasharray="3 5"/>
     </svg>
   </div>
 
@@ -52,17 +52,12 @@
         </div>
       </div>
 
-      <button type="button" id="btn-toc" class="hud-btn" title="Mở Mục lục 40 màn (Phím G)" aria-label="Mục lục">
+      <button type="button" id="btn-toc" class="hud-btn" title="Mục lục 40 slide (G)" aria-label="Mục lục">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
         <span class="hud-btn-label">Mục lục</span>
       </button>
 
-      <button type="button" id="btn-notes" class="hud-btn" title="Bật/Tắt Ghi chú Thuyết trình (Phím N)" aria-label="Ghi chú thuyết trình">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-        <span class="hud-btn-label">Ghi chú</span>
-      </button>
-
-      <button type="button" id="btn-fullscreen" class="hud-btn" title="Toàn màn hình (Phím F)" aria-label="Toàn màn hình">
+      <button type="button" id="btn-fullscreen" class="hud-btn" title="Toàn màn hình (F)" aria-label="Toàn màn hình">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
       </button>
     </div>
@@ -117,24 +112,12 @@
         <button type="button" class="toc-chip" data-part="2">Phần 2 · Tiểu sử &amp; Vingroup (09–20)</button>
         <button type="button" class="toc-chip" data-part="3">Phần 3 · 5.1 Năng lực &amp; 5.2 Tố chất (21–29)</button>
         <button type="button" class="toc-chip" data-part="4">Phần 4 · 5.3 Đạo đức &amp; 5.4 Phong cách (30–36)</button>
-        <button type="button" class="toc-chip" data-part="5">Phần 5 · Tổng hợp &amp; Sinh viên (37–40)</button>
-        <button type="button" class="toc-chip" data-part="video">Chỉ 5 Video YouTube</button>
+        <button type="button" class="toc-chip" data-part="5">Phần 5 · Tổng hợp &amp; Bài học (37–40)</button>
+        <button type="button" class="toc-chip" data-part="video">5 Video</button>
       </div>
       <div id="toc-grid" class="toc-grid"></div>
     </div>
   </div>
-
-  <!-- Presenter Speaker Notes Slide-up Drawer -->
-  <aside id="notes-panel" class="notes-drawer" hidden aria-label="Lời dẫn thuyết trình">
-    <div class="notes-header">
-      <div>
-        <span class="notes-badge">GHI CHÚ THUYẾT TRÌNH</span>
-        <strong id="notes-slide-title"></strong>
-      </div>
-      <button type="button" id="notes-close" class="modal-close" aria-label="Đóng lời dẫn">✕</button>
-    </div>
-    <p id="notes-body" class="notes-body"></p>
-  </aside>
 
   <script src="slides-data.js"></script>
   <script src="app.js"></script>

@@ -17,7 +17,6 @@
   const btnPrev = document.getElementById("btn-prev");
   const btnNext = document.getElementById("btn-next");
   const btnToc = document.getElementById("btn-toc");
-  const btnNotes = document.getElementById("btn-notes");
   const btnFullscreen = document.getElementById("btn-fullscreen");
 
   const lightboxEl = document.getElementById("lightbox");
@@ -31,11 +30,6 @@
   const tocClose = document.getElementById("toc-close");
   const tocFiltersEl = document.getElementById("toc-filters");
   const tocGridEl = document.getElementById("toc-grid");
-
-  const notesPanelEl = document.getElementById("notes-panel");
-  const notesTitleEl = document.getElementById("notes-slide-title");
-  const notesBodyEl = document.getElementById("notes-body");
-  const notesClose = document.getElementById("notes-close");
 
   const totalSlides = slidesData.length;
   let currentIndex = 0;
@@ -57,11 +51,13 @@
 
   function safeAccentColor(col, fallback = "#FBBF24") {
     const map = {
-      "#0F294A": "#38BDF8",
-      "#1E3A5F": "#60A5FA",
+      "#0F294A": "#F87171",
+      "#1E3A5F": "#FCA5A5",
       "#B45309": "#FBBF24",
-      "#0F766E": "#2DD4BF",
-      "#0D9488": "#2DD4BF",
+      "#0F766E": "#EF4444",
+      "#0D9488": "#EF4444",
+      "#2DD4BF": "#F87171",
+      "#38BDF8": "#FDE047",
       "#D97706": "#FBBF24"
     };
     if (!col) return fallback;
@@ -160,16 +156,19 @@
 
   // ---------- 24 Archetype Renderers ----------
   function renderCover(s) {
-    const pillarsHtml = (s.pillars || []).map((p) => `
+    const pillarsHtml = (s.pillars || []).map((p) => {
+      const accent = safeAccentColor(p.color);
+      return `
       <button type="button"
               class="cover-pillar-btn"
-              style="--pillar-color: ${esc(p.color)}"
+              style="--pillar-color: ${esc(accent)}"
               data-jump="${Number(p.target) || 1}">
         <div class="cover-pillar-num">${esc(p.code)}</div>
         <div class="cover-pillar-name">${esc(p.name)}</div>
-        <div class="cover-pillar-sub">${esc(p.tag)} · Màn ${pad2(p.target)} →</div>
+        <div class="cover-pillar-sub">${esc(p.tag)} →</div>
       </button>
-    `).join("");
+    `;
+    }).join("");
 
     return `
       <div class="cover-backdrop">
@@ -177,21 +176,17 @@
       </div>
       <div class="cover-scrim"></div>
       <div class="slide-inner">
-        <div class="reveal d1" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div class="reveal d1">
           <span class="eyebrow">${esc(s.kicker)}</span>
-          <span class="stamp-seal">40 MÀN TƯƠNG TÁC · 5 VIDEO</span>
         </div>
-        <div class="reveal d1" style="margin-top:12px;">
+        <div class="reveal d1" style="margin-top:10px;">
           <span class="script-accent">${esc(s.scriptAccent)}</span>
         </div>
         <h1 class="cover-hero-h1 reveal d2">
           <span class="gold-metallic-text">${esc(s.title)}</span><br />
-          <span style="font-size:0.68em;color:#F8FAFC;">${esc(s.subtitleHighlight || "")}</span>
+          <span style="font-size:0.68em;color:#FFFBEB;">${esc(s.subtitleHighlight || "")}</span>
         </h1>
-        <p class="slide-lead reveal d3">${esc(s.lead)}</p>
-        <div class="reveal d3" style="font-size:0.86rem;color:#94A3B8;font-weight:600;margin-bottom:8px;">
-          ${esc(s.meta)}
-        </div>
+        ${s.lead ? `<p class="slide-lead reveal d3">${esc(s.lead)}</p>` : ""}
         <div class="cover-pillars reveal d4">${pillarsHtml}</div>
       </div>
     `;
@@ -215,9 +210,9 @@
                   <span class="tag-pill">${esc(st.range)}</span>
                 </div>
                 <div class="card-title">${esc(st.title)}</div>
-                <p style="font-size:0.88rem;color:#CBD5E1;line-height:1.5;">${esc(st.desc)}</p>
+                <p style="font-size:0.88rem;color:#FDE68A;opacity:0.88;line-height:1.5;">${esc(st.desc)}</p>
               </div>
-              <div style="font-size:0.8rem;font-weight:700;color:${esc(accent)};">Đi tới Màn ${pad2(st.target)} →</div>
+              <div style="font-size:0.8rem;font-weight:700;color:${esc(accent)};">Màn ${pad2(st.target)} →</div>
             </button>
           `;
           }).join("")}
@@ -237,8 +232,8 @@
           <div>
             <div class="utehy-frame">
               <div class="utehy-frame-top">
-                <span>Các nhân tố ảnh hưởng tới văn hóa doanh nhân</span>
-                <span style="color:#FBBF24;">✦ 4 TRỤ CỘT</span>
+                <span>Nhân tố ảnh hưởng &amp; 4 Bộ phận cấu thành</span>
+                <span style="color:#FBBF24;">5.1 – 5.4</span>
               </div>
               <div class="utehy-frame-body">
                 <div class="utehy-heading">5. CÁC BỘ PHẬN CẤU THÀNH<br />VĂN HÓA DOANH NHÂN</div>
@@ -256,22 +251,22 @@
             </div>
           </div>
 
-          <div class="edit-card gold" data-utehy-detail style="min-height: 295px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="edit-card gold" data-utehy-detail style="min-height: 280px; display:flex; flex-direction:column; justify-content:space-between;">
             <div>
               <span class="card-kicker" data-utehy-code>BỘ PHẬN ${esc(first.code)}</span>
               <h3 class="card-title" data-utehy-title style="font-size:1.38rem;">${esc(first.label)}</h3>
-              <div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:4px solid #38BDF8;">
-                <div style="font-size:0.76rem;font-weight:800;color:#38BDF8;text-transform:uppercase;">Cơ sở lý thuyết</div>
-                <p data-utehy-theory style="font-size:0.94rem;color:#CBD5E1;margin-top:4px;">${esc(first.theory)}</p>
+              <div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:4px solid #F87171;">
+                <div style="font-size:0.74rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;">Lý thuyết</div>
+                <p data-utehy-theory style="font-size:0.94rem;color:#FFFBEB;margin-top:4px;">${esc(first.theory)}</p>
               </div>
-              <div style="margin-top:12px;padding:12px 14px;background:rgba(251,191,36,0.08);border-radius:8px;border-left:4px solid #FBBF24;">
-                <div style="font-size:0.76rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Minh họa thực tiễn · Phạm Nhật Vượng</div>
+              <div style="margin-top:12px;padding:12px 14px;background:rgba(251,191,36,0.09);border-radius:8px;border-left:4px solid #FBBF24;">
+                <div style="font-size:0.74rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Thực tiễn Phạm Nhật Vượng</div>
                 <p data-utehy-pnv style="font-size:0.94rem;color:#FEF3C7;margin-top:4px;">${esc(first.pnv)}</p>
               </div>
             </div>
             <div style="margin-top:16px;">
               <button type="button" class="btn-gold" data-utehy-jump data-jump="${Number(first.target) || 21}">
-                Đi tới Chương ${esc(first.code)} (Màn ${pad2(first.target)}) →
+                Xem Mục ${esc(first.code)} →
               </button>
             </div>
           </div>
@@ -292,10 +287,10 @@
           ` : ""}
         </div>
         <div class="grid-2">
-          <div class="glass-card reveal r-left d2" style="border-top:4px solid #0D9488;">
+          <div class="glass-card reveal r-left d2" style="border-top:4px solid #FBBF24;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-              <h3 class="card-title" style="color:#5EEAD4;margin:0;">${esc(s.leftTitle)}</h3>
-              <span class="stamp-seal" style="border-color:#0D9488;color:#5EEAD4;font-size:0.72rem;">${esc(s.leftBadge)}</span>
+              <h3 class="card-title" style="color:#FDE68A;margin:0;">${esc(s.leftTitle)}</h3>
+              <span class="stamp-seal" style="border-color:#FBBF24;color:#FDE68A;font-size:0.72rem;">${esc(s.leftBadge)}</span>
             </div>
             ${renderBulletPoints(s.leftPoints)}
           </div>
@@ -318,7 +313,7 @@
         ${renderHeader(s)}
         <div class="grid-2 reveal d2">
           ${(s.blocks || []).map((b, i) => `
-            <div class="edit-card ${i === 1 ? "teal" : "gold"} reveal ${i === 0 ? "r-left" : "r-right"} d2" style="border-top-color:${esc(b.color)}">
+            <div class="edit-card ${i === 1 ? "teal" : "gold"} reveal ${i === 0 ? "r-left" : "r-right"} d2" style="border-top-color:${esc(safeAccentColor(b.color))}">
               <div class="card-kicker">${esc(b.tag)}</div>
               <h3 class="card-title">${esc(b.title)}</h3>
               ${renderBulletPoints(b.points)}
@@ -338,7 +333,7 @@
         <div class="grid-3 reveal d2">
           ${(s.cards || []).map((c, idx) => `
             <div class="${cardClass(s.theme, idx === 1 ? "gold" : idx === 2 ? "teal" : "")}"
-                 style="${s.theme === "dark" ? `border-top:4px solid ${idx === 0 ? "#FBBF24" : idx === 1 ? "#0D9488" : "#60A5FA"}` : ""}">
+                 style="border-top:4px solid ${idx === 0 ? "#FBBF24" : idx === 1 ? "#EF4444" : "#F59E0B"}">
               <div class="card-kicker">${esc(c.tag)}</div>
               <h3 class="card-title">${esc(c.title)}</h3>
               ${c.highlight ? `<div class="kpi-teal" style="font-weight:800;font-size:0.95rem;margin-bottom:10px;">${esc(c.highlight)}</div>` : ""}
@@ -550,19 +545,17 @@
                 <div class="play-orb">
                   <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
                 </div>
-                <span style="font-weight:700;font-size:0.95rem;color:#FEF3C7;text-shadow:0 2px 8px rgba(0,0,0,0.8);">Nhấn để phát trực tiếp trong bài trình bày</span>
               </div>
             </div>
           </div>
 
           <div class="glass-card">
-            <div class="card-kicker">TÀI LIỆU VIDEO BỔ TRỢ · ${esc(s.duration)}</div>
+            <div class="card-kicker">VIDEO · ${esc(s.duration)} · ${esc(s.channel)}</div>
             <h3 class="card-title" style="color:#FEF3C7;">${esc(s.videoTitle)}</h3>
-            <div style="font-size:0.84rem;color:#5EEAD4;font-weight:700;margin-bottom:12px;">Kênh: ${esc(s.channel)}</div>
             ${renderBulletPoints(s.highlights)}
             <div class="cta-row">
               <button type="button" class="btn-gold" data-play-inline-btn>▶ Phát Video Tại Chỗ</button>
-              <a class="btn-outline-light" href="${esc(s.videoUrl)}" target="_blank" rel="noopener noreferrer">Mở trên YouTube ↗</a>
+              <a class="btn-outline-light" href="${esc(s.videoUrl)}" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
             </div>
           </div>
         </div>
@@ -600,26 +593,21 @@
           <div class="orbit-ring">
             <div class="orbit-center">
               <span style="font-family:var(--font-serif);font-size:1.08rem;font-weight:800;color:#FBBF24;">${esc(s.hubLabel)}</span>
-              <span style="font-size:0.74rem;color:#CBD5E1;margin-top:4px;">${esc(s.hubSub)}</span>
+              <span style="font-size:0.74rem;color:#FDE68A;margin-top:4px;">${esc(s.hubSub)}</span>
             </div>
             ${nodesHtml}
           </div>
 
           <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:20px;align-items:center;">
-            <div class="glass-card" style="border-top:4px solid #FBBF24;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;">
-              <div>
-                <div class="card-kicker" data-wheel-kicker>TRỤ CỘT HỆ SINH THÁI (1/4)</div>
-                <h3 class="card-title" data-wheel-title style="color:#FEF3C7;font-size:1.35rem;">${esc(first.icon)} ${esc(first.title)}</h3>
-                <p data-wheel-desc style="font-size:0.96rem;color:#E2E8F0;line-height:1.6;">${esc(first.desc)}</p>
-              </div>
-              <div style="margin-top:14px;font-size:0.8rem;color:#5EEAD4;font-weight:600;">
-                ✦ Nhấn vào 4 vòng tròn trên quỹ đạo để xoay và xem từng lĩnh vực
-              </div>
+            <div class="glass-card" style="border-top:4px solid #FBBF24;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
+              <div class="card-kicker" data-wheel-kicker>TRỤ CỘT HỆ SINH THÁI (1/4)</div>
+              <h3 class="card-title" data-wheel-title style="color:#FEF3C7;font-size:1.35rem;">${esc(first.icon)} ${esc(first.title)}</h3>
+              <p data-wheel-desc style="font-size:0.96rem;color:#FFFBEB;line-height:1.6;">${esc(first.desc)}</p>
             </div>
             <div>
               ${renderPolaroid(s, {
                 image: s.image,
-                caption: s.imageCaption || "Landmark 81 — Biểu tượng Tập đoàn Vingroup",
+                caption: s.imageCaption || "Landmark 81 — Biểu tượng Vingroup",
                 tilt: 2
               })}
             </div>
@@ -643,16 +631,16 @@
       <svg class="svg-chart" viewBox="0 0 560 280" role="img" aria-label="Biểu đồ bàn giao VinFast 2024 và 2025">
         <defs>
           <linearGradient id="bar24" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#94A3B8"/>
-            <stop offset="100%" stop-color="#475569"/>
+            <stop offset="0%" stop-color="#C4A4A8"/>
+            <stop offset="100%" stop-color="#784E55"/>
           </linearGradient>
           <linearGradient id="bar25Car" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#FBBF24"/>
+            <stop offset="0%" stop-color="#FDE047"/>
             <stop offset="100%" stop-color="#D97706"/>
           </linearGradient>
           <linearGradient id="bar25Bike" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2DD4BF"/>
-            <stop offset="100%" stop-color="#0D9488"/>
+            <stop offset="0%" stop-color="#F87171"/>
+            <stop offset="100%" stop-color="#DC2626"/>
           </linearGradient>
         </defs>
         <line x1="46" y1="228" x2="532" y2="228" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
@@ -661,25 +649,25 @@
 
         <!-- Legend -->
         <rect x="278" y="14" width="12" height="12" rx="3" fill="url(#bar24)"/>
-        <text x="296" y="24" font-size="11" font-weight="700" fill="#CBD5E1">Năm 2024</text>
+        <text x="296" y="24" font-size="11" font-weight="700" fill="#FDE68A">Năm 2024</text>
         <rect x="372" y="14" width="12" height="12" rx="3" fill="url(#bar25Car)"/>
         <text x="390" y="24" font-size="11" font-weight="700" fill="#FEF3C7">2025 (+102% / +473%)</text>
 
         <!-- Group 1: Cars -->
         <rect class="anim-bar" x="92" y="${228 - hCar24}" width="64" height="${hCar24}" rx="6" fill="url(#bar24)"/>
-        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="12" font-weight="700" fill="#CBD5E1">97.399</text>
+        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="12" font-weight="700" fill="#F5D0D6">97.399</text>
 
         <rect class="anim-bar b2" x="172" y="${228 - hCar25}" width="64" height="${hCar25}" rx="6" fill="url(#bar25Car)"/>
         <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="13" font-weight="800" fill="#FBBF24">196.919 (+102%)</text>
-        <text x="164" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#F8FAFC">Ô tô điện VinFast</text>
+        <text x="164" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFBEB">Ô tô điện VinFast</text>
 
         <!-- Group 2: E-bikes -->
         <rect class="anim-bar b3" x="322" y="${228 - hBike24}" width="64" height="${hBike24}" rx="6" fill="url(#bar24)"/>
-        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="11" font-weight="700" fill="#CBD5E1">Nền 2024</text>
+        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="11" font-weight="700" fill="#F5D0D6">Nền 2024</text>
 
         <rect class="anim-bar b4" x="402" y="${228 - hBike25}" width="64" height="${hBike25}" rx="6" fill="url(#bar25Bike)"/>
-        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="13" font-weight="800" fill="#5EEAD4">406.498 (+473%)</text>
-        <text x="394" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#F8FAFC">Xe máy điện &amp; Xe đạp điện</text>
+        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="13" font-weight="800" fill="#FCA5A5">406.498 (+473%)</text>
+        <text x="394" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFBEB">Xe máy &amp; Xe đạp điện</text>
       </svg>
     `;
 
@@ -692,8 +680,8 @@
             return `
             <div class="edit-card" style="border-top-color:${esc(accent)}">
               <div class="kpi-big" data-rollup="${esc(k.num)}" style="color:${esc(accent)}">${esc(k.num)}</div>
-              <div style="font-weight:700;color:#F8FAFC;margin-top:4px;">${esc(k.unit)}</div>
-              <div style="font-size:0.86rem;font-weight:700;color:#5EEAD4;margin-top:4px;">${esc(k.delta)}</div>
+              <div style="font-weight:700;color:#FFFBEB;margin-top:4px;">${esc(k.unit)}</div>
+              <div style="font-size:0.86rem;font-weight:700;color:#FCA5A5;margin-top:4px;">${esc(k.delta)}</div>
             </div>
           `;
           }).join("")}
@@ -729,8 +717,8 @@
             <svg class="svg-chart" viewBox="0 0 600 280" role="img" aria-label="Biểu đồ tài sản ròng Phạm Nhật Vượng Forbes 2013-2026">
               <defs>
                 <linearGradient id="forbesArea" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.5"/>
-                  <stop offset="100%" stop-color="#0D9488" stop-opacity="0.04"/>
+                  <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.52"/>
+                  <stop offset="100%" stop-color="#DC2626" stop-opacity="0.06"/>
                 </linearGradient>
               </defs>
               <line x1="40" y1="235" x2="565" y2="235" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
@@ -740,9 +728,9 @@
                 const c = coords[i];
                 return `
                   <circle class="beacon-ring" cx="${c.x}" cy="${c.y}" r="9" fill="none" stroke="#FBBF24" stroke-width="2" style="animation-delay:${i * 0.4}s"/>
-                  <circle cx="${c.x}" cy="${c.y}" r="8" fill="#0F294A" stroke="#FBBF24" stroke-width="3.5"/>
+                  <circle cx="${c.x}" cy="${c.y}" r="8" fill="#3A0810" stroke="#FBBF24" stroke-width="3.5"/>
                   <text x="${c.x}" y="${c.y - 16}" text-anchor="middle" font-size="13" font-weight="800" fill="#FEF3C7">${esc(m.display)}</text>
-                  <text x="${c.x}" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#94A3B8">${esc(m.year)}</text>
+                  <text x="${c.x}" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#FCA5A5">${esc(m.year)}</text>
                 `;
               }).join("")}
             </svg>
@@ -754,7 +742,7 @@
                   <span style="font-weight:800;color:#FBBF24;">${esc(m.year)}</span>
                   <span style="font-family:var(--font-serif);font-size:1.15rem;font-weight:800;color:#FFFFFF;">${esc(m.display)}</span>
                 </div>
-                <div style="font-size:0.84rem;color:#CBD5E1;margin-top:4px;">${esc(m.rank)}</div>
+                <div style="font-size:0.84rem;color:#FDE68A;margin-top:4px;">${esc(m.rank)}</div>
               </div>
             `).join("")}
           </div>
@@ -796,10 +784,10 @@
         ${renderHeader(s)}
         <div class="grid-2 reveal d2">
           ${(s.cards || []).map((c, idx) => `
-            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#14B8A6"}">
+            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"}">
               <div class="card-kicker">THÀNH TỐ ${esc(c.num)}</div>
               <h3 class="card-title" style="color:#FEF3C7;">${esc(c.title)}</h3>
-              <p style="font-size:0.95rem;color:#E2E8F0;line-height:1.58;">${esc(c.desc)}</p>
+              <p style="font-size:0.95rem;color:#FFFBEB;opacity:0.9;line-height:1.58;">${esc(c.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -814,10 +802,10 @@
         ${renderHeader(s)}
         <div class="grid-5 reveal d2">
           ${(s.items || []).map((it, idx) => `
-            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#0D9488"};display:flex;flex-direction:column;gap:8px;">
+            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"};display:flex;flex-direction:column;gap:8px;">
               <div style="font-family:var(--font-serif);font-size:1.75rem;font-weight:800;color:#FBBF24;">${esc(it.idx)}</div>
               <h3 class="card-title" style="font-size:1.05rem;color:#FFFFFF;margin:0;">${esc(it.title)}</h3>
-              <p style="font-size:0.86rem;color:#CBD5E1;line-height:1.52;">${esc(it.desc)}</p>
+              <p style="font-size:0.86rem;color:#FDE68A;opacity:0.9;line-height:1.52;">${esc(it.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -887,16 +875,16 @@
       <div class="slide-inner">
         ${renderHeader(s)}
         <div class="grid-3 reveal d2">
-          <div class="edit-card" style="background:linear-gradient(145deg,#0F294A,#173D6E);color:#FFFFFF;border-top-color:#FBBF24;display:flex;flex-direction:column;justify-content:center;">
+          <div class="edit-card" style="background:linear-gradient(145deg,#4A0D18,#7F1D1D);color:#FFFFFF;border-top-color:#FBBF24;display:flex;flex-direction:column;justify-content:center;">
             <span class="card-kicker" style="color:#FBBF24;">TỔNG HỢP 5 NHÂN TỐ</span>
             <h3 class="card-title" style="color:#FFFFFF;font-size:1.45rem;">${esc(s.centerLabel)}</h3>
-            <p style="color:#CBD5E1;font-size:0.94rem;">${esc(s.centerSub)}</p>
+            <p style="color:#FDE68A;font-size:0.94rem;">${esc(s.centerSub)}</p>
           </div>
           ${(s.factors || []).map((f, idx) => `
             <div class="edit-card ${idx % 2 === 0 ? "gold" : "teal"}">
-              <div class="card-kicker">NHÂN TỐ HÌNH THÀNH</div>
+              <div class="card-kicker">NHÂN TỐ</div>
               <h3 class="card-title">${esc(f.name)}</h3>
-              <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(f.desc)}</p>
+              <p style="font-size:0.92rem;color:#FFFBEB;opacity:0.9;line-height:1.55;">${esc(f.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -937,7 +925,7 @@
       const yAdj = ly < cy - 50 ? ly - 6 : (ly > cy + 50 ? ly + 12 : ly + 4);
       return `
         <circle class="beacon-ring" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="6" fill="none" stroke="#FBBF24" stroke-width="1.8" style="animation-delay:${i * 0.35}s"/>
-        <circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.5" fill="#FBBF24" stroke="#071426" stroke-width="2"/>
+        <circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.5" fill="#FBBF24" stroke="#140407" stroke-width="2"/>
         <text x="${lx.toFixed(1)}" y="${yAdj.toFixed(1)}" text-anchor="${anchor}" font-size="11.5" font-weight="700" fill="#FEF3C7">${esc(ax.label)} (${ax.score})</text>
       `;
     }).join("");
@@ -956,12 +944,12 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;">
             ${axes.map((ax) => `
-              <div class="glass-card" style="padding:12px 16px;border-left:4px solid #14B8A6;">
+              <div class="glass-card" style="padding:12px 16px;border-left:4px solid #EF4444;">
                 <div style="display:flex;justify-content:space-between;align-items:center;">
                   <strong style="color:#FEF3C7;">${esc(ax.label)}</strong>
-                  <span style="font-family:var(--font-serif);font-weight:800;color:#5EEAD4;">${ax.score} / 10</span>
+                  <span style="font-family:var(--font-serif);font-weight:800;color:#FBBF24;">${ax.score} / 10</span>
                 </div>
-                <div style="font-size:0.86rem;color:#CBD5E1;margin-top:3px;">${esc(ax.note)}</div>
+                <div style="font-size:0.86rem;color:#FDE68A;opacity:0.9;margin-top:3px;">${esc(ax.note)}</div>
               </div>
             `).join("")}
           </div>
@@ -1025,7 +1013,7 @@
 
         <div class="reveal d3">
           <div style="font-size:0.82rem;font-weight:700;color:#FBBF24;letter-spacing:0.06em;text-transform:uppercase;">
-            Trung tâm Truy cập Nhanh 5 Video YouTube Trong Bài
+            5 Video Tư liệu Nổi bật
           </div>
           <div class="conclusion-video-grid">
             ${(s.videos || []).map((v) => `
@@ -1033,7 +1021,7 @@
                 <div>
                   <div style="font-size:0.72rem;font-weight:800;color:#FBBF24;">VIDEO 0${v.n} · ${esc(v.dur)}</div>
                   <div style="font-size:0.84rem;font-weight:700;margin-top:4px;line-height:1.35;">${esc(v.title)}</div>
-                  <div style="font-size:0.74rem;color:#94A3B8;margin-top:4px;">${esc(v.ch)}</div>
+                  <div style="font-size:0.74rem;color:#FCA5A5;margin-top:4px;">${esc(v.ch)}</div>
                 </div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap;">
                   <button type="button" class="btn-gold" style="padding:5px 9px;font-size:0.74rem;" data-jump="${Number(v.slide)}">Màn ${pad2(v.slide)}</button>
@@ -1045,7 +1033,7 @@
         </div>
 
         <div class="reveal d4" style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
-          <div style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:#5EEAD4;">${esc(s.closing)}</div>
+          <div style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:#FDE68A;">${esc(s.closing)}</div>
           <button type="button" class="btn-gold" data-jump="1">↺ Quay lại Màn 01</button>
         </div>
       </div>
@@ -1140,7 +1128,6 @@
         <div class="play-orb">
           <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
         </div>
-        <span style="font-weight:700;font-size:0.95rem;color:#FEF3C7;text-shadow:0 2px 8px rgba(0,0,0,0.8);">Nhấn để phát trực tiếp trong bài trình bày</span>
       </div>
     `;
   }
@@ -1213,11 +1200,6 @@
     const dots = railEl.querySelectorAll(".rail-dot");
     dots.forEach((dot, i) => dot.classList.toggle("active", i === idx));
 
-    if (!notesPanelEl.hidden) {
-      notesTitleEl.textContent = `Màn ${pad2(slide.id)} · ${slide.title}`;
-      notesBodyEl.textContent = slide.notes || "Không có ghi chú bổ sung cho màn này.";
-    }
-
     unloadAllInactiveVideos(idx);
   }
 
@@ -1250,7 +1232,7 @@
     Array.from(deckEl.children).forEach((el) => observer.observe(el));
   }
 
-  // ---------- Lightbox, TOC & Notes Modals ----------
+  // ---------- Lightbox & TOC Modals ----------
   function openLightbox(triggerEl) {
     lightboxImg.src = triggerEl.dataset.src || "";
     lightboxImg.alt = triggerEl.dataset.caption || "";
@@ -1291,17 +1273,6 @@
     tocModalEl.hidden = true;
   }
 
-  function toggleNotes(forceOpen) {
-    const nextOpen = typeof forceOpen === "boolean" ? forceOpen : notesPanelEl.hidden;
-    notesPanelEl.hidden = !nextOpen;
-    btnNotes.classList.toggle("active", nextOpen);
-    if (nextOpen) {
-      const s = slidesData[currentIndex];
-      notesTitleEl.textContent = `Màn ${pad2(s.id)} · ${s.title}`;
-      notesBodyEl.textContent = s.notes || "";
-    }
-  }
-
   function toggleFullscreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen?.().catch(() => {});
@@ -1315,7 +1286,6 @@
     btnPrev.addEventListener("click", () => goToSlideByNumber(currentIndex));
     btnNext.addEventListener("click", () => goToSlideByNumber(currentIndex + 2));
     btnToc.addEventListener("click", () => (tocModalEl.hidden ? openTocModal() : closeTocModal()));
-    btnNotes.addEventListener("click", () => toggleNotes());
     btnFullscreen.addEventListener("click", toggleFullscreen);
 
     lightboxClose.addEventListener("click", closeLightbox);
@@ -1342,8 +1312,6 @@
       closeTocModal();
       goToSlideByNumber(Number(item.dataset.tocJump));
     });
-
-    notesClose.addEventListener("click", () => toggleNotes(false));
 
     railEl.addEventListener("click", (e) => {
       const dot = e.target.closest("[data-jump]");
@@ -1388,7 +1356,7 @@
         slideEl.querySelector("[data-utehy-pnv]").textContent = bar.pnv;
         const jBtn = slideEl.querySelector("[data-utehy-jump]");
         jBtn.dataset.jump = String(bar.target);
-        jBtn.textContent = `Đi tới Chương ${bar.code} (Màn ${pad2(bar.target)}) →`;
+        jBtn.textContent = `Xem Mục ${bar.code} →`;
         return;
       }
 
@@ -1433,7 +1401,6 @@
       if (e.key === "Escape") {
         if (!lightboxEl.hidden) { closeLightbox(); return; }
         if (!tocModalEl.hidden) { closeTocModal(); return; }
-        if (!notesPanelEl.hidden) { toggleNotes(false); return; }
       }
 
       if (!lightboxEl.hidden || !tocModalEl.hidden) return;
@@ -1470,11 +1437,6 @@
         case "G":
           e.preventDefault();
           tocModalEl.hidden ? openTocModal() : closeTocModal();
-          break;
-        case "n":
-        case "N":
-          e.preventDefault();
-          toggleNotes();
           break;
         case "f":
         case "F":

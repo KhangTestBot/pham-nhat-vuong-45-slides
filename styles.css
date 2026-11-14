@@ -1,12 +1,12 @@
 :root {
-  --navy-deep: #071426;
-  --navy-royal: #0F294A;
-  --navy-mid: #163861;
+  --navy-deep: #140407;
+  --navy-royal: #3A0810;
+  --navy-mid: #590E1B;
   --gold-bright: #FBBF24;
   --gold-rich: #D97706;
   --gold-dark: #B45309;
-  --teal-bright: #2DD4BF;
-  --teal-rich: #0D9488;
+  --teal-bright: #F87171;
+  --teal-rich: #DC2626;
   --ivory: #FAFBFC;
   --parchment: #FEFCE8;
   --slate-900: #0F172A;
@@ -15,8 +15,8 @@
   --slate-200: #E2E8F0;
   --crimson: #DC2626;
   --emerald: #10B981;
-  --glass-dark: rgba(10, 26, 48, 0.72);
-  --glass-border: rgba(251, 191, 36, 0.25);
+  --glass-dark: rgba(24, 4, 8, 0.82);
+  --glass-border: rgba(251, 191, 36, 0.34);
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
   --font-script: 'Dancing Script', Georgia, cursive;
@@ -208,7 +208,7 @@ html, body {
   align-items: center;
   gap: 5px;
   padding: 10px 6px;
-  background: rgba(7, 20, 38, 0.62);
+  background: rgba(24, 4, 8, 0.72);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
@@ -367,9 +367,9 @@ html, body {
   justify-content: center;
   padding: 88px 68px 96px 54px;
   overflow: hidden;
-  background: radial-gradient(circle at 82% 20%, rgba(13, 148, 136, 0.16), transparent 46%),
-              radial-gradient(circle at 18% 82%, rgba(217, 119, 6, 0.16), transparent 48%),
-              linear-gradient(145deg, #061121 0%, #0F294A 55%, #12335C 100%);
+  background: radial-gradient(circle at 82% 20%, rgba(220, 38, 38, 0.24), transparent 46%),
+              radial-gradient(circle at 18% 82%, rgba(251, 191, 36, 0.16), transparent 48%),
+              linear-gradient(145deg, #160408 0%, #3A0810 52%, #520D18 100%);
   color: #F8FAFC;
   opacity: 0.22;
   transform: perspective(1400px) scale(0.92) rotateX(3deg);
@@ -409,9 +409,9 @@ html, body {
 /* Unified Royal Navy + Metallic Gold Dark Glass Theme */
 .slide.theme-dark,
 .slide.theme-editorial {
-  background: radial-gradient(circle at 82% 20%, rgba(13, 148, 136, 0.16), transparent 46%),
-              radial-gradient(circle at 18% 82%, rgba(217, 119, 6, 0.16), transparent 48%),
-              linear-gradient(145deg, #061121 0%, #0F294A 55%, #12335C 100%);
+  background: radial-gradient(circle at 82% 20%, rgba(220, 38, 38, 0.24), transparent 46%),
+              radial-gradient(circle at 18% 82%, rgba(251, 191, 36, 0.16), transparent 48%),
+              linear-gradient(145deg, #160408 0%, #3A0810 52%, #520D18 100%);
   color: #F8FAFC;
 }
 
@@ -543,7 +543,7 @@ html, body {
 /* ---------- Unified Dark Glass Photo Cards + Click-to-Zoom ---------- */
 .polaroid {
   position: relative;
-  background: linear-gradient(155deg, rgba(16, 40, 74, 0.92), rgba(8, 22, 44, 0.96));
+  background: linear-gradient(155deg, rgba(56, 9, 17, 0.92), rgba(24, 4, 8, 0.96));
   color: #F8FAFC;
   padding: 10px 10px 14px;
   border-radius: 12px;
@@ -630,7 +630,7 @@ html, body {
 .edit-card {
   position: relative;
   overflow: hidden;
-  background: rgba(15, 36, 66, 0.74);
+  background: rgba(50, 8, 15, 0.76);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-md);
   padding: 20px 22px;
@@ -666,7 +666,7 @@ html, body {
 .edit-card:hover {
   transform: translateY(-4px);
   border-color: rgba(251, 191, 36, 0.56);
-  background: rgba(20, 48, 86, 0.86);
+  background: rgba(72, 12, 22, 0.88);
   box-shadow: 0 18px 40px rgba(4, 10, 22, 0.48), 0 0 22px rgba(251, 191, 36, 0.14);
 }
 
@@ -719,7 +719,7 @@ html, body {
 
 /* ---------- Cover Slide Hero ---------- */
 .slide-cover {
-  background: #071426;
+  background: #140407;
 }
 
 .cover-backdrop {
@@ -739,8 +739,8 @@ html, body {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(7, 20, 38, 0.97) 0%, rgba(15, 41, 74, 0.9) 56%, rgba(15, 41, 74, 0.25) 100%),
-              linear-gradient(0deg, rgba(7, 20, 38, 0.96) 0%, transparent 45%);
+  background: linear-gradient(90deg, rgba(20, 4, 7, 0.96) 0%, rgba(58, 8, 16, 0.88) 56%, rgba(82, 13, 24, 0.25) 100%),
+              linear-gradient(0deg, rgba(20, 4, 7, 0.95) 0%, transparent 45%);
 }
 
 .cover-hero-h1 {
@@ -764,7 +764,7 @@ html, body {
   text-align: left;
   padding: 14px 16px;
   border-radius: 12px;
-  background: rgba(16, 45, 82, 0.88);
+  background: rgba(62, 10, 19, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-top: 4px solid var(--pillar-color, var(--gold-bright));
   color: #FFFFFF;
@@ -775,7 +775,7 @@ html, body {
 .cover-pillar-btn:hover {
   transform: translateY(-5px);
   border-color: var(--gold-bright);
-  background: rgba(20, 56, 102, 0.95);
+  background: rgba(88, 14, 26, 0.95);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
 }
 
@@ -799,7 +799,7 @@ html, body {
 
 /* ---------- 4-Pillar Interactive Selector (5.1-5.4) ---------- */
 .utehy-frame {
-  background: rgba(15, 36, 66, 0.78);
+  background: rgba(52, 8, 16, 0.78);
   border-radius: 16px;
   border: 1px solid rgba(251, 191, 36, 0.28);
   box-shadow: 0 20px 48px rgba(4, 10, 22, 0.45);
@@ -809,7 +809,7 @@ html, body {
 }
 
 .utehy-frame-top {
-  background: linear-gradient(90deg, rgba(217, 119, 6, 0.26), rgba(13, 148, 136, 0.22));
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.34), rgba(251, 191, 36, 0.22));
   border-bottom: 1px solid rgba(251, 191, 36, 0.25);
   color: #FEF3C7;
   padding: 12px 18px;
@@ -868,9 +868,9 @@ html, body {
 }
 
 .utehy-bar.b51 { border-left-color: #FBBF24; }
-.utehy-bar.b52 { border-left-color: #38BDF8; }
-.utehy-bar.b53 { border-left-color: #14B8A6; }
-.utehy-bar.b54 { border-left-color: #A78BFA; }
+.utehy-bar.b52 { border-left-color: #EF4444; }
+.utehy-bar.b53 { border-left-color: #F59E0B; }
+.utehy-bar.b54 { border-left-color: #F87171; }
 
 /* ---------- Interactive Ecosystem / Hub Wheel (TikTok Revolving Disc Signature) ---------- */
 .wheel-stage {
@@ -890,7 +890,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, rgba(15, 41, 74, 0.04) 70%);
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, rgba(58, 8, 16, 0.08) 70%);
 }
 
 .orbit-ring::before {
@@ -898,7 +898,7 @@ html, body {
   position: absolute;
   inset: -14px;
   border-radius: 50%;
-  border: 1px dashed rgba(45, 212, 191, 0.34);
+  border: 1px dashed rgba(248, 113, 113, 0.42);
   pointer-events: none;
   animation: slowSpin 26s linear infinite;
 }
@@ -907,7 +907,7 @@ html, body {
   width: 158px;
   height: 158px;
   border-radius: 50%;
-  background: linear-gradient(145deg, var(--navy-royal), #0A1B33);
+  background: linear-gradient(145deg, #520D18, #1A0509);
   border: 3px solid var(--gold-bright);
   color: #FFFFFF;
   display: flex;
@@ -982,7 +982,7 @@ html, body {
 .video-poster-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 20, 38, 0.2) 0%, rgba(7, 20, 38, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(20, 4, 7, 0.2) 0%, rgba(20, 4, 7, 0.78) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1046,7 +1046,7 @@ html, body {
   gap: 6px;
   padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(7, 20, 38, 0.86);
+  background: rgba(24, 4, 8, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
   font-size: 0.78rem;
@@ -1121,7 +1121,7 @@ html, body {
 .editorial-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(11, 28, 52, 0.8);
+  background: rgba(42, 7, 13, 0.82);
   color: #E2E8F0;
   border: 1px solid rgba(251, 191, 36, 0.22);
   border-radius: 12px;
@@ -1131,7 +1131,7 @@ html, body {
 }
 
 .editorial-table thead th {
-  background: linear-gradient(90deg, rgba(217, 119, 6, 0.25), rgba(13, 148, 136, 0.22));
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.32), rgba(251, 191, 36, 0.2));
   color: #FEF3C7;
   font-size: 0.88rem;
   font-weight: 700;
@@ -1173,7 +1173,7 @@ html, body {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(5, 13, 26, 0.84);
+  background: rgba(18, 3, 6, 0.86);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -1208,7 +1208,7 @@ html, body {
   position: relative;
   max-width: 920px;
   width: 100%;
-  background: #0F294A;
+  background: #2C060C;
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 20px;
@@ -1223,7 +1223,7 @@ html, body {
 }
 
 .lightbox-frame {
-  background: #071426;
+  background: #140407;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -1263,7 +1263,7 @@ html, body {
   max-width: 1080px;
   width: 100%;
   max-height: 86vh;
-  background: #0B1F3A;
+  background: #26050B;
   border: 1px solid var(--glass-border);
   border-radius: 18px;
   padding: 24px;
@@ -1353,7 +1353,7 @@ html, body {
   transform: translateX(-50%);
   width: min(860px, 92vw);
   z-index: 60;
-  background: rgba(7, 20, 38, 0.94);
+  background: rgba(24, 4, 8, 0.94);
   backdrop-filter: blur(14px);
   border: 1px solid var(--gold-bright);
   border-radius: 16px;
@@ -1426,7 +1426,7 @@ html, body {
   position: relative;
   padding: 26px 32px;
   border-radius: var(--radius-lg);
-  background: rgba(15, 36, 66, 0.78);
+  background: rgba(52, 8, 16, 0.78);
   border: 1px solid rgba(251, 191, 36, 0.25);
   border-left: 6px solid var(--gold-bright);
   box-shadow: 0 16px 36px rgba(4, 10, 22, 0.42);
@@ -1489,7 +1489,7 @@ html, body {
   margin-top: 18px;
   padding: 14px 20px;
   border-radius: 12px;
-  background: linear-gradient(90deg, rgba(251, 191, 36, 0.14), rgba(20, 184, 166, 0.14));
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.22), rgba(251, 191, 36, 0.16));
   border: 1px solid rgba(251, 191, 36, 0.34);
   color: #F8FAFC;
   font-weight: 600;
@@ -1553,7 +1553,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 75% 28%, rgba(15, 41, 74, 0.56), rgba(6, 17, 33, 0.94) 72%);
+  background: radial-gradient(circle at 75% 28%, rgba(58, 8, 16, 0.56), rgba(18, 4, 7, 0.94) 72%);
 }
 
 /* ---------- Unified Dark Glass Gallery Strip & Stair Photos ---------- */
@@ -1565,7 +1565,7 @@ html, body {
 }
 
 .thumb-polaroid {
-  background: linear-gradient(155deg, rgba(16, 40, 74, 0.92), rgba(8, 22, 44, 0.96));
+  background: linear-gradient(155deg, rgba(56, 9, 17, 0.92), rgba(24, 4, 8, 0.96));
   color: #FEF3C7;
   padding: 7px 7px 10px;
   border-radius: 10px;
@@ -1665,7 +1665,7 @@ html, body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.85), rgba(13, 148, 136, 0.0));
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.88), rgba(220, 38, 38, 0.0));
   animation: particleFloat 14s ease-in-out infinite;
   opacity: 0.45;
 }
