@@ -1,12 +1,12 @@
-/* Dữ liệu 40 màn trình chiếu Tương tác — Phạm Nhật Vượng & Văn hóa Doanh nhân Việt Nam (UTEHY) */
+/* Dữ liệu 40 màn trình chiếu Tương tác — Phạm Nhật Vượng & Văn hóa Doanh nhân Việt Nam */
 window.DECK_SLIDES = [
   {
     "id": 1,
     "part": 1,
     "kind": "cover",
     "theme": "dark",
-    "section": "Phần 1 · Dẫn nhập & Khung UTEHY",
-    "kicker": "HỌC PHẦN VĂN HÓA KINH DOANH · UTEHY · CHƯƠNG 5",
+    "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
+    "kicker": "CHÂN DUNG & VĂN HÓA DOANH NHÂN VIỆT NAM",
     "scriptAccent": "Từ Kharkov đến sàn Nasdaq...",
     "title": "PHẠM NHẬT VƯỢNG",
     "subtitleHighlight": "& Văn hóa Doanh nhân Việt Nam",
@@ -43,23 +43,23 @@ window.DECK_SLIDES = [
         "target": 35
       }
     ],
-    "notes": "Chào mừng giảng viên và các bạn sinh viên UTEHY. Hôm nay chúng ta không chỉ kể câu chuyện tiểu sử tỷ phú giàu nhất Việt Nam, mà sẽ dùng chính hệ quy chiếu môn Văn hóa Kinh doanh — gồm Các nhân tố ảnh hưởng và 4 bộ phận 5.1 đến 5.4 — để giải phẫu con đường từ sinh viên du học Nga đến người sáng lập Vingroup và VinFast."
+    "notes": "Hôm nay chúng ta không chỉ kể câu chuyện tiểu sử tỷ phú giàu nhất Việt Nam, mà sẽ dùng chính hệ quy chiếu môn Văn hóa Kinh doanh — gồm Các nhân tố ảnh hưởng và 4 bộ phận 5.1 đến 5.4 — để giải phẫu con đường từ sinh viên du học Nga đến người sáng lập Vingroup và VinFast."
   },
   {
     "id": 2,
     "part": 1,
     "kind": "toc",
-    "theme": "editorial",
-    "section": "Phần 1 · Dẫn nhập & Khung UTEHY",
+    "theme": "dark",
+    "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
     "kicker": "CẤU TRÚC BÀI THUYẾT TRÌNH 40 MÀN",
     "scriptAccent": "Mạch dẫn lý thuyết — thực chứng",
-    "title": "Lộ trình 5 Chặng Từ Giáo trình Đến Thực tiễn",
+    "title": "Lộ trình 5 Chặng từ tư duy đến thực tiễn",
     "lead": "Nhấp chọn bất kỳ chặng nào để nhảy nhanh; các màn gắn thẻ Đỏ tích hợp trực tiếp video tư liệu YouTube (5–10 phút).",
     "stages": [
       {
         "num": "01",
         "range": "Màn 03–08",
-        "title": "Khung Lý thuyết Bài giảng UTEHY",
+        "title": "Khung Lý thuyết khung phân tích văn hóa doanh nhân",
         "desc": "5 nhân tố tác động, cấu trúc 4 mục 5.1–5.4 & Ma trận đối chiếu.",
         "target": 3,
         "color": "#0F294A"
@@ -97,12 +97,12 @@ window.DECK_SLIDES = [
         "color": "#B45309"
       }
     ],
-    "notes": "Bố cục bài chia thành 5 phần rõ ràng. Phần I dựng khung lý thuyết theo đúng slide UTEHY; Phần II cung cấp toàn cảnh dữ kiện sự nghiệp; Phần III và IV phân tích sâu từng cấu phần 5.1–5.4 kèm dẫn chứng định lượng; Phần V tổng hợp mô hình và đúc kết 4 bài học hành động cho sinh viên.",
+    "notes": "Bố cục bài chia thành 5 phần rõ ràng. Phần I dựng khung lý thuyết theo 4 trụ cột 5.1–5.4; Phần II cung cấp toàn cảnh dữ kiện sự nghiệp; Phần III và IV phân tích sâu từng cấu phần 5.1–5.4 kèm dẫn chứng định lượng; Phần V tổng hợp mô hình và đúc kết 4 bài học hành động cho sinh viên.",
     "bgImage": "assets/utehy_framework_backdrop.png",
     "gallery": [
       {
-        "src": "assets/pnv_portrait.jpg",
-        "cap": "Chân dung Doanh nhân Phạm Nhật Vượng"
+        "src": "assets/pnv_vingroup_meeting.jpg",
+        "cap": "Doanh nhân Phạm Nhật Vượng"
       },
       {
         "src": "assets/mivina_kharkov.jpg",
@@ -122,12 +122,12 @@ window.DECK_SLIDES = [
     "id": 3,
     "part": 1,
     "kind": "utehy_facsimile",
-    "theme": "editorial",
-    "section": "Phần 1 · Dẫn nhập & Khung UTEHY",
-    "kicker": "BỐI CẢNH ĐỀ BÀI GIẢNG UTEHY",
+    "theme": "dark",
+    "section": "Phần 1 · Dẫn nhập & Khung Phân tích",
+    "kicker": "BỐI CẢNH ĐỀ khung phân tích văn hóa doanh nhân",
     "scriptAccent": "Hệ quy chiếu trung tâm",
-    "title": "Từ Các Nhân tố Ảnh hưởng Đến Cấu trúc Mục 5",
-    "lead": "Nhấp từng thanh mục tiêu 5.1–5.4 trong mô phỏng bài giảng UTEHY bên trái để xem luận điểm phân tích tương ứng.",
+    "title": "Các Nhân tố Ảnh hưởng & 4 Bộ phận Cấu thành",
+    "lead": "Chọn từng trụ cột 5.1–5.4 để xem bản chất lý luận và dẫn chứng thực tiễn.",
     "bars": [
       {
         "code": "5.1",
@@ -162,8 +162,7 @@ window.DECK_SLIDES = [
         "pnv": "Tư duy tốc độ thần tốc, thẳng thắn thực chất tại Đại hội cổ đông, đời tư kín tiếng."
       }
     ],
-    "question": "Vì sao từ một sinh viên từng vỡ nợ ở Moscow năm 1992, Phạm Nhật Vượng có thể dựng nên tập đoàn tư nhân hàng đầu Việt Nam?",
-    "notes": "Đây là khung bài giảng chuẩn của Đại học Sư phạm Kỹ thuật Hưng Yên: phần trên xác định Các nhân tố ảnh hưởng tới văn hóa doanh nhân; phần dưới giải phẫu 4 bộ phận cấu thành 5.1 đến 5.4. Các bạn có thể bấm trực tiếp vào từng thanh trên màn hình để đối chiếu nhanh lý thuyết và thực tiễn.",
+    "notes": "Khung nội dung tổng quan gồm Các nhân tố ảnh hưởng tới văn hóa doanh nhân và 4 bộ phận cấu thành 5.1 đến 5.4. Có thể bấm trực tiếp vào từng thanh trên màn hình để đối chiếu nhanh lý thuyết và thực tiễn.",
     "bgImage": "assets/utehy_framework_backdrop.png"
   },
   {
@@ -217,7 +216,7 @@ window.DECK_SLIDES = [
     "id": 5,
     "part": 1,
     "kind": "strata",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 1 · Các nhân tố ảnh hưởng",
     "kicker": "NHÂN TỐ 2 & 3 / 5 · KINH TẾ & THỂ CHẾ",
     "scriptAccent": "Động lực thị trường",
@@ -304,8 +303,8 @@ window.DECK_SLIDES = [
     "id": 7,
     "part": 1,
     "kind": "pillar_hub",
-    "theme": "editorial",
-    "section": "Phần 1 · Khung Mục 5 UTEHY",
+    "theme": "dark",
+    "section": "Phần 1 · Khung Mục 5 Văn hóa Doanh nhân",
     "kicker": "TRỌNG TÂM CHƯƠNG 5 · BỐN BỘ PHẬN CẤU THÀNH",
     "scriptAccent": "Tài · Chất · Tâm · Phong cách",
     "title": "Kiến trúc 4 Trụ cột Văn hóa Doanh nhân",
@@ -351,15 +350,15 @@ window.DECK_SLIDES = [
     "id": 8,
     "part": 1,
     "kind": "matrix_table",
-    "theme": "editorial",
-    "section": "Phần 1 · Khung Mục 5 UTEHY",
+    "theme": "dark",
+    "section": "Phần 1 · Khung Mục 5 Văn hóa Doanh nhân",
     "kicker": "MA TRẬN ĐỐI CHIẾU LÝ THUYẾT – THỰC TIỄN",
     "scriptAccent": "Soi chiếu trực diện",
     "title": "Bản đồ Ánh xạ 5.1–5.4 Vào Trường hợp Phạm Nhật Vượng",
-    "lead": "Bảng tổng hợp đối chiếu trực diện từng bộ phận trong giáo trình UTEHY với các dấu ấn đã được kiểm chứng.",
+    "lead": "Bảng tổng hợp đối chiếu trực diện từng bộ phận trong giáo trình Văn hóa Doanh nhân với các dấu ấn đã được kiểm chứng.",
     "headers": [
       "Bộ phận (Mục 5)",
-      "Nội hàm Lý thuyết (UTEHY)",
+      "Nội hàm Lý thuyết (Văn hóa Doanh nhân)",
       "Biểu hiện & Dẫn chứng Phạm Nhật Vượng"
     ],
     "rows": [
@@ -440,7 +439,7 @@ window.DECK_SLIDES = [
     ],
     "notes": "Phần II đưa chúng ta đi dọc chiều dài lịch sử cuộc đời ông Phạm Nhật Vượng qua 4 giai đoạn lớn, kèm 3 video YouTube tư liệu chọn lọc từ 6 đến 10 phút.",
     "bgImage": "assets/vietnam_heritage_culture.jpg",
-    "image": "assets/pnv_portrait.jpg"
+    "image": "assets/pnv_vingroup_meeting.jpg"
   },
   {
     "id": 10,
@@ -452,10 +451,9 @@ window.DECK_SLIDES = [
     "scriptAccent": "Gốc rễ kỷ luật",
     "title": "Xuất thân & Học vấn: Nội lực Từ Thời Bao cấp Đến Moscow",
     "lead": "Gia cảnh thanh bạch rèn ý chí vượt khó, còn năng khiếu Toán học mở cánh cửa học bổng tại Liên Xô.",
-    "image": "assets/pnv_portrait.jpg",
-    "portrait": true,
-    "polaroidCaption": "Chân dung Chủ tịch Vingroup Phạm Nhật Vượng",
-    "polaroidCredit": "Office of the President of the Philippines · Public Domain",
+    "image": "assets/pnv_vingroup_meeting.jpg",
+    "portrait": false,
+    "polaroidCaption": "Chủ tịch Phạm Nhật Vượng tại diễn đàn hợp tác công nghệ & y tế",
     "tilt": "-2deg",
     "points": [
       {
@@ -481,7 +479,7 @@ window.DECK_SLIDES = [
     "id": 11,
     "part": 2,
     "kind": "breathing_quote",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "BƯỚC NGOẶT TÂM LÝ · MOSCOW 1992",
     "scriptAccent": "Bài học trước vinh quang",
@@ -508,8 +506,7 @@ window.DECK_SLIDES = [
     "notes": "Đây là khoảng lặng rất giá trị cho sinh viên: không một đế chế nào đi lên bằng đường thẳng. Sự khác biệt của tố chất 5.2 nằm ở phản ứng sau phá sản.",
     "bgImage": "assets/moscow_grit_backdrop.jpg",
     "image": "assets/moscow_university.jpg",
-    "polaroidCaption": "Bối cảnh Nga hậu Xô Viết — nơi hình thành bản lĩnh không lùi bước",
-    "polaroidCredit": "Wikimedia Commons · Moscow State University"
+    "polaroidCaption": "Bối cảnh Nga hậu Xô Viết — nơi hình thành bản lĩnh không lùi bước"
   },
   {
     "id": 12,
@@ -538,7 +535,7 @@ window.DECK_SLIDES = [
     "id": 13,
     "part": 2,
     "kind": "polaroid_story",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "CHẶNG 2 · TECHNOCOM & MIVINA (1993–2010)",
     "scriptAccent": "Huyền thoại nơi xứ người",
@@ -546,7 +543,6 @@ window.DECK_SLIDES = [
     "lead": "Đọc trúng nhu cầu bữa ăn nhanh giá rẻ giữa khủng hoảng Ukraine, ông biến Technocom thành thương hiệu quốc dân rồi bán lại chiến lược cho Nestlé.",
     "image": "assets/mivina_kharkov.jpg",
     "polaroidCaption": "Kharkov (Ukraine) — Nơi khởi nguồn thương hiệu Mivina",
-    "polaroidCredit": "Ảnh: Russellcunning (Wikimedia Commons · CC BY-SA 3.0)",
     "tilt": "2deg",
     "kpis": [
       {
@@ -601,7 +597,7 @@ window.DECK_SLIDES = [
     "id": 15,
     "part": 2,
     "kind": "strata",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 2 · Tiểu sử & Sự nghiệp",
     "kicker": "CHẶNG 3 · HỒI HƯƠNG & HỢP NHẤT (2001–2012)",
     "scriptAccent": "Đặt móng đế chế mới",
@@ -730,7 +726,6 @@ window.DECK_SLIDES = [
     "lead": "Bước chuyển từ bất động sản sang chế tạo ô tô điện và niêm yết trên sàn chứng khoán Mỹ đánh dấu tầm vóc công nghiệp toàn cầu.",
     "image": "assets/vinfast_ev_factory.jpg",
     "polaroidCaption": "Xe điện VinFast VF 6 lăn bánh tại Hà Nội",
-    "polaroidCredit": "Ảnh: Newone (Wikimedia Commons · CC BY-SA 4.0)",
     "tilt": "-2deg",
     "points": [
       {
@@ -752,7 +747,7 @@ window.DECK_SLIDES = [
     "id": 19,
     "part": 2,
     "kind": "bar_chart",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 2 · Dữ liệu Thực chứng VinFast",
     "kicker": "BỨT PHÁ KỶ LỤC NĂM 2025",
     "scriptAccent": "Con số biết nói",
@@ -778,7 +773,6 @@ window.DECK_SLIDES = [
         "color": "#D97706"
       }
     ],
-    "chartNote": "Nguồn tổng hợp số liệu công bố 2025: SGGP Đầu tư Tài chính, VnEconomy, Autodaily.",
     "notes": "Trên màn hình là biểu đồ so sánh trực tiếp năm 2024 và năm 2025: ô tô điện tăng từ 97.399 lên 196.919 chiếc (+102%), xe máy/xe đạp điện bùng nổ +473% đạt 406.498 chiếc, kéo doanh thu lên 90.427,6 tỷ đồng.",
     "bgImage": "assets/vinfast_ev_factory.jpg",
     "gallery": [
@@ -835,7 +829,7 @@ window.DECK_SLIDES = [
     "id": 21,
     "part": 3,
     "kind": "pillar_intro",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực & 5.2 Tố chất",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.1 · PHẦN \"TÀI\" VÀ \"TRÍ\"",
     "scriptAccent": "Năng lực tạo thành quả",
@@ -850,7 +844,7 @@ window.DECK_SLIDES = [
       "3. Lãnh đạo định hướng",
       "4. Đổi mới sáng tạo"
     ],
-    "notes": "Từ Phần III trở đi, chúng ta mổ xẻ từng mục của slide UTEHY bằng chứng cứ vừa xem. Mở đầu là mục 5.1 — Năng lực của doanh nhân, tức phần Tài và phần Trí."
+    "notes": "Từ Phần III trở đi, chúng ta mổ xẻ từng mục của slide Văn hóa Doanh nhân bằng chứng cứ vừa xem. Mở đầu là mục 5.1 — Năng lực của doanh nhân, tức phần Tài và phần Trí."
   },
   {
     "id": 22,
@@ -858,7 +852,7 @@ window.DECK_SLIDES = [
     "kind": "grid4_theory",
     "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực của Doanh nhân",
-    "kicker": "CƠ SỞ LÝ THUYẾT 5.1 (UTEHY)",
+    "kicker": "CƠ SỞ LÝ THUYẾT 5.1 (Văn hóa Doanh nhân)",
     "scriptAccent": "Bốn thước đo năng lực",
     "title": "Bốn Cấu phần Tạo nên Năng lực Doanh nhân",
     "lead": "Giáo trình Văn hóa kinh doanh đánh giá năng lực doanh nhân qua 4 năng lực thành phần liên hoàn hỗ trợ lẫn nhau.",
@@ -905,15 +899,14 @@ window.DECK_SLIDES = [
     "id": 23,
     "part": 3,
     "kind": "polaroid_story",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 3 · 5.1 Năng lực của Doanh nhân",
     "kicker": "5.1 THỰC CHỨNG · CHUYÊN MÔN & ĐIỀU HÀNH",
     "scriptAccent": "Kỷ luật tiến độ thần tốc",
     "title": "Năng lực Quản trị Đa ngành & Tốc độ Thực thi Kỷ lục",
     "lead": "Từ dây chuyền mì gói nơi đất khách tới tổ hợp tự động hóa Cát Hải cho thấy khả năng tổ chức nguồn lực ở đẳng cấp hiếm có.",
-    "image": "assets/vinfast_ev_factory.jpg",
-    "polaroidCaption": "VinFast hiện diện thực tế tại đô thị Việt Nam",
-    "polaroidCredit": "Ảnh: Newone (Wikimedia Commons · CC BY-SA 4.0)",
+    "image": "assets/pnv_vinfast_tour.jpg",
+    "polaroidCaption": "Chỉ đạo trực tiếp tại tổ hợp sản xuất ô tô VinFast Hải Phòng",
     "tilt": "1.8deg",
     "points": [
       {
@@ -978,7 +971,7 @@ window.DECK_SLIDES = [
     "id": 25,
     "part": 3,
     "kind": "pillar_intro",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.2 · BẢN LĨNH MỞ ĐƯỜNG",
     "scriptAccent": "Chất riêng tạo khác biệt",
@@ -994,7 +987,7 @@ window.DECK_SLIDES = [
       "Khát vọng thành đạt cao",
       "Nhạy bén thích ứng"
     ],
-    "notes": "Chúng ta chuyển sang bộ phận thứ hai trong khung UTEHY: 5.2 Tố chất của doanh nhân — những phẩm chất tâm lý tạo dấu ấn riêng của người mở đường."
+    "notes": "Chúng ta chuyển sang bộ phận thứ hai trong khung Văn hóa Doanh nhân: 5.2 Tố chất của doanh nhân — những phẩm chất tâm lý tạo dấu ấn riêng của người mở đường."
   },
   {
     "id": 26,
@@ -1002,7 +995,7 @@ window.DECK_SLIDES = [
     "kind": "grid5_qualities",
     "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
-    "kicker": "CƠ SỞ LÝ THUYẾT 5.2 (UTEHY)",
+    "kicker": "CƠ SỞ LÝ THUYẾT 5.2 (Văn hóa Doanh nhân)",
     "scriptAccent": "Năm phẩm chất tâm lý",
     "title": "Năm Tố chất Cốt lõi Cấu thành Chân dung Doanh nhân",
     "lead": "Thiếu tầm nhìn và tinh thần dấn thân có tính toán, người quản lý giỏi chỉ giữ được hiện trạng chứ khó tạo bước nhảy vọt.",
@@ -1033,14 +1026,14 @@ window.DECK_SLIDES = [
         "desc": "Đọc nhanh tín hiệu khủng hoảng hay khoảng trống thị trường để xoay trục kịp lúc."
       }
     ],
-    "notes": "Giáo trình UTEHY nêu bật 5 tố chất tâm lý này. Trong thực tế Việt Nam, rất hiếm doanh nhân thể hiện mạnh mẽ cả 5 tố chất ở quy mô lớn như Phạm Nhật Vượng.",
+    "notes": "Giáo trình Văn hóa Doanh nhân nêu bật 5 tố chất tâm lý này. Trong thực tế Việt Nam, rất hiếm doanh nhân thể hiện mạnh mẽ cả 5 tố chất ở quy mô lớn như Phạm Nhật Vượng.",
     "bgImage": "assets/moscow_grit_backdrop.jpg"
   },
   {
     "id": 27,
     "part": 3,
     "kind": "staircase_bets",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 3 · 5.2 Tố chất của Doanh nhân",
     "kicker": "5.2 THỰC CHỨNG · BA CÚ ĐẶT CƯỢC LỊCH SỬ",
     "scriptAccent": "Luôn bước ra vùng an toàn",
@@ -1086,7 +1079,7 @@ window.DECK_SLIDES = [
     "title": "Khát vọng Đỉnh cao & Cam kết Không Từ bỏ",
     "quote": "“Đã làm gì thì phải làm đến cùng và làm cho xuất sắc.” — “Không bao giờ buông bỏ VinFast.”",
     "quoteAttr": "Phạm Nhật Vượng · Tuyên ngôn về chuẩn mực và cam kết chiến lược",
-    "image": "assets/pnv_portrait.jpg",
+    "image": "assets/pnv_vinfast_tour.jpg",
     "lessons": [
       {
         "num": "A",
@@ -1133,7 +1126,7 @@ window.DECK_SLIDES = [
     "id": 30,
     "part": 4,
     "kind": "pillar_intro",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức & 5.4 Phong cách",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.3 · CÁI \"TÂM\" BỀN VỮNG",
     "scriptAccent": "Gốc rễ trường tồn",
@@ -1187,7 +1180,7 @@ window.DECK_SLIDES = [
     "id": 32,
     "part": 4,
     "kind": "stat_showcase",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 4 · 5.3 Đạo đức của Doanh nhân",
     "kicker": "5.3 THỰC CHỨNG · 20 NĂM QUỸ THIỆN TÂM (2006–2026)",
     "scriptAccent": "Anh hùng từ thiện châu Á",
@@ -1238,7 +1231,6 @@ window.DECK_SLIDES = [
     "lead": "Đồng sáng lập bởi vợ chồng Phạm Nhật Vượng – Phạm Thu Hương, VinFuture mở rộng trách nhiệm xã hội vượt khỏi biên giới quốc gia.",
     "image": "assets/vinfuture_thientam.jpg",
     "polaroidCaption": "Lễ trao Giải thưởng Khoa học Công nghệ VinFuture tại Nhà hát Hồ Gươm",
-    "polaroidCredit": "Ảnh: Newone (Wikimedia Commons · CC BY 4.0)",
     "tilt": "-1.6deg",
     "kpis": [
       {
@@ -1293,7 +1285,7 @@ window.DECK_SLIDES = [
     "id": 35,
     "part": 4,
     "kind": "pillar_intro",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 4 · 5.4 Phong cách của Doanh nhân",
     "kicker": "CHUYÊN SÂU BỘ PHẬN 5.4 · DẤU ẤN HÀNH VI",
     "scriptAccent": "Biến chiến lược thành văn hóa",
@@ -1319,10 +1311,9 @@ window.DECK_SLIDES = [
     "scriptAccent": "Hiệu quả trên hết",
     "title": "Lãnh đạo Sâu sát, Thẳng thắn Thực chất & Đời tư Giản dị",
     "lead": "Sự kết hợp giữa yêu cầu chuẩn mực khắt khe trong công việc và lối sống kín tiếng tránh phô trương trước truyền thông.",
-    "image": "assets/pnv_portrait.jpg",
-    "portrait": true,
-    "polaroidCaption": "Tác phong điềm tĩnh và kín tiếng đời tư",
-    "polaroidCredit": "Office of the President of the Philippines · Public Domain",
+    "image": "assets/pnv_joko_vinfast.jpg",
+    "portrait": false,
+    "polaroidCaption": "Trực tiếp điều hành bên dây chuyền sản xuất ô tô điện VinFast",
     "tilt": "1.8deg",
     "points": [
       {
@@ -1344,12 +1335,12 @@ window.DECK_SLIDES = [
     "id": 37,
     "part": 5,
     "kind": "synthesis_factors",
-    "theme": "editorial",
-    "section": "Phần 5 · Tổng hợp Mô hình UTEHY",
+    "theme": "dark",
+    "section": "Phần 5 · Tổng hợp Mô hình Văn hóa Doanh nhân",
     "kicker": "KẾT NỐI TRỌN VẸN PHẦN ĐẦU & MỤC 5",
     "scriptAccent": "Vòng tròn hội tụ",
     "title": "Năm Nhân tố Nhào nặn Văn hóa Doanh nhân Phạm Nhật Vượng",
-    "lead": "Quay lại phần đầu slide UTEHY: năm nhân tố khách quan và chủ quan đã cùng hội tụ để hình thành chân dung 5.1–5.4.",
+    "lead": "Quay lại phần đầu slide Văn hóa Doanh nhân: năm nhân tố khách quan và chủ quan đã cùng hội tụ để hình thành chân dung 5.1–5.4.",
     "centerLabel": "VĂN HÓA PHẠM NHẬT VƯỢNG",
     "centerSub": "5.1 Năng lực · 5.2 Tố chất · 5.3 Đạo đức · 5.4 Phong cách",
     "factors": [
@@ -1374,7 +1365,7 @@ window.DECK_SLIDES = [
         "desc": "Bản lĩnh đứng dậy sau phá sản Moscow và tinh thần làm đến cùng."
       }
     ],
-    "notes": "Sơ đồ quy tụ này giúp kết nối hoàn hảo hai vế trong ảnh slide UTEHY của bạn: 5 nhân tố đầu vào tác động và kết tinh thành 4 cấu phần văn hóa đầu ra.",
+    "notes": "Sơ đồ quy tụ này giúp kết nối hoàn hảo hai vế trong ảnh slide Văn hóa Doanh nhân của bạn: 5 nhân tố đầu vào tác động và kết tinh thành 4 cấu phần văn hóa đầu ra.",
     "bgImage": "assets/vietnam_heritage_culture.jpg"
   },
   {
@@ -1414,7 +1405,6 @@ window.DECK_SLIDES = [
         "note": "Thương hiệu Việt tầm quốc tế"
       }
     ],
-    "disclaimer": "Ghi chú học thuật: Thang điểm 10 trên biểu đồ radar là đánh giá minh họa định tính tổng hợp phục vụ thảo luận lớp học (Data class: scenario).",
     "notes": "Lưu ý minh bạch khi thuyết trình: thang điểm trên radar là mô hình hóa định tính để sinh viên trực quan hóa sự cân đối giữa 4 cấu phần chứ không phải một bảng chấm điểm tuyệt đối.",
     "bgImage": "assets/cover_editorial_horizon.png"
   },
@@ -1422,17 +1412,17 @@ window.DECK_SLIDES = [
     "id": 39,
     "part": 5,
     "kind": "lessons_table",
-    "theme": "editorial",
+    "theme": "dark",
     "section": "Phần 5 · Thách thức & Bài học Sinh viên",
     "kicker": "GÓC NHÌN KHÁCH QUAN & RÈN LUYỆN",
-    "scriptAccent": "Hành trang sinh viên UTEHY",
-    "title": "Thách thức Thực tế & 4 Bài học Hành động Cho Sinh viên UTEHY",
-    "lead": "Nhìn nhận khách quan áp lực tài chính của ngành công nghiệp nặng và chuyển hóa thành lộ trình tự rèn luyện theo đúng Mục 5.",
+    "scriptAccent": "Hành trang thế hệ trẻ",
+    "title": "Thách thức Thực tế & 4 Bài học Hành động",
+    "lead": "Những giới hạn áp lực cần nhìn thẳng và bài học thực tiễn cho người trẻ khởi nghiệp.",
     "challenge": "Thách thức khách quan: Đầu tư xe điện và công nghiệp nặng đòi hỏi nguồn vốn khổng lồ, áp lực lỗ kế hoạch ngắn hạn và cạnh tranh gay gắt trước các hãng xe trăm tuổi tại Bắc Mỹ – châu Âu.",
     "headers": [
-      "Trụ cột UTEHY",
+      "Trụ cột",
       "Bài học Nhận thức",
-      "Hành động Cụ thể Tại Giảng đường UTEHY"
+      "Hành động Cụ thể Tại Giảng đường Văn hóa Doanh nhân"
     ],
     "rows": [
       [
@@ -1456,12 +1446,12 @@ window.DECK_SLIDES = [
         "Rèn tác phong đúng giờ, làm việc có kế hoạch rõ ràng và theo đuổi chất lượng đến cùng."
       ]
     ],
-    "notes": "Một bài nghiên cứu khoa học cần góc nhìn hai chiều: bên cạnh thành tựu là thách thức vốn lớn và cạnh tranh khốc liệt. Từ đó rút ra 4 bài học thiết thực nhất cho sinh viên UTEHY.",
+    "notes": "Một bài nghiên cứu khoa học cần góc nhìn hai chiều: bên cạnh thành tựu là thách thức vốn lớn và cạnh tranh khốc liệt. Từ đó rút ra 4 bài học thiết thực nhất cho thế hệ trẻ.",
     "bgImage": "assets/student_future_horizon.png",
     "gallery": [
       {
         "src": "assets/student_future_horizon.png",
-        "cap": "Sinh viên UTEHY trước chân trời hội nhập công nghệ"
+        "cap": "Thế hệ trẻ trước chân trời hội nhập công nghệ"
       }
     ]
   },
@@ -1524,8 +1514,8 @@ window.DECK_SLIDES = [
         "url": "https://www.youtube.com/watch?v=FaPiGnhHv1k"
       }
     ],
-    "closing": "Trân trọng cảm ơn Giảng viên và các bạn sinh viên Đại học Sư phạm Kỹ thuật Hưng Yên (UTEHY) đã lắng nghe!",
-    "notes": "Xin trân trọng cảm ơn thầy/cô và các bạn đã theo dõi 40 màn trình chiếu. Trên màn kết có sẵn nút Xem lại từ đầu và đầy đủ 5 liên kết video tư liệu để cả lớp tra cứu hoặc xem lại ngay.",
+    "closing": "Trân trọng cảm ơn quý vị đã theo dõi và lắng nghe!",
+    "notes": "Cảm ơn quý vị đã theo dõi 40 màn trình chiếu. Trên màn kết có sẵn nút Xem lại từ đầu và đầy đủ 5 liên kết video tư liệu để tra cứu hoặc xem lại ngay.",
     "flagEmblem": "assets/vietnam_flag.png"
   }
 ];

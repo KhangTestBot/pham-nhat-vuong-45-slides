@@ -40,7 +40,6 @@
   const totalSlides = slidesData.length;
   let currentIndex = 0;
   let currentTocFilter = "all";
-  const isFileProtocol = window.location.protocol === "file:";
 
   // ---------- Safe Utilities ----------
   function esc(str) {
@@ -54,6 +53,19 @@
 
   function pad2(n) {
     return String(n).padStart(2, "0");
+  }
+
+  function safeAccentColor(col, fallback = "#FBBF24") {
+    const map = {
+      "#0F294A": "#38BDF8",
+      "#1E3A5F": "#60A5FA",
+      "#B45309": "#FBBF24",
+      "#0F766E": "#2DD4BF",
+      "#0D9488": "#2DD4BF",
+      "#D97706": "#FBBF24"
+    };
+    if (!col) return fallback;
+    return map[String(col).toUpperCase()] || col;
   }
 
   function cardClass(theme, accent = "") {
@@ -81,8 +93,7 @@
   function renderPolaroid(s, {
     image = s.image,
     caption = s.polaroidCaption || s.imageCaption || s.title,
-    credit = s.polaroidCredit || "",
-    tilt = s.tilt ?? -2,
+    tilt = s.tilt ?? -1.5,
     portrait = Boolean(s.portrait),
     title = s.title
   } = {}) {
@@ -95,14 +106,12 @@
            data-src="${esc(image)}"
            data-title="${esc(title)}"
            data-caption="${esc(caption)}"
-           data-credit="${esc(credit)}"
+           data-credit=""
            aria-label="Phóng to ảnh: ${esc(caption)}">
         <img src="${esc(image)}" alt="${esc(caption)}" loading="lazy" />
         <div class="polaroid-caption">
           <span>${esc(caption)}</span>
-          <span class="polaroid-zoom-tag">Phóng to ↗</span>
         </div>
-        ${credit ? `<div class="credit-line">${esc(credit)}</div>` : ""}
       </div>
     `;
   }
@@ -126,7 +135,7 @@
 
   function renderGalleryStrip(gallery, title) {
     if (!Array.isArray(gallery) || !gallery.length) return "";
-    const tilts = [-1.8, 1.4, -1.2, 1.8];
+    const tilts = [-1.6, 1.4, -1.1, 1.6];
     return `
       <div class="mini-gallery reveal d4">
         ${gallery.map((g, i) => `
@@ -138,11 +147,10 @@
                data-src="${esc(g.src)}"
                data-title="${esc(title)}"
                data-caption="${esc(g.cap)}"
-               data-credit="Nhấn để xem kích thước lớn">
+               data-credit="">
             <img src="${esc(g.src)}" alt="${esc(g.cap)}" loading="lazy" />
             <div class="thumb-polaroid-cap">
               <span>${esc(g.cap)}</span>
-              <span style="color:#B45309;">↗</span>
             </div>
           </div>
         `).join("")}
@@ -194,22 +202,25 @@
       <div class="slide-inner">
         ${renderHeader(s)}
         <div class="stage-card-grid reveal d2">
-          ${(s.stages || []).map((st) => `
+          ${(s.stages || []).map((st) => {
+            const accent = safeAccentColor(st.color);
+            return `
             <button type="button"
                     class="edit-card stage-card"
-                    style="border-top-color:${esc(st.color)}"
+                    style="border-top-color:${esc(accent)}"
                     data-jump="${Number(st.target)}">
               <div>
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                  <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:${esc(st.color)}">${esc(st.num)}</span>
+                  <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:${esc(accent)}">${esc(st.num)}</span>
                   <span class="tag-pill">${esc(st.range)}</span>
                 </div>
                 <div class="card-title">${esc(st.title)}</div>
-                <p style="font-size:0.88rem;color:var(--slate-700);line-height:1.5;">${esc(st.desc)}</p>
+                <p style="font-size:0.88rem;color:#CBD5E1;line-height:1.5;">${esc(st.desc)}</p>
               </div>
-              <div style="font-size:0.8rem;font-weight:700;color:${esc(st.color)};">Đi tới Màn ${pad2(st.target)} →</div>
+              <div style="font-size:0.8rem;font-weight:700;color:${esc(accent)};">Đi tới Màn ${pad2(st.target)} →</div>
             </button>
-          `).join("")}
+          `;
+          }).join("")}
         </div>
         ${renderGalleryStrip(s.gallery, s.title)}
       </div>
@@ -227,7 +238,7 @@
             <div class="utehy-frame">
               <div class="utehy-frame-top">
                 <span>Các nhân tố ảnh hưởng tới văn hóa doanh nhân</span>
-                <span>UTEHY ✦</span>
+                <span style="color:#FBBF24;">✦ 4 TRỤ CỘT</span>
               </div>
               <div class="utehy-frame-body">
                 <div class="utehy-heading">5. CÁC BỘ PHẬN CẤU THÀNH<br />VĂN HÓA DOANH NHÂN</div>
@@ -237,26 +248,25 @@
                             class="utehy-bar ${esc(b.cls)} ${idx === 0 ? "active" : ""}"
                             data-utehy-idx="${idx}">
                       <span>${esc(b.label)}</span>
-                      <span style="font-size:0.82rem;opacity:0.92;">Màn ${pad2(b.target)} ▸</span>
+                      <span style="font-size:0.82rem;color:#FBBF24;">Màn ${pad2(b.target)} ▸</span>
                     </button>
                   `).join("")}
                 </div>
               </div>
             </div>
-            ${s.question ? `<div class="bridge-callout" style="margin-top:14px;">💡 <strong>Câu hỏi dẫn nhập:</strong> ${esc(s.question)}</div>` : ""}
           </div>
 
           <div class="edit-card gold" data-utehy-detail style="min-height: 295px; display:flex; flex-direction:column; justify-content:space-between;">
             <div>
               <span class="card-kicker" data-utehy-code>BỘ PHẬN ${esc(first.code)}</span>
               <h3 class="card-title" data-utehy-title style="font-size:1.38rem;">${esc(first.label)}</h3>
-              <div style="margin-top:12px;padding:12px 14px;background:#F8FAFC;border-radius:8px;border-left:4px solid #0F294A;">
-                <div style="font-size:0.76rem;font-weight:800;color:#0F294A;text-transform:uppercase;">Cơ sở lý thuyết bài giảng</div>
-                <p data-utehy-theory style="font-size:0.94rem;color:#334155;margin-top:4px;">${esc(first.theory)}</p>
+              <div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:4px solid #38BDF8;">
+                <div style="font-size:0.76rem;font-weight:800;color:#38BDF8;text-transform:uppercase;">Cơ sở lý thuyết</div>
+                <p data-utehy-theory style="font-size:0.94rem;color:#CBD5E1;margin-top:4px;">${esc(first.theory)}</p>
               </div>
-              <div style="margin-top:12px;padding:12px 14px;background:#FFFBEB;border-radius:8px;border-left:4px solid #D97706;">
-                <div style="font-size:0.76rem;font-weight:800;color:#B45309;text-transform:uppercase;">Minh họa thực tiễn · Phạm Nhật Vượng</div>
-                <p data-utehy-pnv style="font-size:0.94rem;color:#1E293B;margin-top:4px;">${esc(first.pnv)}</p>
+              <div style="margin-top:12px;padding:12px 14px;background:rgba(251,191,36,0.08);border-radius:8px;border-left:4px solid #FBBF24;">
+                <div style="font-size:0.76rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Minh họa thực tiễn · Phạm Nhật Vượng</div>
+                <p data-utehy-pnv style="font-size:0.94rem;color:#FEF3C7;margin-top:4px;">${esc(first.pnv)}</p>
               </div>
             </div>
             <div style="margin-top:16px;">
@@ -349,26 +359,28 @@
           <div>
             ${renderPolaroid(s, {
               image: s.image,
-              caption: "Mô hình 4 bộ phận cấu thành Văn hóa Doanh nhân UTEHY",
-              credit: "Đồ họa biên tập · 5.1 – 5.4",
+              caption: "Mô hình 4 bộ phận cấu thành Văn hóa Doanh nhân",
               tilt: -1.5
             })}
           </div>
           <div class="grid-2" style="gap:14px;">
-            ${(s.pillars || []).map((p) => `
+            ${(s.pillars || []).map((p) => {
+              const accent = safeAccentColor(p.color);
+              return `
               <button type="button"
                       class="edit-card"
-                      style="text-align:left;cursor:pointer;border-top-color:${esc(p.color)}"
+                      style="text-align:left;cursor:pointer;border-top-color:${esc(accent)}"
                       data-jump="${Number(p.target)}">
                 <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <span style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:${esc(p.color)}">${esc(p.code)}</span>
+                  <span style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:${esc(accent)}">${esc(p.code)}</span>
                   <span class="tag-pill">${esc(p.essence)}</span>
                 </div>
                 <div class="card-title" style="margin-top:8px;">${esc(p.title)}</div>
-                <p style="font-size:0.86rem;color:var(--slate-700);line-height:1.48;">${esc(p.detail)}</p>
-                <div style="margin-top:10px;font-size:0.78rem;font-weight:700;color:${esc(p.color)};">Xem Màn ${pad2(p.target)} →</div>
+                <p style="font-size:0.86rem;color:#CBD5E1;line-height:1.48;">${esc(p.detail)}</p>
+                <div style="margin-top:10px;font-size:0.78rem;font-weight:700;color:${esc(accent)};">Xem Màn ${pad2(p.target)} →</div>
               </button>
-            `).join("")}
+            `;
+            }).join("")}
           </div>
         </div>
       </div>
@@ -387,7 +399,7 @@
             <tbody>
               ${(s.rows || []).map((row) => `
                 <tr>${row.map((cell, idx) => `
-                  <td style="${idx === 0 ? "font-weight:800;color:#0F294A;white-space:nowrap;" : ""}">${esc(cell)}</td>
+                  <td style="${idx === 0 ? "font-weight:800;color:#FEF3C7;white-space:nowrap;" : ""}">${esc(cell)}</td>
                 `).join("")}</tr>
               `).join("")}
             </tbody>
@@ -415,11 +427,10 @@
                      data-src="${esc(s.image)}"
                      data-title="${esc(s.title)}"
                      data-caption="Chân dung Doanh nhân Phạm Nhật Vượng"
-                     data-credit="Hành trình 1968 – 2026">
+                     data-credit="">
                   <img src="${esc(s.image)}" alt="Chân dung Phạm Nhật Vượng" style="max-height:145px;object-fit:cover;object-position:top center;" loading="lazy" />
                   <div class="polaroid-caption" style="font-size:0.72rem;margin-top:6px;">
                     <span>Phạm Nhật Vượng</span>
-                    <span class="polaroid-zoom-tag">↗</span>
                   </div>
                 </div>
               ` : ""}
@@ -453,8 +464,8 @@
           <div class="grid-2" style="gap:12px;margin-top:16px;">
             ${s.kpis.map((k) => `
               <div class="${cardClass(s.theme, "gold")}" style="padding:12px 14px;text-align:center;">
-                <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:${s.theme === "dark" ? "#FBBF24" : "#B45309"}">${esc(k.val)}</div>
-                <div style="font-size:0.78rem;opacity:0.88;">${esc(k.lbl)}</div>
+                <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:#FBBF24">${esc(k.val)}</div>
+                <div style="font-size:0.78rem;color:#CBD5E1;">${esc(k.lbl)}</div>
               </div>
             `).join("")}
           </div>
@@ -486,7 +497,7 @@
           <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}">
             <div class="card-kicker">ĐIỂM NHẤN ${esc(l.num)}</div>
             <h3 class="card-title">${esc(l.title)}</h3>
-            <p style="font-size:0.92rem;color:var(--slate-700);line-height:1.55;">${esc(l.desc)}</p>
+            <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(l.desc)}</p>
           </div>
         `).join("")}
       </div>
@@ -505,7 +516,7 @@
               ${(s.lessons || []).map((l, idx) => `
                 <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}" style="padding:14px 18px;">
                   <div class="card-kicker">BƯỚC NGOẶT ${esc(l.num)} · ${esc(l.title)}</div>
-                  <p style="font-size:0.9rem;color:var(--slate-700);">${esc(l.desc)}</p>
+                  <p style="font-size:0.9rem;color:#CBD5E1;">${esc(l.desc)}</p>
                 </div>
               `).join("")}
             </div>
@@ -513,7 +524,6 @@
               ${renderPolaroid(s, {
                 image: s.image,
                 caption: "Khát vọng công nghệ Việt Nam vươn tầm thế giới",
-                credit: "Phạm Nhật Vượng · Vingroup / VinFast",
                 tilt: 2
               })}
             </div>
@@ -542,11 +552,6 @@
                 </div>
                 <span style="font-weight:700;font-size:0.95rem;color:#FEF3C7;text-shadow:0 2px 8px rgba(0,0,0,0.8);">Nhấn để phát trực tiếp trong bài trình bày</span>
               </div>
-            </div>
-            <div class="protocol-tip">
-              ${isFileProtocol
-                ? "⚠️ Đang mở bằng file:// — nếu YouTube báo lỗi trình phát (Error 153), hãy mở qua <code>start_presentation.command</code> (localhost) hoặc bấm “Mở trên YouTube ↗”."
-                : "✦ Mẹo: Bấm “Phát Video Tại Chỗ” hoặc click thẳng vào poster để xem ngay trên slide."}
             </div>
           </div>
 
@@ -615,7 +620,6 @@
               ${renderPolaroid(s, {
                 image: s.image,
                 caption: s.imageCaption || "Landmark 81 — Biểu tượng Tập đoàn Vingroup",
-                credit: "Ảnh tư liệu kiến trúc",
                 tilt: 2
               })}
             </div>
@@ -639,43 +643,43 @@
       <svg class="svg-chart" viewBox="0 0 560 280" role="img" aria-label="Biểu đồ bàn giao VinFast 2024 và 2025">
         <defs>
           <linearGradient id="bar24" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#64748B"/>
-            <stop offset="100%" stop-color="#334155"/>
+            <stop offset="0%" stop-color="#94A3B8"/>
+            <stop offset="100%" stop-color="#475569"/>
           </linearGradient>
           <linearGradient id="bar25Car" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#FBBF24"/>
             <stop offset="100%" stop-color="#D97706"/>
           </linearGradient>
           <linearGradient id="bar25Bike" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#14B8A6"/>
-            <stop offset="100%" stop-color="#0F766E"/>
+            <stop offset="0%" stop-color="#2DD4BF"/>
+            <stop offset="100%" stop-color="#0D9488"/>
           </linearGradient>
         </defs>
-        <line x1="46" y1="228" x2="532" y2="228" stroke="#CBD5E1" stroke-width="2"/>
-        <line x1="46" y1="138" x2="532" y2="138" stroke="#E2E8F0" stroke-dasharray="4 4"/>
-        <line x1="46" y1="48" x2="532" y2="48" stroke="#E2E8F0" stroke-dasharray="4 4"/>
+        <line x1="46" y1="228" x2="532" y2="228" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+        <line x1="46" y1="138" x2="532" y2="138" stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 4"/>
+        <line x1="46" y1="48" x2="532" y2="48" stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 4"/>
 
         <!-- Legend -->
         <rect x="278" y="14" width="12" height="12" rx="3" fill="url(#bar24)"/>
-        <text x="296" y="24" font-size="11" font-weight="700" fill="#334155">Năm 2024</text>
+        <text x="296" y="24" font-size="11" font-weight="700" fill="#CBD5E1">Năm 2024</text>
         <rect x="372" y="14" width="12" height="12" rx="3" fill="url(#bar25Car)"/>
-        <text x="390" y="24" font-size="11" font-weight="700" fill="#0F294A">2025 (+102% / +473%)</text>
+        <text x="390" y="24" font-size="11" font-weight="700" fill="#FEF3C7">2025 (+102% / +473%)</text>
 
         <!-- Group 1: Cars -->
         <rect class="anim-bar" x="92" y="${228 - hCar24}" width="64" height="${hCar24}" rx="6" fill="url(#bar24)"/>
-        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">97.399</text>
+        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="12" font-weight="700" fill="#CBD5E1">97.399</text>
 
         <rect class="anim-bar b2" x="172" y="${228 - hCar25}" width="64" height="${hCar25}" rx="6" fill="url(#bar25Car)"/>
-        <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="13" font-weight="800" fill="#B45309">196.919 (+102%)</text>
-        <text x="164" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#0F294A">Ô tô điện VinFast</text>
+        <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="13" font-weight="800" fill="#FBBF24">196.919 (+102%)</text>
+        <text x="164" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#F8FAFC">Ô tô điện VinFast</text>
 
         <!-- Group 2: E-bikes -->
         <rect class="anim-bar b3" x="322" y="${228 - hBike24}" width="64" height="${hBike24}" rx="6" fill="url(#bar24)"/>
-        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Nền 2024</text>
+        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="11" font-weight="700" fill="#CBD5E1">Nền 2024</text>
 
         <rect class="anim-bar b4" x="402" y="${228 - hBike25}" width="64" height="${hBike25}" rx="6" fill="url(#bar25Bike)"/>
-        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="13" font-weight="800" fill="#0F766E">406.498 (+473%)</text>
-        <text x="394" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#0F294A">Xe máy điện &amp; Xe đạp điện</text>
+        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="13" font-weight="800" fill="#5EEAD4">406.498 (+473%)</text>
+        <text x="394" y="252" text-anchor="middle" font-size="13" font-weight="800" fill="#F8FAFC">Xe máy điện &amp; Xe đạp điện</text>
       </svg>
     `;
 
@@ -683,18 +687,20 @@
       <div class="slide-inner">
         ${renderHeader(s)}
         <div class="grid-3 reveal d2" style="margin-bottom:18px;">
-          ${(s.kpis || []).map((k) => `
-            <div class="edit-card" style="border-top-color:${esc(k.color)}">
-              <div class="kpi-big" data-rollup="${esc(k.num)}" style="color:${esc(k.color)}">${esc(k.num)}</div>
-              <div style="font-weight:700;color:#0F294A;margin-top:4px;">${esc(k.unit)}</div>
-              <div style="font-size:0.86rem;font-weight:700;color:#0F766E;margin-top:4px;">${esc(k.delta)}</div>
+          ${(s.kpis || []).map((k) => {
+            const accent = safeAccentColor(k.color);
+            return `
+            <div class="edit-card" style="border-top-color:${esc(accent)}">
+              <div class="kpi-big" data-rollup="${esc(k.num)}" style="color:${esc(accent)}">${esc(k.num)}</div>
+              <div style="font-weight:700;color:#F8FAFC;margin-top:4px;">${esc(k.unit)}</div>
+              <div style="font-size:0.86rem;font-weight:700;color:#5EEAD4;margin-top:4px;">${esc(k.delta)}</div>
             </div>
-          `).join("")}
+          `;
+          }).join("")}
         </div>
         <div class="grid-asymmetric-r reveal d3">
           <div class="edit-card gold">
             ${svgChart}
-            ${s.chartNote ? `<div style="font-size:0.8rem;color:var(--slate-500);margin-top:8px;">${esc(s.chartNote)}</div>` : ""}
           </div>
           <div>
             ${renderGalleryStrip(s.gallery, s.title)}
@@ -733,6 +739,7 @@
               ${ms.map((m, i) => {
                 const c = coords[i];
                 return `
+                  <circle class="beacon-ring" cx="${c.x}" cy="${c.y}" r="9" fill="none" stroke="#FBBF24" stroke-width="2" style="animation-delay:${i * 0.4}s"/>
                   <circle cx="${c.x}" cy="${c.y}" r="8" fill="#0F294A" stroke="#FBBF24" stroke-width="3.5"/>
                   <text x="${c.x}" y="${c.y - 16}" text-anchor="middle" font-size="13" font-weight="800" fill="#FEF3C7">${esc(m.display)}</text>
                   <text x="${c.x}" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#94A3B8">${esc(m.year)}</text>
@@ -762,7 +769,7 @@
         <div class="grid-asymmetric-l">
           <div class="reveal d1">
             <span class="eyebrow">${esc(s.kicker)}</span>
-            <div class="big-chapter-badge" style="color:${esc(s.accentColor || "#D97706")};margin:8px 0;">${esc(s.code)}</div>
+            <div class="big-chapter-badge" style="color:${esc(safeAccentColor(s.accentColor))};margin:8px 0;">${esc(s.code)}</div>
             <div class="script-accent">${esc(s.scriptAccent || "")}</div>
             <h2 class="slide-title-serif">${esc(s.title)}</h2>
             <div class="gold-rule"></div>
@@ -775,7 +782,6 @@
             ${renderPolaroid(s, {
               image: s.image,
               caption: `Trụ cột ${s.code} · ${s.title}`,
-              credit: "Giáo trình Văn hóa Doanh nhân UTEHY",
               tilt: 2
             })}
           </div>
@@ -825,7 +831,7 @@
         ${renderHeader(s)}
         <div class="staircase-row reveal d2">
           ${(s.steps || []).map((st, idx) => `
-            <div class="edit-card stair-step step-${idx}" style="border-top-color:${esc(st.color)}">
+            <div class="edit-card stair-step step-${idx}" style="border-top-color:${esc(safeAccentColor(st.color))}">
               <div>
                 ${st.img ? `
                   <img class="stair-photo"
@@ -836,7 +842,7 @@
                        data-src="${esc(st.img)}"
                        data-title="${esc(st.title)}"
                        data-caption="${esc(st.year)} · ${esc(st.level)}"
-                       data-credit="Nhấp để phóng to tư liệu" />
+                       data-credit="" />
                 ` : ""}
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
                   <span class="card-kicker">${esc(st.year)}</span>
@@ -844,7 +850,7 @@
                 </div>
                 <h3 class="card-title" style="margin-top:8px;">${esc(st.title)}</h3>
               </div>
-              <p style="font-size:0.92rem;color:var(--slate-700);line-height:1.55;">${esc(st.desc)}</p>
+              <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(st.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -859,15 +865,15 @@
         <div class="edit-card gold reveal d2" style="margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
           <div>
             <div class="card-kicker">QUY MÔ ĐÓNG GÓP QUỸ THIỆN TÂM</div>
-            <div class="kpi-big" data-rollup="${esc(s.heroStat)}" style="color:#B45309;">${esc(s.heroStat)}</div>
+            <div class="kpi-big" data-rollup="${esc(s.heroStat)}" style="color:#FBBF24;">${esc(s.heroStat)}</div>
           </div>
-          <p style="max-width:52ch;font-size:0.98rem;font-weight:600;color:#0F294A;">${esc(s.heroSub)}</p>
+          <p style="max-width:52ch;font-size:0.98rem;font-weight:600;color:#FEF3C7;">${esc(s.heroSub)}</p>
         </div>
         <div class="grid-4 reveal d3">
           ${(s.cards || []).map((c, idx) => `
             <div class="edit-card ${idx % 2 === 1 ? "teal" : ""}">
               <h3 class="card-title" style="font-size:1.05rem;">${esc(c.title)}</h3>
-              <p style="font-size:0.88rem;color:var(--slate-700);line-height:1.52;">${esc(c.desc)}</p>
+              <p style="font-size:0.88rem;color:#CBD5E1;line-height:1.52;">${esc(c.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -882,7 +888,7 @@
         ${renderHeader(s)}
         <div class="grid-3 reveal d2">
           <div class="edit-card" style="background:linear-gradient(145deg,#0F294A,#173D6E);color:#FFFFFF;border-top-color:#FBBF24;display:flex;flex-direction:column;justify-content:center;">
-            <span class="card-kicker" style="color:#FBBF24;">TỔNG HỢP 5 NHÂN TỐ UTEHY</span>
+            <span class="card-kicker" style="color:#FBBF24;">TỔNG HỢP 5 NHÂN TỐ</span>
             <h3 class="card-title" style="color:#FFFFFF;font-size:1.45rem;">${esc(s.centerLabel)}</h3>
             <p style="color:#CBD5E1;font-size:0.94rem;">${esc(s.centerSub)}</p>
           </div>
@@ -890,7 +896,7 @@
             <div class="edit-card ${idx % 2 === 0 ? "gold" : "teal"}">
               <div class="card-kicker">NHÂN TỐ HÌNH THÀNH</div>
               <h3 class="card-title">${esc(f.name)}</h3>
-              <p style="font-size:0.92rem;color:var(--slate-700);line-height:1.55;">${esc(f.desc)}</p>
+              <p style="font-size:0.92rem;color:#CBD5E1;line-height:1.55;">${esc(f.desc)}</p>
             </div>
           `).join("")}
         </div>
@@ -930,6 +936,7 @@
       const anchor = Math.abs(lx - cx) < 12 ? "middle" : (lx > cx ? "start" : "end");
       const yAdj = ly < cy - 50 ? ly - 6 : (ly > cy + 50 ? ly + 12 : ly + 4);
       return `
+        <circle class="beacon-ring" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="6" fill="none" stroke="#FBBF24" stroke-width="1.8" style="animation-delay:${i * 0.35}s"/>
         <circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.5" fill="#FBBF24" stroke="#071426" stroke-width="2"/>
         <text x="${lx.toFixed(1)}" y="${yAdj.toFixed(1)}" text-anchor="${anchor}" font-size="11.5" font-weight="700" fill="#FEF3C7">${esc(ax.label)} (${ax.score})</text>
       `;
@@ -946,7 +953,6 @@
               <polygon class="anim-radar" points="${polyPts}" fill="rgba(251, 191, 36, 0.28)" stroke="#FBBF24" stroke-width="2.8"/>
               ${labelsSvg}
             </svg>
-            ${s.disclaimer ? `<p style="font-size:0.76rem;color:#94A3B8;margin-top:6px;">${esc(s.disclaimer)}</p>` : ""}
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;">
             ${axes.map((ax) => `
@@ -976,7 +982,7 @@
             <tbody>
               ${(s.rows || []).map((row) => `
                 <tr>${row.map((cell, idx) => `
-                  <td style="${idx === 0 ? "font-weight:800;color:#0F294A;white-space:nowrap;" : ""}">${esc(cell)}</td>
+                  <td style="${idx === 0 ? "font-weight:800;color:#FEF3C7;white-space:nowrap;" : ""}">${esc(cell)}</td>
                 `).join("")}</tr>
               `).join("")}
             </tbody>
@@ -991,7 +997,7 @@
   function renderConclusionHub(s) {
     return `
       <div class="cover-backdrop">
-        <img src="${esc(s.image)}" alt="Tương lai sinh viên UTEHY" style="opacity:0.35;" />
+        <img src="${esc(s.image)}" alt="Tương lai doanh nhân Việt Nam" style="opacity:0.35;" />
       </div>
       <div class="cover-scrim"></div>
       <div class="slide-inner">
@@ -1406,6 +1412,21 @@
         e.target.click();
       }
     });
+
+    // Subtle 3D perspective tilt on interactive photo frames & cards
+    deckEl.addEventListener("mousemove", (e) => {
+      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn");
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5;
+      const ny = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(700px) rotateY(${(nx * 7).toFixed(2)}deg) rotateX(${(-ny * 7).toFixed(2)}deg) translateY(-5px) scale(1.02)`;
+    });
+
+    deckEl.addEventListener("mouseleave", (e) => {
+      const card = e.target.closest(".polaroid, .thumb-polaroid, .cover-pillar-btn");
+      if (card) card.style.transform = "";
+    }, true);
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
