@@ -1195,6 +1195,7 @@
 
   function setActiveSlide(idx) {
     if (idx < 0 || idx >= totalSlides) return;
+    deckEl.dataset.dir = idx >= currentIndex ? "forward" : "backward";
     currentIndex = idx;
     const slide = slidesData[idx];
 
