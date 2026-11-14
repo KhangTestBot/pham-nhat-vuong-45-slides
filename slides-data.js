@@ -216,7 +216,13 @@ window.DECK_SLIDES = [
         "src": "assets/vingroup_ecosystem_3d.jpg",
         "cap": "3D Hệ sinh thái"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "right",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 5,
@@ -308,7 +314,13 @@ window.DECK_SLIDES = [
     ],
     "bottomHighlight": "Áp dụng thực tế: Lấy “Mãnh liệt tinh thần Việt Nam” làm ngọn cờ hiệu triệu, vận hành theo kỷ luật toàn cầu.",
     "bgImage": "assets/vietnam_heritage_culture.jpg",
-    "emblemImage": "assets/vietnam_flag.png"
+    "emblemImage": "assets/vietnam_flag.png",
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "left",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 7,
@@ -351,7 +363,13 @@ window.DECK_SLIDES = [
         "src": "assets/vinfast_ev_factory.jpg",
         "cap": "Chuỗi sản xuất ô tô điện tự động hóa cao"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/vincom_3d_model.webp",
+      "side": "right",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Vincom Center"
+    }
   },
   {
     "id": 8,
@@ -439,7 +457,13 @@ window.DECK_SLIDES = [
         "target": 37,
         "detail": "Lãnh đạo tầm nhìn · Giao tiếp thẳng thắn · Kỷ luật thép."
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "right",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 10,
@@ -496,7 +520,13 @@ window.DECK_SLIDES = [
         "src": "assets/landmark81_vingroup.jpg",
         "cap": "5.4 · Landmark 81 Vingroup"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/vingroup_3d_model.webp",
+      "side": "left",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Hệ sinh thái Vingroup"
+    }
   },
   {
     "id": 11,
@@ -532,7 +562,13 @@ window.DECK_SLIDES = [
       }
     ],
     "bgImage": "assets/vietnam_heritage_culture.jpg",
-    "image": "assets/pnv_vingroup_meeting.jpg"
+    "image": "assets/pnv_vingroup_meeting.jpg",
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "right",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 12,
@@ -730,7 +766,13 @@ window.DECK_SLIDES = [
         "src": "assets/landmark81_vingroup.jpg",
         "cap": "Landmark 81"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/vincom_3d_model.webp",
+      "side": "right",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Vincom & Vinpearl"
+    }
   },
   {
     "id": 18,
@@ -777,7 +819,13 @@ window.DECK_SLIDES = [
       }
     ],
     "is3d": true,
-    "badge3d": "3D Vingroup"
+    "badge3d": "3D Vingroup",
+    "cornerModel": {
+      "src": "assets/vingroup_3d_model.webp",
+      "side": "left",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Hệ sinh thái Vingroup"
+    }
   },
   {
     "id": 19,
@@ -871,7 +919,13 @@ window.DECK_SLIDES = [
         "src": "assets/vinfast_ev_factory.jpg",
         "cap": "Tổ hợp Cát Hải"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/xanhsm_3d_model.webp",
+      "side": "left",
+      "variant": "diorama",
+      "alt": "Mô hình 3D VinFast & Xanh SM"
+    }
   },
   {
     "id": 22,
@@ -909,7 +963,13 @@ window.DECK_SLIDES = [
         "rank": "Biến động Top 54–93 toàn cầu theo thị giá VIC/VHM"
       }
     ],
-    "bgImage": "assets/vincom_3d_tower.jpg"
+    "bgImage": "assets/vincom_3d_tower.jpg",
+    "cornerModel": {
+      "src": "assets/vincom_3d_model.webp",
+      "side": "right",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Vincom Center"
+    }
   },
   {
     "id": 23,
@@ -929,7 +989,13 @@ window.DECK_SLIDES = [
       "2. Quản lý & Điều hành",
       "3. Lãnh đạo định hướng",
       "4. Đổi mới sáng tạo"
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "right",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 24,
@@ -1047,7 +1113,13 @@ window.DECK_SLIDES = [
         "src": "assets/vinfast_vf8_us.jpg",
         "cap": "VinFast Toàn cầu"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/xanhsm_3d_model.webp",
+      "side": "right",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Xanh SM & VinFast"
+    }
   },
   {
     "id": 27,
@@ -1068,7 +1140,13 @@ window.DECK_SLIDES = [
       "Chấp nhận mạo hiểm",
       "Khát vọng thành đạt cao",
       "Nhạy bén thích ứng"
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "left",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 28,
@@ -1145,7 +1223,13 @@ window.DECK_SLIDES = [
         "img": "assets/vinfast_ev_factory.jpg"
       }
     ],
-    "bgImage": "assets/vincom_3d_tower.jpg"
+    "bgImage": "assets/vincom_3d_tower.jpg",
+    "cornerModel": {
+      "src": "assets/vincom_3d_model.webp",
+      "side": "left",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Vincom Center"
+    }
   },
   {
     "id": 30,
@@ -1217,7 +1301,13 @@ window.DECK_SLIDES = [
       "Thượng tôn Pháp luật",
       "Trách nhiệm Xã hội (CSR)",
       "Triết lý Tri ân"
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "right",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 33,
@@ -1291,7 +1381,13 @@ window.DECK_SLIDES = [
         "src": "assets/vinfuture_thientam.jpg",
         "cap": "Giải thưởng Khoa học Toàn cầu VinFuture (2.000 tỷ đồng)"
       }
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/vingroup_3d_model.webp",
+      "side": "left",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Hệ sinh thái Vingroup"
+    }
   },
   {
     "id": 35,
@@ -1370,7 +1466,13 @@ window.DECK_SLIDES = [
       "Phong cách Lãnh đạo",
       "Giao tiếp & Ứng xử",
       "Lối sống & Kỷ luật Tác phong"
-    ]
+    ],
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "left",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   },
   {
     "id": 38,
@@ -1435,7 +1537,13 @@ window.DECK_SLIDES = [
         "desc": "Bản lĩnh đứng dậy sau phá sản Moscow và tinh thần làm đến cùng."
       }
     ],
-    "bgImage": "assets/vietnam_heritage_culture.jpg"
+    "bgImage": "assets/vietnam_heritage_culture.jpg",
+    "cornerModel": {
+      "src": "assets/vingroup_3d_model.webp",
+      "side": "right",
+      "variant": "diorama",
+      "alt": "Mô hình 3D Hệ sinh thái Vingroup"
+    }
   },
   {
     "id": 40,
@@ -1582,6 +1690,12 @@ window.DECK_SLIDES = [
       }
     ],
     "closing": "Trân trọng cảm ơn quý vị đã theo dõi và lắng nghe!",
-    "flagEmblem": "assets/vietnam_flag.png"
+    "flagEmblem": "assets/vietnam_flag.png",
+    "cornerModel": {
+      "src": "assets/pnv_standing_model.webp",
+      "side": "left",
+      "variant": "figure",
+      "alt": "Mô hình 3D Phạm Nhật Vượng"
+    }
   }
 ];

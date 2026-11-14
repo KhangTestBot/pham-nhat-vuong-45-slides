@@ -153,6 +153,14 @@
     return `<div class="slide-bg-layer" aria-hidden="true"><img src="${esc(s.bgImage)}" alt="" loading="lazy" /></div>`;
   }
 
+  function renderCornerModel(s) {
+    const cm = s.cornerModel;
+    if (!cm || !cm.src) return "";
+    const sideClass = cm.side === "left" ? "side-left" : "side-right";
+    const variantClass = cm.variant === "diorama" ? "is-diorama" : "is-figure";
+    return `<div class="corner-3d-stage ${sideClass} ${variantClass}" aria-hidden="true"><img src="${esc(cm.src)}" alt="${esc(cm.alt || "")}" decoding="async" /></div>`;
+  }
+
   function renderGalleryStrip(gallery, title) {
     if (!Array.isArray(gallery) || !gallery.length) return "";
     const tilts = [-1.6, 1.4, -1.1, 1.6];
@@ -1185,7 +1193,7 @@
         console.warn("Unknown slide kind:", s.kind);
         body = `<div class="slide-inner">${renderHeader(s)}</div>`;
     }
-    return renderSlideBg(s) + body;
+    return renderSlideBg(s) + renderCornerModel(s) + body;
   }
 
   // ---------- Build Slides & Right Rail ----------
@@ -1294,6 +1302,8 @@
     });
   }
 
+  let programmaticJumpUntil = 0;
+
   function setActiveSlide(idx) {
     if (idx < 0 || idx >= totalSlides) return;
     deckEl.dataset.dir = idx >= currentIndex ? "forward" : "backward";
@@ -1321,26 +1331,39 @@
     const idx = Math.max(0, Math.min(totalSlides - 1, Number(slideNumber) - 1));
     const target = deckEl.children[idx];
     if (!target) return;
+    const farJump = Math.abs(idx - currentIndex) > 2;
+    programmaticJumpUntil = performance.now() + (farJump ? 180 : 520);
     setActiveSlide(idx);
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    target.scrollIntoView({ behavior: farJump ? "auto" : "smooth", block: "start" });
   }
 
   // ---------- Scroll / Intersection Observer ----------
   function setupObserver() {
+    const visibleRatios = new Map();
     const observer = new IntersectionObserver(
       (entries) => {
-        let best = null;
         for (const entry of entries) {
-          if (entry.isIntersecting && (!best || entry.intersectionRatio > best.intersectionRatio)) {
-            best = entry;
+          const idx = Number(entry.target.dataset.index);
+          if (!Number.isNaN(idx)) {
+            if (entry.isIntersecting) {
+              visibleRatios.set(idx, entry.intersectionRect.height);
+            } else {
+              visibleRatios.delete(idx);
+            }
           }
         }
-        if (best) {
-          const idx = Number(best.target.dataset.index);
-          if (!Number.isNaN(idx)) setActiveSlide(idx);
+        if (performance.now() < programmaticJumpUntil) return;
+        let bestIdx = -1;
+        let bestHeight = 0;
+        for (const [idx, h] of visibleRatios.entries()) {
+          if (h > bestHeight) {
+            bestHeight = h;
+            bestIdx = idx;
+          }
         }
+        if (bestIdx >= 0) setActiveSlide(bestIdx);
       },
-      { root: deckEl, threshold: 0.55 }
+      { root: deckEl, threshold: [0.15, 0.35, 0.55, 0.75] }
     );
 
     Array.from(deckEl.children).forEach((el) => observer.observe(el));
