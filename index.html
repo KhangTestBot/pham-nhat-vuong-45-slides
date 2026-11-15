@@ -3,61 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phạm Nhật Vượng &amp; Văn hóa Doanh nhân Việt Nam</title>
+  <title>Tỷ phú Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup — Trọn bộ 45 Slide 3D Morph (UTEHY)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Top Floating Navigation HUD -->
-  <header class="hud-top" role="banner">
-    <div class="hud-brand">
-      <span class="hud-seal" title="Phạm Nhật Vượng">PNV</span>
-      <div class="hud-titles">
-        <span class="hud-course">Văn hóa Doanh nhân</span>
-        <span id="hud-section-label" class="hud-section">Phần 1 · Khung Phân tích</span>
-      </div>
-    </div>
+  <div class="app-shell">
+    <!-- 16:9 Presentation Stage Container -->
+    <main id="stage-viewport" class="stage-viewport" tabindex="0" aria-label="Sân khấu trình chiếu 45 Slide Phạm Nhật Vượng">
+      <div id="slide-stage" class="slide-stage">
 
-    <div class="hud-controls">
-      <div class="hud-progress-wrap" aria-label="Tiến độ bài trình bày">
-        <span id="hud-slide-counter" class="hud-counter">01 / 42</span>
-        <div class="hud-progress-track">
-          <div id="hud-progress-bar" class="hud-progress-fill" style="width: 2.4%;"></div>
+        <!-- =================================================================
+             PERSISTENT CONTINUOUS CAMERA STAGE
+             Silk Waves, Golden Astrolabe Rings, Sunburst Glow & Light Sweep
+             ================================================================= -->
+        <div id="persistent-stage" class="persistent-stage" aria-hidden="true">
+          <div id="p-glow" class="p-glow"></div>
+
+          <svg id="p-rings" class="p-rings" viewBox="0 0 800 800" fill="none">
+            <circle cx="400" cy="400" r="345" stroke="#FDE047" stroke-width="1.5" stroke-dasharray="14 10" opacity="0.25" />
+            <circle cx="400" cy="400" r="275" stroke="#F59E0B" stroke-width="2" stroke-dasharray="60 24 12 24" opacity="0.28" />
+            <circle cx="400" cy="400" r="205" stroke="#FDE047" stroke-width="1.2" opacity="0.18" />
+            <polygon points="400,45 422,110 490,110 435,150 455,215 400,175 345,215 365,150 310,110 378,110"
+                     stroke="#FDE047" stroke-width="2" fill="rgba(250,204,21,0.06)" opacity="0.3" />
+          </svg>
+
+          <svg id="p-silhouette" class="p-silhouette" viewBox="0 0 1280 720" fill="none">
+            <g opacity="0.14" stroke="#FDE047" stroke-width="1.5">
+              <line x1="640" y1="360" x2="1280" y2="0" />
+              <line x1="640" y1="360" x2="1280" y2="220" />
+              <line x1="640" y1="360" x2="1280" y2="500" />
+              <line x1="640" y1="360" x2="1280" y2="720" />
+              <line x1="640" y1="360" x2="0" y2="0" />
+              <line x1="640" y1="360" x2="0" y2="360" />
+              <line x1="640" y1="360" x2="0" y2="720" />
+            </g>
+            <path d="M80,720 L80,550 L135,550 L135,470 L185,470 L185,590 L230,590 L230,390 L260,390 L260,280 L280,280 L280,190 L292,110 L304,190 L304,280 L324,280 L324,390 L355,390 L355,560 L420,560 L420,490 L485,490 L485,720 Z"
+                  fill="url(#silGrad)" opacity="0.18" />
+            <defs>
+              <linearGradient id="silGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F59E0B" />
+                <stop offset="100%" stop-color="#450A0A" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <svg id="p-silk-top" class="p-silk-top" viewBox="0 0 700 320" fill="none">
+            <defs>
+              <linearGradient id="silkRedTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#EF4444" />
+                <stop offset="55%" stop-color="#991B1B" />
+                <stop offset="100%" stop-color="#450A0A" />
+              </linearGradient>
+              <linearGradient id="goldRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#F59E0B" />
+                <stop offset="50%" stop-color="#FEF08A" />
+                <stop offset="100%" stop-color="#B45309" />
+              </linearGradient>
+            </defs>
+            <path d="M-60,-40 C120,-20 240,140 460,60 C560,25 640,-10 700,-30 L700,0 C610,50 490,120 340,130 C160,140 40,60 -60,190 Z"
+                  fill="url(#silkRedTop)" opacity="0.86" />
+            <path d="M-40,45 C110,10 230,115 430,45 C520,14 600,-5 670,-20"
+                  stroke="url(#goldRibbon)" stroke-width="5.5" opacity="0.9" />
+            <path d="M-40,57 C110,22 230,127 430,57 C520,26 600,7 670,-8"
+                  stroke="#1C1917" stroke-width="4" opacity="0.75" />
+          </svg>
+
+          <svg id="p-silk-bottom" class="p-silk-bottom" viewBox="0 0 800 340" fill="none">
+            <path d="M840,360 C660,340 520,170 280,250 C140,295 50,330 -20,350 L-20,310 C90,250 250,165 440,160 C620,155 730,240 840,110 Z"
+                  fill="url(#silkRedTop)" opacity="0.88" />
+            <path d="M820,275 C650,315 510,190 290,265 C180,302 80,325 10,340"
+                  stroke="url(#goldRibbon)" stroke-width="6" opacity="0.92" />
+            <path d="M820,262 C650,302 510,177 290,252 C180,289 80,312 10,327"
+                  stroke="#1C1917" stroke-width="4" opacity="0.78" />
+          </svg>
+
+          <div id="p-flash-beam" class="p-flash-beam"></div>
+        </div>
+
+        <!-- Outgoing slide layer for 3D Morph transitions -->
+        <div id="slide-outgoing" class="slide-layer slide-outgoing" aria-hidden="true"></div>
+        <!-- Active incoming slide layer -->
+        <div id="slide-active" class="slide-layer slide-active" role="region" aria-live="polite"></div>
+
+        <!-- Autoplay progress bar along bottom of stage -->
+        <div class="stage-progress-track">
+          <div id="stage-progress-fill" class="stage-progress-fill"></div>
         </div>
       </div>
+    </main>
 
-      <button type="button" id="btn-toc" class="hud-btn" title="Mục lục 42 màn (G)" aria-label="Mục lục">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
-        <span class="hud-btn-label">Mục lục</span>
-      </button>
+    <!-- Bottom Presenter Control Bar -->
+    <footer class="presenter-bar" role="navigation" aria-label="Điều khiển trình chiếu">
+      <div class="bar-left">
+        <button type="button" id="btn-toc" class="ctrl-btn" title="Mục lục 45 Slide (Phím G)">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
+          <span>Mục lục (45 Slide)</span>
+        </button>
 
-      <button type="button" id="btn-fullscreen" class="hud-btn" title="Toàn màn hình (F)" aria-label="Toàn màn hình">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
-      </button>
-    </div>
-  </header>
+        <div class="deck-mode-picker" title="Chế độ trình chiếu">
+          <select id="sel-deck-mode" class="ctrl-select">
+            <option value="full45" selected>📚 Trọn bộ 45 Slide Đầy đủ</option>
+            <option value="tiktok14">⚡ Rút gọn 14 Cảnh Trọng tâm</option>
+          </select>
+        </div>
 
-  <!-- Right Vertical Pagination Rail (TikTok Scrollytelling Signature) -->
-  <nav id="side-rail" class="side-rail" aria-label="Điều hướng nhanh 40 màn"></nav>
+        <button type="button" id="btn-autoplay" class="ctrl-btn ctrl-btn-gold" title="Tự động chuyển cảnh Morph (4.5 giây/slide)">
+          <span id="autoplay-label">▶ Tự chạy (4.5s)</span>
+        </button>
+      </div>
 
-  <!-- Bottom Floating Navigation Bar -->
-  <div class="hud-bottom" role="navigation" aria-label="Chuyển màn trước hoặc sau">
-    <button type="button" id="btn-prev" class="nav-pill" title="Màn trước (↑ hoặc ←)">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
-      <span>Trước</span>
-    </button>
-    <button type="button" id="btn-next" class="nav-pill nav-pill-primary" title="Màn tiếp theo (↓, → hoặc Space)">
-      <span>Tiếp</span>
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
+      <div class="bar-center">
+        <button type="button" id="btn-prev" class="nav-btn" title="Slide trước (← hoặc ↑)">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          <span>Trước</span>
+        </button>
+
+        <div class="scrubber-wrap">
+          <span id="slide-counter" class="slide-counter">01 / 45</span>
+          <input type="range" id="slide-scrubber" class="slide-scrubber" min="1" max="45" step="1" value="1" aria-label="Thanh trượt chọn trang slide" />
+        </div>
+
+        <button type="button" id="btn-next" class="nav-btn nav-btn-primary" title="Slide tiếp theo (→, ↓ hoặc Space)">
+          <span>Tiếp theo</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="bar-right">
+        <span id="section-indicator" class="section-indicator">Slide 01 / 45</span>
+        <button type="button" id="btn-fullscreen" class="ctrl-btn" title="Toàn màn hình (Phím F)" aria-label="Toàn màn hình">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
+        </button>
+      </div>
+    </footer>
   </div>
 
-  <!-- Main Scrollytelling Presentation Viewport -->
-  <main id="deck" class="deck-viewport" tabindex="0"></main>
-
-  <!-- Lightbox Modal for Polaroid / Photo Zoom -->
+  <!-- Lightbox Modal for Photo Zoom -->
   <div id="lightbox" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
     <div class="lightbox-card">
       <button type="button" id="lightbox-close" class="modal-close" aria-label="Đóng ảnh phóng to">✕</button>
@@ -67,29 +151,28 @@
       <div class="lightbox-meta">
         <h3 id="lightbox-title" class="lightbox-title"></h3>
         <p id="lightbox-caption" class="lightbox-caption"></p>
-        <p id="lightbox-credit" class="lightbox-credit"></p>
       </div>
     </div>
   </div>
 
-  <!-- Quick 42-Slide Grid Table of Contents Modal -->
+  <!-- Slide Sorter Modal (Table of Contents) -->
   <div id="toc-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="toc-heading">
     <div class="toc-dialog">
       <div class="toc-head">
         <div>
-          <span class="eyebrow">CHUYỂN NHANH 42 MÀN TRÌNH CHIẾU</span>
-          <h2 id="toc-heading">Mục lục Toàn bài · Phạm Nhật Vượng &amp; Văn hóa Doanh nhân</h2>
+          <span class="toc-kicker">MỤC LỤC TRỌN BỘ 45 SLIDE THUYẾT TRÌNH</span>
+          <h2 id="toc-heading">Phạm Nhật Vượng, Hệ sinh thái Vingroup &amp; Văn hóa Doanh nhân UTEHY (5.1 – 5.4)</h2>
         </div>
         <button type="button" id="toc-close" class="modal-close" aria-label="Đóng mục lục">✕</button>
       </div>
       <div id="toc-filters" class="toc-filters">
-        <button type="button" class="toc-chip active" data-part="all">Tất cả (42)</button>
-        <button type="button" class="toc-chip" data-part="1">Phần 1 · Giới thiệu &amp; Khung Phân tích (01–10)</button>
-        <button type="button" class="toc-chip" data-part="2">Phần 2 · Tiểu sử &amp; Vingroup (11–22)</button>
-        <button type="button" class="toc-chip" data-part="3">Phần 3 · 5.1 Năng lực &amp; 5.2 Tố chất (23–31)</button>
-        <button type="button" class="toc-chip" data-part="4">Phần 4 · 5.3 Đạo đức &amp; 5.4 Phong cách (32–38)</button>
-        <button type="button" class="toc-chip" data-part="5">Phần 5 · Tổng hợp &amp; Bài học (39–42)</button>
-        <button type="button" class="toc-chip" data-part="video">5 Video</button>
+        <button type="button" class="toc-chip active" data-part="all">Tất cả (45)</button>
+        <button type="button" class="toc-chip" data-part="1">Phần I · Nhân tố &amp; Tổng quan (01–10)</button>
+        <button type="button" class="toc-chip" data-part="2">Phần II · Tiểu sử &amp; Doanh nghiệp (11–24)</button>
+        <button type="button" class="toc-chip" data-part="3">Phần III · 5.1 Năng lực &amp; 5.2 Tố chất (25–35)</button>
+        <button type="button" class="toc-chip" data-part="4">Phần IV · 5.3 Đạo đức &amp; 5.4 Phong cách (36–43)</button>
+        <button type="button" class="toc-chip" data-part="5">Phần V · Tổng kết &amp; Bài học (44–45)</button>
+        <button type="button" class="toc-chip" data-part="video">5 Video Tư liệu</button>
       </div>
       <div id="toc-grid" class="toc-grid"></div>
     </div>

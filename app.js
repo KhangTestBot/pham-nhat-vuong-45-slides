@@ -1,1566 +1,1154 @@
-(() => {
+/* ==========================================================================
+   PHẠM NHẬT VƯỢNG & HỆ SINH THÁI VINGROUP — 45 SLIDES × 12 ARCHETYPES ENGINE
+   - Opens ALL 45 SLIDES (01 / 45) by default!
+   - Native HTML5 <video controls> with real downloaded MP4s (vid01.mp4 - vid05.mp4)
+     + 1-click YouTube Embed Toggle & External Link!
+   - 4 Distinct Real Photos per slide (Main Morph Frames + Card Inline Thumbs)
+   - 12 Non-Repeating Layout Archetypes + 10 3D Camera Morph Transitions
+   ========================================================================== */
+
+(function () {
   "use strict";
 
-  const slidesData = Array.isArray(window.DECK_SLIDES) ? window.DECK_SLIDES : [];
-  if (!slidesData.length) {
-    console.error("DECK_SLIDES is empty or missing.");
-    return;
-  }
+  const RAW_SLIDES = window.DECK_SLIDES || window.SLIDES_DATA || [];
+  const TIKTOK_14_IDS = [1, 3, 4, 11, 12, 14, 15, 17, 19, 20, 26, 31, 38, 45];
 
-  // DOM References
-  const deckEl = document.getElementById("deck");
-  const railEl = document.getElementById("side-rail");
-  const counterEl = document.getElementById("hud-slide-counter");
-  const sectionEl = document.getElementById("hud-section-label");
-  const progressBarEl = document.getElementById("hud-progress-bar");
-
-  const btnPrev = document.getElementById("btn-prev");
-  const btnNext = document.getElementById("btn-next");
-  const btnToc = document.getElementById("btn-toc");
-  const btnFullscreen = document.getElementById("btn-fullscreen");
-
-  const lightboxEl = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const lightboxTitle = document.getElementById("lightbox-title");
-  const lightboxCaption = document.getElementById("lightbox-caption");
-  const lightboxCredit = document.getElementById("lightbox-credit");
-  const lightboxClose = document.getElementById("lightbox-close");
-
-  const tocModalEl = document.getElementById("toc-modal");
-  const tocClose = document.getElementById("toc-close");
-  const tocFiltersEl = document.getElementById("toc-filters");
-  const tocGridEl = document.getElementById("toc-grid");
-
-  const totalSlides = slidesData.length;
-  let currentIndex = 0;
-  let currentTocFilter = "all";
-
-  // ---------- Safe Utilities ----------
   function esc(str) {
-    return String(str ?? "")
+    if (str === null || str === undefined) return "";
+    return String(str)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
+      .replace(/"/g, "&quot;");
   }
 
   function pad2(n) {
     return String(n).padStart(2, "0");
   }
 
-  function safeAccentColor(col, fallback = "#FBBF24") {
-    const map = {
-      "#0F294A": "#F87171",
-      "#1E3A5F": "#FCA5A5",
-      "#B45309": "#FBBF24",
-      "#0F766E": "#EF4444",
-      "#0D9488": "#EF4444",
-      "#2DD4BF": "#F87171",
-      "#38BDF8": "#FDE047",
-      "#D97706": "#FBBF24"
-    };
-    if (!col) return fallback;
-    return map[String(col).toUpperCase()] || col;
-  }
-
-  function cardClass(theme, accent = "") {
-    const base = theme === "dark" ? "glass-card" : "edit-card";
-    return accent ? `${base} ${accent}` : base;
-  }
-
-  function renderHeader(s, { showLead = true, darkOverride = false } = {}) {
-    const titleClass = s.theme === "dark" || darkOverride
-      ? "slide-title-serif"
-      : "slide-title-serif";
-    return `
-      <div class="reveal d1">
-        <span class="eyebrow">${esc(s.kicker)}</span>
-        <h2 class="${titleClass}">${esc(s.title)}</h2>
-        <div class="gold-rule"></div>
-        ${showLead && s.lead ? `<p class="slide-lead">${esc(s.lead)}</p>` : ""}
-      </div>
-    `;
-  }
-
-  function render3dFrame({ image, caption, title = "" }) {
-    return `
-      <div class="card-3d-frame"
-           role="button"
-           tabindex="0"
-           data-lightbox="true"
-           data-src="${esc(image)}"
-           data-title="${esc(title || caption)}"
-           data-caption="${esc(caption)}"
-           data-credit=""
-           aria-label="Phóng to hình: ${esc(caption)}">
-        <img src="${esc(image)}" alt="${esc(caption)}" loading="lazy" />
-        <div class="card-3d-cap">
-          <span>${esc(caption)}</span>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderPolaroid(s, {
-    image = s.image,
-    caption = s.polaroidCaption || s.imageCaption || s.title,
-    portrait = Boolean(s.portrait),
-    title = s.title,
-    is3d = Boolean(s.is3d)
-  } = {}) {
-    if (is3d) {
-      return render3dFrame({ image, caption, title });
+  function getPhotosForSlide(s) {
+    if (Array.isArray(s.gallery) && s.gallery.length >= 3) {
+      return s.gallery;
     }
+    return [
+      { src: s.image || "assets/pnv_portrait.jpg", tag: "PHẠM NHẬT VƯỢNG", cap: s.imageCaption || s.title },
+      { src: "assets/pnv_vinfast_tour.jpg", tag: "NHÀ MÁY VINFAST", cap: "Ông Phạm Nhật Vượng thị sát dây chuyền sản xuất VinFast" },
+      { src: "assets/landmark81_vingroup.jpg", tag: "LANDMARK 81", cap: "Biểu tượng tòa tháp Landmark 81 của Tập đoàn Vingroup" },
+      { src: "assets/vinfast_vf9.jpg", tag: "SUV ĐIỆN VF 9", cap: "Mẫu SUV điện cỡ lớn VinFast VF 9" }
+    ];
+  }
+
+  function renderPhotoBox(photo, morphKey, extraClass) {
+    const p = photo || { src: "assets/pnv_portrait.jpg", tag: "VINGROUP", cap: "Tỷ phú Phạm Nhật Vượng" };
     return `
-      <div class="polaroid ${portrait ? "polaroid-portrait" : ""}"
-           style="--tilt: 0deg"
-           role="button"
-           tabindex="0"
-           data-lightbox="true"
-           data-src="${esc(image)}"
-           data-title="${esc(title)}"
-           data-caption="${esc(caption)}"
-           data-credit=""
-           aria-label="Phóng to ảnh: ${esc(caption)}">
-        <img src="${esc(image)}" alt="${esc(caption)}" loading="lazy" />
-        <div class="polaroid-caption">
-          <span>${esc(caption)}</span>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderBulletPoints(points) {
-    if (!Array.isArray(points) || !points.length) return "";
-    return `
-      <ul class="bullet-list">
-        ${points.map((pt) => {
-          if (typeof pt === "string") return `<li>${esc(pt)}</li>`;
-          return `<li><strong>${esc(pt.bold)}:</strong> ${esc(pt.text)}</li>`;
-        }).join("")}
-      </ul>
-    `;
-  }
-
-  function renderSlideBg(s) {
-    if (!s.bgImage || s.kind === "cover" || s.kind === "conclusion_hub") return "";
-    return `<div class="slide-bg-layer" aria-hidden="true"><img src="${esc(s.bgImage)}" alt="" loading="lazy" /></div>`;
-  }
-
-  function renderCornerModel(s) {
-    const cm = s.cornerModel;
-    if (!cm || !cm.src) return "";
-    const sideClass = cm.side === "left" ? "side-left" : "side-right";
-    const variantClass = cm.variant === "diorama" ? "is-diorama" : "is-figure";
-    return `<div class="corner-3d-stage ${sideClass} ${variantClass}" aria-hidden="true"><img src="${esc(cm.src)}" alt="${esc(cm.alt || "")}" decoding="async" /></div>`;
-  }
-
-  function renderGalleryStrip(gallery, title) {
-    if (!Array.isArray(gallery) || !gallery.length) return "";
-    const tilts = [0];
-    return `
-      <div class="mini-gallery reveal d4">
-        ${gallery.map((g, i) => `
-          <div class="thumb-polaroid"
-               style="--tilt: ${tilts[i % tilts.length]}deg"
-               role="button"
-               tabindex="0"
-               data-lightbox="true"
-               data-src="${esc(g.src)}"
-               data-title="${esc(title)}"
-               data-caption="${esc(g.cap)}"
-               data-credit="">
-            <img src="${esc(g.src)}" alt="${esc(g.cap)}" loading="lazy" />
-            <div class="thumb-polaroid-cap">
-              <span>${esc(g.cap)}</span>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  // ---------- 24 Archetype Renderers ----------
-  function renderCover(s) {
-    const pillarsHtml = (s.pillars || []).map((p) => {
-      const accent = safeAccentColor(p.color);
-      return `
-      <button type="button"
-              class="cover-pillar-btn"
-              style="--pillar-color: ${esc(accent)}"
-              data-jump="${Number(p.target) || 1}">
-        <div class="cover-pillar-num">${esc(p.code)}</div>
-        <div class="cover-pillar-name">${esc(p.name)}</div>
-        <div class="cover-pillar-sub">${esc(p.tag)} →</div>
-      </button>
-    `;
-    }).join("");
-
-    const heroTextHtml = `
-      <div>
-        <div class="reveal d1">
-          <span class="eyebrow">${esc(s.kicker)}</span>
-        </div>
-        <h1 class="cover-hero-h1 reveal d2">
-          <span class="gold-metallic-text">${esc(s.title)}</span><br />
-          <span style="font-size:0.68em;color:#FFFDF7;">${esc(s.subtitleHighlight || "")}</span>
-        </h1>
-        ${s.lead ? `<p class="slide-lead reveal d3">${esc(s.lead)}</p>` : ""}
-      </div>
-    `;
-
-    const heroVisualHtml = s.hero3d ? `
-      <div class="reveal r-right d3">
-        ${render3dFrame({
-          image: s.hero3d.image,
-          caption: s.hero3d.caption,
-          badge: s.hero3d.badge || "3D",
-          title: s.title
-        })}
-      </div>
-    ` : "";
-
-    return `
-      <div class="cover-backdrop">
-        <img src="${esc(s.image)}" alt="Nền trang bìa Phạm Nhật Vượng" />
-      </div>
-      <div class="cover-scrim"></div>
-      <div class="slide-inner">
-        ${s.hero3d ? `<div class="cover-split">${heroTextHtml}${heroVisualHtml}</div>` : heroTextHtml}
-        <div class="cover-pillars reveal d4">${pillarsHtml}</div>
-      </div>
-    `;
-  }
-
-  function renderBioProfile(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="bio-layout reveal d2">
-          <div style="display:flex;flex-direction:column;gap:14px;">
-            ${render3dFrame({
-              image: s.image,
-              caption: s.imageCaption || s.title,
-              badge: s.badge3d || "3D Profile",
-              title: s.title
-            })}
-            ${Array.isArray(s.highlights) && s.highlights.length ? `
-              <div class="tag-cloud" style="margin-top:2px;">
-                ${s.highlights.map((h) => `<span class="tag-pill">${esc(h)}</span>`).join("")}
-              </div>
-            ` : ""}
-          </div>
-          <div>
-            <div class="bio-facts-grid">
-              ${(s.facts || []).map((f) => {
-                const accent = safeAccentColor(f.color);
-                return `
-                <div class="bio-fact-card" style="border-top-color:${esc(accent)};">
-                  <div class="bio-fact-label" style="color:${esc(accent)};">${esc(f.label)}</div>
-                  <div class="bio-fact-val">${esc(f.value)}</div>
-                  ${f.sub ? `<div class="bio-fact-sub">${esc(f.sub)}</div>` : ""}
-                </div>
-              `;
-              }).join("")}
-            </div>
-            ${s.bridge ? `<div class="bridge-callout" style="margin-top:16px;">${esc(s.bridge)}</div>` : ""}
+      <div class="m-photo-frame ${extraClass || ""} js-zoom-trigger"
+           data-morph="${esc(morphKey)}"
+           data-src="${esc(p.src)}"
+           data-title="${esc(p.tag)}"
+           data-caption="${esc(p.cap)}">
+        <div class="m-photo-inner">
+          <img src="${esc(p.src)}" alt="${esc(p.cap)}" onerror="this.src='assets/pnv_portrait.jpg'" />
+          <div class="m-photo-cap">
+            <span class="m-photo-tag">${esc(p.tag)}</span>
+            <div>${esc(p.cap)}</div>
           </div>
         </div>
       </div>
     `;
   }
 
-  function renderBrandShowcase3d(s) {
+  function renderInlineThumb(photo, customClass) {
+    const p = photo || { src: "assets/pnv_portrait.jpg", tag: "VINGROUP", cap: "Tỷ phú Phạm Nhật Vượng" };
     return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="brand-3d-grid reveal d2">
-          ${(s.brands || []).map((b) => {
-            const accent = safeAccentColor(b.color);
-            return `
-            <div class="brand-3d-card" style="border-top-color:${esc(accent)};">
-              <div class="brand-3d-media"
-                   role="button"
-                   tabindex="0"
-                   data-lightbox="true"
-                   data-src="${esc(b.image)}"
-                   data-title="${esc(b.title)}"
-                   data-caption="${esc(b.caption || b.title)}"
-                   data-credit="">
-                <img src="${esc(b.image)}" alt="${esc(b.title)}" loading="lazy" />
-              </div>
-              <div class="brand-3d-body">
-                <div class="card-kicker" style="color:${esc(accent)};margin-bottom:2px;">${esc(b.tag)}</div>
-                <h3 class="card-title" style="margin-bottom:4px;">${esc(b.title)}</h3>
-                <p style="font-size:0.98rem;color:#FFFFFF;line-height:1.52;">${esc(b.desc)}</p>
-                ${b.highlight ? `<div style="margin-top:auto;padding-top:8px;font-weight:800;font-size:0.94rem;color:#FBBF24;">${esc(b.highlight)}</div>` : ""}
-              </div>
-            </div>
-          `;
-          }).join("")}
-        </div>
+      <div class="${customClass || "m-card-thumb"} js-zoom-trigger"
+           data-src="${esc(p.src)}"
+           data-title="${esc(p.tag)}"
+           data-caption="${esc(p.cap)}">
+        <img src="${esc(p.src)}" alt="${esc(p.cap)}" onerror="this.src='assets/pnv_portrait.jpg'" />
       </div>
     `;
   }
 
-  function renderToc(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="stage-card-grid reveal d2">
-          ${(s.stages || []).map((st) => {
-            const accent = safeAccentColor(st.color);
-            return `
-            <button type="button"
-                    class="edit-card stage-card"
-                    style="border-top-color:${esc(accent)}"
-                    data-jump="${Number(st.target)}">
-              <div>
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                  <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:${esc(accent)}">${esc(st.num)}</span>
-                  <span class="tag-pill">${esc(st.range)}</span>
-                </div>
-                <div class="card-title">${esc(st.title)}</div>
-                <p style="font-size:1rem;color:#FFFFFF;line-height:1.5;">${esc(st.desc)}</p>
-              </div>
-              <div style="font-size:0.9rem;font-weight:700;color:${esc(accent)};">Màn ${pad2(st.target)} →</div>
-            </button>
-          `;
-          }).join("")}
-        </div>
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
+  // =========================================================================
+  // 12 DISTINCT VISUAL ARCHETYPE RENDERERS (WITH COMPLETE PHOTOS & VIDEOS)
+  // =========================================================================
 
-  function renderUtehyFacsimile(s) {
-    const bars = s.bars || [];
-    const first = bars[0] || {};
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-asymmetric-l reveal d2">
-          <div>
-            <div class="utehy-frame">
-              <div class="utehy-frame-top">
-                <span>Nhân tố ảnh hưởng &amp; 4 Bộ phận cấu thành</span>
-                <span style="color:#FBBF24;">5.1 – 5.4</span>
-              </div>
-              <div class="utehy-frame-body">
-                <div class="utehy-heading">5. CÁC BỘ PHẬN CẤU THÀNH<br />VĂN HÓA DOANH NHÂN</div>
-                <div class="utehy-bars" data-utehy-group>
-                  ${bars.map((b, idx) => `
-                    <button type="button"
-                            class="utehy-bar ${esc(b.cls)} ${idx === 0 ? "active" : ""}"
-                            data-utehy-idx="${idx}">
-                      <span>${esc(b.label)}</span>
-                      <span style="font-size:0.82rem;color:#FBBF24;">Màn ${pad2(b.target)} ▸</span>
-                    </button>
-                  `).join("")}
-                </div>
-              </div>
-            </div>
-          </div>
+  // 1. ARCHETYPE: HERO POSTER SPLIT (Slide 01, Slide 45 Finale Loop)
+  function renderArchHeroPoster(s, idx, total, photos) {
+    const metrics = s.metrics || [
+      { val: "1968", label: "Sinh tại Hà Nội, quê gốc Hà Tĩnh" },
+      { val: "1993", label: "Sáng lập Technocom (Mivina)" },
+      { val: "2012", label: "Hợp nhất thành Tập đoàn Vingroup" },
+      { val: "2023", label: "Niêm yết VinFast trên sàn Nasdaq" }
+    ];
+    const pillars = s.pillars || (s.lessons ? s.lessons.map((l) => ({ code: l.num, label: l.title, desc: l.action })) : []);
 
-          <div class="edit-card gold" data-utehy-detail style="min-height: 280px; display:flex; flex-direction:column; justify-content:space-between;">
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "CHUYÊN ĐỀ VĂN HÓA DOANH NHÂN UTEHY")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.section || "")}</div>
+        </header>
+
+        <div class="arch-hero-grid">
+          <div class="arch-hero-left">
             <div>
-              <span class="card-kicker" data-utehy-code>BỘ PHẬN ${esc(first.code)}</span>
-              <h3 class="card-title" data-utehy-title style="font-size:1.38rem;">${esc(first.label)}</h3>
-              <div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border-radius:8px;border-left:4px solid #F87171;">
-                <div style="font-size:0.84rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;">Lý thuyết</div>
-                <p data-utehy-theory style="font-size:1.04rem;color:#FFFFFF;margin-top:4px;">${esc(first.theory)}</p>
-              </div>
-              <div style="margin-top:12px;padding:12px 14px;background:rgba(251,191,36,0.09);border-radius:8px;border-left:4px solid #FBBF24;">
-                <div style="font-size:0.84rem;font-weight:800;color:#FBBF24;text-transform:uppercase;">Thực tiễn Phạm Nhật Vượng</div>
-                <p data-utehy-pnv style="font-size:1.04rem;color:#FEF3C7;margin-top:4px;">${esc(first.pnv)}</p>
-              </div>
+              <h1 class="fs-title fs-title-hero" data-morph="morph-title">${esc(s.title)}</h1>
+              <p class="fs-lead" data-morph="morph-subtitle">${esc(s.subtitle || s.lead || "")}</p>
             </div>
-            <div style="margin-top:16px;">
-              <button type="button" class="btn-gold" data-utehy-jump data-jump="${Number(first.target) || 21}">
-                Xem Mục ${esc(first.code)} →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
 
-  function renderContrastSplit(s) {
-    return `
-      <div class="slide-inner">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;">
-          <div style="flex:1;min-width:0;">${renderHeader(s)}</div>
-          ${s.emblemImage ? `
-            <div class="waving-flag-wrap reveal d2" style="flex-shrink:0;padding-top:6px;">
-              <img class="waving-flag" src="${esc(s.emblemImage)}" alt="Quốc kỳ Việt Nam" />
-            </div>
-          ` : ""}
-        </div>
-        <div class="grid-2">
-          <div class="glass-card reveal r-left d2" style="border-top:4px solid #FBBF24;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-              <h3 class="card-title" style="color:#FDE68A;margin:0;">${esc(s.leftTitle)}</h3>
-              <span class="stamp-seal" style="border-color:#FBBF24;color:#FDE68A;font-size:0.72rem;">${esc(s.leftBadge)}</span>
-            </div>
-            ${renderBulletPoints(s.leftPoints)}
-          </div>
-          <div class="glass-card reveal r-right d3" style="border-top:4px solid #EF4444;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-              <h3 class="card-title" style="color:#FCA5A5;margin:0;">${esc(s.rightTitle)}</h3>
-              <span class="stamp-seal crimson" style="font-size:0.72rem;">${esc(s.rightBadge)}</span>
-            </div>
-            ${renderBulletPoints(s.rightPoints)}
-          </div>
-        </div>
-        ${s.bottomHighlight ? `<div class="bridge-callout reveal d4">${esc(s.bottomHighlight)}</div>` : ""}
-      </div>
-    `;
-  }
-
-  function renderStrata(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-2 reveal d2">
-          ${(s.blocks || []).map((b, i) => `
-            <div class="edit-card ${i === 1 ? "teal" : "gold"} reveal ${i === 0 ? "r-left" : "r-right"} d2" style="border-top-color:${esc(safeAccentColor(b.color))}">
-              <div class="card-kicker">${esc(b.tag)}</div>
-              <h3 class="card-title">${esc(b.title)}</h3>
-              ${renderBulletPoints(b.points)}
-            </div>
-          `).join("")}
-        </div>
-        ${s.bridge ? `<div class="bridge-callout reveal d3">${esc(s.bridge)}</div>` : ""}
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
-
-  function renderTrifoldCards(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-3 reveal d2">
-          ${(s.cards || []).map((c, idx) => `
-            <div class="${cardClass(s.theme, idx === 1 ? "gold" : idx === 2 ? "teal" : "")}"
-                 style="border-top:4px solid ${idx === 0 ? "#FBBF24" : idx === 1 ? "#EF4444" : "#F59E0B"}">
-              <div class="card-kicker">${esc(c.tag)}</div>
-              <h3 class="card-title">${esc(c.title)}</h3>
-              ${c.highlight ? `<div class="kpi-teal" style="font-weight:800;font-size:0.95rem;margin-bottom:10px;">${esc(c.highlight)}</div>` : ""}
-              <p style="font-size:1.04rem;line-height:1.6;color:#FFFFFF;">${esc(c.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
-
-  function renderPillarHub(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-asymmetric-l reveal d2">
-          <div>
-            ${renderPolaroid(s, {
-              image: s.image,
-              caption: "Mô hình 4 bộ phận cấu thành Văn hóa Doanh nhân",
-              tilt: -1.5
-            })}
-          </div>
-          <div class="grid-2" style="gap:14px;">
-            ${(s.pillars || []).map((p) => {
-              const accent = safeAccentColor(p.color);
-              return `
-              <button type="button"
-                      class="edit-card"
-                      style="text-align:left;cursor:pointer;border-top-color:${esc(accent)}"
-                      data-jump="${Number(p.target)}">
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <span style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:${esc(accent)}">${esc(p.code)}</span>
-                  <span class="tag-pill">${esc(p.essence)}</span>
+            <div class="arch-hero-metrics" data-morph="morph-stats">
+              ${metrics.slice(0, 4).map((m, i) => `
+                <div class="arch-metric-box" data-morph="morph-stat-${i + 1}">
+                  <div class="arch-metric-val">${esc(m.val || m.num)}</div>
+                  <div class="arch-metric-lbl">${esc(m.label)}</div>
                 </div>
-                <div class="card-title" style="margin-top:8px;">${esc(p.title)}</div>
-                <p style="font-size:0.98rem;color:#FFFFFF;line-height:1.48;">${esc(p.detail)}</p>
-                <div style="margin-top:10px;font-size:0.9rem;font-weight:700;color:${esc(accent)};">Xem Màn ${pad2(p.target)} →</div>
-              </button>
-            `;
-            }).join("")}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderMatrixTable(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="reveal d2" style="overflow-x:auto;">
-          <table class="editorial-table">
-            <thead>
-              <tr>${(s.headers || []).map((h) => `<th>${esc(h)}</th>`).join("")}</tr>
-            </thead>
-            <tbody>
-              ${(s.rows || []).map((row) => `
-                <tr>${row.map((cell, idx) => `
-                  <td style="${idx === 0 ? "font-weight:800;color:#FEF3C7;white-space:nowrap;" : ""}">${esc(cell)}</td>
-                `).join("")}</tr>
               `).join("")}
-            </tbody>
-          </table>
-        </div>
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
+            </div>
 
-  function renderChapterDivider(s) {
-    return `
-      <div class="slide-inner">
-        <div class="grid-asymmetric-l">
-          <div class="reveal r-left d1">
-            <span class="eyebrow">${esc(s.kicker)}</span>
-            <div style="display:flex;align-items:center;gap:20px;margin:10px 0;">
-              <div class="big-chapter-badge gold-metallic-text" style="margin:0;">${esc(s.bigNumber)}</div>
-              ${s.image ? `
-                <div class="polaroid polaroid-portrait"
-                     style="--tilt: 0deg; max-width: 170px; padding: 8px 8px 10px;"
-                     role="button"
-                     tabindex="0"
-                     data-lightbox="true"
-                     data-src="${esc(s.image)}"
-                     data-title="${esc(s.title)}"
-                     data-caption="Chân dung Doanh nhân Phạm Nhật Vượng"
-                     data-credit="">
-                  <img src="${esc(s.image)}" alt="Chân dung Phạm Nhật Vượng" style="max-height:145px;object-fit:cover;object-position:top center;" loading="lazy" />
-                  <div class="polaroid-caption" style="font-size:0.72rem;margin-top:6px;">
-                    <span>Phạm Nhật Vượng</span>
+            <div class="arch-hero-pillars">
+              ${pillars.slice(0, 4).map((p, i) => `
+                <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
+                  ${renderInlineThumb(photos[i % photos.length])}
+                  <div>
+                    <div class="m-card-title">${esc(p.code ? (p.code + " · ") : "")}${esc(p.label || p.title)}</div>
+                    ${p.desc ? `<div class="m-card-body">${esc(p.desc)}</div>` : ""}
                   </div>
                 </div>
-              ` : ""}
+              `).join("")}
             </div>
-            <h2 class="slide-title-serif">${esc(s.title)}</h2>
-            <div class="gold-rule"></div>
-            <p class="slide-lead">${esc(s.lead)}</p>
           </div>
-          <div class="reveal r-right d2" style="display:flex;flex-direction:column;gap:12px;">
-            ${(s.timeline || []).map((t) => `
-              <div class="glass-card" style="padding:14px 18px;display:flex;align-items:center;gap:16px;">
-                <span class="stamp-seal" style="flex-shrink:0;transform:none;">${esc(t.period)}</span>
+
+          <div class="arch-hero-right">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>NHÂN VẬT TRUNG TÂM: TỶ PHÚ PHẠM NHẬT VƯỢNG &amp; HỆ SINH THÁI VINGROUP</span>
+          <span>BẤM VÀO ẢNH ĐỂ PHÓNG TO · PHÍM ← / → HOẶC SPACE ĐỂ CHUYỂN CẢNH 3D MORPH</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 2. ARCHETYPE: CENTRAL RADIAL HUB (Photos in Center, 4 Photo-Cards Orbit in 4 Corners!)
+  function renderArchRadialHub(s, idx, total, photos, items) {
+    const list = items.slice(0, 4);
+    const renderCorner = (it, i) => {
+      if (!it) return `<div></div>`;
+      return `
+        <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
+          ${renderInlineThumb(photos[(i + 1) % photos.length])}
+          <div>
+            <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
+            <div class="m-card-body">${esc(it.body)}</div>
+          </div>
+        </div>
+      `;
+    };
+
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "SƠ ĐỒ TÂM ĐIỂM")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block center">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || s.subtitle || "")}</p>
+        </div>
+
+        <div class="arch-radial-stage">
+          ${renderCorner(list[0], 0)}
+
+          <!-- CENTER HUB PHOTO -->
+          <div class="arch-radial-center">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "hex-frame")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          </div>
+
+          ${renderCorner(list[1], 1)}
+          ${renderCorner(list[2], 2)}
+          ${renderCorner(list[3], 3)}
+        </div>
+
+        <footer class="fs-footer">
+          <span>SƠ ĐỒ TÂM ĐIỂM · PHẠM NHẬT VƯỢNG &amp; HỆ SINH THÁI VINGROUP</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 3. ARCHETYPE: TOP PANORAMIC 3-PHOTO STRIP + BENTO GRID BELOW
+  function renderArchPanoramicBento(s, idx, total, photos, items) {
+    const colsClass = items.length <= 4 ? "cols-2" : "";
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "HỒ SƠ TOÀN CẢNH")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || s.subtitle || "")}</p>
+        </div>
+
+        <div class="arch-pano-layout">
+          <div class="arch-pano-strip">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+            ${renderPhotoBox(photos[2], "morph-photo-3", "")}
+          </div>
+
+          <div class="arch-bento-grid ${colsClass}">
+            ${items.slice(0, 6).map((it, i) => `
+              <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
+                ${items.length <= 4 ? renderInlineThumb(photos[(i + 1) % photos.length]) : ""}
                 <div>
-                  <div style="font-weight:700;color:#FEF3C7;">${esc(t.label)}</div>
-                  <div style="font-size:1rem;color:#FFFFFF;">${esc(t.desc)}</div>
+                  <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
+                  <div class="m-card-body">${esc(it.body)}</div>
                 </div>
               </div>
             `).join("")}
           </div>
         </div>
+
+        <footer class="fs-footer">
+          <span>PHẠM NHẬT VƯỢNG &amp; CÁC DOANH NGHIỆP TRỤ CỘT VINGROUP</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
       </div>
     `;
   }
 
-  function renderPolaroidStory(s) {
-    const mediaCol = `
-      <div class="reveal d2">
-        ${renderPolaroid(s)}
-        ${Array.isArray(s.kpis) && s.kpis.length ? `
-          <div class="grid-2" style="gap:12px;margin-top:16px;">
-            ${s.kpis.map((k) => `
-              <div class="${cardClass(s.theme, "gold")}" style="padding:12px 14px;text-align:center;">
-                <div style="font-family:var(--font-serif);font-size:1.35rem;font-weight:800;color:#FBBF24">${esc(k.val)}</div>
-                <div style="font-size:0.9rem;color:#FEF3C7;">${esc(k.lbl)}</div>
+  // 4. ARCHETYPE: UTEHY CLASSROOM SLIDE REPLICA (4 Giant Colored Bars with Thumbs + Right Photos)
+  function renderArchUtehyReplica(s, idx, total, photos) {
+    const bars = s.bars || [];
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.headerTitle || "CÁC NHÂN TỐ ẢNH HƯỞNG TỚI VĂN HOÁ DOANH NHÂN")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">KHUNG BÀI GIẢNG UTEHY · SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title fs-title-hero" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        <div class="arch-utehy-grid">
+          <div class="arch-utehy-bars">
+            ${bars.map((b, i) => `
+              <div class="arch-utehy-pill" data-morph="morph-card-${i + 1}">
+                <div class="arch-utehy-code">${esc(b.code)}</div>
+                <div class="arch-utehy-text">
+                  <div class="arch-utehy-name">${esc(b.text)}</div>
+                  <div class="arch-utehy-sub">${esc(b.sub)}</div>
+                </div>
+                ${renderInlineThumb(photos[i % photos.length], "arch-utehy-thumb")}
               </div>
             `).join("")}
           </div>
-        ` : ""}
-      </div>
-    `;
-    const textCol = `
-      <div class="reveal d3">
-        <div class="${cardClass(s.theme, "teal")}">
-          ${renderBulletPoints(s.points)}
+
+          <div class="arch-hero-right">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          </div>
         </div>
-      </div>
-    `;
-    const flip = s.id % 2 === 1;
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="${flip ? "grid-asymmetric-r" : "grid-asymmetric-l"}">
-          ${flip ? textCol + mediaCol : mediaCol + textCol}
-        </div>
+
+        <footer class="fs-footer">
+          <span>MỤC 5 BÀI GIẢNG UTEHY · ÁNH XẠ VÀO THỰC TIỄN TỶ PHÚ PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
       </div>
     `;
   }
 
-  function renderBreathingQuote(s) {
-    const cardsHtml = `
-      <div class="grid-3 reveal d3">
-        ${(s.lessons || []).map((l, idx) => `
-          <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}">
-            <div class="card-kicker">ĐIỂM NHẤN ${esc(l.num)}</div>
-            <h3 class="card-title">${esc(l.title)}</h3>
-            <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(l.desc)}</p>
-          </div>
-        `).join("")}
+  // 5. ARCHETYPE: 3 TALL VERTICAL PHOTO PILLARS
+  function renderArchThreePillars(s, idx, total, photos, cols) {
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "3 TRỤ CỘT CHIẾN LƯỢC")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || s.subtitle || "")}</p>
+        </div>
+
+        <div class="arch-pillars-grid">
+          ${cols.slice(0, 3).map((col, i) => {
+            const p = photos[i % photos.length];
+            return `
+              <div class="arch-pillar-col" data-morph="morph-card-${i + 1}">
+                <div class="arch-pillar-photo js-zoom-trigger"
+                     data-morph="morph-photo-${i + 1}"
+                     data-src="${esc(p.src)}"
+                     data-title="${esc(col.title || p.tag)}"
+                     data-caption="${esc(p.cap)}">
+                  <img src="${esc(p.src)}" alt="${esc(col.title)}" onerror="this.src='assets/pnv_portrait.jpg'" />
+                  <div class="m-photo-cap">
+                    <span class="m-photo-tag">${esc(col.tag || col.num || p.tag)}</span>
+                  </div>
+                </div>
+                <div class="arch-pillar-body">
+                  <div class="arch-pillar-head">
+                    <div class="m-hex-badge">${esc(col.num || ("0" + (i + 1)))}</div>
+                    <div class="arch-pillar-title">${esc(col.title)}</div>
+                  </div>
+                  ${col.subtitle ? `<div class="m-card-body" style="color:#FEF08A;font-weight:800;">${esc(col.subtitle)}</div>` : ""}
+                  <ul class="arch-pillar-list">
+                    ${(col.items || []).slice(0, 4).map((li) => `<li>${esc(li)}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+
+        <footer class="fs-footer">
+          <span>BA TRỤ CỘT DOANH NGHIỆP &amp; VĂN HÓA DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
       </div>
     `;
+  }
+
+  // 6. ARCHETYPE: DUAL VERSUS SYMMETRY (Left Card with Banner + Center Photo Bridge + Right Card with Banner)
+  function renderArchDualVersus(s, idx, total, photos) {
+    const left = s.leftCol || { title: "Giai đoạn Khởi đầu", badge: "NỀN TẢNG", items: [] };
+    const right = s.rightCol || { title: "Bước ngoặt Bứt phá", badge: "VƯƠN TẦM", items: [] };
 
     return `
-      <div class="slide-inner">
-        ${renderHeader(s, { showLead: false })}
-        <div class="quote-slab reveal d2">
-          <blockquote>“${esc(s.quote)}”</blockquote>
-          <div class="quote-attr">— ${esc(s.quoteAttr)}</div>
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "ĐỐI CHIẾU HAI CHIỀU")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block center">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
         </div>
-        ${s.image ? `
-          <div class="grid-asymmetric-r reveal d3">
-            <div class="grid-3" style="grid-template-columns:1fr;gap:12px;">
-              ${(s.lessons || []).map((l, idx) => `
-                <div class="edit-card ${idx === 1 ? "gold" : idx === 2 ? "teal" : ""}" style="padding:14px 18px;">
-                  <div class="card-kicker">BƯỚC NGOẶT ${esc(l.num)} · ${esc(l.title)}</div>
-                  <p style="font-size:1rem;color:#FFFFFF;">${esc(l.desc)}</p>
+
+        <div class="arch-versus-grid">
+          <div class="arch-versus-col" data-morph="morph-card-1">
+            ${renderInlineThumb(photos[2 % photos.length], "arch-col-banner")}
+            <div class="fs-pill-badge" style="align-self:flex-start;">${esc(left.badge || "CHIỀU 01")}</div>
+            <div class="m-card-title" style="font-size:21px;">${esc(left.title)}</div>
+            <ul class="arch-pillar-list">
+              ${(left.items || []).slice(0, 4).map((it) => `<li>${esc(it)}</li>`).join("")}
+            </ul>
+          </div>
+
+          <div class="arch-versus-center">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          </div>
+
+          <div class="arch-versus-col" data-morph="morph-card-2">
+            ${renderInlineThumb(photos[3 % photos.length], "arch-col-banner")}
+            <div class="fs-pill-badge" style="align-self:flex-start;">${esc(right.badge || "CHIỀU 02")}</div>
+            <div class="m-card-title" style="font-size:21px;">${esc(right.title)}</div>
+            <ul class="arch-pillar-list">
+              ${(right.items || []).slice(0, 4).map((it) => `<li>${esc(it)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>PHÂN TÍCH ĐỐI CHIẾU · CHUYÊN ĐỀ DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 7. ARCHETYPE: HONEYCOMB HEXAGON PHOTO CLUSTER + STORY STACK WITH THUMBS
+  function renderArchHoneycombStory(s, idx, total, photos, items) {
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || s.section || "PHÂN TÍCH CHUYÊN SÂU")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || s.subtitle || "")}</p>
+        </div>
+
+        <div class="arch-honeycomb-grid">
+          <div class="arch-hex-cluster">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "hex-frame")}
+            ${renderPhotoBox(photos[2], "morph-photo-3", "hex-frame")}
+          </div>
+
+          <div class="arch-story-stack">
+            ${items.slice(0, 4).map((it, i) => `
+              <div class="arch-story-row" data-morph="morph-card-${i + 1}">
+                <div class="m-hex-badge">${esc(it.badge || ("0" + (i + 1)))}</div>
+                <div style="flex:1;">
+                  <div class="m-card-title">${esc(it.title)}</div>
+                  <div class="m-card-body">${esc(it.body)}</div>
+                </div>
+                ${renderInlineThumb(photos[(i + 1) % photos.length])}
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>TƯ LIỆU HÌNH ẢNH &amp; THỰC CHỨNG DOANH NGHIỆP VINGROUP</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 8. ARCHETYPE: HORIZONTAL ASCENDING TIMELINE / STAIRCASE
+  function renderArchTimeline(s, idx, total, photos, steps) {
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIẾN TRÌNH LỊCH SỬ")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || s.subtitle || "")}</p>
+        </div>
+
+        <div class="arch-timeline-layout">
+          <div class="arch-timeline-row">
+            ${steps.slice(0, 5).map((st, i) => `
+              <div class="arch-step-card" data-morph="morph-card-${i + 1}">
+                <span class="arch-step-year">${esc(st.year || st.badge || ("MỐC " + (i + 1)))}</span>
+                <div class="m-card-title">${esc(st.title)}</div>
+                <div class="m-card-body">${esc(st.body)}</div>
+              </div>
+            `).join("")}
+          </div>
+
+          <div class="arch-timeline-photos">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+            ${renderPhotoBox(photos[2], "morph-photo-3", "")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>DẤU ẤN HÀNH TRÌNH TỶ PHÚ PHẠM NHẬT VƯỢNG (1993 – 2026)</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 9. ARCHETYPE: GIANT CENTER QUOTE SHOWCASE (“ ”) + 3 PHOTO-BACKED PROOF CARDS
+  function renderArchQuoteSpotlight(s, idx, total, photos) {
+    const pts = s.points || [];
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || "PHÁT NGÔN & TẦM NHÌN")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        <div class="arch-quote-layout">
+          <div class="arch-quote-top">
+            <div class="arch-quote-banner" data-morph="morph-quote">
+              <div class="arch-quote-text">“${esc(s.quote || s.lead)}”</div>
+              <div class="arch-quote-author">— ${esc(s.quoteAuthor || "Chủ tịch Phạm Nhật Vượng")}</div>
+            </div>
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+          </div>
+
+          <div class="arch-quote-bottom">
+            ${pts.slice(0, 3).map((pt, i) => `
+              <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
+                ${renderInlineThumb(photos[(i + 1) % photos.length])}
+                <div>
+                  <div class="m-card-title">0${i + 1} · ${esc(pt.title)}</div>
+                  <div class="m-card-body">${esc(pt.text)}</div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>TRIẾT LÝ HÀNH ĐỘNG CỦA CHỦ TỊCH PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 10. ARCHETYPE: ENTERPRISE SHOWROOM (KPI Counters + Details/Bar Chart + Right Photos)
+  function renderArchEnterpriseShowroom(s, idx, total, photos) {
+    const kpis = s.kpis || (s.heroMetric ? [
+      { val: s.heroMetric.val, label: s.heroMetric.label },
+      { val: "2006–2026", label: "20 năm hoạt động bền bỉ khắp 63 tỉnh thành" },
+      { val: "5 Trụ cột", label: "Y tế, Giáo dục, Dân sinh, Thiên tai, Khoa học" }
+    ] : []);
+
+    const details = s.details || s.programs || [];
+    const barsData = s.barsData || null;
+
+    let leftBodyHTML = "";
+    if (barsData && barsData.length) {
+      leftBodyHTML = `
+        <div class="arch-chart-stack">
+          ${barsData.map((b, i) => `
+            <div class="arch-chart-row" data-morph="morph-card-${i + 1}">
+              <div class="arch-chart-head">
+                <span>${esc(b.label)} · ${esc(b.sub || "")}</span>
+                <span>${esc(b.val)}</span>
+              </div>
+              <div class="arch-chart-track">
+                <div class="arch-chart-fill" style="width:${Math.min(100, Number(b.pct) || 50)}%"></div>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    } else {
+      leftBodyHTML = `
+        <div class="arch-story-stack">
+          ${details.slice(0, 4).map((d, i) => `
+            <div class="arch-story-row" data-morph="morph-card-${i + 1}">
+              <div class="m-hex-badge">0${i + 1}</div>
+              <div style="flex:1;">
+                <div class="m-card-title">${esc(d.heading || d.title)}</div>
+                <div class="m-card-body">${esc(d.text || d.desc)}</div>
+              </div>
+              ${renderInlineThumb(photos[(i + 2) % photos.length])}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIÊU ĐIỂM DOANH NGHIỆP")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        <div class="arch-showroom-layout">
+          ${kpis.length ? `
+            <div class="arch-kpi-strip" data-morph="morph-stats">
+              ${kpis.slice(0, 3).map((k, i) => `
+                <div class="arch-kpi-card" data-morph="morph-stat-${i + 1}">
+                  <div class="arch-kpi-num">${esc(k.val)}</div>
+                  <div class="arch-kpi-desc">${esc(k.label)}</div>
                 </div>
               `).join("")}
             </div>
-            <div>
-              ${renderPolaroid(s, {
-                image: s.image,
-                caption: "Khát vọng công nghệ Việt Nam vươn tầm thế giới",
-                tilt: 2
-              })}
-            </div>
-          </div>
-        ` : cardsHtml}
-      </div>
-    `;
-  }
+          ` : ""}
 
-  function renderVideoCinema(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="cinema-wrap reveal d2">
-          <div>
-            <div class="video-stage" data-video-stage data-video-id="${esc(s.videoId)}" data-thumb="${esc(s.thumb)}" data-channel="${esc(s.channel)}" data-duration="${esc(s.duration)}" data-title="${esc(s.videoTitle)}">
-              <img class="poster" src="${esc(s.thumb)}" alt="${esc(s.videoTitle)}" loading="lazy" />
-              <div class="video-yt-tag">
-                <span>▶ YouTube</span>
-                <span>· ${esc(s.channel)}</span>
-              </div>
-              <div class="video-duration-pill">${esc(s.duration)}</div>
-              <div class="video-poster-overlay" data-play-video role="button" tabindex="0" aria-label="Phát video: ${esc(s.videoTitle)}">
-                <div class="play-orb">
-                  <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass-card">
-            <div class="card-kicker">VIDEO · ${esc(s.duration)} · ${esc(s.channel)}</div>
-            <h3 class="card-title" style="color:#FEF3C7;">${esc(s.videoTitle)}</h3>
-            ${renderBulletPoints(s.highlights)}
-            <div class="cta-row">
-              <button type="button" class="btn-gold" data-play-inline-btn>▶ Phát Video Tại Chỗ</button>
-              <a class="btn-outline-light" href="${esc(s.videoUrl)}" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+          <div class="arch-showroom-body">
+            ${leftBodyHTML}
+            <div class="arch-showroom-photos">
+              ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+              ${renderPhotoBox(photos[1], "morph-photo-2", "")}
             </div>
           </div>
         </div>
+
+        <footer class="fs-footer">
+          <span>HỆ SINH THÁI DOANH NGHIỆP CỦA TỶ PHÚ PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
       </div>
     `;
   }
 
-  function renderEcosystemWheel(s) {
-    const spokes = s.spokes || [];
-    const first = spokes[0] || {};
-    const angles = [-90, 0, 90, 180];
-    const radius = 132;
-    const center = 170;
-    const halfNode = 39;
+  // 11. ARCHETYPE: MATRIX COMPARISON ROWS + SIDE PHOTO TOWER
+  function renderArchMatrix(s, idx, total, photos) {
+    const rows = s.rows || [];
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "MA TRẬN ĐỐI CHIẾU")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+        </header>
 
-    const nodesHtml = spokes.map((sp, i) => {
-      const rad = (angles[i % angles.length] * Math.PI) / 180;
-      const x = Math.round(center + radius * Math.cos(rad) - halfNode);
-      const y = Math.round(center + radius * Math.sin(rad) - halfNode);
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        <div class="arch-matrix-layout">
+          <div class="arch-matrix-rows">
+            ${rows.slice(0, 5).map((r, i) => `
+              <div class="arch-story-row" data-morph="morph-card-${i + 1}">
+                <div class="m-hex-badge">0${i + 1}</div>
+                <div style="flex:1;">
+                  <div class="m-card-title">${esc(r[0])} → ${esc(r[1])}</div>
+                  <div class="m-card-body">${esc(r[2] || "")} ${r[3] ? (" · " + esc(r[3])) : ""}</div>
+                </div>
+                ${renderInlineThumb(photos[(i + 1) % photos.length])}
+              </div>
+            `).join("")}
+          </div>
+
+          <div class="arch-hero-right">
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>BẢNG ĐỐI CHIẾU THỰC CHỨNG · DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // 12. ARCHETYPE: VIDEO DOCUMENTARY THEATER (Real Local MP4 Player + YouTube Link!)
+  function renderArchVideo(s, idx, total, photos) {
+    const vidMap = { 14: "assets/vid01.mp4", 16: "assets/vid02.mp4", 23: "assets/vid03.mp4", 35: "assets/vid04.mp4", 40: "assets/vid05.mp4" };
+    const mp4Src = s.localVideo || vidMap[s.id] || "assets/vid01.mp4";
+    const posterSrc = s.thumb || photos[0].src;
+    const ytUrl = s.videoUrl || ("https://www.youtube.com/watch?v=" + (s.videoId || ""));
+    const takeaways = s.takeaways || [];
+
+    return `
+      <div class="fs-slide">
+        <header class="fs-topbar">
+          <div class="fs-pill-badge" data-morph="morph-badge">▶ ${esc(s.kicker || "VIDEO TƯ LIỆU THỰC TẾ")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.channel || "YouTube")} (${esc(s.duration || "HD")})</div>
+        </header>
+
+        <div class="fs-header-block">
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        <div class="arch-video-layout">
+          <div class="arch-video-stage">
+            <div class="arch-video-player" data-morph="morph-photo-1">
+              <video controls playsinline preload="metadata" poster="${esc(posterSrc)}">
+                <source src="${esc(mp4Src)}" type="video/mp4" />
+                Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
+              </video>
+            </div>
+            <div class="arch-video-toolbar">
+              <span>🎬 Kênh: <strong>${esc(s.channel || "Tư liệu")}</strong> · Bấm nút <strong>▶ Play</strong> trên khung video để phát trực tiếp có âm thanh</span>
+              <a class="arch-video-btn" href="${esc(ytUrl)}" target="_blank" rel="noopener noreferrer">Mở YouTube gốc ↗</a>
+            </div>
+          </div>
+
+          <div class="arch-story-stack">
+            ${takeaways.slice(0, 3).map((t, i) => `
+              <div class="arch-story-row" data-morph="morph-card-${i + 1}">
+                <div class="m-hex-badge">0${i + 1}</div>
+                <div class="m-card-body" style="font-size:17px;flex:1;">${esc(t)}</div>
+              </div>
+            `).join("")}
+            ${renderPhotoBox(photos[1] || photos[0], "morph-photo-2", "")}
+          </div>
+        </div>
+
+        <footer class="fs-footer">
+          <span>VIDEO TƯ LIỆU ĐÃ TẢI SẴN MP4 TRỰC TIẾP · KHÔNG LO LỖI CHẶN NHÚNG YOUTUBE</span>
+          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+        </footer>
+      </div>
+    `;
+  }
+
+  // =========================================================================
+  // MASTER ROUTER: MAPS EACH OF THE 45 SLIDES TO ITS DISTINCT ARCHETYPE
+  // =========================================================================
+  function renderSlideMaster(s, idx, total) {
+    const photos = getPhotosForSlide(s);
+    const lay = s.layout || "";
+
+    if (lay === "cover_hero" || lay === "final_lessons_utehy") {
+      return renderArchHeroPoster(s, idx, total, photos);
+    }
+    if (lay === "utehy_slide_replica") {
+      return renderArchUtehyReplica(s, idx, total, photos);
+    }
+    if (lay === "video_slide") {
+      return renderArchVideo(s, idx, total, photos);
+    }
+    if (lay === "split_comparison") {
+      return renderArchDualVersus(s, idx, total, photos);
+    }
+    if (lay === "quote_analysis") {
+      return renderArchQuoteSpotlight(s, idx, total, photos);
+    }
+    if (lay === "matrix_table") {
+      return renderArchMatrix(s, idx, total, photos);
+    }
+    if (lay === "enterprise_deep_dive" || lay === "chart_bars_kpi" || lay === "charity_showcase") {
+      if (s.id === 20) {
+        const items20 = (s.details || []).map((d, i) => ({
+          badge: s.kpis && s.kpis[i] ? s.kpis[i].val : ("0" + (i + 1)),
+          title: d.heading || d.title,
+          body: d.text || d.desc
+        }));
+        return renderArchRadialHub(s, idx, total, photos, items20);
+      }
+      if (s.id === 39) {
+        const items39 = (s.details || []).map((d, i) => ({
+          badge: s.kpis && s.kpis[i] ? s.kpis[i].val : ("0" + (i + 1)),
+          title: d.heading || d.title,
+          body: d.text || d.desc
+        }));
+        return renderArchPanoramicBento(s, idx, total, photos, items39);
+      }
+      return renderArchEnterpriseShowroom(s, idx, total, photos);
+    }
+    if (lay === "three_columns" || lay === "ecosystem_architecture") {
+      const cols = (s.columns || s.pillars || []).map((c, i) => ({
+        num: c.num || c.code || ("0" + (i + 1)),
+        tag: c.tag || c.code || "",
+        title: c.title || c.name,
+        subtitle: c.subtitle || "",
+        items: c.items || c.entities || (c.desc ? [c.desc] : [])
+      }));
+      return renderArchThreePillars(s, idx, total, photos, cols);
+    }
+    if (lay === "chapter_cover" || lay === "forbes_trajectory" || lay === "staircase_decisions") {
+      const steps = (s.milestones || s.steps || []).map((m) => ({
+        year: m.year || m.val || m.step,
+        title: m.event || m.title || m.val,
+        body: m.desc || m.context || (m.action ? (m.action + " → " + (m.outcome || "")) : "")
+      }));
+      return renderArchTimeline(s, idx, total, photos, steps);
+    }
+    if (lay === "agenda_grid" || lay === "five_factors_diagram" || lay === "pillar_section_intro") {
+      const items = (s.chapters || s.factors || s.components || []).map((c) => ({
+        badge: c.num || c.code || "",
+        title: c.title || c.name,
+        body: c.desc || (c.theory ? (c.theory + " · Thực tiễn: " + (c.pnv || "")) : "")
+      }));
+      if (idx % 2 === 1) {
+        return renderArchRadialHub(s, idx, total, photos, items);
+      }
+      return renderArchHoneycombStory(s, idx, total, photos, items);
+    }
+    if (lay === "bio_overview" || lay === "six_core_values" || lay === "two_cards_image") {
+      const items = (s.facts || s.values || s.cards || []).map((f) => ({
+        badge: f.code || f.tag || f.label || "",
+        title: f.val || f.name || f.title,
+        body: f.detail || f.desc || (Array.isArray(f.bullets) ? f.bullets.join(" · ") : "")
+      }));
+      if (s.id === 8) {
+        return renderArchHoneycombStory(s, idx, total, photos, items);
+      }
+      return renderArchPanoramicBento(s, idx, total, photos, items);
+    }
+    if (lay === "photo_story") {
+      const items = (s.bullets || []).map((b, i) => ({
+        badge: "0" + (i + 1),
+        title: b.heading,
+        body: b.text
+      }));
+      if (idx % 2 === 0) {
+        return renderArchHoneycombStory(s, idx, total, photos, items);
+      }
+      return renderArchRadialHub(s, idx, total, photos, items);
+    }
+
+    return renderArchHeroPoster(s, idx, total, photos);
+  }
+
+  // =========================================================================
+  // STATE & DOM REFERENCES (Default = Full 45 Slides!)
+  // =========================================================================
+  let activeDeck = RAW_SLIDES.slice();
+  let currentIndex = 0;
+  let isTransitioning = false;
+  let autoplayTimer = null;
+
+  const stageViewport = document.getElementById("stage-viewport");
+  const slideStage = document.getElementById("slide-stage");
+  const slideActive = document.getElementById("slide-active");
+  const slideOutgoing = document.getElementById("slide-outgoing");
+  const progressFill = document.getElementById("stage-progress-fill");
+
+  const pGlow = document.getElementById("p-glow");
+  const pRings = document.getElementById("p-rings");
+  const pSilhouette = document.getElementById("p-silhouette");
+  const pSilkTop = document.getElementById("p-silk-top");
+  const pSilkBottom = document.getElementById("p-silk-bottom");
+  const pFlashBeam = document.getElementById("p-flash-beam");
+
+  const btnPrev = document.getElementById("btn-prev");
+  const btnNext = document.getElementById("btn-next");
+  const btnToc = document.getElementById("btn-toc");
+  const btnFullscreen = document.getElementById("btn-fullscreen");
+  const btnAutoplay = document.getElementById("btn-autoplay");
+  const autoplayLabel = document.getElementById("autoplay-label");
+  const selDeckMode = document.getElementById("sel-deck-mode");
+  const slideCounter = document.getElementById("slide-counter");
+  const slideScrubber = document.getElementById("slide-scrubber");
+  const sectionIndicator = document.getElementById("section-indicator");
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxTitle = document.getElementById("lightbox-title");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  const tocModal = document.getElementById("toc-modal");
+  const tocClose = document.getElementById("toc-close");
+  const tocGrid = document.getElementById("toc-grid");
+  const tocFilters = document.getElementById("toc-filters");
+
+  function fitStageToViewport() {
+    if (!stageViewport || !slideStage) return;
+    const rect = stageViewport.getBoundingClientRect();
+    const availW = Math.max(300, rect.width - 4);
+    const availH = Math.max(180, rect.height - 4);
+    const scale = Math.min(availW / 1280, availH / 720);
+    slideStage.style.transform = `scale(${scale.toFixed(4)})`;
+  }
+
+  window.addEventListener("resize", fitStageToViewport);
+
+  function updateBackgroundStage(idx, triggerBeam) {
+    const angle = idx * 42;
+    const gx = Math.cos(idx * 1.1) * 240;
+    const gy = Math.sin(idx * 0.9) * 65;
+
+    if (pGlow) {
+      pGlow.style.transform = `translate3d(${gx.toFixed(0)}px, ${gy.toFixed(0)}px, 0) scale(${1.05 + (idx % 3) * 0.1})`;
+    }
+    if (pRings) {
+      pRings.style.transform = `translate3d(${(-gx * 0.8).toFixed(0)}px, ${(gy * 0.6).toFixed(0)}px, 0) rotate(${angle}deg) scale(${0.92 + (idx % 4) * 0.08})`;
+    }
+    if (pSilhouette) {
+      pSilhouette.style.transform = `translate3d(${((idx % 5) - 2) * 20}px, ${((idx % 3) - 1) * 10}px, 0) scale(${1.02 + (idx % 3) * 0.025})`;
+    }
+    if (pSilkTop) {
+      pSilkTop.style.transform = `translate3d(${((idx % 4) - 2) * 18}px, ${((idx % 3) - 1) * 10}px, 0) rotate(${((idx % 3) - 1) * 2.5}deg)`;
+    }
+    if (pSilkBottom) {
+      pSilkBottom.style.transform = `translate3d(${((idx % 4) - 2) * -18}px, ${((idx % 3) - 1) * -10}px, 0) rotate(${((idx % 3) - 1) * -2.5}deg)`;
+    }
+    if (triggerBeam && pFlashBeam) {
+      pFlashBeam.classList.remove("sweeping");
+      void pFlashBeam.offsetWidth;
+      pFlashBeam.classList.add("sweeping");
+    }
+  }
+
+  function runFlipMorph(outLayer, inLayer) {
+    if (!outLayer || !inLayer || !slideStage) return;
+
+    const stageRect = slideStage.getBoundingClientRect();
+    const scale = stageRect.width / 1280 || 1;
+
+    const outMap = new Map();
+    outLayer.querySelectorAll("[data-morph]").forEach((el) => {
+      const key = el.getAttribute("data-morph");
+      if (key) outMap.set(key, el.getBoundingClientRect());
+    });
+
+    inLayer.querySelectorAll("[data-morph]").forEach((el) => {
+      const key = el.getAttribute("data-morph");
+      if (!key || !outMap.has(key)) return;
+
+      const first = outMap.get(key);
+      const last = el.getBoundingClientRect();
+
+      const dx = (first.left - last.left) / scale;
+      const dy = (first.top - last.top) / scale;
+      const sw = Math.max(0.35, Math.min(2.2, first.width / Math.max(1, last.width)));
+      const sh = Math.max(0.35, Math.min(2.2, first.height / Math.max(1, last.height)));
+
+      if (Math.abs(dx) < 3 && Math.abs(dy) < 3 && Math.abs(sw - 1) < 0.04) return;
+
+      const isPhoto = key.startsWith("morph-photo");
+      const rotZ = isPhoto ? ((dx > 0 ? 6 : -6)) : 0;
+
+      el.animate(
+        [
+          {
+            transformOrigin: "top left",
+            transform: `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, ${isPhoto ? 90 : 40}px) scale(${sw.toFixed(3)}, ${sh.toFixed(3)}) rotateZ(${rotZ}deg)`,
+            filter: isPhoto ? "brightness(1.22) drop-shadow(0 20px 35px rgba(250,204,21,0.55))" : "brightness(1.18)"
+          },
+          {
+            transformOrigin: "top left",
+            transform: "translate3d(0, 0, 0) scale(1, 1) rotateZ(0deg)",
+            filter: "brightness(1)"
+          }
+        ],
+        {
+          duration: 900,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "both"
+        }
+      );
+    });
+  }
+
+  function clearCamClasses() {
+    for (let i = 0; i < 10; i++) {
+      slideOutgoing.classList.remove(`cam-out-${i}`);
+      slideActive.classList.remove(`cam-in-${i}`);
+    }
+  }
+
+  function goToSlide(targetIdx, immediate) {
+    const total = activeDeck.length;
+    if (!total) return;
+
+    let nextIdx = targetIdx;
+    if (nextIdx >= total) nextIdx = 0;
+    if (nextIdx < 0) nextIdx = total - 1;
+
+    if (!immediate && (nextIdx === currentIndex || isTransitioning)) return;
+
+    // Pause any playing video before leaving slide
+    slideActive.querySelectorAll("video").forEach((v) => {
+      try { v.pause(); } catch (_) {}
+    });
+
+    const slide = activeDeck[nextIdx];
+    const html = renderSlideMaster(slide, nextIdx, total);
+
+    if (immediate) {
+      currentIndex = nextIdx;
+      slideActive.innerHTML = html;
+      slideOutgoing.innerHTML = "";
+      updateBackgroundStage(nextIdx, false);
+      updateControlsUI();
+      bindSlideInteractions(slideActive);
+      return;
+    }
+
+    isTransitioning = true;
+    currentIndex = nextIdx;
+
+    clearCamClasses();
+    slideOutgoing.innerHTML = slideActive.innerHTML;
+    slideActive.innerHTML = html;
+
+    const camMode = nextIdx % 10;
+    slideOutgoing.classList.add(`cam-out-${camMode}`);
+    slideActive.classList.add(`cam-in-${camMode}`);
+
+    updateBackgroundStage(nextIdx, true);
+    runFlipMorph(slideOutgoing, slideActive);
+
+    updateControlsUI();
+    bindSlideInteractions(slideActive);
+
+    setTimeout(() => {
+      slideOutgoing.innerHTML = "";
+      clearCamClasses();
+      isTransitioning = false;
+    }, 930);
+  }
+
+  function updateControlsUI() {
+    const total = activeDeck.length;
+    const slide = activeDeck[currentIndex];
+    if (slideCounter) slideCounter.textContent = `${pad2(currentIndex + 1)} / ${pad2(total)}`;
+    if (slideScrubber) {
+      slideScrubber.max = String(total);
+      slideScrubber.value = String(currentIndex + 1);
+    }
+    if (sectionIndicator && slide) {
+      sectionIndicator.textContent = slide.section || `Slide ${pad2(currentIndex + 1)} / ${pad2(total)}`;
+    }
+    if (progressFill) {
+      const pct = ((currentIndex + 1) / total) * 100;
+      progressFill.style.width = `${pct.toFixed(1)}%`;
+    }
+  }
+
+  function openLightbox(src, title, caption) {
+    if (!lightbox || !src) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = title || "Phạm Nhật Vượng & Hệ sinh thái Vingroup";
+    lightboxTitle.textContent = title || "Phạm Nhật Vượng & Hệ sinh thái Vingroup";
+    lightboxCaption.textContent = caption || "";
+    lightbox.hidden = false;
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    lightboxImg.src = "";
+  }
+
+  function bindSlideInteractions(container) {
+    if (!container) return;
+    container.querySelectorAll(".js-zoom-trigger").forEach((el) => {
+      el.addEventListener("click", () => {
+        openLightbox(
+          el.getAttribute("data-src"),
+          el.getAttribute("data-title"),
+          el.getAttribute("data-caption")
+        );
+      });
+    });
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  function setDeckMode(mode) {
+    if (mode === "tiktok14") {
+      activeDeck = RAW_SLIDES.filter((s) => TIKTOK_14_IDS.includes(s.id));
+    } else {
+      activeDeck = RAW_SLIDES.slice();
+    }
+    goToSlide(0, true);
+    renderTocGrid("all");
+  }
+
+  if (selDeckMode) {
+    selDeckMode.addEventListener("change", (e) => {
+      setDeckMode(e.target.value);
+    });
+  }
+
+  function toggleAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+      if (autoplayLabel) autoplayLabel.textContent = "▶ Tự chạy (4.5s)";
+    } else {
+      if (autoplayLabel) autoplayLabel.textContent = "⏸ Đang chạy...";
+      autoplayTimer = setInterval(() => {
+        goToSlide(currentIndex + 1, false);
+      }, 4500);
+    }
+  }
+
+  if (btnAutoplay) btnAutoplay.addEventListener("click", toggleAutoplay);
+  if (btnPrev) btnPrev.addEventListener("click", () => goToSlide(currentIndex - 1, false));
+  if (btnNext) btnNext.addEventListener("click", () => goToSlide(currentIndex + 1, false));
+
+  if (slideScrubber) {
+    slideScrubber.addEventListener("input", (e) => {
+      const idx = parseInt(e.target.value, 10) - 1;
+      goToSlide(idx, false);
+    });
+  }
+
+  function renderTocGrid(filterPart) {
+    if (!tocGrid) return;
+    const items = activeDeck.filter((s) => {
+      if (filterPart === "all") return true;
+      if (filterPart === "video") return s.layout === "video_slide";
+      return String(s.part) === String(filterPart);
+    });
+
+    tocGrid.innerHTML = items.map((s) => {
+      const realIdx = activeDeck.indexOf(s);
+      const isAct = realIdx === currentIndex ? "active" : "";
+      const isVid = s.layout === "video_slide" ? "🎬 " : "";
       return `
-        <button type="button"
-                class="orbit-node ${i === 0 ? "active" : ""}"
-                style="left:${x}px;top:${y}px;"
-                data-spoke-idx="${i}">
-          <span style="font-size:1.15rem;line-height:1.1;">${esc(sp.icon)}</span>
-          <span>${esc(sp.short)}</span>
+        <button type="button" class="toc-item ${isAct}" data-idx="${realIdx}">
+          <div class="toc-item-num">SLIDE ${pad2(realIdx + 1)} · ${esc(s.section || "")}</div>
+          <div class="toc-item-title">${isVid}${esc(s.title)}</div>
         </button>
       `;
     }).join("");
 
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="wheel-stage reveal d2" data-wheel-stage>
-          <div class="orbit-ring">
-            <div class="orbit-center">
-              <span style="font-family:var(--font-serif);font-size:1.08rem;font-weight:800;color:#FBBF24;">${esc(s.hubLabel)}</span>
-              <span style="font-size:0.74rem;color:#FDE68A;margin-top:4px;">${esc(s.hubSub)}</span>
-            </div>
-            ${nodesHtml}
-          </div>
-
-          <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:20px;align-items:center;">
-            <div class="glass-card" style="border-top:4px solid #FBBF24;min-height:200px;display:flex;flex-direction:column;justify-content:center;">
-              <div class="card-kicker" data-wheel-kicker>TRỤ CỘT HỆ SINH THÁI (1/4)</div>
-              <h3 class="card-title" data-wheel-title style="color:#FEF3C7;font-size:1.35rem;">${esc(first.icon)} ${esc(first.title)}</h3>
-              <p data-wheel-desc style="font-size:1.05rem;color:#FFFFFF;line-height:1.6;">${esc(first.desc)}</p>
-            </div>
-            <div>
-              ${renderPolaroid(s, {
-                image: s.image,
-                caption: s.imageCaption || "Landmark 81 — Biểu tượng Vingroup",
-                tilt: 2
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
+    tocGrid.querySelectorAll(".toc-item").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-idx"), 10);
+        tocModal.hidden = true;
+        goToSlide(idx, false);
+      });
+    });
   }
 
-  function renderBarChart(s) {
-    // Verified facts:
-    // Cars 2024: 97.399 | 2025: 196.919 (+102%)
-    // 2-wheelers: 2024 baseline (1x = 406498 / 5.73 visually scaled for +473% ratio; labeled cleanly as "Nền 2024" without inventing an unprinted integer!) -> 2025: 406.498 (+473%)
-    const maxVal = 440000;
-    const hCar24 = Math.round((97399 / maxVal) * 185);
-    const hCar25 = Math.round((196919 / maxVal) * 185);
-    const hBike24 = Math.round(((406498 / 5.73) / maxVal) * 185);
-    const hBike25 = Math.round((406498 / maxVal) * 185);
-
-    const svgChart = `
-      <svg class="svg-chart" viewBox="0 0 560 280" role="img" aria-label="Biểu đồ bàn giao VinFast 2024 và 2025">
-        <defs>
-          <linearGradient id="bar24" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#C4A4A8"/>
-            <stop offset="100%" stop-color="#784E55"/>
-          </linearGradient>
-          <linearGradient id="bar25Car" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#FDE047"/>
-            <stop offset="100%" stop-color="#D97706"/>
-          </linearGradient>
-          <linearGradient id="bar25Bike" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#F87171"/>
-            <stop offset="100%" stop-color="#DC2626"/>
-          </linearGradient>
-        </defs>
-        <line x1="46" y1="228" x2="532" y2="228" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
-        <line x1="46" y1="138" x2="532" y2="138" stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 4"/>
-        <line x1="46" y1="48" x2="532" y2="48" stroke="rgba(255,255,255,0.12)" stroke-dasharray="4 4"/>
-
-        <!-- Legend -->
-        <rect x="278" y="14" width="12" height="12" rx="3" fill="url(#bar24)"/>
-        <text x="296" y="24" font-size="15" font-weight="700" fill="#FDE68A">Năm 2024</text>
-        <rect x="372" y="14" width="12" height="12" rx="3" fill="url(#bar25Car)"/>
-        <text x="390" y="24" font-size="15" font-weight="700" fill="#FEF3C7">2025 (+102% / +473%)</text>
-
-        <!-- Group 1: Cars -->
-        <rect class="anim-bar" x="92" y="${228 - hCar24}" width="64" height="${hCar24}" rx="6" fill="url(#bar24)"/>
-        <text x="124" y="${220 - hCar24}" text-anchor="middle" font-size="14" font-weight="700" fill="#F5D0D6">97.399</text>
-
-        <rect class="anim-bar b2" x="172" y="${228 - hCar25}" width="64" height="${hCar25}" rx="6" fill="url(#bar25Car)"/>
-        <text x="204" y="${220 - hCar25}" text-anchor="middle" font-size="15" font-weight="800" fill="#FBBF24">196.919 (+102%)</text>
-        <text x="164" y="252" text-anchor="middle" font-size="15" font-weight="800" fill="#FFFBEB">Ô tô điện VinFast</text>
-
-        <!-- Group 2: E-bikes -->
-        <rect class="anim-bar b3" x="322" y="${228 - hBike24}" width="64" height="${hBike24}" rx="6" fill="url(#bar24)"/>
-        <text x="354" y="${220 - hBike24}" text-anchor="middle" font-size="15" font-weight="700" fill="#F5D0D6">Nền 2024</text>
-
-        <rect class="anim-bar b4" x="402" y="${228 - hBike25}" width="64" height="${hBike25}" rx="6" fill="url(#bar25Bike)"/>
-        <text x="434" y="${220 - hBike25}" text-anchor="middle" font-size="15" font-weight="800" fill="#FCA5A5">406.498 (+473%)</text>
-        <text x="394" y="252" text-anchor="middle" font-size="15" font-weight="800" fill="#FFFBEB">Xe máy &amp; Xe đạp điện</text>
-      </svg>
-    `;
-
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-3 reveal d2" style="margin-bottom:18px;">
-          ${(s.kpis || []).map((k) => {
-            const accent = safeAccentColor(k.color);
-            return `
-            <div class="edit-card" style="border-top-color:${esc(accent)}">
-              <div class="kpi-big" data-rollup="${esc(k.num)}" style="color:${esc(accent)}">${esc(k.num)}</div>
-              <div style="font-weight:700;color:#FFFBEB;margin-top:4px;">${esc(k.unit)}</div>
-              <div style="font-size:0.86rem;font-weight:700;color:#FCA5A5;margin-top:4px;">${esc(k.delta)}</div>
-            </div>
-          `;
-          }).join("")}
-        </div>
-        <div class="grid-asymmetric-r reveal d3">
-          <div class="edit-card gold">
-            ${svgChart}
-          </div>
-          <div>
-            ${renderGalleryStrip(s.gallery, s.title)}
-          </div>
-        </div>
-      </div>
-    `;
+  if (btnToc) {
+    btnToc.addEventListener("click", () => {
+      renderTocGrid("all");
+      tocModal.hidden = false;
+    });
+  }
+  if (tocClose) tocClose.addEventListener("click", () => { tocModal.hidden = true; });
+  if (tocModal) {
+    tocModal.addEventListener("click", (e) => {
+      if (e.target === tocModal) tocModal.hidden = true;
+    });
+  }
+  if (tocFilters) {
+    tocFilters.querySelectorAll(".toc-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        tocFilters.querySelectorAll(".toc-chip").forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        renderTocGrid(chip.getAttribute("data-part"));
+      });
+    });
   }
 
-  function renderAreaChart(s) {
-    const ms = s.milestones || [];
-    const coords = [
-      { x: 75, y: 218 },
-      { x: 225, y: 118 },
-      { x: 375, y: 95 },
-      { x: 525, y: 42 }
-    ];
-    const polyPoints = coords.map((c) => `${c.x},${c.y}`).join(" ");
-    const areaPath = `M ${coords[0].x},235 L ${coords.map((c) => `${c.x},${c.y}`).join(" L ")} L ${coords[coords.length - 1].x},235 Z`;
-
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-asymmetric-r reveal d2">
-          <div class="glass-card" style="padding:18px;">
-            <svg class="svg-chart" viewBox="0 0 600 280" role="img" aria-label="Biểu đồ tài sản ròng Phạm Nhật Vượng Forbes 2013-2026">
-              <defs>
-                <linearGradient id="forbesArea" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.52"/>
-                  <stop offset="100%" stop-color="#DC2626" stop-opacity="0.06"/>
-                </linearGradient>
-              </defs>
-              <line x1="40" y1="235" x2="565" y2="235" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-              <path d="${areaPath}" fill="url(#forbesArea)"/>
-              <polyline class="anim-line" points="${polyPoints}" fill="none" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              ${ms.map((m, i) => {
-                const c = coords[i];
-                return `
-                  <circle class="beacon-ring" cx="${c.x}" cy="${c.y}" r="9" fill="none" stroke="#FBBF24" stroke-width="2" style="animation-delay:${i * 0.4}s"/>
-                  <circle cx="${c.x}" cy="${c.y}" r="8" fill="#3A0810" stroke="#FBBF24" stroke-width="3.5"/>
-                  <text x="${c.x}" y="${c.y - 16}" text-anchor="middle" font-size="15" font-weight="800" fill="#FEF3C7">${esc(m.display)}</text>
-                  <text x="${c.x}" y="258" text-anchor="middle" font-size="14" font-weight="700" fill="#FCA5A5">${esc(m.year)}</text>
-                `;
-              }).join("")}
-            </svg>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            ${ms.map((m) => `
-              <div class="glass-card" style="padding:12px 16px;border-left:4px solid #FBBF24;">
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <span style="font-weight:800;color:#FBBF24;">${esc(m.year)}</span>
-                  <span style="font-family:var(--font-serif);font-size:1.15rem;font-weight:800;color:#FFFFFF;">${esc(m.display)}</span>
-                </div>
-                <div style="font-size:0.95rem;color:#FEF3C7;margin-top:4px;">${esc(m.rank)}</div>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-      </div>
-    `;
+  if (btnFullscreen) {
+    btnFullscreen.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    });
   }
 
-  function renderPillarIntro(s) {
-    return `
-      <div class="slide-inner">
-        <div class="grid-asymmetric-l">
-          <div class="reveal d1">
-            <span class="eyebrow">${esc(s.kicker)}</span>
-            <div class="big-chapter-badge" style="color:${esc(safeAccentColor(s.accentColor))};margin:8px 0;">${esc(s.code)}</div>
-            <h2 class="slide-title-serif">${esc(s.title)}</h2>
-            <div class="gold-rule"></div>
-            <p class="slide-lead">${esc(s.lead)}</p>
-            <div class="tag-cloud">
-              ${(s.tags || []).map((t) => `<span class="tag-pill">${esc(t)}</span>`).join("")}
-            </div>
-          </div>
-          <div class="reveal d2">
-            ${renderPolaroid(s, {
-              image: s.image,
-              caption: `Trụ cột ${s.code} · ${s.title}`,
-              tilt: 2
-            })}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderGrid4Theory(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-2 reveal d2">
-          ${(s.cards || []).map((c, idx) => `
-            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"}">
-              <div class="card-kicker">THÀNH TỐ ${esc(c.num)}</div>
-              <h3 class="card-title" style="color:#FEF3C7;">${esc(c.title)}</h3>
-              <p style="font-size:1.04rem;color:#FFFFFF;line-height:1.58;">${esc(c.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
-
-  function renderGrid5Qualities(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-5 reveal d2">
-          ${(s.items || []).map((it, idx) => `
-            <div class="glass-card" style="border-top:4px solid ${idx % 2 === 0 ? "#FBBF24" : "#EF4444"};display:flex;flex-direction:column;gap:8px;">
-              <div style="font-family:var(--font-serif);font-size:1.75rem;font-weight:800;color:#FBBF24;">${esc(it.idx)}</div>
-              <h3 class="card-title" style="font-size:1.05rem;color:#FFFFFF;margin:0;">${esc(it.title)}</h3>
-              <p style="font-size:0.98rem;color:#FEF3C7;line-height:1.52;">${esc(it.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-    `;
-  }
-
-  function renderStaircaseBets(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="staircase-row reveal d2">
-          ${(s.steps || []).map((st, idx) => `
-            <div class="edit-card stair-step step-${idx}" style="border-top-color:${esc(safeAccentColor(st.color))}">
-              <div>
-                ${st.img ? `
-                  <img class="stair-photo"
-                       src="${esc(st.img)}"
-                       alt="${esc(st.title)}"
-                       loading="lazy"
-                       data-lightbox="true"
-                       data-src="${esc(st.img)}"
-                       data-title="${esc(st.title)}"
-                       data-caption="${esc(st.year)} · ${esc(st.level)}"
-                       data-credit="" />
-                ` : ""}
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-                  <span class="card-kicker">${esc(st.year)}</span>
-                  <span class="tag-pill">${esc(st.level)}</span>
-                </div>
-                <h3 class="card-title" style="margin-top:8px;">${esc(st.title)}</h3>
-              </div>
-              <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(st.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-    `;
-  }
-
-  function renderStatShowcase(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="edit-card gold reveal d2" style="margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-          <div>
-            <div class="card-kicker">QUY MÔ ĐÓNG GÓP QUỸ THIỆN TÂM</div>
-            <div class="kpi-big" data-rollup="${esc(s.heroStat)}" style="color:#FBBF24;">${esc(s.heroStat)}</div>
-          </div>
-          <p style="max-width:52ch;font-size:1.06rem;font-weight:600;color:#FEF3C7;">${esc(s.heroSub)}</p>
-        </div>
-        <div class="grid-4 reveal d3">
-          ${(s.cards || []).map((c, idx) => `
-            <div class="edit-card ${idx % 2 === 1 ? "teal" : ""}">
-              <h3 class="card-title" style="font-size:1.05rem;">${esc(c.title)}</h3>
-              <p style="font-size:1rem;color:#FFFFFF;line-height:1.52;">${esc(c.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
-
-  function renderSynthesisFactors(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-3 reveal d2">
-          <div class="edit-card" style="background:linear-gradient(145deg,#4A0D18,#7F1D1D);color:#FFFFFF;border-top-color:#FBBF24;display:flex;flex-direction:column;justify-content:center;">
-            <span class="card-kicker" style="color:#FBBF24;">TỔNG HỢP 5 NHÂN TỐ</span>
-            <h3 class="card-title" style="color:#FFFFFF;font-size:1.45rem;">${esc(s.centerLabel)}</h3>
-            <p style="color:#FDE68A;font-size:0.94rem;">${esc(s.centerSub)}</p>
-          </div>
-          ${(s.factors || []).map((f, idx) => `
-            <div class="edit-card ${idx % 2 === 0 ? "gold" : "teal"}">
-              <div class="card-kicker">NHÂN TỐ</div>
-              <h3 class="card-title">${esc(f.name)}</h3>
-              <p style="font-size:1.02rem;color:#FFFFFF;line-height:1.55;">${esc(f.desc)}</p>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-    `;
-  }
-
-  function renderRadarChart(s) {
-    const axes = s.axes || [];
-    const n = axes.length || 5;
-    const cx = 230;
-    const cy = 172;
-    const maxR = 100;
-
-    function pt(angleDeg, ratio) {
-      const rad = ((angleDeg - 90) * Math.PI) / 180;
-      return [cx + maxR * ratio * Math.cos(rad), cy + maxR * ratio * Math.sin(rad)];
+  window.addEventListener("keydown", (e) => {
+    if (!lightbox.hidden) {
+      if (e.key === "Escape") closeLightbox();
+      return;
     }
-
-    const rings = [0.25, 0.5, 0.75, 1.0].map((r) => {
-      const pts = Array.from({ length: n }, (_, i) => pt((360 / n) * i, r).join(",")).join(" ");
-      return `<polygon points="${pts}" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>`;
-    }).join("");
-
-    const spokesSvg = Array.from({ length: n }, (_, i) => {
-      const [x, y] = pt((360 / n) * i, 1);
-      return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>`;
-    }).join("");
-
-    const dataPoints = axes.map((ax, i) => pt((360 / n) * i, Math.min(ax.score, 10) / 10));
-    const polyPts = dataPoints.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
-
-    const labelsSvg = axes.map((ax, i) => {
-      const deg = (360 / n) * i;
-      const [lx, ly] = pt(deg, 1.18);
-      const [dx, dy] = dataPoints[i];
-      const anchor = Math.abs(lx - cx) < 12 ? "middle" : (lx > cx ? "start" : "end");
-      const yAdj = ly < cy - 50 ? ly - 6 : (ly > cy + 50 ? ly + 12 : ly + 4);
-      return `
-        <circle class="beacon-ring" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="6" fill="none" stroke="#FBBF24" stroke-width="1.8" style="animation-delay:${i * 0.35}s"/>
-        <circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.5" fill="#FBBF24" stroke="#140407" stroke-width="2"/>
-        <text x="${lx.toFixed(1)}" y="${yAdj.toFixed(1)}" text-anchor="${anchor}" font-size="13.5" font-weight="700" fill="#FEF3C7">${esc(ax.label)} (${ax.score})</text>
-      `;
-    }).join("");
-
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="grid-asymmetric-l reveal d2">
-          <div class="glass-card" style="padding:14px;">
-            <svg class="svg-chart" viewBox="0 0 460 330" role="img" aria-label="Biểu đồ Radar minh họa 5 chiều văn hóa doanh nhân">
-              ${rings}
-              ${spokesSvg}
-              <polygon class="anim-radar" points="${polyPts}" fill="rgba(251, 191, 36, 0.28)" stroke="#FBBF24" stroke-width="2.8"/>
-              ${labelsSvg}
-            </svg>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            ${axes.map((ax) => `
-              <div class="glass-card" style="padding:12px 16px;border-left:4px solid #EF4444;">
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                  <strong style="color:#FEF3C7;">${esc(ax.label)}</strong>
-                  <span style="font-family:var(--font-serif);font-weight:800;color:#FBBF24;">${ax.score} / 10</span>
-                </div>
-                <div style="font-size:0.98rem;color:#FEF3C7;margin-top:3px;">${esc(ax.note)}</div>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderLessonsTable(s) {
-    return `
-      <div class="slide-inner">
-        ${renderHeader(s)}
-        <div class="reveal d2" style="overflow-x:auto;">
-          <table class="editorial-table">
-            <thead>
-              <tr>${(s.headers || []).map((h) => `<th>${esc(h)}</th>`).join("")}</tr>
-            </thead>
-            <tbody>
-              ${(s.rows || []).map((row) => `
-                <tr>${row.map((cell, idx) => `
-                  <td style="${idx === 0 ? "font-weight:800;color:#FEF3C7;white-space:nowrap;" : ""}">${esc(cell)}</td>
-                `).join("")}</tr>
-              `).join("")}
-            </tbody>
-          </table>
-        </div>
-        ${s.challenge ? `<div class="bridge-callout reveal d3">🎯 ${esc(s.challenge)}</div>` : ""}
-        ${renderGalleryStrip(s.gallery, s.title)}
-      </div>
-    `;
-  }
-
-  function renderConclusionHub(s) {
-    return `
-      <div class="cover-backdrop">
-        <img src="${esc(s.image)}" alt="Tương lai doanh nhân Việt Nam" style="opacity:0.35;" />
-      </div>
-      <div class="cover-scrim"></div>
-      <div class="slide-inner">
-        <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:280px;">
-            <div>
-              <span class="eyebrow">${esc(s.kicker)}</span>
-              <h2 class="slide-title-serif"><span class="gold-metallic-text">${esc(s.title)}</span></h2>
-            </div>
-            <p class="slide-lead">${esc(s.lead)}</p>
-          </div>
-          ${s.flagEmblem ? `
-            <div style="flex-shrink:0;text-align:center;">
-              <img class="waving-flag flag-hero" src="${esc(s.flagEmblem)}" alt="Quốc kỳ Việt Nam" />
-            </div>
-          ` : ""}
-        </div>
-
-        <div class="reveal d2" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
-          ${(s.seals || []).map((seal, i) => `
-            <span class="stamp-seal ${i % 2 === 1 ? "crimson" : ""}" style="transform:none;">${esc(seal)}</span>
-          `).join("")}
-        </div>
-
-        <div class="reveal d3">
-          <div style="font-size:0.82rem;font-weight:700;color:#FBBF24;letter-spacing:0.06em;text-transform:uppercase;">
-            5 Video Tư liệu Nổi bật
-          </div>
-          <div class="conclusion-video-grid">
-            ${(s.videos || []).map((v) => `
-              <div class="conclusion-vid-card">
-                <div>
-                  <div style="font-size:0.8rem;font-weight:800;color:#FBBF24;">VIDEO 0${v.n} · ${esc(v.dur)}</div>
-                  <div style="font-size:0.98rem;font-weight:700;margin-top:6px;line-height:1.38;color:#FFFFFF;">${esc(v.title)}</div>
-                  <div style="font-size:0.85rem;color:#FDE68A;margin-top:4px;">${esc(v.ch)}</div>
-                </div>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;">
-                  <button type="button" class="btn-gold" style="padding:6px 11px;font-size:0.84rem;" data-jump="${Number(v.slide)}">Màn ${pad2(v.slide)}</button>
-                  <a class="btn-outline-light" style="padding:5px 10px;font-size:0.82rem;" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">YT ↗</a>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-        </div>
-
-        <div class="reveal d4" style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
-          <div style="font-family:var(--font-serif);font-size:1.18rem;font-weight:700;color:#FDE68A;">${esc(s.closing)}</div>
-          <button type="button" class="btn-gold" data-jump="1">↺ Quay lại Màn 01</button>
-        </div>
-      </div>
-    `;
-  }
-
-  function renderSlideContent(s) {
-    let body = "";
-    switch (s.kind) {
-      case "cover": body = renderCover(s); break;
-      case "bio_profile": body = renderBioProfile(s); break;
-      case "brand_showcase_3d": body = renderBrandShowcase3d(s); break;
-      case "toc": body = renderToc(s); break;
-      case "utehy_facsimile": body = renderUtehyFacsimile(s); break;
-      case "contrast_split": body = renderContrastSplit(s); break;
-      case "strata": body = renderStrata(s); break;
-      case "trifold_cards": body = renderTrifoldCards(s); break;
-      case "pillar_hub": body = renderPillarHub(s); break;
-      case "matrix_table": body = renderMatrixTable(s); break;
-      case "chapter_divider": body = renderChapterDivider(s); break;
-      case "polaroid_story": body = renderPolaroidStory(s); break;
-      case "breathing_quote": body = renderBreathingQuote(s); break;
-      case "video_cinema": body = renderVideoCinema(s); break;
-      case "ecosystem_wheel": body = renderEcosystemWheel(s); break;
-      case "bar_chart": body = renderBarChart(s); break;
-      case "area_chart": body = renderAreaChart(s); break;
-      case "pillar_intro": body = renderPillarIntro(s); break;
-      case "grid4_theory": body = renderGrid4Theory(s); break;
-      case "grid5_qualities": body = renderGrid5Qualities(s); break;
-      case "staircase_bets": body = renderStaircaseBets(s); break;
-      case "stat_showcase": body = renderStatShowcase(s); break;
-      case "synthesis_factors": body = renderSynthesisFactors(s); break;
-      case "radar_chart": body = renderRadarChart(s); break;
-      case "lessons_table": body = renderLessonsTable(s); break;
-      case "conclusion_hub": body = renderConclusionHub(s); break;
-      default:
-        console.warn("Unknown slide kind:", s.kind);
-        body = `<div class="slide-inner">${renderHeader(s)}</div>`;
+    if (!tocModal.hidden) {
+      if (e.key === "Escape") tocModal.hidden = true;
+      return;
     }
-    return renderSlideBg(s) + renderCornerModel(s) + body;
-  }
-
-  // ---------- Build Slides & Right Rail ----------
-  function buildDeck() {
-    const slidesFrag = document.createDocumentFragment();
-    const railFrag = document.createDocumentFragment();
-
-    slidesData.forEach((s, idx) => {
-      const section = document.createElement("section");
-      section.id = `slide-${pad2(s.id)}`;
-      section.className = `slide theme-${s.theme || "dark"}${s.kind === "cover" ? " slide-cover" : ""}`;
-      section.dataset.index = String(idx);
-      section.dataset.slideId = String(s.id);
-      section.innerHTML = renderSlideContent(s);
-      slidesFrag.appendChild(section);
-
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "rail-dot";
-      if (s.kind === "video_cinema") dot.dataset.kind = "video";
-      dot.dataset.jump = String(s.id);
-      dot.dataset.tooltip = `Màn ${pad2(s.id)} · ${s.title}`;
-      dot.setAttribute("aria-label", `Đi tới Màn ${s.id}: ${s.title}`);
-      railFrag.appendChild(dot);
-    });
-
-    deckEl.appendChild(slidesFrag);
-    railEl.appendChild(railFrag);
-  }
-
-  // ---------- Active Slide State & Navigation ----------
-  function unloadAllInactiveVideos(activeIdx) {
-    const stages = deckEl.querySelectorAll("[data-video-stage]");
-    stages.forEach((stage) => {
-      const parentSlide = stage.closest(".slide");
-      const slideIdx = Number(parentSlide?.dataset.index ?? -1);
-      if (slideIdx !== activeIdx && stage.dataset.playing === "true") {
-        restoreVideoPoster(stage);
-      }
-    });
-  }
-
-  function restoreVideoPoster(stage) {
-    const thumb = stage.dataset.thumb;
-    const channel = stage.dataset.channel;
-    const duration = stage.dataset.duration;
-    const title = stage.dataset.title;
-    stage.dataset.playing = "false";
-    stage.innerHTML = `
-      <img class="poster" src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" />
-      <div class="video-yt-tag"><span>▶ YouTube</span><span>· ${esc(channel)}</span></div>
-      <div class="video-duration-pill">${esc(duration)}</div>
-      <div class="video-poster-overlay" data-play-video role="button" tabindex="0" aria-label="Phát video: ${esc(title)}">
-        <div class="play-orb">
-          <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>
-        </div>
-      </div>
-    `;
-  }
-
-  function activateVideoStage(stage) {
-    const videoId = stage.dataset.videoId;
-    const title = stage.dataset.title || "YouTube Video";
-    if (!videoId) return;
-    stage.dataset.playing = "true";
-    stage.innerHTML = `
-      <iframe
-        src="https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0"
-        title="${esc(title)}"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    `;
-  }
-
-  function runRollups(slideEl) {
-    if (!slideEl || slideEl.dataset.rolledUp === "true") return;
-    slideEl.dataset.rolledUp = "true";
-    const els = slideEl.querySelectorAll("[data-rollup]");
-    els.forEach((el) => {
-      const raw = el.dataset.rollup || "";
-      const match = raw.match(/^([\d.,]+)(.*)$/);
-      if (!match) return;
-      const numStr = match[1];
-      const suffix = match[2] || "";
-      const hasCommaDecimal = numStr.includes(",");
-      const cleanInt = Number(numStr.replace(/\./g, "").replace(",", "."));
-      if (!Number.isFinite(cleanInt) || cleanInt <= 0) return;
-
-      const decimals = hasCommaDecimal ? (numStr.split(",")[1]?.length || 0) : 0;
-      const start = performance.now();
-      const duration = 900;
-
-      function tick(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const cur = cleanInt * eased;
-        const formatted = decimals > 0
-          ? cur.toFixed(decimals).replace(".", ",")
-          : Math.round(cur).toLocaleString("vi-VN");
-        el.textContent = formatted + suffix;
-        if (t < 1) requestAnimationFrame(tick);
-        else el.textContent = raw;
-      }
-      requestAnimationFrame(tick);
-    });
-  }
-
-  let programmaticJumpUntil = 0;
-
-  function setActiveSlide(idx) {
-    if (idx < 0 || idx >= totalSlides) return;
-    deckEl.dataset.dir = idx >= currentIndex ? "forward" : "backward";
-    currentIndex = idx;
-    const slide = slidesData[idx];
-
-    counterEl.textContent = `${pad2(slide.id)} / ${pad2(totalSlides)}`;
-    sectionEl.textContent = slide.section || "";
-    progressBarEl.style.width = `${((idx + 1) / totalSlides) * 100}%`;
-
-    btnPrev.disabled = idx === 0;
-    btnNext.disabled = idx === totalSlides - 1;
-
-    const allSlides = deckEl.querySelectorAll(".slide");
-    allSlides.forEach((el, i) => el.classList.toggle("is-visible", i === idx));
-    runRollups(allSlides[idx]);
-
-    const dots = railEl.querySelectorAll(".rail-dot");
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === idx));
-
-    unloadAllInactiveVideos(idx);
-  }
-
-  function goToSlideByNumber(slideNumber) {
-    const idx = Math.max(0, Math.min(totalSlides - 1, Number(slideNumber) - 1));
-    const target = deckEl.children[idx];
-    if (!target) return;
-    const farJump = Math.abs(idx - currentIndex) > 2;
-    programmaticJumpUntil = performance.now() + (farJump ? 180 : 520);
-    setActiveSlide(idx);
-    target.scrollIntoView({ behavior: farJump ? "auto" : "smooth", block: "start" });
-  }
-
-  // ---------- Scroll / Intersection Observer ----------
-  function setupObserver() {
-    const visibleRatios = new Map();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const idx = Number(entry.target.dataset.index);
-          if (!Number.isNaN(idx)) {
-            if (entry.isIntersecting) {
-              visibleRatios.set(idx, entry.intersectionRect.height);
-            } else {
-              visibleRatios.delete(idx);
-            }
-          }
-        }
-        if (performance.now() < programmaticJumpUntil) return;
-        let bestIdx = -1;
-        let bestHeight = 0;
-        for (const [idx, h] of visibleRatios.entries()) {
-          if (h > bestHeight) {
-            bestHeight = h;
-            bestIdx = idx;
-          }
-        }
-        if (bestIdx >= 0) setActiveSlide(bestIdx);
-      },
-      { root: deckEl, threshold: [0.15, 0.35, 0.55, 0.75] }
-    );
-
-    Array.from(deckEl.children).forEach((el) => observer.observe(el));
-  }
-
-  // ---------- Lightbox & TOC Modals ----------
-  function openLightbox(triggerEl) {
-    lightboxImg.src = triggerEl.dataset.src || "";
-    lightboxImg.alt = triggerEl.dataset.caption || "";
-    lightboxTitle.textContent = triggerEl.dataset.title || "";
-    lightboxCaption.textContent = triggerEl.dataset.caption || "";
-    lightboxCredit.textContent = triggerEl.dataset.credit || "";
-    lightboxEl.hidden = false;
-  }
-
-  function closeLightbox() {
-    lightboxEl.hidden = true;
-    lightboxImg.src = "";
-  }
-
-  function renderTocGrid() {
-    const filtered = slidesData.filter((s) => {
-      if (currentTocFilter === "all") return true;
-      if (currentTocFilter === "video") return s.kind === "video_cinema";
-      return String(s.part) === String(currentTocFilter);
-    });
-
-    tocGridEl.innerHTML = filtered.map((s) => `
-      <button type="button"
-              class="toc-item ${s.id === slidesData[currentIndex].id ? "current" : ""}"
-              data-toc-jump="${s.id}">
-        <div class="toc-item-num">MÀN ${pad2(s.id)} ${s.kind === "video_cinema" ? "· ▶ VIDEO" : ""}</div>
-        <div class="toc-item-title">${esc(s.title)}</div>
-      </button>
-    `).join("");
-  }
-
-  function openTocModal() {
-    renderTocGrid();
-    tocModalEl.hidden = false;
-  }
-
-  function closeTocModal() {
-    tocModalEl.hidden = true;
-  }
-
-  function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen?.().catch(() => {});
-    } else {
-      document.exitFullscreen?.().catch(() => {});
+    if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " " || e.key === "PageDown") {
+      e.preventDefault();
+      goToSlide(currentIndex + 1, false);
+    } else if (e.key === "ArrowLeft" || e.key === "ArrowUp" || e.key === "PageUp") {
+      e.preventDefault();
+      goToSlide(currentIndex - 1, false);
+    } else if (e.key === "g" || e.key === "G") {
+      e.preventDefault();
+      renderTocGrid("all");
+      tocModal.hidden = !tocModal.hidden;
+    } else if (e.key === "f" || e.key === "F") {
+      e.preventDefault();
+      btnFullscreen.click();
     }
-  }
+  });
 
-  // ---------- Interactive Delegated Events ----------
-  function bindEvents() {
-    btnPrev.addEventListener("click", () => goToSlideByNumber(currentIndex));
-    btnNext.addEventListener("click", () => goToSlideByNumber(currentIndex + 2));
-    btnToc.addEventListener("click", () => (tocModalEl.hidden ? openTocModal() : closeTocModal()));
-    btnFullscreen.addEventListener("click", toggleFullscreen);
-
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightboxEl.addEventListener("click", (e) => {
-      if (e.target === lightboxEl) closeLightbox();
-    });
-
-    tocClose.addEventListener("click", closeTocModal);
-    tocModalEl.addEventListener("click", (e) => {
-      if (e.target === tocModalEl) closeTocModal();
-    });
-
-    tocFiltersEl.addEventListener("click", (e) => {
-      const chip = e.target.closest("[data-part]");
-      if (!chip) return;
-      currentTocFilter = chip.dataset.part;
-      tocFiltersEl.querySelectorAll(".toc-chip").forEach((c) => c.classList.toggle("active", c === chip));
-      renderTocGrid();
-    });
-
-    tocGridEl.addEventListener("click", (e) => {
-      const item = e.target.closest("[data-toc-jump]");
-      if (!item) return;
-      closeTocModal();
-      goToSlideByNumber(Number(item.dataset.tocJump));
-    });
-
-    railEl.addEventListener("click", (e) => {
-      const dot = e.target.closest("[data-jump]");
-      if (dot) goToSlideByNumber(Number(dot.dataset.jump));
-    });
-
-    deckEl.addEventListener("click", (e) => {
-      // Jump CTA buttons inside slides
-      const jumpBtn = e.target.closest("[data-jump]");
-      if (jumpBtn) {
-        goToSlideByNumber(Number(jumpBtn.dataset.jump));
-        return;
-      }
-
-      // Polaroid lightbox
-      const polaroid = e.target.closest("[data-lightbox]");
-      if (polaroid) {
-        openLightbox(polaroid);
-        return;
-      }
-
-      // Video play (overlay or button)
-      const playOverlay = e.target.closest("[data-play-video], [data-play-inline-btn]");
-      if (playOverlay) {
-        const slideEl = playOverlay.closest(".slide");
-        const stage = slideEl?.querySelector("[data-video-stage]");
-        if (stage) activateVideoStage(stage);
-        return;
-      }
-
-      // UTEHY 5.1-5.4 Facsimile bar selector (Slide 03)
-      const utehyBtn = e.target.closest("[data-utehy-idx]");
-      if (utehyBtn) {
-        const slideEl = utehyBtn.closest(".slide");
-        const sObj = slidesData[Number(slideEl.dataset.index)];
-        const bar = sObj?.bars?.[Number(utehyBtn.dataset.utehyIdx)];
-        if (!bar) return;
-        slideEl.querySelectorAll("[data-utehy-idx]").forEach((b) => b.classList.toggle("active", b === utehyBtn));
-        slideEl.querySelector("[data-utehy-code]").textContent = `BỘ PHẬN ${bar.code}`;
-        slideEl.querySelector("[data-utehy-title]").textContent = bar.label;
-        slideEl.querySelector("[data-utehy-theory]").textContent = bar.theory;
-        slideEl.querySelector("[data-utehy-pnv]").textContent = bar.pnv;
-        const jBtn = slideEl.querySelector("[data-utehy-jump]");
-        jBtn.dataset.jump = String(bar.target);
-        jBtn.textContent = `Xem Mục ${bar.code} →`;
-        return;
-      }
-
-      // Ecosystem wheel spoke selector (Slide 16)
-      const spokeBtn = e.target.closest("[data-spoke-idx]");
-      if (spokeBtn) {
-        const idx = Number(spokeBtn.dataset.spokeIdx);
-        const slideEl = spokeBtn.closest(".slide");
-        const sObj = slidesData[Number(slideEl.dataset.index)];
-        const spoke = sObj?.spokes?.[idx];
-        if (!spoke) return;
-        slideEl.querySelectorAll("[data-spoke-idx]").forEach((n) => n.classList.toggle("active", n === spokeBtn));
-        slideEl.querySelector("[data-wheel-kicker]").textContent = `TRỤ CỘT HỆ SINH THÁI (${idx + 1}/${sObj.spokes.length})`;
-        slideEl.querySelector("[data-wheel-title]").textContent = `${spoke.icon} ${spoke.title}`;
-        slideEl.querySelector("[data-wheel-desc]").textContent = spoke.desc;
-      }
-    });
-
-    deckEl.addEventListener("keydown", (e) => {
-      if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-lightbox], [data-play-video]")) {
-        e.preventDefault();
-        e.target.click();
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        if (!lightboxEl.hidden) { closeLightbox(); return; }
-        if (!tocModalEl.hidden) { closeTocModal(); return; }
-      }
-
-      if (!lightboxEl.hidden || !tocModalEl.hidden) return;
-      if (e.target.matches("input, textarea, select")) return;
-
-      switch (e.key) {
-        case "ArrowDown":
-        case "ArrowRight":
-        case "PageDown":
-          e.preventDefault();
-          goToSlideByNumber(currentIndex + 2);
-          break;
-        case " ":
-          if (!e.target.matches("button, a")) {
-            e.preventDefault();
-            goToSlideByNumber(currentIndex + 2);
-          }
-          break;
-        case "ArrowUp":
-        case "ArrowLeft":
-        case "PageUp":
-          e.preventDefault();
-          goToSlideByNumber(currentIndex);
-          break;
-        case "Home":
-          e.preventDefault();
-          goToSlideByNumber(1);
-          break;
-        case "End":
-          e.preventDefault();
-          goToSlideByNumber(totalSlides);
-          break;
-        case "g":
-        case "G":
-          e.preventDefault();
-          tocModalEl.hidden ? openTocModal() : closeTocModal();
-          break;
-        case "f":
-        case "F":
-          e.preventDefault();
-          toggleFullscreen();
-          break;
-      }
-    });
-  }
-
-  // ---------- Init ----------
-  buildDeck();
-  setupObserver();
-  bindEvents();
-  setActiveSlide(0);
+  fitStageToViewport();
+  setDeckMode("full45");
 })();
