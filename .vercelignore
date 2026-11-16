@@ -1,2 +1,4 @@
 .DS_Store
 start_presentation.command
+.agent
+generate_45_slides.js

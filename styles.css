@@ -315,10 +315,11 @@ html, body {
   position: relative;
   width: 1280px;
   height: 720px;
-  padding: 20px 36px 26px;
+  padding: 18px 34px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
   z-index: 2;
 }
 
@@ -415,6 +416,9 @@ html, body {
   clip-path: var(--chamfer-md);
   cursor: zoom-in;
   overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
   transition: transform 300ms ease, filter 300ms ease;
 }
 
@@ -431,41 +435,46 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 0;
   overflow: hidden;
   background: #2A0303;
   clip-path: inherit;
 }
 
 .m-photo-inner img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 14%;
   display: block;
 }
 
 .m-photo-cap {
   position: absolute;
   inset: auto 0 0 0;
-  padding: 22px 12px 9px;
-  background: linear-gradient(to top, rgba(22, 2, 2, 0.96) 0%, rgba(45, 4, 4, 0.78) 68%, transparent 100%);
-  color: var(--text-cream);
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.25;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  padding: 16px 10px 8px;
+  background: linear-gradient(to top, rgba(20, 2, 2, 0.72) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.m-photo-frame.hex-frame .m-photo-cap {
+  display: flex;
+  justify-content: center;
+  padding: 16px 16% 8px;
 }
 
 .m-photo-tag {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 9px;
   background: var(--gold-primary);
   color: #3B0404;
   font-size: 11px;
   font-weight: 900;
-  border-radius: 3px;
+  border-radius: 4px;
   text-transform: uppercase;
-  margin-bottom: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .m-card {
@@ -473,7 +482,7 @@ html, body {
   background: linear-gradient(145deg, rgba(138, 18, 18, 0.92) 0%, rgba(65, 7, 7, 0.95) 100%);
   border: 2px solid var(--gold-border);
   clip-path: var(--chamfer-sm);
-  padding: 13px 18px;
+  padding: 14px 18px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.52), inset 0 0 20px rgba(250, 204, 21, 0.1);
 }
 
@@ -487,19 +496,51 @@ html, body {
   background: linear-gradient(180deg, #FEF08A, #F59E0B);
 }
 
+.m-card-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold-primary);
+  margin-bottom: 2px;
+}
+
 .m-card-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--gold-bright);
   line-height: 1.24;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .m-card-body {
-  font-size: 17px;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--text-cream);
+  line-height: 1.38;
+}
+
+.m-card-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.m-card-bullets li {
+  font-size: 16.5px;
   font-weight: 600;
   color: var(--text-cream);
   line-height: 1.36;
+  padding-left: 14px;
+  position: relative;
+}
+
+.m-card-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--gold-primary);
 }
 
 .m-hex-badge {
@@ -522,7 +563,7 @@ html, body {
 .arch-hero-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.48fr 1fr;
+  grid-template-columns: minmax(0, 1.48fr) minmax(0, 1fr);
   gap: 22px;
   align-items: stretch;
   min-height: 0;
@@ -533,11 +574,13 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .arch-hero-metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -566,15 +609,22 @@ html, body {
 
 .arch-hero-pillars {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+}
+
+.arch-hero-pillars.is-final {
+  flex: 1;
+  gap: 14px;
+  align-content: stretch;
 }
 
 .arch-hero-right {
   display: grid;
-  grid-template-rows: 1.35fr 1fr;
+  grid-template-rows: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 12px;
   min-height: 0;
+  height: 100%;
 }
 
 /* ==========================================================================
@@ -583,9 +633,9 @@ html, body {
 .arch-radial-stage {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 330px 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 14px 18px;
+  grid-template-columns: minmax(0, 1fr) 320px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 16px;
   align-items: stretch;
   min-height: 0;
 }
@@ -597,11 +647,13 @@ html, body {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  min-height: 0;
+  height: 100%;
 }
 
 .arch-radial-center .m-photo-frame {
   flex: 1;
-  min-height: 240px;
+  min-height: 0;
 }
 
 /* ==========================================================================
@@ -610,7 +662,7 @@ html, body {
 .arch-pillars-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
   min-height: 0;
@@ -686,13 +738,18 @@ html, body {
   color: var(--gold-primary);
 }
 
+.arch-pillar-list li strong {
+  color: var(--gold-bright);
+  font-weight: 800;
+}
+
 /* ==========================================================================
    ARCHETYPE 4: UTEHY SLIDE REPLICA (4 Giant Colored Bars + Right Photo Tower)
    ========================================================================== */
 .arch-utehy-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
   gap: 22px;
   align-items: stretch;
   min-height: 0;
@@ -757,9 +814,9 @@ html, body {
 }
 
 .arch-pano-strip {
-  height: 158px;
+  height: 150px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   flex-shrink: 0;
 }
@@ -767,13 +824,18 @@ html, body {
 .arch-bento-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   align-items: stretch;
+  min-height: 0;
 }
 
 .arch-bento-grid.cols-2 {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.arch-bento-grid.items-5 > :last-child {
+  grid-column: span 2;
 }
 
 /* ==========================================================================
@@ -782,8 +844,8 @@ html, body {
 .arch-versus-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 330px 1fr;
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 320px minmax(0, 1fr);
+  gap: 16px;
   align-items: stretch;
   min-height: 0;
 }
@@ -792,16 +854,20 @@ html, body {
   background: linear-gradient(155deg, rgba(135, 18, 18, 0.92) 0%, rgba(58, 6, 6, 0.95) 100%);
   border: 2px solid var(--gold-border);
   clip-path: var(--chamfer-md);
-  padding: 16px 20px;
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .arch-versus-center {
   display: grid;
-  grid-template-rows: 1.2fr 1fr;
+  grid-template-rows: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 12px;
+  min-height: 0;
+  height: 100%;
 }
 
 /* ==========================================================================
@@ -810,17 +876,19 @@ html, body {
 .arch-honeycomb-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 460px 1fr;
-  gap: 22px;
+  grid-template-columns: 450px minmax(0, 1fr);
+  gap: 20px;
   align-items: stretch;
   min-height: 0;
 }
 
 .arch-hex-cluster {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.25fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr);
   gap: 12px;
+  min-height: 0;
+  height: 100%;
 }
 
 .arch-hex-cluster .m-photo-frame:first-child {
@@ -831,17 +899,21 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .arch-story-row {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 13px 18px;
+  gap: 12px;
+  padding: 11px 16px;
   background: linear-gradient(90deg, rgba(142, 19, 19, 0.94) 0%, rgba(68, 8, 8, 0.92) 100%);
   border: 2px solid var(--gold-border);
   clip-path: var(--chamfer-sm);
+  min-width: 0;
+  min-height: 0;
 }
 
 /* ==========================================================================
@@ -905,9 +977,10 @@ html, body {
 
 .arch-quote-top {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 18px;
-  min-height: 215px;
+  min-height: 0;
+  height: 210px;
 }
 
 .arch-quote-banner {
@@ -973,7 +1046,7 @@ html, body {
 }
 
 .arch-kpi-num {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
   color: var(--gold-bright);
   white-space: nowrap;
@@ -989,16 +1062,32 @@ html, body {
 .arch-showroom-body {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
   gap: 18px;
   min-height: 0;
 }
 
+.arch-showroom-body .arch-story-stack {
+  justify-content: center;
+  gap: 8px;
+  min-height: 0;
+}
+
+.arch-showroom-body .arch-story-row {
+  padding: 9px 14px;
+}
+
+.arch-showroom-body .m-card-thumb {
+  width: 68px;
+  height: 54px;
+}
+
 .arch-showroom-photos {
   display: grid;
-  grid-template-rows: 1.25fr 1fr;
+  grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr);
   gap: 12px;
   min-height: 0;
+  height: 100%;
 }
 
 /* Bar Chart inside Showroom */
@@ -1044,7 +1133,7 @@ html, body {
 .arch-matrix-layout {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 18px;
   min-height: 0;
 }
@@ -1054,6 +1143,8 @@ html, body {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  min-width: 0;
+  min-height: 0;
 }
 
 /* ==========================================================================
@@ -1062,7 +1153,7 @@ html, body {
 .arch-video-layout {
   flex: 1;
   display: grid;
-  grid-template-columns: 1.42fr 1fr;
+  grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr);
   gap: 18px;
   align-items: stretch;
   min-height: 0;
@@ -1073,6 +1164,7 @@ html, body {
   flex-direction: column;
   gap: 8px;
   min-height: 0;
+  height: 100%;
 }
 
 .arch-video-player {
@@ -1083,17 +1175,36 @@ html, body {
   background: #090101;
   overflow: hidden;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.78);
-  min-height: 280px;
+  min-height: 0;
 }
 
 .arch-video-player video,
 .arch-video-player iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 0;
   display: block;
   background: #000;
+}
+
+.arch-video-layout .arch-story-stack {
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 0;
+  height: 100%;
+}
+
+.arch-video-layout .arch-story-row {
+  padding: 9px 14px;
+  flex-shrink: 0;
+}
+
+.arch-video-layout .m-photo-frame {
+  flex: 1;
+  min-height: 110px;
 }
 
 .arch-video-toolbar {
@@ -1169,7 +1280,7 @@ html, body {
 }
 
 .arch-col-banner {
-  height: 118px;
+  height: 98px;
   width: 100%;
   border-radius: 6px;
   border: 1.5px solid var(--gold-bright);

@@ -50,11 +50,17 @@
           <img src="${esc(p.src)}" alt="${esc(p.cap)}" onerror="this.src='assets/pnv_portrait.jpg'" />
           <div class="m-photo-cap">
             <span class="m-photo-tag">${esc(p.tag)}</span>
-            <div>${esc(p.cap)}</div>
           </div>
         </div>
       </div>
     `;
+  }
+
+  function renderCardBodyContent(it) {
+    if (Array.isArray(it.points) && it.points.length) {
+      return `<ul class="m-card-bullets">${it.points.map((pt) => `<li>${esc(pt)}</li>`).join("")}</ul>`;
+    }
+    return `<div class="m-card-body">${esc(it.body || "")}</div>`;
   }
 
   function renderInlineThumb(photo, customClass) {
@@ -73,21 +79,26 @@
   // 12 DISTINCT VISUAL ARCHETYPE RENDERERS (WITH COMPLETE PHOTOS & VIDEOS)
   // =========================================================================
 
-  // 1. ARCHETYPE: HERO POSTER SPLIT (Slide 01, Slide 45 Finale Loop)
+  // 1. ARCHETYPE: HERO POSTER SPLIT (Cover & Grand Openers)
   function renderArchHeroPoster(s, idx, total, photos) {
     const metrics = s.metrics || [
-      { val: "1968", label: "Sinh tại Hà Nội, quê gốc Hà Tĩnh" },
-      { val: "1993", label: "Sáng lập Technocom (Mivina)" },
-      { val: "2012", label: "Hợp nhất thành Tập đoàn Vingroup" },
-      { val: "2023", label: "Niêm yết VinFast trên sàn Nasdaq" }
+      { val: "1968", label: "Sinh tại Hà Nội" },
+      { val: "1993", label: "Lập Technocom (Mivina)" },
+      { val: "2012", label: "Hợp nhất Vingroup" },
+      { val: "2023", label: "Niêm yết Nasdaq (VFS)" }
     ];
-    const pillars = s.pillars || (s.lessons ? s.lessons.map((l) => ({ code: l.num, label: l.title, desc: l.action })) : []);
+    const pillars = s.pillars || (s.lessons ? s.lessons.map((l) => ({
+      code: l.code || l.num,
+      label: l.title,
+      desc: l.desc || l.action
+    })) : []);
+    const isFinal = s.layout === "final_lessons_utehy";
 
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "CHUYÊN ĐỀ VĂN HÓA DOANH NHÂN UTEHY")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.section || "")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "VĂN HÓA DOANH NHÂN UTEHY")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
         <div class="arch-hero-grid">
@@ -97,16 +108,18 @@
               <p class="fs-lead" data-morph="morph-subtitle">${esc(s.subtitle || s.lead || "")}</p>
             </div>
 
-            <div class="arch-hero-metrics" data-morph="morph-stats">
-              ${metrics.slice(0, 4).map((m, i) => `
-                <div class="arch-metric-box" data-morph="morph-stat-${i + 1}">
-                  <div class="arch-metric-val">${esc(m.val || m.num)}</div>
-                  <div class="arch-metric-lbl">${esc(m.label)}</div>
-                </div>
-              `).join("")}
-            </div>
+            ${!isFinal ? `
+              <div class="arch-hero-metrics" data-morph="morph-stats">
+                ${metrics.slice(0, 4).map((m, i) => `
+                  <div class="arch-metric-box" data-morph="morph-stat-${i + 1}">
+                    <div class="arch-metric-val">${esc(m.val || m.num)}</div>
+                    <div class="arch-metric-lbl">${esc(m.label)}</div>
+                  </div>
+                `).join("")}
+              </div>
+            ` : ""}
 
-            <div class="arch-hero-pillars">
+            <div class="arch-hero-pillars ${isFinal ? "is-final" : ""}">
               ${pillars.slice(0, 4).map((p, i) => `
                 <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
                   ${renderInlineThumb(photos[i % photos.length])}
@@ -126,8 +139,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>NHÂN VẬT TRUNG TÂM: TỶ PHÚ PHẠM NHẬT VƯỢNG &amp; HỆ SINH THÁI VINGROUP</span>
-          <span>BẤM VÀO ẢNH ĐỂ PHÓNG TO · PHÍM ← / → HOẶC SPACE ĐỂ CHUYỂN CẢNH 3D MORPH</span>
+          <span>${esc(s.closing || "Phạm Nhật Vượng & Hệ sinh thái Vingroup")}</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)} · Bấm ảnh để phóng to</span>
         </footer>
       </div>
     `;
@@ -143,7 +156,7 @@
           ${renderInlineThumb(photos[(i + 1) % photos.length])}
           <div>
             <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
-            <div class="m-card-body">${esc(it.body)}</div>
+            ${renderCardBodyContent(it)}
           </div>
         </div>
       `;
@@ -152,7 +165,7 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "SƠ ĐỒ TÂM ĐIỂM")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TÂM ĐIỂM")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -176,8 +189,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>SƠ ĐỒ TÂM ĐIỂM · PHẠM NHẬT VƯỢNG &amp; HỆ SINH THÁI VINGROUP</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -185,11 +198,11 @@
 
   // 3. ARCHETYPE: TOP PANORAMIC 3-PHOTO STRIP + BENTO GRID BELOW
   function renderArchPanoramicBento(s, idx, total, photos, items) {
-    const colsClass = items.length <= 4 ? "cols-2" : "";
+    const colsClass = items.length <= 4 ? "cols-2" : (items.length === 5 ? "items-5" : "");
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "HỒ SƠ TOÀN CẢNH")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TOÀN CẢNH")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -208,10 +221,10 @@
           <div class="arch-bento-grid ${colsClass}">
             ${items.slice(0, 6).map((it, i) => `
               <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
-                ${items.length <= 4 ? renderInlineThumb(photos[(i + 1) % photos.length]) : ""}
+                ${items.length <= 5 ? renderInlineThumb(photos[(i + 1) % photos.length]) : ""}
                 <div>
                   <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
-                  <div class="m-card-body">${esc(it.body)}</div>
+                  ${renderCardBodyContent(it)}
                 </div>
               </div>
             `).join("")}
@@ -219,8 +232,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>PHẠM NHẬT VƯỢNG &amp; CÁC DOANH NGHIỆP TRỤ CỘT VINGROUP</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -229,15 +242,16 @@
   // 4. ARCHETYPE: UTEHY CLASSROOM SLIDE REPLICA (4 Giant Colored Bars with Thumbs + Right Photos)
   function renderArchUtehyReplica(s, idx, total, photos) {
     const bars = s.bars || [];
+    const showPractice = s.id >= 25;
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.headerTitle || "CÁC NHÂN TỐ ẢNH HƯỞNG TỚI VĂN HOÁ DOANH NHÂN")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">KHUNG BÀI GIẢNG UTEHY · SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "KHUNG BÀI GIẢNG UTEHY")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
         <div class="fs-header-block">
-          <h1 class="fs-title fs-title-hero" data-morph="morph-title">${esc(s.title)}</h1>
+          <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
           <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
         </div>
 
@@ -247,8 +261,8 @@
               <div class="arch-utehy-pill" data-morph="morph-card-${i + 1}">
                 <div class="arch-utehy-code">${esc(b.code)}</div>
                 <div class="arch-utehy-text">
-                  <div class="arch-utehy-name">${esc(b.text)}</div>
-                  <div class="arch-utehy-sub">${esc(b.sub)}</div>
+                  <div class="arch-utehy-name">${esc(b.label || b.text)}</div>
+                  <div class="arch-utehy-sub">${esc(showPractice ? (b.practice || b.theory) : (b.theory || b.sub || b.practice))}</div>
                 </div>
                 ${renderInlineThumb(photos[i % photos.length], "arch-utehy-thumb")}
               </div>
@@ -262,8 +276,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>MỤC 5 BÀI GIẢNG UTEHY · ÁNH XẠ VÀO THỰC TIỄN TỶ PHÚ PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Khung bài giảng UTEHY · Ánh xạ thực tiễn Phạm Nhật Vượng</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -274,7 +288,7 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "3 TRỤ CỘT CHIẾN LƯỢC")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "3 TRỤ CỘT")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -300,7 +314,7 @@
                 </div>
                 <div class="arch-pillar-body">
                   <div class="arch-pillar-head">
-                    <div class="m-hex-badge">${esc(col.num || ("0" + (i + 1)))}</div>
+                    <div class="m-hex-badge">${esc((col.num && String(col.num).length <= 3) ? col.num : ("0" + (i + 1)))}</div>
                     <div class="arch-pillar-title">${esc(col.title)}</div>
                   </div>
                   ${col.subtitle ? `<div class="m-card-body" style="color:#FEF08A;font-weight:800;">${esc(col.subtitle)}</div>` : ""}
@@ -314,8 +328,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>BA TRỤ CỘT DOANH NGHIỆP &amp; VĂN HÓA DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -325,6 +339,12 @@
   function renderArchDualVersus(s, idx, total, photos) {
     const left = s.leftCol || { title: "Giai đoạn Khởi đầu", badge: "NỀN TẢNG", items: [] };
     const right = s.rightCol || { title: "Bước ngoặt Bứt phá", badge: "VƯƠN TẦM", items: [] };
+    const renderItem = (it) => {
+      if (it && typeof it === "object") {
+        return `<li><strong>${esc(it.bold)}:</strong> ${esc(it.text)}</li>`;
+      }
+      return `<li>${esc(it)}</li>`;
+    };
 
     return `
       <div class="fs-slide">
@@ -344,7 +364,7 @@
             <div class="fs-pill-badge" style="align-self:flex-start;">${esc(left.badge || "CHIỀU 01")}</div>
             <div class="m-card-title" style="font-size:21px;">${esc(left.title)}</div>
             <ul class="arch-pillar-list">
-              ${(left.items || []).slice(0, 4).map((it) => `<li>${esc(it)}</li>`).join("")}
+              ${(left.items || []).slice(0, 4).map(renderItem).join("")}
             </ul>
           </div>
 
@@ -358,14 +378,14 @@
             <div class="fs-pill-badge" style="align-self:flex-start;">${esc(right.badge || "CHIỀU 02")}</div>
             <div class="m-card-title" style="font-size:21px;">${esc(right.title)}</div>
             <ul class="arch-pillar-list">
-              ${(right.items || []).slice(0, 4).map((it) => `<li>${esc(it)}</li>`).join("")}
+              ${(right.items || []).slice(0, 4).map(renderItem).join("")}
             </ul>
           </div>
         </div>
 
         <footer class="fs-footer">
-          <span>PHÂN TÍCH ĐỐI CHIẾU · CHUYÊN ĐỀ DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -376,7 +396,7 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || s.section || "PHÂN TÍCH CHUYÊN SÂU")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || s.section || "CHUYÊN SÂU")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -393,22 +413,28 @@
           </div>
 
           <div class="arch-story-stack">
-            ${items.slice(0, 4).map((it, i) => `
-              <div class="arch-story-row" data-morph="morph-card-${i + 1}">
-                <div class="m-hex-badge">${esc(it.badge || ("0" + (i + 1)))}</div>
-                <div style="flex:1;">
-                  <div class="m-card-title">${esc(it.title)}</div>
-                  <div class="m-card-body">${esc(it.body)}</div>
+            ${items.slice(0, 4).map((it, i) => {
+              const rawBadge = it.badge ? String(it.badge).trim() : "";
+              const hexText = rawBadge && rawBadge.length <= 4 ? rawBadge : ("0" + (i + 1));
+              const eyebrow = rawBadge.length > 4 ? rawBadge : "";
+              return `
+                <div class="arch-story-row" data-morph="morph-card-${i + 1}">
+                  <div class="m-hex-badge">${esc(hexText)}</div>
+                  <div style="flex:1;min-width:0;">
+                    ${eyebrow ? `<div class="m-card-eyebrow">${esc(eyebrow)}</div>` : ""}
+                    <div class="m-card-title">${esc(it.title)}</div>
+                    ${renderCardBodyContent(it)}
+                  </div>
+                  ${renderInlineThumb(photos[(i + 1) % photos.length])}
                 </div>
-                ${renderInlineThumb(photos[(i + 1) % photos.length])}
-              </div>
-            `).join("")}
+              `;
+            }).join("")}
           </div>
         </div>
 
         <footer class="fs-footer">
-          <span>TƯ LIỆU HÌNH ẢNH &amp; THỰC CHỨNG DOANH NGHIỆP VINGROUP</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -419,7 +445,7 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIẾN TRÌNH LỊCH SỬ")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIẾN TRÌNH")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -447,8 +473,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>DẤU ẤN HÀNH TRÌNH TỶ PHÚ PHẠM NHẬT VƯỢNG (1993 – 2026)</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Hành trình Tỷ phú Phạm Nhật Vượng (1993 – 2026)</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -460,19 +486,19 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || "PHÁT NGÔN & TẦM NHÌN")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.pillLabel || "PHÁT NGÔN & TẦM NHÌN")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
-          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+          ${s.lead ? `<p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead)}</p>` : ""}
         </div>
 
         <div class="arch-quote-layout">
           <div class="arch-quote-top">
             <div class="arch-quote-banner" data-morph="morph-quote">
-              <div class="arch-quote-text">“${esc(s.quote || s.lead)}”</div>
+              <div class="arch-quote-text">${esc(s.quote || s.lead)}</div>
               <div class="arch-quote-author">— ${esc(s.quoteAuthor || "Chủ tịch Phạm Nhật Vượng")}</div>
             </div>
             ${renderPhotoBox(photos[0], "morph-photo-1", "")}
@@ -483,8 +509,8 @@
               <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
                 ${renderInlineThumb(photos[(i + 1) % photos.length])}
                 <div>
-                  <div class="m-card-title">0${i + 1} · ${esc(pt.title)}</div>
-                  <div class="m-card-body">${esc(pt.text)}</div>
+                  <div class="m-card-title">${esc(pt.title)}</div>
+                  <div class="m-card-body">${esc(pt.desc || pt.text || "")}</div>
                 </div>
               </div>
             `).join("")}
@@ -492,8 +518,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>TRIẾT LÝ HÀNH ĐỘNG CỦA CHỦ TỊCH PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Triết lý hành động · Chủ tịch Phạm Nhật Vượng</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -501,11 +527,16 @@
 
   // 10. ARCHETYPE: ENTERPRISE SHOWROOM (KPI Counters + Details/Bar Chart + Right Photos)
   function renderArchEnterpriseShowroom(s, idx, total, photos) {
-    const kpis = s.kpis || (s.heroMetric ? [
-      { val: s.heroMetric.val, label: s.heroMetric.label },
-      { val: "2006–2026", label: "20 năm hoạt động bền bỉ khắp 63 tỉnh thành" },
-      { val: "5 Trụ cột", label: "Y tế, Giáo dục, Dân sinh, Thiên tai, Khoa học" }
-    ] : []);
+    const kpis = (s.kpis && s.kpis.length)
+      ? s.kpis.map((k) => ({
+          val: k.val || k.num,
+          label: k.label || [k.unit, k.delta].filter(Boolean).join(" · ")
+        }))
+      : (s.heroMetric ? [
+          { val: s.heroMetric.val, label: s.heroMetric.sub || s.heroMetric.label },
+          { val: "2006–2026", label: "20 năm khắp 63 tỉnh thành" },
+          { val: "5 Trụ cột", label: "Sinh kế · Giáo dục · Y tế · Tri ân · Thiên tai" }
+        ] : []);
 
     const details = s.details || s.programs || [];
     const barsData = s.barsData || null;
@@ -514,17 +545,28 @@
     if (barsData && barsData.length) {
       leftBodyHTML = `
         <div class="arch-chart-stack">
-          ${barsData.map((b, i) => `
-            <div class="arch-chart-row" data-morph="morph-card-${i + 1}">
-              <div class="arch-chart-head">
-                <span>${esc(b.label)} · ${esc(b.sub || "")}</span>
-                <span>${esc(b.val)}</span>
+          ${barsData.map((b, i) => {
+            const hasPair = typeof b.v2024 === "number" && typeof b.v2025 === "number";
+            const fmt = (n) => Number(n).toLocaleString("vi-VN");
+            const valLabel = hasPair
+              ? `2024: ${fmt(b.v2024)} → 2025: ${fmt(b.v2025)}${b.unit || ""}`
+              : (b.val || "");
+            const pct = hasPair && b.max
+              ? Math.min(100, Math.round((b.v2025 / b.max) * 100))
+              : Math.min(100, Number(b.pct) || 50);
+            return `
+              <div class="arch-chart-row" data-morph="morph-card-${i + 1}">
+                <div class="arch-chart-head">
+                  <span>${esc(b.label)}</span>
+                  <span>${esc(valLabel)}</span>
+                </div>
+                <div class="arch-chart-track">
+                  <div class="arch-chart-fill" style="width:${pct}%"></div>
+                </div>
               </div>
-              <div class="arch-chart-track">
-                <div class="arch-chart-fill" style="width:${Math.min(100, Number(b.pct) || 50)}%"></div>
-              </div>
-            </div>
-          `).join("")}
+            `;
+          }).join("")}
+          ${s.note ? `<div class="m-card-body" style="color:#FEF08A;padding:4px 6px;">★ ${esc(s.note)}</div>` : ""}
         </div>
       `;
     } else {
@@ -534,7 +576,7 @@
             <div class="arch-story-row" data-morph="morph-card-${i + 1}">
               <div class="m-hex-badge">0${i + 1}</div>
               <div style="flex:1;">
-                <div class="m-card-title">${esc(d.heading || d.title)}</div>
+                <div class="m-card-title">${esc(d.heading || d.title || d.bold)}</div>
                 <div class="m-card-body">${esc(d.text || d.desc)}</div>
               </div>
               ${renderInlineThumb(photos[(i + 2) % photos.length])}
@@ -547,7 +589,7 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIÊU ĐIỂM DOANH NGHIỆP")}</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "DOANH NGHIỆP")}</div>
           <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
         </header>
 
@@ -578,8 +620,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>HỆ SINH THÁI DOANH NGHIỆP CỦA TỶ PHÚ PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Hệ sinh thái Doanh nghiệp Vingroup</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -621,8 +663,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>BẢNG ĐỐI CHIẾU THỰC CHỨNG · DOANH NHÂN PHẠM NHẬT VƯỢNG</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Bảng đối chiếu thực chứng · Phạm Nhật Vượng</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -639,8 +681,8 @@
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">▶ ${esc(s.kicker || "VIDEO TƯ LIỆU THỰC TẾ")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.channel || "YouTube")} (${esc(s.duration || "HD")})</div>
+          <div class="fs-pill-badge" data-morph="morph-badge">▶ ${esc(s.kicker || "VIDEO TƯ LIỆU")}</div>
+          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.duration || "HD")}</div>
         </header>
 
         <div class="fs-header-block">
@@ -653,12 +695,12 @@
             <div class="arch-video-player" data-morph="morph-photo-1">
               <video controls playsinline preload="metadata" poster="${esc(posterSrc)}">
                 <source src="${esc(mp4Src)}" type="video/mp4" />
-                Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
+                Trình duyệt không hỗ trợ phát video.
               </video>
             </div>
             <div class="arch-video-toolbar">
-              <span>🎬 Kênh: <strong>${esc(s.channel || "Tư liệu")}</strong> · Bấm nút <strong>▶ Play</strong> trên khung video để phát trực tiếp có âm thanh</span>
-              <a class="arch-video-btn" href="${esc(ytUrl)}" target="_blank" rel="noopener noreferrer">Mở YouTube gốc ↗</a>
+              <span>🎬 Nguồn: <strong>${esc(s.channel || "Tư liệu")}</strong></span>
+              <a class="arch-video-btn" href="${esc(ytUrl)}" target="_blank" rel="noopener noreferrer">Mở YouTube ↗</a>
             </div>
           </div>
 
@@ -674,8 +716,8 @@
         </div>
 
         <footer class="fs-footer">
-          <span>VIDEO TƯ LIỆU ĐÃ TẢI SẴN MP4 TRỰC TIẾP · KHÔNG LO LỖI CHẶN NHÚNG YOUTUBE</span>
-          <span>SLIDE ${pad2(idx + 1)} / ${pad2(total)}</span>
+          <span>Video tư liệu MP4 phát trực tiếp</span>
+          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
         </footer>
       </div>
     `;
@@ -709,16 +751,16 @@
     if (lay === "enterprise_deep_dive" || lay === "chart_bars_kpi" || lay === "charity_showcase") {
       if (s.id === 20) {
         const items20 = (s.details || []).map((d, i) => ({
-          badge: s.kpis && s.kpis[i] ? s.kpis[i].val : ("0" + (i + 1)),
-          title: d.heading || d.title,
+          badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
+          title: d.heading || d.title || d.bold,
           body: d.text || d.desc
         }));
         return renderArchRadialHub(s, idx, total, photos, items20);
       }
       if (s.id === 39) {
         const items39 = (s.details || []).map((d, i) => ({
-          badge: s.kpis && s.kpis[i] ? s.kpis[i].val : ("0" + (i + 1)),
-          title: d.heading || d.title,
+          badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
+          title: d.heading || d.title || d.bold,
           body: d.text || d.desc
         }));
         return renderArchPanoramicBento(s, idx, total, photos, items39);
@@ -728,18 +770,18 @@
     if (lay === "three_columns" || lay === "ecosystem_architecture") {
       const cols = (s.columns || s.pillars || []).map((c, i) => ({
         num: c.num || c.code || ("0" + (i + 1)),
-        tag: c.tag || c.code || "",
+        tag: c.num && String(c.num).length > 3 ? `${c.num} · ${c.tag || ""}`.replace(/ · $/, "") : (c.tag || c.code || ""),
         title: c.title || c.name,
         subtitle: c.subtitle || "",
-        items: c.items || c.entities || (c.desc ? [c.desc] : [])
+        items: c.items || c.entities || (Array.isArray(c.brands) ? [...c.brands, c.desc].filter(Boolean) : (c.desc ? [c.desc] : []))
       }));
       return renderArchThreePillars(s, idx, total, photos, cols);
     }
     if (lay === "chapter_cover" || lay === "forbes_trajectory" || lay === "staircase_decisions") {
       const steps = (s.milestones || s.steps || []).map((m) => ({
-        year: m.year || m.val || m.step,
-        title: m.event || m.title || m.val,
-        body: m.desc || m.context || (m.action ? (m.action + " → " + (m.outcome || "")) : "")
+        year: m.year || m.step || m.val,
+        title: m.event || m.name || m.title || m.label || m.val,
+        body: m.desc || m.sub || m.rank || m.context || [m.risk, m.outcome].filter(Boolean).join(" · ") || (m.action ? (m.action + " → " + (m.outcome || "")) : "")
       }));
       return renderArchTimeline(s, idx, total, photos, steps);
     }
@@ -747,8 +789,11 @@
       const items = (s.chapters || s.factors || s.components || []).map((c) => ({
         badge: c.num || c.code || "",
         title: c.title || c.name,
-        body: c.desc || (c.theory ? (c.theory + " · Thực tiễn: " + (c.pnv || "")) : "")
+        body: c.desc || (c.theory ? (c.theory + " · " + (c.pnv || "")) : "")
       }));
+      if (items.length >= 5) {
+        return renderArchPanoramicBento(s, idx, total, photos, items);
+      }
       if (idx % 2 === 1) {
         return renderArchRadialHub(s, idx, total, photos, items);
       }
@@ -756,8 +801,9 @@
     }
     if (lay === "bio_overview" || lay === "six_core_values" || lay === "two_cards_image") {
       const items = (s.facts || s.values || s.cards || []).map((f) => ({
-        badge: f.code || f.tag || f.label || "",
-        title: f.val || f.name || f.title,
+        badge: f.code || f.sub || f.tag || f.label || "",
+        title: f.val || f.word || f.name || f.title,
+        points: Array.isArray(f.points) ? f.points : null,
         body: f.detail || f.desc || (Array.isArray(f.bullets) ? f.bullets.join(" · ") : "")
       }));
       if (s.id === 8) {
@@ -768,7 +814,7 @@
     if (lay === "photo_story") {
       const items = (s.bullets || []).map((b, i) => ({
         badge: "0" + (i + 1),
-        title: b.heading,
+        title: b.heading || b.bold,
         body: b.text
       }));
       if (idx % 2 === 0) {
@@ -906,7 +952,7 @@
         {
           duration: 900,
           easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-          fill: "both"
+          fill: "none"
         }
       );
     });
@@ -954,12 +1000,14 @@
     slideOutgoing.innerHTML = slideActive.innerHTML;
     slideActive.innerHTML = html;
 
+    // Measure FLIP start/end positions cleanly BEFORE 3D camera keyframes offset the layer!
+    runFlipMorph(slideOutgoing, slideActive);
+
     const camMode = nextIdx % 10;
     slideOutgoing.classList.add(`cam-out-${camMode}`);
     slideActive.classList.add(`cam-in-${camMode}`);
 
     updateBackgroundStage(nextIdx, true);
-    runFlipMorph(slideOutgoing, slideActive);
 
     updateControlsUI();
     bindSlideInteractions(slideActive);
