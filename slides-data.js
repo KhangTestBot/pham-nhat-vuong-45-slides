@@ -35,25 +35,25 @@ window.DECK_SLIDES = [
         "code": "5.1",
         "label": "Năng lực doanh nhân",
         "color": "#C5A888",
-        "target": 26
+        "target": 24
       },
       {
         "code": "5.2",
         "label": "Tố chất doanh nhân",
         "color": "#9DA6A3",
-        "target": 31
+        "target": 29
       },
       {
         "code": "5.3",
         "label": "Đạo đức doanh nhân",
         "color": "#A3B190",
-        "target": 36
+        "target": 33
       },
       {
         "code": "5.4",
         "label": "Phong cách doanh nhân",
         "color": "#AE9CA8",
-        "target": 41
+        "target": 37
       }
     ],
     "gallery": [
@@ -86,8 +86,8 @@ window.DECK_SLIDES = [
     "theme": "light",
     "section": "Phần 1 · Cấu trúc Bài thuyết trình",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "LỘ TRÌNH 45 SLIDE",
-    "title": "Cấu trúc 5 Phần & 5 Video Tư liệu",
+    "kicker": "LỘ TRÌNH 41 SLIDE",
+    "title": "Cấu trúc 5 Phần & 1 Video Tư liệu",
     "lead": "Kết hợp khung lý thuyết UTEHY với số liệu định lượng và tư liệu thực tế.",
     "chapters": [
       {
@@ -100,34 +100,34 @@ window.DECK_SLIDES = [
       },
       {
         "num": "Phần II",
-        "range": "11 – 24",
+        "range": "11 – 22",
         "title": "Tiểu sử & Hệ sinh thái Doanh nghiệp",
-        "desc": "Từ Technocom (Ukraine) đến Vinhomes, VinFast, Xanh SM, VinUni.",
+        "desc": "Từ Technocom (Ukraine) đến Vinhomes, VinFast, Xanh SM, VinUni & Video.",
         "target": 11,
         "color": "#B91C1C"
       },
       {
         "num": "Phần III",
-        "range": "25 – 35",
+        "range": "23 – 32",
         "title": "5.1 Năng lực & 5.2 Tố chất",
         "desc": "Quản trị đa ngành, đổi mới công nghệ và 3 bước ngoặt đặt cược lớn.",
-        "target": 25,
+        "target": 23,
         "color": "#C5A888"
       },
       {
         "num": "Phần IV",
-        "range": "36 – 43",
+        "range": "33 – 39",
         "title": "5.3 Đạo đức & 5.4 Phong cách",
         "desc": "Chữ Tín, 46.000 tỷ Quỹ Thiện Tâm, VinFuture và kỷ luật tốc độ.",
-        "target": 36,
+        "target": 33,
         "color": "#6B7F5E"
       },
       {
         "num": "Phần V",
-        "range": "44 – 45",
+        "range": "40 – 41",
         "title": "Đánh giá & Bài học Sinh viên",
         "desc": "Thách thức toàn cầu và 4 định hướng rèn luyện cho sinh viên UTEHY.",
-        "target": 44,
+        "target": 40,
         "color": "#1E293B"
       }
     ],
@@ -238,7 +238,7 @@ window.DECK_SLIDES = [
         "code": "5.1",
         "color": "#C5A888",
         "label": "5.1. Năng lực của doanh nhân",
-        "target": 26,
+        "target": 24,
         "theory": "Chuyên môn, quản lý – điều hành, lãnh đạo & đổi mới sáng tạo (Tài & Trí).",
         "practice": "Kỹ sư địa chất lập Mivina (97% thị phần Ukraine) đến Vingroup – VinFast."
       },
@@ -246,7 +246,7 @@ window.DECK_SLIDES = [
         "code": "5.2",
         "color": "#9DA6A3",
         "label": "5.2. Tố chất của doanh nhân",
-        "target": 31,
+        "target": 29,
         "theory": "Tầm nhìn chiến lược, quyết đoán, chấp nhận rủi ro & khát vọng lớn.",
         "practice": "Đứng dậy sau phá sản (1992), bán Mivina (2010), chuyển 100% xe điện."
       },
@@ -254,7 +254,7 @@ window.DECK_SLIDES = [
         "code": "5.3",
         "color": "#A3B190",
         "label": "5.3. Đạo đức của doanh nhân",
-        "target": 36,
+        "target": 33,
         "theory": "Đạo đức cá nhân, chữ Tín, thượng tôn pháp luật & trách nhiệm xã hội.",
         "practice": "46.000 tỷ đồng Quỹ Thiện Tâm (20 năm) & Giải thưởng VinFuture."
       },
@@ -262,7 +262,7 @@ window.DECK_SLIDES = [
         "code": "5.4",
         "color": "#AE9CA8",
         "label": "5.4. Phong cách của doanh nhân",
-        "target": 41,
+        "target": 37,
         "theory": "Cách thức lãnh đạo, giao tiếp – ứng xử & tác phong kỷ luật.",
         "practice": "Kỷ luật cao, tốc độ, đời tư kín tiếng & 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
       }
@@ -817,52 +817,6 @@ window.DECK_SLIDES = [
   {
     "id": 14,
     "part": 2,
-    "layout": "video_slide",
-    "theme": "dark",
-    "section": "Phần 2 · Video Tư liệu #1",
-    "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VIDEO TƯ LIỆU #1 · 06:14",
-    "title": "Ông Phạm Nhật Vượng & Những Điều Chưa Biết",
-    "lead": "Xuất thân gia đình, du học Nga và nguyên tắc sống kín tiếng.",
-    "videoId": "2A-MNpVHpN4",
-    "videoUrl": "https://www.youtube.com/watch?v=2A-MNpVHpN4",
-    "thumb": "assets/vid01_thumb.jpg",
-    "channel": "KIẾN THỨC THÚ VỊ Official",
-    "duration": "06:14",
-    "takeaways": [
-      "Tái hiện bối cảnh bao cấp và hành trình giành học bổng sang Moscow.",
-      "Vì sao cú ngã năm 1992 trở thành nền tảng cho Technocom.",
-      "Liên hệ trực tiếp Nhân tố Gia đình, Giáo dục và Tố chất (5.2)."
-    ],
-    "localVideo": "assets/vid01.mp4",
-    "image": "assets/vincom_ba_trieu.jpg",
-    "imageCaption": "Không gian thương mại và nghệ thuật hiện đại tại hệ thống Vincom Center",
-    "gallery": [
-      {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
-      },
-      {
-        "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "PARIS MOTOR SHOW",
-        "cap": "VinFast LUX SA2.0 tại Triển lãm Ô tô Paris 2018"
-      },
-      {
-        "src": "assets/vinmec_hospital.jpg",
-        "tag": "BỆNH VIỆN VINMEC",
-        "cap": "Hệ thống Bệnh viện Đa khoa Quốc tế Vinmec đạt chuẩn JCI toàn cầu"
-      },
-      {
-        "src": "assets/vid03_thumb.jpg",
-        "tag": "TOÀN CẢNH VINGROUP",
-        "cap": "Quy mô hệ sinh thái Vingroup qua góc nhìn phân tích trực quan"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
     "section": "Phần 2 · Doanh nghiệp 1/8",
@@ -924,53 +878,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 16,
-    "part": 2,
-    "layout": "video_slide",
-    "theme": "dark",
-    "section": "Phần 2 · Video Tư liệu #2",
-    "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VIDEO TƯ LIỆU #2 · 06:22",
-    "title": "Người Ukraine Nói Gì Về Mivina & VinFast?",
-    "lead": "Phóng sự người Ukraine chia sẻ ký ức Mivina và bất ngờ về xe điện VinFast.",
-    "videoId": "JMykclAmGW8",
-    "videoUrl": "https://www.youtube.com/watch?v=JMykclAmGW8",
-    "thumb": "assets/vid02_thumb.jpg",
-    "channel": "TDS Media",
-    "duration": "06:22",
-    "takeaways": [
-      "Mivina gắn liền với đời sống sinh viên và nhiều thế hệ người Ukraine.",
-      "Khẳng định năng lực xây thương hiệu đại chúng chuẩn châu Âu của người Việt.",
-      "Minh chứng thực tế cho Năng lực (5.1) và Chữ Tín sản phẩm (5.3)."
-    ],
-    "localVideo": "assets/vid02.mp4",
-    "image": "assets/vinhomes_ocean_park.jpg",
-    "imageCaption": "Đại đô thị Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni",
-    "gallery": [
-      {
-        "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
-      },
-      {
-        "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
-      },
-      {
-        "src": "assets/pnv_3d_executive.jpg",
-        "tag": "TẦM NHÌN LÃNH ĐẠO",
-        "cap": "Chân dung nhà lãnh đạo kiến tạo hệ sinh thái đa ngành Vingroup"
-      },
-      {
-        "src": "assets/pnv_portrait.jpg",
-        "tag": "CHỦ TỊCH VINGROUP",
-        "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup"
-      }
-    ]
-  },
-  {
-    "id": 17,
+    "id": 15,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -1033,7 +941,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 18,
+    "id": 16,
     "part": 2,
     "layout": "ecosystem_architecture",
     "theme": "light",
@@ -1103,7 +1011,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 19,
+    "id": 17,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -1166,7 +1074,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 20,
+    "id": 18,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -1229,7 +1137,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 21,
+    "id": 19,
     "part": 2,
     "layout": "chart_bars_kpi",
     "theme": "light",
@@ -1308,7 +1216,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 22,
+    "id": 20,
     "part": 2,
     "layout": "three_columns",
     "theme": "light",
@@ -1363,13 +1271,13 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 23,
+    "id": 21,
     "part": 2,
     "layout": "video_slide",
     "theme": "dark",
-    "section": "Phần 2 · Video Tư liệu #3",
+    "section": "Phần 2 · Video Tư liệu Thực tế",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VIDEO TƯ LIỆU #3 · 09:57",
+    "kicker": "VIDEO TƯ LIỆU · 09:57",
     "title": "Hành trình Xây dựng Hệ sinh thái Vingroup",
     "lead": "Toàn cảnh kết nối từ Mivina sang Vinpearl, Vincom, Vinhomes và VinFast.",
     "videoId": "lbifzWm9Dgg",
@@ -1409,7 +1317,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 24,
+    "id": 22,
     "part": 2,
     "layout": "forbes_trajectory",
     "theme": "light",
@@ -1470,7 +1378,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 25,
+    "id": 23,
     "part": 3,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
@@ -1484,7 +1392,7 @@ window.DECK_SLIDES = [
         "code": "5.1",
         "color": "#C5A888",
         "label": "5.1. Năng lực của doanh nhân",
-        "target": 26,
+        "target": 24,
         "theory": "Chuyên môn, quản lý, lãnh đạo & đổi mới sáng tạo.",
         "practice": "Xây chuỗi cung ứng, điều hành đa ngành và chuyển đổi xe điện."
       },
@@ -1492,7 +1400,7 @@ window.DECK_SLIDES = [
         "code": "5.2",
         "color": "#9DA6A3",
         "label": "5.2. Tố chất của doanh nhân",
-        "target": 31,
+        "target": 29,
         "theory": "Tầm nhìn, quyết đoán, chấp nhận rủi ro & khát vọng.",
         "practice": "3 quyết định rời vùng an toàn (1993, 2010, 2017–2022)."
       },
@@ -1500,7 +1408,7 @@ window.DECK_SLIDES = [
         "code": "5.3",
         "color": "#A3B190",
         "label": "5.3. Đạo đức của doanh nhân",
-        "target": 36,
+        "target": 33,
         "theory": "Đạo đức cá nhân, chữ Tín, pháp luật & trách nhiệm CSR.",
         "practice": "Hậu mãi xe xăng 10 năm, 46.000 tỷ Quỹ Thiện Tâm, VinFuture."
       },
@@ -1508,7 +1416,7 @@ window.DECK_SLIDES = [
         "code": "5.4",
         "color": "#AE9CA8",
         "label": "5.4. Phong cách của doanh nhân",
-        "target": 41,
+        "target": 37,
         "theory": "Lãnh đạo, giao tiếp ứng xử & tác phong kỷ luật.",
         "practice": "Tốc độ, sâu sát hiện trường và 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
       }
@@ -1539,7 +1447,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 26,
+    "id": 24,
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -1599,7 +1507,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 27,
+    "id": 25,
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
@@ -1651,7 +1559,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 28,
+    "id": 26,
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
@@ -1703,7 +1611,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 29,
+    "id": 27,
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
@@ -1761,7 +1669,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 30,
+    "id": 28,
     "part": 3,
     "layout": "matrix_table",
     "theme": "light",
@@ -1826,7 +1734,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 31,
+    "id": 29,
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -1886,7 +1794,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 32,
+    "id": 30,
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
@@ -1944,7 +1852,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 33,
+    "id": 31,
     "part": 3,
     "layout": "staircase_decisions",
     "theme": "light",
@@ -2002,7 +1910,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 34,
+    "id": 32,
     "part": 3,
     "layout": "quote_analysis",
     "theme": "light",
@@ -2055,53 +1963,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 35,
-    "part": 3,
-    "layout": "video_slide",
-    "theme": "dark",
-    "section": "Phần 3 · Video Tư liệu #4",
-    "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VIDEO TƯ LIỆU #4 · 09:08",
-    "title": "Người Định nghĩa Lại Sự Giàu có ở Việt Nam",
-    "lead": "Giao thoa giữa Năng lực tổ chức (5.1) và Tố chất đặt cược công nghiệp (5.2).",
-    "videoId": "KNUV7ZuMTTw",
-    "videoUrl": "https://www.youtube.com/watch?v=KNUV7ZuMTTw",
-    "thumb": "assets/vid04_thumb.jpg",
-    "channel": "BLV Anh Quân Discovery",
-    "duration": "09:08",
-    "takeaways": [
-      "Lý giải lựa chọn công nghiệp chế tạo đầy thử thách thay vì giữ an toàn với BĐS.",
-      "Nổi bật tầm nhìn dài hạn và ý chí kiên định trước áp lực tài chính quốc tế.",
-      "Tư liệu thực tế trọng tâm cho phần 5.1 (Năng lực) và 5.2 (Tố chất)."
-    ],
-    "localVideo": "assets/vid04.mp4",
-    "image": "assets/pnv_joko_vinfast.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia",
-    "gallery": [
-      {
-        "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "ĐỐI NGOẠI CẤP CAO",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
-      },
-      {
-        "src": "assets/vid02_thumb.jpg",
-        "tag": "THƯƠNG HIỆU MIVINA",
-        "cap": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé"
-      },
-      {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
-      },
-      {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "VINFAST VF 8 TẠI MỸ",
-        "cap": "Mẫu SUV điện VinFast VF 8 trưng bày tại TTTM Hoa Kỳ"
-      }
-    ]
-  },
-  {
-    "id": 36,
+    "id": 33,
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -2161,7 +2023,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 37,
+    "id": 34,
     "part": 4,
     "layout": "two_cards_image",
     "theme": "light",
@@ -2217,7 +2079,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 38,
+    "id": 35,
     "part": 4,
     "layout": "charity_showcase",
     "theme": "light",
@@ -2281,7 +2143,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 39,
+    "id": 36,
     "part": 4,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -2347,53 +2209,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 40,
-    "part": 4,
-    "layout": "video_slide",
-    "theme": "dark",
-    "section": "Phần 4 · Video Tư liệu #5",
-    "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VIDEO TƯ LIỆU #5 · 07:28",
-    "title": "20 Năm Quỹ Thiện Tâm: 46.000 Tỷ Đi Về Đâu?",
-    "lead": "Quy trình khảo sát thực địa, giải ngân minh bạch và triết lý thiện nguyện không phô trương.",
-    "videoId": "FaPiGnhHv1k",
-    "videoUrl": "https://www.youtube.com/watch?v=FaPiGnhHv1k",
-    "thumb": "assets/vid05_thumb.jpg",
-    "channel": "Độc Đáo TV",
-    "duration": "07:28",
-    "takeaways": [
-      "Dữ liệu chi tiết 20 năm Quỹ Thiện Tâm (2006–2026) trên cả nước.",
-      "Áp dụng kỷ luật quản trị doanh nghiệp vào thiện nguyện để tiền tới đúng người.",
-      "Tư liệu tổng kết thuyết phục cho Mục 5.3: Đạo đức doanh nhân."
-    ],
-    "localVideo": "assets/vid05.mp4",
-    "image": "assets/vid02_thumb.jpg",
-    "imageCaption": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé",
-    "gallery": [
-      {
-        "src": "assets/vid02_thumb.jpg",
-        "tag": "THƯƠNG HIỆU MIVINA",
-        "cap": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé"
-      },
-      {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
-      },
-      {
-        "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "PARIS MOTOR SHOW",
-        "cap": "VinFast LUX SA2.0 tại Triển lãm Ô tô Paris 2018"
-      },
-      {
-        "src": "assets/vinmec_hospital.jpg",
-        "tag": "BỆNH VIỆN VINMEC",
-        "cap": "Hệ thống Bệnh viện Đa khoa Quốc tế Vinmec đạt chuẩn JCI toàn cầu"
-      }
-    ]
-  },
-  {
-    "id": 41,
+    "id": 37,
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -2453,7 +2269,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 42,
+    "id": 38,
     "part": 4,
     "layout": "photo_story",
     "theme": "light",
@@ -2505,7 +2321,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 43,
+    "id": 39,
     "part": 4,
     "layout": "six_core_values",
     "theme": "light",
@@ -2575,7 +2391,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 44,
+    "id": 40,
     "part": 5,
     "layout": "split_comparison",
     "theme": "light",
@@ -2646,7 +2462,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 45,
+    "id": 41,
     "part": 5,
     "layout": "final_lessons_utehy",
     "theme": "utehy",

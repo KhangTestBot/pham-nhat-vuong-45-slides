@@ -1,8 +1,8 @@
 /* ==========================================================================
-   PHẠM NHẬT VƯỢNG & HỆ SINH THÁI VINGROUP — 45 SLIDES × 12 ARCHETYPES ENGINE
-   - Opens ALL 45 SLIDES (01 / 45) by default!
-   - Native HTML5 <video controls> with real downloaded MP4s (vid01.mp4 - vid05.mp4)
-     + 1-click YouTube Embed Toggle & External Link!
+   PHẠM NHẬT VƯỢNG & HỆ SINH THÁI VINGROUP — 41 SLIDES × 12 ARCHETYPES ENGINE
+   - Opens ALL 41 SLIDES (01 / 41) by default!
+   - Native HTML5 <video controls> with full 09:57 HD MP4 (assets/vid03.mp4)
+     + External YouTube Link!
    - 4 Distinct Real Photos per slide (Main Morph Frames + Card Inline Thumbs)
    - 12 Non-Repeating Layout Archetypes + 10 3D Camera Morph Transitions
    ========================================================================== */
@@ -11,7 +11,7 @@
   "use strict";
 
   const RAW_SLIDES = window.DECK_SLIDES || window.SLIDES_DATA || [];
-  const TIKTOK_14_IDS = [1, 3, 4, 11, 12, 14, 15, 17, 19, 20, 26, 31, 38, 45];
+  const TIKTOK_14_IDS = [1, 3, 4, 11, 13, 14, 15, 17, 18, 21, 24, 29, 35, 41];
 
   function esc(str) {
     if (str === null || str === undefined) return "";
@@ -242,7 +242,7 @@
   // 4. ARCHETYPE: UTEHY CLASSROOM SLIDE REPLICA (4 Giant Colored Bars with Thumbs + Right Photos)
   function renderArchUtehyReplica(s, idx, total, photos) {
     const bars = s.bars || [];
-    const showPractice = s.id >= 25;
+    const showPractice = s.part >= 3 || s.id >= 23;
     return `
       <div class="fs-slide">
         <header class="fs-topbar">
@@ -670,10 +670,9 @@
     `;
   }
 
-  // 12. ARCHETYPE: VIDEO DOCUMENTARY THEATER (Real Local MP4 Player + YouTube Link!)
+  // 12. ARCHETYPE: VIDEO DOCUMENTARY THEATER (Full 09:57 MP4 Player + YouTube Link!)
   function renderArchVideo(s, idx, total, photos) {
-    const vidMap = { 14: "assets/vid01.mp4", 16: "assets/vid02.mp4", 23: "assets/vid03.mp4", 35: "assets/vid04.mp4", 40: "assets/vid05.mp4" };
-    const mp4Src = s.localVideo || vidMap[s.id] || "assets/vid01.mp4";
+    const mp4Src = s.localVideo || "assets/vid03.mp4";
     const posterSrc = s.thumb || photos[0].src;
     const ytUrl = s.videoUrl || ("https://www.youtube.com/watch?v=" + (s.videoId || ""));
     const takeaways = s.takeaways || [];
@@ -749,21 +748,21 @@
       return renderArchMatrix(s, idx, total, photos);
     }
     if (lay === "enterprise_deep_dive" || lay === "chart_bars_kpi" || lay === "charity_showcase") {
-      if (s.id === 20) {
-        const items20 = (s.details || []).map((d, i) => ({
+      if (s.id === 18) {
+        const items18 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
           body: d.text || d.desc
         }));
-        return renderArchRadialHub(s, idx, total, photos, items20);
+        return renderArchRadialHub(s, idx, total, photos, items18);
       }
-      if (s.id === 39) {
-        const items39 = (s.details || []).map((d, i) => ({
+      if (s.id === 36) {
+        const items36 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
           body: d.text || d.desc
         }));
-        return renderArchPanoramicBento(s, idx, total, photos, items39);
+        return renderArchPanoramicBento(s, idx, total, photos, items36);
       }
       return renderArchEnterpriseShowroom(s, idx, total, photos);
     }
