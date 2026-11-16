@@ -4,12 +4,12 @@ window.DECK_SLIDES = [
     "part": 1,
     "layout": "cover_hero",
     "theme": "utehy",
-    "section": "Phần 1 · Tổng quan & Khung UTEHY",
+    "section": "Phần 1 · Tổng quan & Khung Lý thuyết",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "VĂN HÓA KINH DOANH · UTEHY",
+    "kicker": "VĂN HÓA KINH DOANH",
     "title": "DOANH NHÂN PHẠM NHẬT VƯỢNG",
     "subtitle": "Hệ sinh thái Vingroup & 4 Cấu phần Văn hóa Doanh nhân (5.1 – 5.4)",
-    "lead": "Từ Technocom (Ukraine) đến Vingroup – VinFast qua lăng kính 4 cấu phần văn hóa doanh nhân UTEHY.",
+    "lead": "Từ Technocom (Ukraine) đến Vingroup – VinFast qua lăng kính 4 cấu phần văn hóa doanh nhân (5.1 – 5.4).",
     "image": "assets/pnv_portrait.jpg",
     "imageCaption": "Phạm Nhật Vượng — Chủ tịch Vingroup, CEO VinFast",
     "metrics": [
@@ -88,7 +88,7 @@ window.DECK_SLIDES = [
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "LỘ TRÌNH 41 SLIDE",
     "title": "Cấu trúc 5 Phần & 1 Video Tư liệu",
-    "lead": "Kết hợp khung lý thuyết UTEHY với số liệu định lượng và tư liệu thực tế.",
+    "lead": "Kết hợp khung lý thuyết văn hóa doanh nhân với số liệu định lượng và tư liệu thực tế.",
     "chapters": [
       {
         "num": "Phần I",
@@ -126,7 +126,7 @@ window.DECK_SLIDES = [
         "num": "Phần V",
         "range": "40 – 41",
         "title": "Đánh giá & Bài học Sinh viên",
-        "desc": "Thách thức toàn cầu và 4 định hướng rèn luyện cho sinh viên UTEHY.",
+        "desc": "Thách thức toàn cầu và 4 định hướng rèn luyện cho sinh viên.",
         "target": 40,
         "color": "#1E293B"
       }
@@ -228,9 +228,9 @@ window.DECK_SLIDES = [
     "part": 1,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
-    "section": "Phần 1 · Slide Gốc UTEHY",
+    "section": "Phần 1 · 4 Bộ phận Cấu thành",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "KHUNG BÀI GIẢNG UTEHY",
+    "kicker": "VĂN HÓA DOANH NHÂN · MỤC 5",
     "title": "5. CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
     "lead": "Bốn cấu phần cốt lõi (5.1 – 5.4) làm trục phân tích xuyên suốt bài thuyết trình.",
     "bars": [
@@ -1382,9 +1382,9 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
-    "section": "Phần 3 · Mục 5.1 & 5.2 (UTEHY)",
+    "section": "Phần 3 · Mục 5.1 & 5.2",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "PHÂN TÍCH MỤC 5 UTEHY",
+    "kicker": "PHÂN TÍCH MỤC 5",
     "title": "5. CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
     "lead": "Ánh xạ trực tiếp từng cấu phần (5.1 → 5.4) vào thực chứng Phạm Nhật Vượng.",
     "bars": [
@@ -2466,10 +2466,10 @@ window.DECK_SLIDES = [
     "part": 5,
     "layout": "final_lessons_utehy",
     "theme": "utehy",
-    "section": "Phần 5 · Bài học Sinh viên UTEHY",
+    "section": "Phần 5 · Bài học Sinh viên",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "KẾT LUẬN · ĐẠI HỌC UTEHY",
-    "title": "4 Bài học Rèn luyện dành cho Sinh viên UTEHY",
+    "kicker": "KẾT LUẬN",
+    "title": "4 Bài học Rèn luyện dành cho Sinh viên",
     "lead": "Định hướng hành động từ 4 bộ phận cấu thành văn hóa doanh nhân (5.1 – 5.4).",
     "lessons": [
       {

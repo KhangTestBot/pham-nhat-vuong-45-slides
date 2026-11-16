@@ -315,12 +315,23 @@ html, body {
   position: relative;
   width: 1280px;
   height: 720px;
-  padding: 18px 34px 20px;
+  padding: 24px 36px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   overflow: hidden;
   z-index: 2;
+}
+
+.fs-closing-note {
+  padding: 8px 14px;
+  border-left: 4px solid var(--gold-primary);
+  background: rgba(98, 12, 12, 0.72);
+  color: var(--gold-bright);
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: 6px;
 }
 
 .fs-topbar {

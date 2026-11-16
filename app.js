@@ -96,10 +96,6 @@
 
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "VĂN HÓA DOANH NHÂN UTEHY")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="arch-hero-grid">
           <div class="arch-hero-left">
@@ -130,6 +126,7 @@
                 </div>
               `).join("")}
             </div>
+            ${s.closing ? `<div class="fs-closing-note">★ ${esc(s.closing)}</div>` : ""}
           </div>
 
           <div class="arch-hero-right">
@@ -137,11 +134,6 @@
             ${renderPhotoBox(photos[1], "morph-photo-2", "")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>${esc(s.closing || "Phạm Nhật Vượng & Hệ sinh thái Vingroup")}</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)} · Bấm ảnh để phóng to</span>
-        </footer>
       </div>
     `;
   }
@@ -164,10 +156,6 @@
 
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TÂM ĐIỂM")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block center">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -187,11 +175,6 @@
           ${renderCorner(list[2], 2)}
           ${renderCorner(list[3], 3)}
         </div>
-
-        <footer class="fs-footer">
-          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -201,10 +184,6 @@
     const colsClass = items.length <= 4 ? "cols-2" : (items.length === 5 ? "items-5" : "");
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TOÀN CẢNH")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -230,11 +209,6 @@
             `).join("")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -245,10 +219,6 @@
     const showPractice = s.part >= 3 || s.id >= 23;
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "KHUNG BÀI GIẢNG UTEHY")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -274,11 +244,6 @@
             ${renderPhotoBox(photos[1], "morph-photo-2", "")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Khung bài giảng UTEHY · Ánh xạ thực tiễn Phạm Nhật Vượng</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -287,10 +252,6 @@
   function renderArchThreePillars(s, idx, total, photos, cols) {
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "3 TRỤ CỘT")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -326,11 +287,6 @@
             `;
           }).join("")}
         </div>
-
-        <footer class="fs-footer">
-          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -348,10 +304,6 @@
 
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "ĐỐI CHIẾU HAI CHIỀU")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block center">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -382,11 +334,6 @@
             </ul>
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -395,10 +342,6 @@
   function renderArchHoneycombStory(s, idx, total, photos, items) {
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.pillLabel || s.kicker || s.section || "CHUYÊN SÂU")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -431,11 +374,6 @@
             }).join("")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -444,10 +382,6 @@
   function renderArchTimeline(s, idx, total, photos, steps) {
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "TIẾN TRÌNH")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -471,11 +405,6 @@
             ${renderPhotoBox(photos[2], "morph-photo-3", "")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Hành trình Tỷ phú Phạm Nhật Vượng (1993 – 2026)</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -485,10 +414,6 @@
     const pts = s.points || [];
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.pillLabel || "PHÁT NGÔN & TẦM NHÌN")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -516,11 +441,6 @@
             `).join("")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Triết lý hành động · Chủ tịch Phạm Nhật Vượng</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -588,10 +508,6 @@
 
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || s.section || "DOANH NGHIỆP")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -618,11 +534,6 @@
             </div>
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Hệ sinh thái Doanh nghiệp Vingroup</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -632,10 +543,6 @@
     const rows = s.rows || [];
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">★ ${esc(s.kicker || "MA TRẬN ĐỐI CHIẾU")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -661,11 +568,6 @@
             ${renderPhotoBox(photos[1], "morph-photo-2", "")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Bảng đối chiếu thực chứng · Phạm Nhật Vượng</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
@@ -679,10 +581,6 @@
 
     return `
       <div class="fs-slide">
-        <header class="fs-topbar">
-          <div class="fs-pill-badge" data-morph="morph-badge">▶ ${esc(s.kicker || "VIDEO TƯ LIỆU")}</div>
-          <div class="fs-pill-sub" data-morph="morph-subbadge">SLIDE ${pad2(idx + 1)} / ${pad2(total)} · ${esc(s.duration || "HD")}</div>
-        </header>
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -713,11 +611,6 @@
             ${renderPhotoBox(photos[1] || photos[0], "morph-photo-2", "")}
           </div>
         </div>
-
-        <footer class="fs-footer">
-          <span>Video tư liệu MP4 phát trực tiếp</span>
-          <span>Slide ${pad2(idx + 1)} / ${pad2(total)}</span>
-        </footer>
       </div>
     `;
   }
