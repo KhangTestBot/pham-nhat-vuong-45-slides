@@ -616,11 +616,274 @@
   }
 
   // =========================================================================
-  // MASTER ROUTER: MAPS EACH OF THE 45 SLIDES TO ITS DISTINCT ARCHETYPE
+  // CANVA "XANH RỪNG – KEM SÁNG" (EAHKpviK2Js) EDITORIAL ARCHETYPES
+  // =========================================================================
+
+  // C1. CANVA HERO KNOCKOUT COVER (Slide 01, mirroring Slide 1 "NINH BÌNH")
+  function renderCanvaHeroCover(s, idx, total, photos) {
+    const metrics = s.metrics || [];
+    const pillars = s.pillars || [];
+    const bgPhoto = photos[2] || photos[0];
+    const heroPhoto = photos[0];
+
+    return `
+      <div class="fs-slide canva-slide canva-hero-cover">
+        <div class="canva-hero-bg">
+          <img src="${esc(bgPhoto.src)}" alt="" onerror="this.src='assets/vinpearl_phuquoc.jpg'" />
+          <div class="canva-hero-scrim"></div>
+        </div>
+
+        <div class="canva-hero-top">
+          <span class="canva-pill-white" data-morph="morph-badge">Doanh nhân Việt Nam · Hệ sinh thái Vingroup</span>
+        </div>
+
+        <div class="canva-knockout-stage">
+          <h1 class="canva-knockout-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <div class="canva-hero-foreground">
+            <div class="canva-fg-portrait js-zoom-trigger"
+                 data-morph="morph-photo-1"
+                 data-src="${esc(heroPhoto.src)}"
+                 data-title="${esc(heroPhoto.tag)}"
+                 data-caption="${esc(heroPhoto.cap)}">
+              <img src="${esc(heroPhoto.src)}" alt="${esc(heroPhoto.cap)}" onerror="this.src='assets/pnv_portrait.jpg'" />
+            </div>
+
+            <div class="canva-hero-cards">
+              <p class="canva-hero-sub" data-morph="morph-subtitle">${esc(s.subtitle || s.lead || "")}</p>
+              <div class="canva-hero-metrics" data-morph="morph-stats">
+                ${metrics.slice(0, 4).map((m, i) => `
+                  <div class="canva-metric-glass" data-morph="morph-stat-${i + 1}">
+                    <div class="canva-metric-val">${esc(m.val || m.num)}</div>
+                    <div class="canva-metric-lbl">${esc(m.label)}</div>
+                  </div>
+                `).join("")}
+              </div>
+              <div class="canva-hero-pillars">
+                ${pillars.slice(0, 4).map((p, i) => `
+                  <div class="canva-pillar-chip" data-morph="morph-card-${i + 1}">
+                    <span>${esc(p.code)}</span> ${esc(p.label || p.title)}
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="canva-hero-meta">
+          <span>| Chủ tịch Tập đoàn Vingroup · CEO VinFast</span>
+          <span>Technocom → Vingroup · 1993 – 2026 |</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // C2. CANVA CLOSING KNOCKOUT HERO (Slide 41, mirroring Slide 10 "XIN CÁM ƠN")
+  function renderCanvaClosingHero(s, idx, total, photos) {
+    const lessons = s.lessons || [];
+    const bgPhoto = photos[0];
+    return `
+      <div class="fs-slide canva-slide canva-hero-cover canva-closing-cover">
+        <div class="canva-hero-bg">
+          <img src="${esc(bgPhoto.src)}" alt="" onerror="this.src='assets/vincom_timescity.jpg'" />
+          <div class="canva-hero-scrim is-closing"></div>
+        </div>
+
+        <div class="canva-hero-top">
+          <span class="canva-pill-white" data-morph="morph-badge">TÍN · TÂM · TRÍ · TỐC · TINH · NHÂN</span>
+        </div>
+
+        <div class="canva-closing-body">
+          <h1 class="canva-knockout-title is-closing" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="canva-hero-sub center" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+
+          <div class="canva-closing-grid">
+            ${lessons.slice(0, 4).map((l, i) => `
+              <div class="canva-closing-card" data-morph="morph-card-${i + 1}">
+                ${renderInlineThumb(photos[i % photos.length], "canva-mini-thumb")}
+                <div>
+                  <div class="canva-closing-title">${esc(l.code)} · ${esc(l.title)}</div>
+                  <div class="canva-closing-desc">${esc(l.desc)}</div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="canva-hero-meta">
+          <span>| ${esc(s.closing || "Trân trọng cảm ơn Giảng viên và các bạn Sinh viên!")}</span>
+          <span>Phạm Nhật Vượng · 41 Slide |</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // C3. CANVA CONCAVE ARCH PANORAMA (mirroring Slides 4–7 "Tràng An / Tam Cốc / Bái Đính")
+  function renderCanvaConcaveArch(s, idx, total, photos) {
+    const kpis = (s.kpis && s.kpis.length)
+      ? s.kpis.map((k) => ({ val: k.val || k.num, label: k.label || [k.unit, k.delta].filter(Boolean).join(" · ") }))
+      : (s.heroMetric ? [
+          { val: s.heroMetric.val, label: s.heroMetric.sub || s.heroMetric.label },
+          { val: "2006–2026", label: "20 năm khắp 63 tỉnh thành" },
+          { val: "5 Trụ cột", label: "Sinh kế · Giáo dục · Y tế · Tri ân" }
+        ] : []);
+    const items = s.details || s.programs || [];
+
+    return `
+      <div class="fs-slide canva-slide">
+        <div class="fs-header-block center">
+          <h1 class="fs-title canva-serif-title" data-morph="morph-title">${esc(s.title)}</h1>
+          <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+        </div>
+
+        ${kpis.length ? `
+          <div class="canva-kpi-pills" data-morph="morph-stats">
+            ${kpis.slice(0, 3).map((k, i) => `
+              <div class="canva-kpi-pill" data-morph="morph-stat-${i + 1}">
+                <strong>${esc(k.val)}</strong>
+                <span>${esc(k.label)}</span>
+              </div>
+            `).join("")}
+          </div>
+        ` : ""}
+
+        <div class="canva-arch-wrap">
+          <div class="canva-arch-photo js-zoom-trigger"
+               data-morph="morph-photo-1"
+               data-src="${esc(photos[0].src)}"
+               data-title="${esc(photos[0].tag)}"
+               data-caption="${esc(photos[0].cap)}">
+            <img src="${esc(photos[0].src)}" alt="${esc(photos[0].cap)}" onerror="this.src='assets/pnv_portrait.jpg'" />
+            <svg class="canva-arch-curve" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0,0 L1200,0 L1200,10 Q600,82 0,10 Z" fill="#FAF8F5" />
+            </svg>
+            <div class="m-photo-cap"><span class="m-photo-tag">${esc(photos[0].tag)}</span></div>
+          </div>
+
+          <div class="canva-arch-thumbs">
+            ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+            ${renderPhotoBox(photos[2] || photos[1], "morph-photo-3", "")}
+          </div>
+        </div>
+
+        <div class="canva-arch-cards ${items.length >= 4 ? "cols-4" : ""}">
+          ${items.slice(0, items.length >= 4 ? 4 : 3).map((d, i) => `
+            <div class="m-card" data-morph="morph-card-${i + 1}">
+              <div class="m-card-title">0${i + 1} · ${esc(d.heading || d.title || d.bold)}</div>
+              <div class="m-card-body">${esc(d.text || d.desc)}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  // C4. CANVA EDITORIAL INTRO CUTOUT (mirroring Slide 2 "GIỚI THIỆU VỀ NINH BÌNH")
+  function renderCanvaIntroCutout(s, idx, total, photos, items) {
+    return `
+      <div class="fs-slide canva-slide">
+        <div class="canva-intro-top">
+          <div class="canva-intro-heading">
+            <h1 class="fs-title canva-serif-title" data-morph="morph-title">${esc(s.title)}</h1>
+            <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+          </div>
+          <div class="canva-intro-cards ${items.length <= 3 ? "cols-1" : "cols-2"}">
+            ${items.slice(0, 6).map((it, i) => `
+              <div class="m-card canva-compact-card" data-morph="morph-card-${i + 1}">
+                <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
+                <div class="m-card-body">${esc(it.body)}</div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="canva-intro-bottom">
+          ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+          ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+          ${renderPhotoBox(photos[2], "morph-photo-3", "")}
+        </div>
+      </div>
+    `;
+  }
+
+  // C5. CANVA ASYMMETRIC EDITORIAL COLLAGE (mirroring Slides 3, 8, 9 collage)
+  function renderCanvaEditorialCollage(s, idx, total, photos, items) {
+    return `
+      <div class="fs-slide canva-slide">
+        <div class="canva-collage-grid">
+          <div class="canva-collage-left">
+            <div class="canva-collage-title-box">
+              <h1 class="fs-title canva-serif-title" data-morph="morph-title">${esc(s.title)}</h1>
+              <p class="fs-lead" data-morph="morph-subtitle">${esc(s.lead || "")}</p>
+            </div>
+            ${renderPhotoBox(photos[0], "morph-photo-1", "")}
+          </div>
+
+          <div class="canva-collage-right">
+            <div class="canva-collage-photos">
+              ${renderPhotoBox(photos[1], "morph-photo-2", "")}
+              ${renderPhotoBox(photos[2], "morph-photo-3", "")}
+            </div>
+            <div class="canva-collage-cards">
+              ${items.slice(0, 3).map((it, i) => `
+                <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
+                  <div class="m-hex-badge">0${i + 1}</div>
+                  <div style="flex:1;min-width:0;">
+                    ${it.badge && String(it.badge).length > 4 ? `<div class="m-card-eyebrow">${esc(it.badge)}</div>` : ""}
+                    <div class="m-card-title">${esc(it.title)}</div>
+                    ${renderCardBodyContent(it)}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // =========================================================================
+  // MASTER ROUTER: MAPS EACH OF THE 41 SLIDES TO ITS DISTINCT ARCHETYPE
   // =========================================================================
   function renderSlideMaster(s, idx, total) {
     const photos = getPhotosForSlide(s);
     const lay = s.layout || "";
+
+    if (themeMode === "canva") {
+      if (lay === "cover_hero") {
+        return renderCanvaHeroCover(s, idx, total, photos);
+      }
+      if (lay === "final_lessons_utehy") {
+        return renderCanvaClosingHero(s, idx, total, photos);
+      }
+      if ([14, 15, 17, 18, 35, 36].includes(s.id)) {
+        return renderCanvaConcaveArch(s, idx, total, photos);
+      }
+      if (s.id === 3) {
+        const items3 = (s.facts || []).map((f) => ({ badge: f.label, title: f.val, body: f.detail }));
+        return renderCanvaIntroCutout(s, idx, total, photos, items3);
+      }
+      if ([12, 26, 38].includes(s.id)) {
+        const itemsP = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.heading || b.bold, body: b.text }));
+        return renderCanvaIntroCutout(s, idx, total, photos, itemsP);
+      }
+      if ([7, 8, 34].includes(s.id)) {
+        const itemsC = (s.cards || []).map((f) => ({
+          badge: f.tag || "",
+          title: f.title,
+          points: Array.isArray(f.points) ? f.points : null,
+          body: f.desc || ""
+        }));
+        return renderCanvaEditorialCollage(s, idx, total, photos, itemsC);
+      }
+      if (s.id === 25) {
+        const items25 = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.bold, body: b.text }));
+        return renderCanvaEditorialCollage(s, idx, total, photos, items25);
+      }
+      if (s.id === 30) {
+        const items30 = (s.columns || []).map((c) => ({ badge: c.num, title: `${c.num} · ${c.title}`, body: c.desc }));
+        return renderCanvaEditorialCollage(s, idx, total, photos, items30);
+      }
+    }
 
     if (lay === "cover_hero" || lay === "final_lessons_utehy") {
       return renderArchHeroPoster(s, idx, total, photos);
@@ -719,12 +982,13 @@
   }
 
   // =========================================================================
-  // STATE & DOM REFERENCES (Default = Full 45 Slides!)
+  // STATE & DOM REFERENCES (Default = Full 41 Slides + Canva Theme!)
   // =========================================================================
   let activeDeck = RAW_SLIDES.slice();
   let currentIndex = 0;
   let isTransitioning = false;
   let autoplayTimer = null;
+  let themeMode = "canva";
 
   const stageViewport = document.getElementById("stage-viewport");
   const slideStage = document.getElementById("slide-stage");
@@ -737,6 +1001,7 @@
   const pSilhouette = document.getElementById("p-silhouette");
   const pSilkTop = document.getElementById("p-silk-top");
   const pSilkBottom = document.getElementById("p-silk-bottom");
+  const pCanvaCurves = document.getElementById("p-canva-curves");
   const pFlashBeam = document.getElementById("p-flash-beam");
 
   const btnPrev = document.getElementById("btn-prev");
@@ -746,6 +1011,7 @@
   const btnAutoplay = document.getElementById("btn-autoplay");
   const autoplayLabel = document.getElementById("autoplay-label");
   const selDeckMode = document.getElementById("sel-deck-mode");
+  const selThemeMode = document.getElementById("sel-theme-mode");
   const slideCounter = document.getElementById("slide-counter");
   const slideScrubber = document.getElementById("slide-scrubber");
   const sectionIndicator = document.getElementById("section-indicator");
@@ -791,6 +1057,9 @@
     }
     if (pSilkBottom) {
       pSilkBottom.style.transform = `translate3d(${((idx % 4) - 2) * -18}px, ${((idx % 3) - 1) * -10}px, 0) rotate(${((idx % 3) - 1) * -2.5}deg)`;
+    }
+    if (pCanvaCurves) {
+      pCanvaCurves.style.transform = `translate3d(${((idx % 5) - 2) * 16}px, ${((idx % 3) - 1) * 8}px, 0) scale(${1.02 + (idx % 3) * 0.02})`;
     }
     if (triggerBeam && pFlashBeam) {
       pFlashBeam.classList.remove("sweeping");
@@ -874,6 +1143,17 @@
 
     const slide = activeDeck[nextIdx];
     const html = renderSlideMaster(slide, nextIdx, total);
+    if (slideStage && slide) {
+      const darkSlide = slide.layout === "cover_hero" ||
+        slide.layout === "final_lessons_utehy" ||
+        slide.layout === "video_slide" ||
+        slide.layout === "chapter_cover" ||
+        slide.theme === "dark" ||
+        slide.id === 13 ||
+        slide.id === 32;
+      slideStage.classList.toggle("stage-dark", darkSlide);
+      slideStage.classList.toggle("stage-light", !darkSlide);
+    }
 
     if (immediate) {
       currentIndex = nextIdx;
@@ -979,11 +1259,25 @@
     });
   }
 
+  function setThemeMode(mode) {
+    themeMode = mode === "royal" ? "royal" : "canva";
+    if (document.body) {
+      document.body.classList.toggle("theme-canva", themeMode === "canva");
+    }
+    goToSlide(currentIndex, true);
+  }
+
+  if (selThemeMode) {
+    selThemeMode.addEventListener("change", (e) => {
+      setThemeMode(e.target.value);
+    });
+  }
+
   function toggleAutoplay() {
     if (autoplayTimer) {
       clearInterval(autoplayTimer);
       autoplayTimer = null;
-      if (autoplayLabel) autoplayLabel.textContent = "▶ Tự chạy (4.5s)";
+      if (autoplayLabel) autoplayLabel.textContent = "▶ Tự chạy";
     } else {
       if (autoplayLabel) autoplayLabel.textContent = "⏸ Đang chạy...";
       autoplayTimer = setInterval(() => {

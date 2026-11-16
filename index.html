@@ -6,10 +6,10 @@
   <title>Tỷ phú Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup — Trọn bộ 41 Slide 3D Morph</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Lora:ital,wght@0,600;0,700;1,600;1,700&family=Oswald:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="theme-canva">
   <div class="app-shell">
     <!-- 16:9 Presentation Stage Container -->
     <main id="stage-viewport" class="stage-viewport" tabindex="0" aria-label="Sân khấu trình chiếu 41 Slide Phạm Nhật Vượng">
@@ -80,6 +80,13 @@
                   stroke="#1C1917" stroke-width="4" opacity="0.78" />
           </svg>
 
+          <svg id="p-canva-curves" class="p-canva-curves" viewBox="0 0 1280 720" fill="none">
+            <path d="M-80,140 C260,30 480,260 880,110 C1080,35 1220,90 1360,40" stroke="#1D422E" stroke-width="2" opacity="0.14" />
+            <path d="M-60,620 C240,510 540,690 920,540 C1120,460 1240,510 1360,470" stroke="#2D5A46" stroke-width="2.5" opacity="0.16" />
+            <ellipse cx="1140" cy="110" rx="260" ry="150" fill="rgba(45, 90, 70, 0.06)" />
+            <ellipse cx="140" cy="640" rx="280" ry="160" fill="rgba(19, 46, 27, 0.06)" />
+          </svg>
+
           <div id="p-flash-beam" class="p-flash-beam"></div>
         </div>
 
@@ -100,18 +107,25 @@
       <div class="bar-left">
         <button type="button" id="btn-toc" class="ctrl-btn" title="Mục lục 41 Slide (Phím G)">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
-          <span>Mục lục (41 Slide)</span>
+          <span>Mục lục (41)</span>
         </button>
 
         <div class="deck-mode-picker" title="Chế độ trình chiếu">
           <select id="sel-deck-mode" class="ctrl-select">
-            <option value="full45" selected>📚 Trọn bộ 41 Slide Đầy đủ</option>
-            <option value="tiktok14">⚡ Rút gọn 14 Cảnh Trọng tâm</option>
+            <option value="full45" selected>📚 41 Slide</option>
+            <option value="tiktok14">⚡ 14 Cảnh</option>
+          </select>
+        </div>
+
+        <div class="theme-mode-picker" title="Chọn phong cách thiết kế">
+          <select id="sel-theme-mode" class="ctrl-select">
+            <option value="canva" selected>🌿 Canva Xanh</option>
+            <option value="royal">🔥 Đỏ Hoàng Gia</option>
           </select>
         </div>
 
         <button type="button" id="btn-autoplay" class="ctrl-btn ctrl-btn-gold" title="Tự động chuyển cảnh Morph (4.5 giây/slide)">
-          <span id="autoplay-label">▶ Tự chạy (4.5s)</span>
+          <span id="autoplay-label">▶ Tự chạy</span>
         </button>
       </div>
 

@@ -59,7 +59,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_portrait.jpg",
-        "tag": "SLIDE 01",
+        "tag": "CHỦ TỊCH PHẠM NHẬT VƯỢNG",
         "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, Tổng Giám đốc VinFast"
       },
       {
@@ -203,7 +203,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_portrait.jpg",
-        "tag": "SLIDE 03",
+        "tag": "CHỦ TỊCH PHẠM NHẬT VƯỢNG",
         "cap": "Ông Phạm Nhật Vượng (sinh ngày 05/08/1968)"
       },
       {
@@ -276,9 +276,9 @@ window.DECK_SLIDES = [
         "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
       },
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
+        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
@@ -405,28 +405,28 @@ window.DECK_SLIDES = [
         }
       ]
     },
-    "image": "assets/moscow_university.jpg",
-    "imageCaption": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất",
+    "image": "assets/humanitarian_thientam_glow.jpg",
+    "imageCaption": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành",
     "gallery": [
       {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "QUỸ THIỆN TÂM",
+        "cap": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành"
       },
       {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "src": "assets/vinmec_hospital.jpg",
+        "tag": "Y TẾ PHI LỢI NHUẬN",
+        "cap": "Bệnh viện Đa khoa Quốc tế Vinmec hỗ trợ khám sàng lọc và mổ tim miễn phí"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "GIÁO DỤC & HỌC BỔNG",
+        "cap": "Quần thể Đại học VinUni và chương trình học bổng ươm mầm tài năng Việt"
       },
       {
-        "src": "assets/xanhsm_vinfast_3d.jpg",
-        "tag": "XANH SM & V-GREEN",
-        "cap": "Hệ sinh thái Taxi điện Xanh SM và mạng lưới 150.000 cổng sạc V-GREEN"
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "QUỸ VINFUTURE",
+        "cap": "Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tại Hà Nội"
       }
     ]
   },
@@ -516,7 +516,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "SLIDE 08",
+        "tag": "TƯ LIỆU VINGROUP",
         "cap": "Hoạt động đối ngoại và hợp tác đầu tư quốc tế của lãnh đạo Tập đoàn Vingroup"
       },
       {
@@ -570,9 +570,9 @@ window.DECK_SLIDES = [
     "imageCaption": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine",
     "gallery": [
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
+        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
       },
       {
         "src": "assets/vincom_ba_trieu.jpg",
@@ -744,7 +744,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/moscow_university.jpg",
-        "tag": "SLIDE 12",
+        "tag": "TƯ LIỆU VINGROUP",
         "cap": "Môi trường học thuật tại Moscow (Nga) — nơi ông Phạm Nhật Vượng học tập giai đoạn 1987–1993"
       },
       {
@@ -794,7 +794,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/moscow_grit_backdrop.jpg",
-        "tag": "SLIDE 13",
+        "tag": "KHỞI NGHIỆP ĐÔNG ÂU",
         "cap": "Bối cảnh kinh tế Đông Âu đầu thập niên 1990 nhiều biến động"
       },
       {
@@ -857,7 +857,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "SLIDE 15",
+        "tag": "KHARKOV (UKRAINE)",
         "cap": "Nhà máy Technocom tại Kharkov (Ukraine) — nơi sản xuất thương hiệu mì ăn liền Mivina"
       },
       {
@@ -920,7 +920,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "SLIDE 17",
+        "tag": "VINPEARL NHA TRANG",
         "cap": "Quần thể du lịch nghỉ dưỡng Vinpearl trên đảo Hòn Tre (Vịnh Nha Trang)"
       },
       {
@@ -1053,7 +1053,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/landmark81_vingroup.jpg",
-        "tag": "SLIDE 19",
+        "tag": "LANDMARK 81 (461,2M)",
         "cap": "Tòa tháp Landmark 81 (cao 461,2m) nằm trong khu đô thị Vinhomes Central Park (TP.HCM)"
       },
       {
@@ -1116,7 +1116,7 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "SLIDE 20",
+        "tag": "VINFAST VF 8 TẠI MỸ",
         "cap": "Mẫu SUV điện thông minh VinFast VF 8 trên hành trình mở rộng thị trường quốc tế"
       },
       {
@@ -1722,9 +1722,9 @@ window.DECK_SLIDES = [
         "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
       },
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
+        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
@@ -2006,9 +2006,9 @@ window.DECK_SLIDES = [
         "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
       },
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
+        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
@@ -2117,28 +2117,28 @@ window.DECK_SLIDES = [
         "desc": "Ủng hộ hàng nghìn tỷ đồng chống COVID-19, bão lũ lớn (Yagi) và tái thiết nhà ở."
       }
     ],
-    "image": "assets/moscow_university.jpg",
-    "imageCaption": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất",
+    "image": "assets/humanitarian_thientam_glow.jpg",
+    "imageCaption": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành",
     "gallery": [
       {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "QUỸ THIỆN TÂM",
+        "cap": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành"
       },
       {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "src": "assets/vinmec_hospital.jpg",
+        "tag": "Y TẾ PHI LỢI NHUẬN",
+        "cap": "Bệnh viện Đa khoa Quốc tế Vinmec hỗ trợ khám sàng lọc và mổ tim miễn phí"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "GIÁO DỤC & HỌC BỔNG",
+        "cap": "Quần thể Đại học VinUni và chương trình học bổng ươm mầm tài năng Việt"
       },
       {
-        "src": "assets/xanhsm_vinfast_3d.jpg",
-        "tag": "XANH SM & V-GREEN",
-        "cap": "Hệ sinh thái Taxi điện Xanh SM và mạng lưới 150.000 cổng sạc V-GREEN"
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "QUỸ VINFUTURE",
+        "cap": "Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tại Hà Nội"
       }
     ]
   },
@@ -2247,9 +2247,9 @@ window.DECK_SLIDES = [
     "imageCaption": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine",
     "gallery": [
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
+        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
       },
       {
         "src": "assets/vincom_ba_trieu.jpg",

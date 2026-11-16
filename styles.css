@@ -1353,6 +1353,8 @@ html, body {
   gap: 5px;
   height: 30px;
   padding: 0 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
   border-radius: 6px;
   border: 1px solid rgba(250, 204, 21, 0.38);
   background: rgba(95, 12, 12, 0.75);
@@ -1592,4 +1594,834 @@ html, body {
 @media (max-width: 720px) {
   .section-indicator { display: none; }
   .slide-scrubber { width: 70px; }
+}
+
+/* ==========================================================================
+   CANVA "XANH RỪNG – KEM SÁNG" (EAHKpviK2Js) THEME & ARCHETYPES
+   ========================================================================== */
+.p-canva-curves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: transform 1100ms var(--morph-ease);
+}
+
+body.theme-canva .p-glow,
+body.theme-canva .p-rings,
+body.theme-canva .p-silhouette,
+body.theme-canva .p-silk-top,
+body.theme-canva .p-silk-bottom {
+  display: none;
+}
+
+body.theme-canva .p-canva-curves {
+  display: block;
+}
+
+body.theme-canva .app-shell {
+  background: radial-gradient(circle at 50% 45%, #142D1E 0%, #07120B 100%);
+}
+
+body.theme-canva .slide-stage {
+  background: #FAF8F5;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.68), 0 0 0 1.5px rgba(19, 46, 27, 0.25);
+  border-radius: 14px;
+}
+
+body.theme-canva .slide-stage.stage-dark {
+  background: radial-gradient(circle at 60% 35%, #16402A 0%, #0D2317 65%, #07140D 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.78), 0 0 0 1.5px rgba(212, 235, 220, 0.28);
+}
+
+body.theme-canva .stage-dark .p-canva-curves path {
+  stroke: #A7D7BA;
+  opacity: 0.16;
+}
+
+body.theme-canva .stage-progress-fill {
+  background: linear-gradient(90deg, #16422A, #3B7A57, #E2C275);
+  box-shadow: 0 0 10px rgba(59, 122, 87, 0.6);
+}
+
+/* Presenter Bar & Modals in Canva Emerald Palette */
+body.theme-canva .presenter-bar {
+  background: #0A1B11;
+  border-top: 1px solid rgba(167, 215, 186, 0.22);
+}
+
+body.theme-canva .ctrl-btn,
+body.theme-canva .nav-btn,
+body.theme-canva .ctrl-select {
+  background: rgba(22, 64, 42, 0.85);
+  border-color: rgba(167, 215, 186, 0.34);
+  color: #F4F9F5;
+}
+
+body.theme-canva .ctrl-btn:hover,
+body.theme-canva .nav-btn:hover {
+  background: #1E5438;
+  border-color: #E2C275;
+}
+
+body.theme-canva .ctrl-btn-gold,
+body.theme-canva .nav-btn-primary {
+  background: #FAF8F5;
+  color: #132E1B;
+  border-color: #FAF8F5;
+}
+
+body.theme-canva .slide-counter {
+  color: #FAF8F5;
+}
+
+body.theme-canva .section-indicator {
+  color: #B9DEC7;
+}
+
+body.theme-canva .slide-scrubber {
+  accent-color: #499F68;
+}
+
+body.theme-canva .toc-dialog,
+body.theme-canva .lightbox-card {
+  background: #0D2317;
+  border-color: rgba(185, 222, 199, 0.48);
+}
+
+body.theme-canva .toc-head {
+  background: #143523;
+  border-bottom-color: rgba(185, 222, 199, 0.24);
+}
+
+body.theme-canva .toc-filters {
+  background: #0F291A;
+}
+
+body.theme-canva .toc-head h2,
+body.theme-canva .lightbox-title,
+body.theme-canva .toc-item-title {
+  color: #FAF8F5;
+}
+
+body.theme-canva .toc-kicker,
+body.theme-canva .toc-item-num {
+  color: #A7D7BA;
+}
+
+body.theme-canva .toc-chip,
+body.theme-canva .toc-item {
+  background: rgba(22, 64, 42, 0.65);
+  border-color: rgba(167, 215, 186, 0.3);
+}
+
+body.theme-canva .toc-chip.active {
+  background: #FAF8F5;
+  color: #132E1B;
+}
+
+body.theme-canva .toc-item.active,
+body.theme-canva .toc-item:hover {
+  background: #1D5135;
+  border-color: #E2C275;
+}
+
+/* Shared Canva Light Editorial Styling (#FAF8F5 + #132E1B Forest Green) */
+body.theme-canva .stage-light .fs-title {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.18;
+  letter-spacing: 0.005em;
+  background: none;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: #132E1B;
+  color: #132E1B;
+  filter: none;
+}
+
+body.theme-canva .stage-light .fs-lead {
+  color: #2A4333;
+  text-shadow: none;
+  font-size: 17.5px;
+}
+
+body.theme-canva .stage-dark .fs-title:not(.canva-knockout-title) {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  background: none;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: #FAF8F5;
+  color: #FAF8F5;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+body.theme-canva .stage-dark .fs-lead {
+  color: #E2F1E7;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+body.theme-canva .stage-light .m-card,
+body.theme-canva .stage-light .arch-story-row,
+body.theme-canva .stage-light .arch-step-card,
+body.theme-canva .stage-light .arch-kpi-card,
+body.theme-canva .stage-light .arch-versus-col,
+body.theme-canva .stage-light .arch-pillar-col,
+body.theme-canva .stage-light .arch-chart-row,
+body.theme-canva .stage-light .arch-quote-banner {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(19, 46, 27, 0.16);
+  clip-path: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(19, 46, 27, 0.08);
+}
+
+body.theme-canva .stage-light .m-card::before {
+  width: 5px;
+  background: linear-gradient(180deg, #132E1B, #2D6A4F);
+  border-radius: 16px 0 0 16px;
+}
+
+body.theme-canva .stage-light .m-card-title,
+body.theme-canva .stage-light .arch-pillar-title,
+body.theme-canva .stage-light .arch-kpi-num,
+body.theme-canva .stage-light .arch-chart-head {
+  color: #132E1B;
+}
+
+body.theme-canva .stage-light .m-card-body,
+body.theme-canva .stage-light .m-card-bullets li,
+body.theme-canva .stage-light .arch-pillar-list li,
+body.theme-canva .stage-light .arch-kpi-desc {
+  color: #24382C;
+}
+
+body.theme-canva .stage-light .arch-pillar-list li::before,
+body.theme-canva .stage-light .m-card-bullets li::before {
+  color: #2D6A4F;
+}
+
+body.theme-canva .stage-light .arch-pillar-list li strong,
+body.theme-canva .stage-light .m-card-eyebrow {
+  color: #1D5B39;
+}
+
+body.theme-canva .stage-light .m-hex-badge,
+body.theme-canva .stage-light .arch-step-year,
+body.theme-canva .stage-light .fs-pill-badge {
+  background: #132E1B;
+  color: #FAF8F5;
+  clip-path: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(19, 46, 27, 0.22);
+}
+
+body.theme-canva .stage-light .fs-pill-badge {
+  border-radius: 999px;
+}
+
+body.theme-canva .stage-light .arch-quote-text {
+  color: #132E1B;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+body.theme-canva .stage-light .arch-quote-author {
+  color: #2D6A4F;
+}
+
+body.theme-canva .stage-light .arch-chart-track {
+  background: rgba(19, 46, 27, 0.1);
+}
+
+body.theme-canva .stage-light .arch-chart-fill {
+  background: linear-gradient(90deg, #132E1B, #2D6A4F);
+}
+
+body.theme-canva .stage-light .arch-utehy-pill {
+  background: linear-gradient(90deg, #132E1B 0%, #1E4D33 100%);
+  border: 1.5px solid #2D6A4F;
+  box-shadow: 0 10px 24px rgba(19, 46, 27, 0.16);
+}
+
+body.theme-canva .stage-light .arch-utehy-code {
+  background: #FAF8F5;
+  color: #132E1B;
+}
+
+body.theme-canva .stage-light .arch-utehy-name {
+  color: #FAF8F5;
+}
+
+body.theme-canva .stage-light .arch-utehy-sub {
+  color: #D8EDE0;
+}
+
+/* Rounded Editorial Photo Frames under Canva Theme */
+body.theme-canva .m-photo-frame,
+body.theme-canva .m-photo-frame.hex-frame {
+  clip-path: none;
+  border-radius: 18px;
+  padding: 5px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(19, 46, 27, 0.16);
+  box-shadow: 0 12px 28px rgba(19, 46, 27, 0.14);
+}
+
+body.theme-canva .m-photo-inner {
+  clip-path: none;
+  border-radius: 14px;
+  background: #0F2619;
+}
+
+body.theme-canva .stage-light .m-photo-frame.hex-frame .m-photo-cap {
+  padding: 14px 10px 8px;
+  justify-content: flex-start;
+}
+
+body.theme-canva .m-photo-cap {
+  background: linear-gradient(to top, rgba(13, 35, 23, 0.72) 0%, transparent 100%);
+}
+
+body.theme-canva .m-photo-tag {
+  background: rgba(250, 248, 245, 0.94);
+  color: #132E1B;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+body.theme-canva .m-card-thumb,
+body.theme-canva .arch-utehy-thumb,
+body.theme-canva .arch-col-banner {
+  border-color: rgba(19, 46, 27, 0.25);
+  border-radius: 10px;
+}
+
+body.theme-canva .stage-light .arch-pillar-photo {
+  border-bottom-color: rgba(19, 46, 27, 0.18);
+}
+
+/* Dark Canva Slides Styling */
+body.theme-canva .stage-dark .m-card,
+body.theme-canva .stage-dark .arch-story-row,
+body.theme-canva .stage-dark .arch-step-card,
+body.theme-canva .stage-dark .arch-quote-banner {
+  background: rgba(18, 48, 30, 0.88);
+  border: 1.5px solid rgba(185, 222, 199, 0.3);
+  clip-path: none;
+  border-radius: 16px;
+}
+
+body.theme-canva .stage-dark .m-card::before {
+  background: linear-gradient(180deg, #A7D7BA, #E2C275);
+  border-radius: 16px 0 0 16px;
+}
+
+body.theme-canva .stage-dark .m-card-title,
+body.theme-canva .stage-dark .arch-quote-text {
+  color: #FAF8F5;
+}
+
+body.theme-canva .stage-dark .arch-quote-author {
+  color: #E2C275;
+}
+
+body.theme-canva .stage-dark .m-hex-badge,
+body.theme-canva .stage-dark .arch-step-year {
+  background: #FAF8F5;
+  color: #132E1B;
+  clip-path: none;
+  border-radius: 10px;
+}
+
+body.theme-canva .stage-dark .m-photo-frame {
+  background: rgba(250, 248, 245, 0.2);
+  border-color: rgba(250, 248, 245, 0.32);
+}
+
+body.theme-canva .stage-dark .arch-video-player {
+  border: 2.5px solid rgba(250, 248, 245, 0.72);
+  clip-path: none;
+  border-radius: 18px;
+}
+
+body.theme-canva .stage-dark .arch-video-toolbar {
+  background: rgba(18, 48, 30, 0.9);
+  border-color: rgba(185, 222, 199, 0.34);
+}
+
+body.theme-canva .stage-dark .arch-video-btn {
+  background: #FAF8F5;
+  color: #132E1B;
+}
+
+/* ==========================================================================
+   NEW CANVA "EAHKpviK2Js" DEDICATED LAYOUT ARCHETYPES
+   ========================================================================== */
+
+/* C1 & C2: Hero & Closing Knockout Cover */
+.canva-hero-cover {
+  position: relative;
+  padding: 26px 40px 22px;
+  justify-content: space-between;
+}
+
+.canva-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.canva-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) brightness(0.62);
+  transform: scale(1.03);
+}
+
+.canva-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 29, 18, 0.62) 0%, rgba(16, 46, 29, 0.56) 45%, rgba(8, 24, 15, 0.92) 100%);
+}
+
+.canva-hero-scrim.is-closing {
+  background: linear-gradient(180deg, rgba(10, 29, 18, 0.68) 0%, rgba(14, 39, 25, 0.78) 55%, rgba(7, 21, 13, 0.94) 100%);
+}
+
+.canva-hero-top {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.canva-pill-white {
+  display: inline-block;
+  padding: 8px 26px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #132E1B;
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.canva-knockout-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  gap: 10px;
+}
+
+.canva-knockout-title {
+  font-family: 'Oswald', 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
+  font-size: 74px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #FFFFFF 42%, rgba(255, 255, 255, 0.38) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.48));
+  margin-bottom: 6px;
+}
+
+.canva-knockout-title.is-closing {
+  font-size: 56px;
+  line-height: 1.06;
+  margin-bottom: 2px;
+}
+
+.canva-hero-foreground {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  min-height: 0;
+}
+
+.canva-fg-portrait {
+  height: 365px;
+  border-radius: 20px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.canva-fg-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 14%;
+  border-radius: 16px;
+  display: block;
+}
+
+.canva-hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.canva-hero-sub {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 21px;
+  font-weight: 600;
+  color: #FAF8F5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.canva-hero-sub.center {
+  text-align: center;
+  font-size: 19px;
+}
+
+.canva-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.canva-metric-glass {
+  background: rgba(14, 39, 25, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.canva-metric-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.05;
+}
+
+.canva-metric-lbl {
+  font-size: 13px;
+  font-weight: 600;
+  color: #D8EDE0;
+  margin-top: 4px;
+}
+
+.canva-hero-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.canva-pillar-chip {
+  background: rgba(250, 248, 245, 0.94);
+  color: #132E1B;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.canva-pillar-chip span {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: #132E1B;
+  color: #FAF8F5;
+  font-weight: 900;
+}
+
+.canva-hero-meta {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(250, 248, 245, 0.92);
+}
+
+.canva-closing-body {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  min-height: 0;
+}
+
+.canva-closing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.canva-closing-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(250, 248, 245, 0.94);
+  color: #132E1B;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.canva-mini-thumb {
+  width: 72px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: zoom-in;
+  border: 1.5px solid rgba(19, 46, 27, 0.22);
+}
+
+.canva-mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.canva-closing-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #132E1B;
+  margin-bottom: 3px;
+}
+
+.canva-closing-desc {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2A4333;
+  line-height: 1.35;
+}
+
+/* C3: Canva Concave Downward-Arch Panorama (mirroring Tràng An / Tam Cốc / Bái Đính) */
+.canva-kpi-pills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.canva-kpi-pill {
+  background: #132E1B;
+  color: #FAF8F5;
+  border-radius: 999px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(19, 46, 27, 0.16);
+}
+
+.canva-kpi-pill strong {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  color: #E2C275;
+  white-space: nowrap;
+}
+
+.canva-kpi-pill span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #E2F1E7;
+  line-height: 1.25;
+}
+
+.canva-arch-wrap {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 16px;
+  min-height: 0;
+}
+
+.canva-arch-photo {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0F2619;
+  box-shadow: 0 14px 32px rgba(19, 46, 27, 0.16);
+  cursor: zoom-in;
+  min-height: 0;
+  height: 100%;
+}
+
+.canva-arch-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+
+.canva-arch-curve {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 62px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.canva-arch-thumbs {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+}
+
+.canva-arch-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.canva-arch-cards.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.canva-arch-cards.cols-4 .m-card {
+  padding: 11px 13px;
+}
+
+.canva-arch-cards.cols-4 .m-card-title {
+  font-size: 16.5px;
+}
+
+.canva-arch-cards.cols-4 .m-card-body {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* C4: Canva Intro Cutout (Top Split Title + Right Cards + Bottom Panoramic Strip) */
+.canva-intro-top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.45fr);
+  gap: 20px;
+  align-items: center;
+  min-height: 0;
+}
+
+.canva-intro-heading .fs-title {
+  font-size: 40px;
+  line-height: 1.12;
+  margin-bottom: 8px;
+}
+
+.canva-intro-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.canva-intro-cards.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.canva-compact-card {
+  padding: 11px 14px;
+}
+
+.canva-compact-card .m-card-title {
+  font-size: 16.5px;
+  margin-bottom: 2px;
+}
+
+.canva-compact-card .m-card-body {
+  font-size: 14.5px;
+  line-height: 1.32;
+}
+
+.canva-intro-bottom {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-height: 170px;
+}
+
+/* C5: Canva Asymmetrical Editorial Collage */
+.canva-collage-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.32fr);
+  gap: 20px;
+  min-height: 0;
+}
+
+.canva-collage-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  height: 100%;
+}
+
+.canva-collage-title-box .fs-title {
+  font-size: 38px;
+  line-height: 1.14;
+}
+
+.canva-collage-left .m-photo-frame {
+  flex: 1;
+  min-height: 0;
+}
+
+.canva-collage-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+}
+
+.canva-collage-photos {
+  height: 215px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.canva-collage-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-height: 0;
 }
