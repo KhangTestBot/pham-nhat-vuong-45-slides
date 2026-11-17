@@ -26,6 +26,56 @@ window.DECK_SLIDES = [
   {
     "id": 2,
     "part": 1,
+    "layout": "team_members",
+    "theme": "dark",
+    "section": "Mở đầu · Thành viên Nhóm",
+    "kicker": "Chuyên đề Văn hóa Doanh nhân · Nhóm Thực hiện",
+    "title": "THÀNH VIÊN NHÓM THUYẾT TRÌNH",
+    "subtitle": "Chuyên đề: Doanh nhân Phạm Nhật Vượng & Hệ sinh thái Tập đoàn Vingroup",
+    "image": "assets/landmark81_vingroup.jpg",
+    "members": [
+      {
+        "num": "01",
+        "name": "Đỗ Như Trường Giang",
+        "role": "Thành viên Nhóm thuyết trình"
+      },
+      {
+        "num": "02",
+        "name": "Vũ Việt Quang",
+        "role": "Thành viên Nhóm thuyết trình"
+      },
+      {
+        "num": "03",
+        "name": "Trương Đức Anh",
+        "role": "Thành viên Nhóm thuyết trình"
+      },
+      {
+        "num": "04",
+        "name": "Nguyễn Duy Khánh",
+        "role": "Thành viên Nhóm thuyết trình"
+      },
+      {
+        "num": "05",
+        "name": "Đỗ Viết Sáng",
+        "role": "Thành viên Nhóm thuyết trình"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "LANDMARK 81",
+        "cap": "Biểu tượng tòa tháp Landmark 81 và đại đô thị Vinhomes Central Park"
+      },
+      {
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "ĐẠI HỌC VINUNI",
+        "cap": "Khuôn viên Đại học Tinh hoa VinUni"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "part": 1,
     "layout": "cover_hero",
     "theme": "utehy",
     "section": "Phần 1 · Tổng quan & Khung Lý thuyết",
@@ -104,7 +154,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "part": 1,
     "layout": "agenda_grid",
     "theme": "light",
@@ -116,50 +166,50 @@ window.DECK_SLIDES = [
     "chapters": [
       {
         "num": "Phần I",
-        "range": "01 – 11",
-        "title": "Mở đầu, Lý thuyết: 5 Nhân tố & Mục 5",
-        "desc": "Trang bìa, 5 nhân tố hình thành và tổng quan 4 cấu phần (5.1 – 5.4).",
-        "target": 5,
+        "range": "01 – 12",
+        "title": "Mở đầu, Thành viên & 5 Nhân tố",
+        "desc": "Trang mở đầu, danh sách nhóm, 5 nhân tố và tổng quan 4 cấu phần (5.1 – 5.4).",
+        "target": 6,
         "color": "#5B6E58"
       },
       {
         "num": "Phần II",
-        "range": "12 – 23",
+        "range": "13 – 24",
         "title": "Tiểu sử & Hệ sinh thái Doanh nghiệp",
         "desc": "Từ Technocom (Ukraine) đến Vinhomes, VinFast, Xanh SM, VinUni & Video.",
-        "target": 12,
+        "target": 13,
         "color": "#B91C1C"
       },
       {
         "num": "Phần III",
-        "range": "24 – 33",
+        "range": "25 – 34",
         "title": "5.1 Năng lực & 5.2 Tố chất",
         "desc": "Quản trị đa ngành, đổi mới công nghệ và 3 bước ngoặt đặt cược lớn.",
-        "target": 24,
+        "target": 25,
         "color": "#C5A888"
       },
       {
         "num": "Phần IV",
-        "range": "34 – 40",
+        "range": "35 – 41",
         "title": "5.3 Đạo đức & 5.4 Phong cách",
         "desc": "Chữ Tín, 46.000 tỷ Quỹ Thiện Tâm, VinFuture và kỷ luật tốc độ.",
-        "target": 34,
+        "target": 35,
         "color": "#6B7F5E"
       },
       {
         "num": "Phần V",
-        "range": "41 – 42",
+        "range": "42 – 43",
         "title": "Đánh giá & Bài học Sinh viên",
         "desc": "Thách thức toàn cầu và 4 định hướng rèn luyện cho sinh viên.",
-        "target": 41,
+        "target": 42,
         "color": "#1E293B"
       },
       {
         "num": "Phần VI",
-        "range": "43 – 63",
+        "range": "44 – 64",
         "title": "20 Câu hỏi & Thanks for Watching",
         "desc": "10 cặp câu hỏi – đáp án tô xanh tương tác và trang kết thúc.",
-        "target": 43,
+        "target": 44,
         "color": "#15803D"
       }
     ],
@@ -189,7 +239,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "part": 1,
     "layout": "bio_overview",
     "theme": "light",
@@ -256,7 +306,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "part": 1,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
@@ -325,7 +375,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "part": 1,
     "layout": "five_factors_diagram",
     "theme": "light",
@@ -392,7 +442,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "part": 1,
     "layout": "split_comparison",
     "theme": "light",
@@ -463,7 +513,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "part": 1,
     "layout": "two_cards_image",
     "theme": "light",
@@ -516,7 +566,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 9,
+    "id": 10,
     "part": 1,
     "layout": "two_cards_image",
     "theme": "light",
@@ -569,7 +619,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 10,
+    "id": 11,
     "part": 1,
     "layout": "three_columns",
     "theme": "light",
@@ -624,7 +674,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 11,
+    "id": 12,
     "part": 1,
     "layout": "matrix_table",
     "theme": "light",
@@ -686,7 +736,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "part": 2,
     "layout": "chapter_cover",
     "theme": "dark",
@@ -744,7 +794,7 @@ window.DECK_SLIDES = [
     "kicker": "PHẦN II · DÒNG THỜI GIAN"
   },
   {
-    "id": 13,
+    "id": 14,
     "part": 2,
     "layout": "photo_story",
     "theme": "light",
@@ -797,7 +847,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 14,
+    "id": 15,
     "part": 2,
     "layout": "quote_analysis",
     "theme": "light",
@@ -847,7 +897,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 15,
+    "id": 16,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -910,7 +960,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 16,
+    "id": 17,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -973,7 +1023,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 17,
+    "id": 18,
     "part": 2,
     "layout": "ecosystem_architecture",
     "theme": "light",
@@ -1043,7 +1093,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 18,
+    "id": 19,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -1106,7 +1156,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 19,
+    "id": 20,
     "part": 2,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -1169,7 +1219,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 20,
+    "id": 21,
     "part": 2,
     "layout": "chart_bars_kpi",
     "theme": "light",
@@ -1248,7 +1298,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 21,
+    "id": 22,
     "part": 2,
     "layout": "three_columns",
     "theme": "light",
@@ -1303,7 +1353,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 22,
+    "id": 23,
     "part": 2,
     "layout": "video_slide",
     "theme": "dark",
@@ -1349,7 +1399,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 23,
+    "id": 24,
     "part": 2,
     "layout": "forbes_trajectory",
     "theme": "light",
@@ -1410,7 +1460,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 24,
+    "id": 25,
     "part": 3,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
@@ -1479,7 +1529,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 25,
+    "id": 26,
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -1539,7 +1589,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 26,
+    "id": 27,
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
@@ -1591,7 +1641,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 27,
+    "id": 28,
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
@@ -1643,7 +1693,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 28,
+    "id": 29,
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
@@ -1701,7 +1751,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 29,
+    "id": 30,
     "part": 3,
     "layout": "matrix_table",
     "theme": "light",
@@ -1766,7 +1816,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 30,
+    "id": 31,
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -1826,7 +1876,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 31,
+    "id": 32,
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
@@ -1884,7 +1934,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 32,
+    "id": 33,
     "part": 3,
     "layout": "staircase_decisions",
     "theme": "light",
@@ -1942,7 +1992,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 33,
+    "id": 34,
     "part": 3,
     "layout": "quote_analysis",
     "theme": "light",
@@ -1995,7 +2045,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 34,
+    "id": 35,
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -2055,7 +2105,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 35,
+    "id": 36,
     "part": 4,
     "layout": "two_cards_image",
     "theme": "light",
@@ -2111,7 +2161,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 36,
+    "id": 37,
     "part": 4,
     "layout": "charity_showcase",
     "theme": "light",
@@ -2175,7 +2225,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 37,
+    "id": 38,
     "part": 4,
     "layout": "enterprise_deep_dive",
     "theme": "light",
@@ -2241,7 +2291,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 38,
+    "id": 39,
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
@@ -2301,7 +2351,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 39,
+    "id": 40,
     "part": 4,
     "layout": "photo_story",
     "theme": "light",
@@ -2353,7 +2403,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 40,
+    "id": 41,
     "part": 4,
     "layout": "six_core_values",
     "theme": "light",
@@ -2423,7 +2473,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 41,
+    "id": 42,
     "part": 5,
     "layout": "split_comparison",
     "theme": "light",
@@ -2494,7 +2544,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 42,
+    "id": 43,
     "part": 5,
     "layout": "final_lessons_utehy",
     "theme": "utehy",
@@ -2556,7 +2606,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 43,
+    "id": 44,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2584,7 +2634,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 44,
+    "id": 45,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2612,7 +2662,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 45,
+    "id": 46,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2640,7 +2690,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 46,
+    "id": 47,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2668,7 +2718,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 47,
+    "id": 48,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2696,7 +2746,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 48,
+    "id": 49,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2724,7 +2774,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 49,
+    "id": 50,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2752,7 +2802,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 50,
+    "id": 51,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2780,7 +2830,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 51,
+    "id": 52,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2808,7 +2858,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 52,
+    "id": 53,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2836,7 +2886,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 53,
+    "id": 54,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2864,7 +2914,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 54,
+    "id": 55,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2892,7 +2942,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 55,
+    "id": 56,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2920,7 +2970,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 56,
+    "id": 57,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -2948,7 +2998,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 57,
+    "id": 58,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -2976,7 +3026,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 58,
+    "id": 59,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -3004,7 +3054,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 59,
+    "id": 60,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -3032,7 +3082,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 60,
+    "id": 61,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -3060,7 +3110,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 61,
+    "id": 62,
     "part": 6,
     "layout": "quiz_question",
     "theme": "light",
@@ -3088,7 +3138,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 62,
+    "id": 63,
     "part": 6,
     "layout": "quiz_answer",
     "theme": "light",
@@ -3116,7 +3166,7 @@ window.DECK_SLIDES = [
     ]
   },
   {
-    "id": 63,
+    "id": 64,
     "part": 6,
     "layout": "pure_thanks",
     "theme": "dark",

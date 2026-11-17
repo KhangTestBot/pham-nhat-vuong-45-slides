@@ -2805,3 +2805,134 @@ body:not(.theme-canva) .pure-glass-badge {
   border-color: rgba(253, 224, 71, 0.45);
   color: #FEF08A;
 }
+
+/* ==========================================================================
+   SLIDE 02: TEAM MEMBERS SHOWCASE (5 MEMBERS IN 3 + 2 CENTERED GRID)
+   ========================================================================== */
+.team-hero-slide {
+  padding: 28px 44px 36px;
+}
+
+.team-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 0;
+  width: 100%;
+}
+
+.team-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.team-display-title {
+  font-size: 56px;
+  line-height: 1.15;
+  padding: 4px 0;
+  margin: 0;
+}
+
+.team-sub {
+  font-size: 20px;
+}
+
+.team-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 1120px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.team-member-card {
+  width: 356px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(250, 248, 245, 0.96);
+  border: 2px solid rgba(226, 194, 117, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.36);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.team-member-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #132E1B 0%, #1E4D33 100%);
+  color: #FAF8F5;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(19, 46, 27, 0.28);
+}
+
+.team-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  text-align: left;
+}
+
+.team-member-name {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #132E1B;
+  line-height: 1.22;
+  white-space: nowrap;
+}
+
+.team-member-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2D6A4F;
+}
+
+body:not(.theme-canva) .team-display-title {
+  background: linear-gradient(180deg, #FFFFFF 34%, #FEF08A 78%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body:not(.theme-canva) .team-member-card {
+  background: linear-gradient(145deg, rgba(112, 14, 14, 0.94), rgba(59, 4, 4, 0.96));
+  border-color: rgba(250, 204, 21, 0.72);
+}
+
+body:not(.theme-canva) .team-member-badge {
+  background: linear-gradient(135deg, #FEF08A 0%, #F59E0B 100%);
+  color: #3B0404;
+}
+
+body:not(.theme-canva) .team-member-name {
+  color: #FFFFFF;
+}
+
+body:not(.theme-canva) .team-member-role {
+  color: #FDE68A;
+}

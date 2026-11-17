@@ -11,7 +11,7 @@
   "use strict";
 
   const RAW_SLIDES = window.DECK_SLIDES || window.SLIDES_DATA || [];
-  const TIKTOK_14_IDS = [1, 2, 4, 12, 13, 14, 16, 17, 19, 22, 25, 30, 42, 63];
+  const TIKTOK_14_IDS = [1, 2, 3, 5, 13, 14, 15, 17, 18, 20, 23, 26, 43, 64];
 
   function esc(str) {
     if (str === null || str === undefined) return "";
@@ -216,7 +216,7 @@
   // 4. ARCHETYPE: UTEHY CLASSROOM SLIDE REPLICA (4 Giant Colored Bars with Thumbs + Right Photos)
   function renderArchUtehyReplica(s, idx, total, photos) {
     const bars = s.bars || [];
-    const showPractice = s.part >= 3 || s.id >= 24;
+    const showPractice = s.part >= 3 || s.id >= 25;
     return `
       <div class="fs-slide">
 
@@ -900,12 +900,63 @@
     `;
   }
 
+  function renderTeamMembers(s) {
+    const members = Array.isArray(s.members) ? s.members : [];
+    const bgSrc = s.image || "assets/landmark81_vingroup.jpg";
+    const topRow = members.slice(0, 3);
+    const bottomRow = members.slice(3, 5);
+    const renderMemberCard = (m, i) => `
+      <div class="team-member-card" data-morph="morph-card-${i + 1}">
+        <div class="team-member-badge">${esc(m.num || pad2(i + 1))}</div>
+        <div class="team-member-info">
+          <div class="team-member-name">${esc(m.name)}</div>
+          <div class="team-member-role">${esc(m.role || "Thành viên Nhóm thuyết trình")}</div>
+        </div>
+      </div>
+    `;
+    return `
+      <div class="fs-slide canva-hero-cover pure-hero-slide team-hero-slide">
+        <div class="canva-hero-bg">
+          <img src="${esc(bgSrc)}" alt="${esc(s.title)}" />
+          <div class="canva-hero-scrim pure-hero-scrim is-closing"></div>
+        </div>
+        <div class="pure-hero-ring" aria-hidden="true"></div>
+        <div class="pure-hero-frame" aria-hidden="true"></div>
+
+        <div class="canva-hero-top pure-hero-top">
+          <span class="canva-pill-white pure-kicker-pill">${esc(s.kicker || "Nhóm Thực hiện")}</span>
+        </div>
+
+        <div class="team-stage">
+          <div class="team-head">
+            <h1 class="canva-knockout-title team-display-title" data-morph="morph-title">${esc(s.title)}</h1>
+            <div class="pure-divider" aria-hidden="true"><span></span></div>
+            ${s.subtitle ? `<p class="pure-hero-sub team-sub">${esc(s.subtitle)}</p>` : ""}
+          </div>
+
+          <div class="team-rows">
+            <div class="team-row team-row-3">
+              ${topRow.map((m, i) => renderMemberCard(m, i)).join("")}
+            </div>
+            <div class="team-row team-row-2">
+              ${bottomRow.map((m, i) => renderMemberCard(m, i + 3)).join("")}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   function renderSlideMaster(s, idx, total) {
     const photos = getPhotosForSlide(s);
     const lay = s.layout || "";
 
     if (lay === "pure_opening" || lay === "pure_thanks") {
       return renderPureCover(s);
+    }
+
+    if (lay === "team_members") {
+      return renderTeamMembers(s);
     }
 
     if (lay === "quiz_question" || lay === "quiz_answer") {
@@ -919,18 +970,18 @@
       if (lay === "final_lessons_utehy") {
         return renderCanvaClosingHero(s, idx, total, photos);
       }
-      if ([15, 16, 18, 19, 36, 37].includes(s.id)) {
+      if ([16, 17, 19, 20, 37, 38].includes(s.id)) {
         return renderCanvaConcaveArch(s, idx, total, photos);
       }
-      if (s.id === 4) {
+      if (s.id === 5) {
         const items3 = (s.facts || []).map((f) => ({ badge: f.label, title: f.val, body: f.detail }));
         return renderCanvaIntroCutout(s, idx, total, photos, items3);
       }
-      if ([13, 27, 39].includes(s.id)) {
+      if ([14, 28, 40].includes(s.id)) {
         const itemsP = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.heading || b.bold, body: b.text }));
         return renderCanvaIntroCutout(s, idx, total, photos, itemsP);
       }
-      if ([8, 9, 35].includes(s.id)) {
+      if ([9, 10, 36].includes(s.id)) {
         const itemsC = (s.cards || []).map((f) => ({
           badge: f.tag || "",
           title: f.title,
@@ -939,11 +990,11 @@
         }));
         return renderCanvaEditorialCollage(s, idx, total, photos, itemsC);
       }
-      if (s.id === 26) {
+      if (s.id === 27) {
         const items25 = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.bold, body: b.text }));
         return renderCanvaEditorialCollage(s, idx, total, photos, items25);
       }
-      if (s.id === 31) {
+      if (s.id === 32) {
         const items30 = (s.columns || []).map((c) => ({ badge: c.num, title: `${c.num} · ${c.title}`, body: c.desc }));
         return renderCanvaEditorialCollage(s, idx, total, photos, items30);
       }
@@ -968,7 +1019,7 @@
       return renderArchMatrix(s, idx, total, photos);
     }
     if (lay === "enterprise_deep_dive" || lay === "chart_bars_kpi" || lay === "charity_showcase") {
-      if (s.id === 19) {
+      if (s.id === 20) {
         const items18 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
@@ -976,7 +1027,7 @@
         }));
         return renderArchRadialHub(s, idx, total, photos, items18);
       }
-      if (s.id === 37) {
+      if (s.id === 38) {
         const items36 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
@@ -1025,7 +1076,7 @@
         points: Array.isArray(f.points) ? f.points : null,
         body: f.detail || f.desc || (Array.isArray(f.bullets) ? f.bullets.join(" · ") : "")
       }));
-      if (s.id === 9) {
+      if (s.id === 10) {
         return renderArchHoneycombStory(s, idx, total, photos, items);
       }
       return renderArchPanoramicBento(s, idx, total, photos, items);
@@ -1214,13 +1265,14 @@
     if (slideStage && slide) {
       const darkSlide = slide.layout === "pure_opening" ||
         slide.layout === "pure_thanks" ||
+        slide.layout === "team_members" ||
         slide.layout === "cover_hero" ||
         slide.layout === "final_lessons_utehy" ||
         slide.layout === "video_slide" ||
         slide.layout === "chapter_cover" ||
         slide.theme === "dark" ||
-        slide.id === 14 ||
-        slide.id === 33;
+        slide.id === 15 ||
+        slide.id === 34;
       slideStage.classList.toggle("stage-dark", darkSlide);
       slideStage.classList.toggle("stage-light", !darkSlide);
     }
