@@ -11,7 +11,7 @@
   "use strict";
 
   const RAW_SLIDES = window.DECK_SLIDES || window.SLIDES_DATA || [];
-  const TIKTOK_14_IDS = [1, 3, 4, 11, 13, 14, 15, 17, 18, 21, 24, 29, 35, 41];
+  const TIKTOK_14_IDS = [1, 2, 4, 12, 13, 14, 16, 17, 19, 22, 25, 30, 42, 63];
 
   function esc(str) {
     if (str === null || str === undefined) return "";
@@ -216,7 +216,7 @@
   // 4. ARCHETYPE: UTEHY CLASSROOM SLIDE REPLICA (4 Giant Colored Bars with Thumbs + Right Photos)
   function renderArchUtehyReplica(s, idx, total, photos) {
     const bars = s.bars || [];
-    const showPractice = s.part >= 3 || s.id >= 23;
+    const showPractice = s.part >= 3 || s.id >= 24;
     return `
       <div class="fs-slide">
 
@@ -711,7 +711,7 @@
 
         <div class="canva-hero-meta">
           <span>| ${esc(s.closing || "Trân trọng cảm ơn Giảng viên và các bạn Sinh viên!")}</span>
-          <span>Phạm Nhật Vượng · 41 Slide |</span>
+          <span>Phạm Nhật Vượng · 41 Slide Nội dung |</span>
         </div>
       </div>
     `;
@@ -876,9 +876,59 @@
   // =========================================================================
   // MASTER ROUTER: MAPS EACH SLIDE TO ITS DISTINCT ARCHETYPE
   // =========================================================================
+  // =========================================================================
+  // PURE OPENING & THANKS FOR WATCHING HERO SLIDES (Slides 01 & 63)
+  // =========================================================================
+  function renderPureCover(s) {
+    const isClosing = s.layout === "pure_thanks";
+    const bgSrc = s.image || (s.gallery && s.gallery[0] && s.gallery[0].src) || "assets/landmark81_vingroup.jpg";
+    const secondPhoto = !isClosing && s.gallery && s.gallery[1] ? s.gallery[1] : null;
+    const badges = Array.isArray(s.badges) ? s.badges : [];
+
+    return `
+      <div class="fs-slide canva-hero-cover pure-hero-slide ${isClosing ? "is-thanks" : "is-opening"}">
+        <div class="canva-hero-bg">
+          <img src="${esc(bgSrc)}" alt="${esc(s.title)}" />
+          <div class="canva-hero-scrim pure-hero-scrim ${isClosing ? "is-closing" : ""}"></div>
+        </div>
+        <div class="pure-hero-ring" aria-hidden="true"></div>
+        <div class="pure-hero-frame" aria-hidden="true"></div>
+
+        <div class="canva-hero-top pure-hero-top">
+          <span class="canva-pill-white pure-kicker-pill">${esc(s.kicker || s.section || "")}</span>
+        </div>
+
+        <div class="pure-knockout-stage">
+          ${secondPhoto ? `
+            <div class="pure-medallion js-zoom-photo" data-src="${esc(secondPhoto.src)}" data-cap="${esc(secondPhoto.cap || "")}" title="Phóng to chân dung">
+              <img src="${esc(secondPhoto.src)}" alt="${esc(secondPhoto.tag || "Phạm Nhật Vượng")}" />
+            </div>
+          ` : ""}
+          <h1 class="canva-knockout-title pure-display-title ${isClosing ? "is-thanks" : "is-opening"}">${esc(s.title)}</h1>
+          <div class="pure-divider" aria-hidden="true"><span></span></div>
+          ${s.subtitle ? `<p class="pure-hero-sub">${esc(s.subtitle)}</p>` : ""}
+          ${badges.length ? `
+            <div class="pure-badges-row">
+              ${badges.map((b) => `<span class="pure-glass-badge">${esc(b)}</span>`).join("")}
+            </div>
+          ` : ""}
+        </div>
+
+        <div class="canva-hero-meta pure-hero-meta">
+          <span>${esc(s.metaLeft || "| Thuyết trình Chuyên đề")}</span>
+          <span>${esc(s.metaRight || "Vingroup · 1993 – 2026 |")}</span>
+        </div>
+      </div>
+    `;
+  }
+
   function renderSlideMaster(s, idx, total) {
     const photos = getPhotosForSlide(s);
     const lay = s.layout || "";
+
+    if (lay === "pure_opening" || lay === "pure_thanks") {
+      return renderPureCover(s);
+    }
 
     if (lay === "quiz_question" || lay === "quiz_answer") {
       return renderArchQuiz(s, idx, total);
@@ -891,18 +941,18 @@
       if (lay === "final_lessons_utehy") {
         return renderCanvaClosingHero(s, idx, total, photos);
       }
-      if ([14, 15, 17, 18, 35, 36].includes(s.id)) {
+      if ([15, 16, 18, 19, 36, 37].includes(s.id)) {
         return renderCanvaConcaveArch(s, idx, total, photos);
       }
-      if (s.id === 3) {
+      if (s.id === 4) {
         const items3 = (s.facts || []).map((f) => ({ badge: f.label, title: f.val, body: f.detail }));
         return renderCanvaIntroCutout(s, idx, total, photos, items3);
       }
-      if ([12, 26, 38].includes(s.id)) {
+      if ([13, 27, 39].includes(s.id)) {
         const itemsP = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.heading || b.bold, body: b.text }));
         return renderCanvaIntroCutout(s, idx, total, photos, itemsP);
       }
-      if ([7, 8, 34].includes(s.id)) {
+      if ([8, 9, 35].includes(s.id)) {
         const itemsC = (s.cards || []).map((f) => ({
           badge: f.tag || "",
           title: f.title,
@@ -911,11 +961,11 @@
         }));
         return renderCanvaEditorialCollage(s, idx, total, photos, itemsC);
       }
-      if (s.id === 25) {
+      if (s.id === 26) {
         const items25 = (s.bullets || []).map((b, i) => ({ badge: "0" + (i + 1), title: b.bold, body: b.text }));
         return renderCanvaEditorialCollage(s, idx, total, photos, items25);
       }
-      if (s.id === 30) {
+      if (s.id === 31) {
         const items30 = (s.columns || []).map((c) => ({ badge: c.num, title: `${c.num} · ${c.title}`, body: c.desc }));
         return renderCanvaEditorialCollage(s, idx, total, photos, items30);
       }
@@ -940,7 +990,7 @@
       return renderArchMatrix(s, idx, total, photos);
     }
     if (lay === "enterprise_deep_dive" || lay === "chart_bars_kpi" || lay === "charity_showcase") {
-      if (s.id === 18) {
+      if (s.id === 19) {
         const items18 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
@@ -948,7 +998,7 @@
         }));
         return renderArchRadialHub(s, idx, total, photos, items18);
       }
-      if (s.id === 36) {
+      if (s.id === 37) {
         const items36 = (s.details || []).map((d, i) => ({
           badge: s.kpis && s.kpis[i] ? (s.kpis[i].val || s.kpis[i].num) : ("0" + (i + 1)),
           title: d.heading || d.title || d.bold,
@@ -997,7 +1047,7 @@
         points: Array.isArray(f.points) ? f.points : null,
         body: f.detail || f.desc || (Array.isArray(f.bullets) ? f.bullets.join(" · ") : "")
       }));
-      if (s.id === 8) {
+      if (s.id === 9) {
         return renderArchHoneycombStory(s, idx, total, photos, items);
       }
       return renderArchPanoramicBento(s, idx, total, photos, items);
@@ -1184,13 +1234,15 @@
     const slide = activeDeck[nextIdx];
     const html = renderSlideMaster(slide, nextIdx, total);
     if (slideStage && slide) {
-      const darkSlide = slide.layout === "cover_hero" ||
+      const darkSlide = slide.layout === "pure_opening" ||
+        slide.layout === "pure_thanks" ||
+        slide.layout === "cover_hero" ||
         slide.layout === "final_lessons_utehy" ||
         slide.layout === "video_slide" ||
         slide.layout === "chapter_cover" ||
         slide.theme === "dark" ||
-        slide.id === 13 ||
-        slide.id === 32;
+        slide.id === 14 ||
+        slide.id === 33;
       slideStage.classList.toggle("stage-dark", darkSlide);
       slideStage.classList.toggle("stage-light", !darkSlide);
     }
@@ -1213,7 +1265,9 @@
     slideActive.innerHTML = html;
 
     const isQuizPairReveal = prevSlide && slide &&
-      prevSlide.part === 6 && slide.part === 6 &&
+      (prevSlide.layout === "quiz_question" || prevSlide.layout === "quiz_answer") &&
+      (slide.layout === "quiz_question" || slide.layout === "quiz_answer") &&
+      prevSlide.qNum != null &&
       prevSlide.qNum === slide.qNum;
 
     if (isQuizPairReveal) {
@@ -1295,9 +1349,9 @@
     if (mode === "tiktok14") {
       activeDeck = RAW_SLIDES.filter((s) => TIKTOK_14_IDS.includes(s.id));
     } else if (mode === "slides41") {
-      activeDeck = RAW_SLIDES.filter((s) => s.part <= 5);
+      activeDeck = RAW_SLIDES.filter((s) => s.part <= 5 || s.layout === "pure_thanks");
     } else if (mode === "quiz20") {
-      activeDeck = RAW_SLIDES.filter((s) => s.part === 6);
+      activeDeck = RAW_SLIDES.filter((s) => s.layout === "quiz_question" || s.layout === "quiz_answer");
     } else {
       activeDeck = RAW_SLIDES.slice();
     }
