@@ -7,7 +7,7 @@ window.DECK_SLIDES = [
     "section": "Mở đầu · Giới thiệu Chuyên đề",
     "kicker": "Chuyên đề Văn hóa Doanh nhân",
     "title": "PHẠM NHẬT VƯỢNG",
-    "subtitle": "Hành trình Doanh nhân & Hệ sinh thái Tập đoàn Vingroup",
+    "subtitle": "Khát Vọng Kiến Tạo & Văn Hoá Kinh Doanh",
     "image": "assets/landmark81_vingroup.jpg",
     "gallery": [
       {
