@@ -572,15 +572,14 @@
     `;
   }
 
-  // 12. ARCHETYPE: VIDEO DOCUMENTARY THEATER (Full 09:57 MP4 Player + YouTube Link!)
+  // 12. ARCHETYPE: VIDEO DOCUMENTARY THEATER (Full-Width MP4 Player + Title)
   function renderArchVideo(s, idx, total, photos) {
     const mp4Src = s.localVideo || "assets/vid03.mp4";
     const posterSrc = s.thumb || photos[0].src;
     const ytUrl = s.videoUrl || ("https://www.youtube.com/watch?v=" + (s.videoId || ""));
-    const takeaways = s.takeaways || [];
 
     return `
-      <div class="fs-slide">
+      <div class="fs-slide fs-video-slide">
 
         <div class="fs-header-block">
           <h1 class="fs-title" data-morph="morph-title">${esc(s.title)}</h1>
@@ -599,16 +598,6 @@
               <span>🎬 Nguồn: <strong>${esc(s.channel || "Tư liệu")}</strong></span>
               <a class="arch-video-btn" href="${esc(ytUrl)}" target="_blank" rel="noopener noreferrer">Mở YouTube ↗</a>
             </div>
-          </div>
-
-          <div class="arch-story-stack">
-            ${takeaways.slice(0, 3).map((t, i) => `
-              <div class="arch-story-row" data-morph="morph-card-${i + 1}">
-                <div class="m-hex-badge">0${i + 1}</div>
-                <div class="m-card-body" style="font-size:17px;flex:1;">${esc(t)}</div>
-              </div>
-            `).join("")}
-            ${renderPhotoBox(photos[1] || photos[0], "morph-photo-2", "")}
           </div>
         </div>
       </div>
