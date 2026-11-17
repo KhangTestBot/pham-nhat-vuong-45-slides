@@ -29,9 +29,9 @@ window.DECK_SLIDES = [
     "layout": "team_members",
     "theme": "dark",
     "section": "Mở đầu · Thành viên Nhóm",
-    "kicker": "Chuyên đề Văn hóa Doanh nhân · Nhóm Thực hiện",
+    "kicker": "Khát Vọng Kiến Tạo & Văn Hoá Kinh Doanh",
     "title": "THÀNH VIÊN NHÓM THUYẾT TRÌNH",
-    "subtitle": "Chuyên đề: Doanh nhân Phạm Nhật Vượng & Hệ sinh thái Tập đoàn Vingroup",
+    "subtitle": "Chuyên đề: Khát Vọng Kiến Tạo & Văn Hoá Kinh Doanh",
     "image": "assets/landmark81_vingroup.jpg",
     "members": [
       {
