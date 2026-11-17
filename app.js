@@ -145,7 +145,7 @@
       if (!it) return `<div></div>`;
       return `
         <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
-          ${renderInlineThumb(photos[(i + 1) % photos.length])}
+          ${renderInlineThumb(photos[i % photos.length])}
           <div>
             <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
             ${renderCardBodyContent(it)}
@@ -200,7 +200,7 @@
           <div class="arch-bento-grid ${colsClass}">
             ${items.slice(0, 6).map((it, i) => `
               <div class="m-card m-card-flex" data-morph="morph-card-${i + 1}">
-                ${items.length <= 5 ? renderInlineThumb(photos[(i + 1) % photos.length]) : ""}
+                ${items.length <= 5 ? renderInlineThumb(photos[i % photos.length]) : ""}
                 <div>
                   <div class="m-card-title">${esc(it.badge ? (it.badge + " · ") : "")}${esc(it.title)}</div>
                   ${renderCardBodyContent(it)}
@@ -270,7 +270,7 @@
                      data-caption="${esc(p.cap)}">
                   <img src="${esc(p.src)}" alt="${esc(col.title)}" onerror="this.src='assets/pnv_portrait.jpg'" />
                   <div class="m-photo-cap">
-                    <span class="m-photo-tag">${esc(col.tag || col.num || p.tag)}</span>
+                    <span class="m-photo-tag">${esc(p.tag || col.tag || col.num)}</span>
                   </div>
                 </div>
                 <div class="arch-pillar-body">
@@ -368,7 +368,7 @@
                     <div class="m-card-title">${esc(it.title)}</div>
                     ${renderCardBodyContent(it)}
                   </div>
-                  ${renderInlineThumb(photos[(i + 1) % photos.length])}
+                  ${renderInlineThumb(photos[i % photos.length])}
                 </div>
               `;
             }).join("")}
@@ -499,7 +499,7 @@
                 <div class="m-card-title">${esc(d.heading || d.title || d.bold)}</div>
                 <div class="m-card-body">${esc(d.text || d.desc)}</div>
               </div>
-              ${renderInlineThumb(photos[(i + 2) % photos.length])}
+              ${renderInlineThumb(photos[i % photos.length])}
             </div>
           `).join("")}
         </div>
@@ -558,7 +558,7 @@
                   <div class="m-card-title">${esc(r[0])} → ${esc(r[1])}</div>
                   <div class="m-card-body">${esc(r[2] || "")} ${r[3] ? (" · " + esc(r[3])) : ""}</div>
                 </div>
-                ${renderInlineThumb(photos[(i + 1) % photos.length])}
+                ${renderInlineThumb(photos[i % photos.length])}
               </div>
             `).join("")}
           </div>
@@ -669,7 +669,7 @@
   // C2. CANVA CLOSING KNOCKOUT HERO (Slide 41, mirroring Slide 10 "XIN CÁM ƠN")
   function renderCanvaClosingHero(s, idx, total, photos) {
     const lessons = s.lessons || [];
-    const bgPhoto = photos[0];
+    const bgPhoto = { src: s.image || photos[0].src };
     return `
       <div class="fs-slide canva-slide canva-hero-cover canva-closing-cover">
         <div class="canva-hero-bg">

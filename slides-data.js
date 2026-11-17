@@ -13,14 +13,15 @@ window.DECK_SLIDES = [
       {
         "src": "assets/landmark81_vingroup.jpg",
         "tag": "LANDMARK 81",
-        "cap": "Biểu tượng Landmark 81 và Vinhomes Central Park"
+        "cap": "Biểu tượng tòa tháp Landmark 81 và đại đô thị Vinhomes Central Park"
       },
       {
         "src": "assets/pnv_portrait.jpg",
-        "tag": "PHẠM NHẬT VƯỢNG",
-        "cap": "Ông Phạm Nhật Vượng — Chủ tịch Vingroup, CEO VinFast"
+        "tag": "CHỦ TỊCH PHẠM NHẬT VƯỢNG",
+        "cap": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, CEO VinFast"
       }
-    ]
+    ],
+    "imageCaption": "Biểu tượng tòa tháp Landmark 81 và đại đô thị Vinhomes Central Park"
   },
   {
     "id": 2,
@@ -34,7 +35,7 @@ window.DECK_SLIDES = [
     "subtitle": "Hệ sinh thái Vingroup & 4 Cấu phần Văn hóa Doanh nhân (5.1 – 5.4)",
     "lead": "Từ Technocom (Ukraine) đến Vingroup – VinFast qua lăng kính 4 cấu phần văn hóa doanh nhân (5.1 – 5.4).",
     "image": "assets/pnv_portrait.jpg",
-    "imageCaption": "Phạm Nhật Vượng — Chủ tịch Vingroup, CEO VinFast",
+    "imageCaption": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, CEO VinFast",
     "metrics": [
       {
         "val": "1968",
@@ -83,22 +84,22 @@ window.DECK_SLIDES = [
       {
         "src": "assets/pnv_portrait.jpg",
         "tag": "CHỦ TỊCH PHẠM NHẬT VƯỢNG",
-        "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, Tổng Giám đốc VinFast"
+        "cap": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, CEO VinFast"
       },
       {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
-      },
-      {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "KHỞI NGHIỆP TECHNOCOM (1993)",
+        "cap": "Từ nhà máy Mivina tại Ukraine đến hệ sinh thái đa ngành Vingroup"
       },
       {
         "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "tag": "ĐẠI ĐÔ THỊ VINHOMES",
+        "cap": "Quần thể đô thị hiện đại Vinhomes Central Park & Landmark 81"
+      },
+      {
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "ĐIỀU HÀNH VINFAST TOÀN CẦU",
+        "cap": "Ông Phạm Nhật Vượng trực tiếp chỉ đạo tại tổ hợp nhà máy VinFast Cát Hải"
       }
     ]
   },
@@ -162,28 +163,28 @@ window.DECK_SLIDES = [
         "color": "#15803D"
       }
     ],
-    "image": "assets/pnv_vinfast_tour.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng trực tiếp kiểm tra dây chuyền nhà máy VinFast Cát Hải",
+    "image": "assets/pnv_portrait.jpg",
+    "imageCaption": "Chủ tịch Phạm Nhật Vượng — Tỷ phú USD đầu tiên của Việt Nam",
     "gallery": [
       {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "PHẦN I–II · TIỂU SỬ & SỰ NGHIỆP",
+        "cap": "Chủ tịch Phạm Nhật Vượng — Tỷ phú USD đầu tiên của Việt Nam"
       },
       {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "PHẦN III · NĂNG LỰC & TỐ CHẤT",
+        "cap": "Tổ hợp nhà máy sản xuất ô tô – xe máy điện VinFast Cát Hải"
       },
       {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "PHẦN IV–VI · ĐẠO ĐỨC & BÀI HỌC",
+        "cap": "Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture và Quỹ Thiện Tâm"
       },
       {
-        "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "PARIS MOTOR SHOW",
-        "cap": "VinFast LUX SA2.0 tại Triển lãm Ô tô Paris 2018"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "ĐẠI HỌC TINH HOA VINUNI",
+        "cap": "Khuôn viên Đại học VinUni — ươm mầm nhân tài thế hệ mới"
       }
     ]
   },
@@ -198,7 +199,7 @@ window.DECK_SLIDES = [
     "title": "Phạm Nhật Vượng — Thông tin & Dấu ấn",
     "lead": "Tỷ phú USD đầu tiên của Việt Nam (Forbes 2013), sáng lập tập đoàn tư nhân lớn nhất nước.",
     "image": "assets/pnv_portrait.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng (sinh ngày 05/08/1968)",
+    "imageCaption": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup",
     "facts": [
       {
         "label": "Họ tên & Ngày sinh",
@@ -234,23 +235,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_portrait.jpg",
-        "tag": "CHỦ TỊCH PHẠM NHẬT VƯỢNG",
-        "cap": "Ông Phạm Nhật Vượng (sinh ngày 05/08/1968)"
+        "tag": "SINH TẠI HÀ NỘI (05/08/1968)",
+        "cap": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup"
       },
       {
-        "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "ĐỐI NGOẠI CẤP CAO",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
+        "src": "assets/moscow_university.jpg",
+        "tag": "KỸ SƯ ĐỊA CHẤT MGRI MOSCOW",
+        "cap": "Trường ĐH Thăm dò Địa chất Moscow — nơi ông tốt nghiệp năm 1993"
       },
       {
-        "src": "assets/vid02_thumb.jpg",
-        "tag": "THƯƠNG HIỆU MIVINA",
-        "cap": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "CHỦ TỊCH VINGROUP & CEO VINFAST",
+        "cap": "Trực tiếp điều hành CEO VinFast toàn cầu từ đầu năm 2024"
       },
       {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "TOP 100 TỶ PHÚ FORBES",
+        "cap": "Tòa tháp Landmark 81 — biểu tượng tầm vóc Tập đoàn Vingroup"
       }
     ]
   },
@@ -298,28 +299,28 @@ window.DECK_SLIDES = [
         "practice": "Kỷ luật cao, tốc độ, đời tư kín tiếng & 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
       }
     ],
-    "image": "assets/pnv_vingroup_meeting.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực",
+    "image": "assets/vinfast_ev_factory.jpg",
+    "imageCaption": "Tổ chức sản xuất công nghiệp công nghệ cao và quản trị đa ngành",
     "gallery": [
       {
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "5.1 · NĂNG LỰC DOANH NHÂN",
+        "cap": "Tổ chức sản xuất công nghiệp công nghệ cao và quản trị đa ngành"
+      },
+      {
+        "src": "assets/pnv_joko_vinfast.jpg",
+        "tag": "5.2 · TỐ CHẤT TIÊN PHONG",
+        "cap": "Bản lĩnh quyết đoán rời vùng an toàn, chuyển đổi 100% xe điện"
+      },
+      {
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "5.3 · ĐẠO ĐỨC & TRÁCH NHIỆM",
+        "cap": "46.000 tỷ đồng Quỹ Thiện Tâm (20 năm) và Giải thưởng VinFuture"
+      },
+      {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "HỢP TÁC QUỐC TẾ",
-        "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
-      },
-      {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
-      },
-      {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
-      },
-      {
-        "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
+        "tag": "5.4 · PHONG CÁCH KỶ LUẬT",
+        "cap": "Kỷ luật thực thi, tốc độ và 6 giá trị cốt lõi TÍN – TÂM – TRÍ – TỐC – TINH – NHÂN"
       }
     ]
   },
@@ -365,28 +366,28 @@ window.DECK_SLIDES = [
         "desc": "Bản lĩnh, ý chí tự học và kinh nghiệm đứng dậy sau thất bại."
       }
     ],
-    "image": "assets/pnv_diplomatic_handshake.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế",
+    "image": "assets/vietnam_heritage_culture.jpg",
+    "imageCaption": "Tinh thần tự tôn dân tộc, trọng chữ Tín và khát vọng vươn tầm",
     "gallery": [
       {
+        "src": "assets/vietnam_heritage_culture.jpg",
+        "tag": "01 · VĂN HÓA DÂN TỘC",
+        "cap": "Tinh thần tự tôn dân tộc, trọng chữ Tín và khát vọng vươn tầm"
+      },
+      {
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "02 · NHÂN TỐ KINH TẾ",
+        "cap": "Cạnh tranh thị trường quốc tế định hình chuẩn mực kỹ thuật ngành"
+      },
+      {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "HỘI ĐÀM CHIẾN LƯỢC",
-        "cap": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế"
+        "tag": "03 · THỂ CHẾ – PHÁP LUẬT",
+        "cap": "Chính sách khuyến khích tư nhân và chuẩn minh bạch quốc tế"
       },
       {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
-      },
-      {
-        "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
-      },
-      {
-        "src": "assets/vinfast_vfe34.jpg",
-        "tag": "VINFAST VF E34",
-        "cap": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh"
+        "src": "assets/moscow_university.jpg",
+        "tag": "04–05 · GIÁO DỤC & BẢN LĨNH",
+        "cap": "Nền tảng tri thức tại Đại học MGRI Moscow và ý chí tự học bền bỉ"
       }
     ]
   },
@@ -436,28 +437,28 @@ window.DECK_SLIDES = [
         }
       ]
     },
-    "image": "assets/humanitarian_thientam_glow.jpg",
-    "imageCaption": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành",
+    "image": "assets/vietnam_heritage_culture.jpg",
+    "imageCaption": "Kế thừa truyền thống yêu nước, cần cù và trọng chữ Tín của người Việt",
     "gallery": [
       {
+        "src": "assets/vietnam_heritage_culture.jpg",
+        "tag": "BẢN SẮC & TỰ TÔN DÂN TỘC",
+        "cap": "Kế thừa truyền thống yêu nước, cần cù và trọng chữ Tín của người Việt"
+      },
+      {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "QUỸ THIỆN TÂM",
-        "cap": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành"
+        "tag": "TRỌNG CHỮ TÍN & NGHĨA TÌNH",
+        "cap": "Tinh thần tương thân tương ái kết tinh qua hoạt động thiện nguyện cộng đồng"
       },
       {
-        "src": "assets/vinmec_hospital.jpg",
-        "tag": "Y TẾ PHI LỢI NHUẬN",
-        "cap": "Bệnh viện Đa khoa Quốc tế Vinmec hỗ trợ khám sàng lọc và mổ tim miễn phí"
+        "src": "assets/vinfast_lux_paris.jpg",
+        "tag": "KHÁT VỌNG THƯƠNG HIỆU VIỆT",
+        "cap": "Đưa thương hiệu công nghiệp Việt Nam bước ra sân khấu Paris Motor Show"
       },
       {
-        "src": "assets/vinuni_campus.jpg",
-        "tag": "GIÁO DỤC & HỌC BỔNG",
-        "cap": "Quần thể Đại học VinUni và chương trình học bổng ươm mầm tài năng Việt"
-      },
-      {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "QUỸ VINFUTURE",
-        "cap": "Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tại Hà Nội"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "VƯỢT BỎ TƯ DUY TIỂU NÔNG",
+        "cap": "Thay lối làm ăn manh mún bằng dây chuyền công nghiệp tự động hóa chuẩn quốc tế"
       }
     ]
   },
@@ -471,8 +472,8 @@ window.DECK_SLIDES = [
     "kicker": "NHÂN TỐ 2 / 5 · KINH TẾ & NGÀNH NGHỀ",
     "title": "Chuyển dịch Kinh tế Định hình Quản trị",
     "lead": "Mỗi bối cảnh kinh tế đặt ra chuẩn mực vận hành khắt khe hơn.",
-    "image": "assets/vid04_thumb.jpg",
-    "imageCaption": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast",
+    "image": "assets/mivina_kharkov.jpg",
+    "imageCaption": "Nhà máy Technocom tại Kharkov chuẩn hóa sản xuất thực phẩm, giữ 97% thị phần Ukraine",
     "cards": [
       {
         "tag": "Đông Âu chuyển đổi (1993–2010)",
@@ -493,24 +494,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "01 · ĐÔNG ÂU (1993–2010)",
+        "cap": "Nhà máy Technocom tại Kharkov chuẩn hóa sản xuất thực phẩm, giữ 97% thị phần Ukraine"
       },
       {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "02 · CÔNG NGHỆ CAO (2017–NAY)",
+        "cap": "Dây chuyền robot tự động hóa VinFast đáp ứng kỷ luật ngành ô tô điện toàn cầu"
       },
       {
-        "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "CHUẨN AN TOÀN NHTSA / EURO NCAP",
+        "cap": "SUV điện VinFast VF 8 chinh phục các tiêu chuẩn an toàn quốc tế khắt khe"
       },
       {
-        "src": "assets/vinbus_green.jpg",
-        "tag": "XE BUÝT ĐIỆN VINBUS",
-        "cap": "Xe buýt điện VinBus vận hành năng lượng sạch"
+        "src": "assets/mivina_noodles.jpg",
+        "tag": "THƯƠNG HIỆU MIVINA UKRAINE",
+        "cap": "Sản phẩm mì ăn liền Mivina giải bài toán tiêu dùng nhanh thời hậu Xô Viết"
       }
     ]
   },
@@ -524,8 +525,8 @@ window.DECK_SLIDES = [
     "kicker": "NHÂN TỐ 3 / 5 · THỂ CHẾ & PHÁP LUẬT",
     "title": "Pháp lý Trong nước & Chuẩn Minh bạch Quốc tế",
     "lead": "Chính sách mở đường trong nước kết hợp chuẩn giám sát tài chính toàn cầu.",
-    "image": "assets/pnv_diplomatic_handshake.jpg",
-    "imageCaption": "Hoạt động đối ngoại và hợp tác đầu tư quốc tế của lãnh đạo Tập đoàn Vingroup",
+    "image": "assets/vinpearl_nhatrang.jpg",
+    "imageCaption": "Chính sách Đổi mới thu hút đầu tư giúp hình thành Vinpearl (2001) và Vincom (2002)",
     "cards": [
       {
         "tag": "Chính sách Đổi mới tại Việt Nam",
@@ -546,24 +547,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
+        "src": "assets/vinpearl_nhatrang.jpg",
+        "tag": "01 · MỞ ĐƯỜNG ĐẠI DỰ ÁN TRONG NƯỚC",
+        "cap": "Chính sách Đổi mới thu hút đầu tư giúp hình thành Vinpearl (2001) và Vincom (2002)"
+      },
+      {
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "02 · CHUẨN MỰC SÀN MỸ NASDAQ (SEC)",
+        "cap": "Niêm yết Nasdaq (2023) đặt VinFast dưới chuẩn giám sát tài chính minh bạch toàn cầu"
+      },
+      {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "TƯ LIỆU VINGROUP",
-        "cap": "Hoạt động đối ngoại và hợp tác đầu tư quốc tế của lãnh đạo Tập đoàn Vingroup"
+        "tag": "CHUẨN HÓA M&A QUỐC TẾ (NESTLÉ)",
+        "cap": "Thương vụ bán Technocom cho Nestlé (2010) chuẩn hóa kế toán và sở hữu trí tuệ"
       },
       {
-        "src": "assets/vid02_thumb.jpg",
-        "tag": "THƯƠNG HIỆU MIVINA",
-        "cap": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé"
-      },
-      {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
-      },
-      {
-        "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "PARIS MOTOR SHOW",
-        "cap": "VinFast LUX SA2.0 tại Triển lãm Ô tô Paris 2018"
+        "src": "assets/vincom_ba_trieu.jpg",
+        "tag": "KINH TẾ TƯ NHÂN HỘI NHẬP",
+        "cap": "Tổ hợp Vincom Center Bà Triệu — dấu ấn phát triển hạ tầng thương mại đô thị"
       }
     ]
   },
@@ -597,28 +598,28 @@ window.DECK_SLIDES = [
         "desc": "Phá sản tại Moscow năm 1992 không làm ông gục ngã mà trở thành bài học sang Kharkov làm lại."
       }
     ],
-    "image": "assets/mivina_noodles.jpg",
-    "imageCaption": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine",
+    "image": "assets/pnv_portrait.jpg",
+    "imageCaption": "Trưởng thành từ gia đình quân nhân nghiêm cẩn, rèn ý thức tự lập từ nhỏ tại Hà Nội",
     "gallery": [
       {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "01 · NẾP SỐNG TỰ LẬP THỜI BAO CẤP",
+        "cap": "Trưởng thành từ gia đình quân nhân nghiêm cẩn, rèn ý thức tự lập từ nhỏ tại Hà Nội"
       },
       {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
+        "src": "assets/moscow_university.jpg",
+        "tag": "02 · TƯ DUY TOÁN & ĐỊA CHẤT MOSCOW",
+        "cap": "Học bổng du học Đại học MGRI Moscow (1987–1993) rèn tư duy phân tích hệ thống"
       },
       {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "VINFAST VF 8 TẠI MỸ",
-        "cap": "Mẫu SUV điện VinFast VF 8 trưng bày tại TTTM Hoa Kỳ"
+        "src": "assets/moscow_grit_backdrop.jpg",
+        "tag": "03 · ĐỨNG DẬY SAU THẤT BẠI 1992",
+        "cap": "Vượt qua cú vấp phá sản năm 1992 tại Moscow để gây dựng lại từ đầu ở Kharkov"
       },
       {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "GIẢI THƯỞNG VINFUTURE",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "BẢN LĨNH KHỞI NGHIỆP ĐÔNG ÂU",
+        "cap": "Từ 10.000 USD vốn vay dựng nên tập đoàn thực phẩm Technocom tại Ukraine"
       }
     ]
   },
@@ -659,28 +660,28 @@ window.DECK_SLIDES = [
         "Quyết liệt, kỷ luật cao, sâu sát thực địa, thẳng thắn và giản dị."
       ]
     ],
-    "image": "assets/vinpearl_hotel.jpg",
-    "imageCaption": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang",
+    "image": "assets/vinfast_ev_factory.jpg",
+    "imageCaption": "Học vấn Moscow kết hợp kinh tế thị trường tạo năng lực thực thi thần tốc",
     "gallery": [
       {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "5.1 · NĂNG LỰC QUẢN TRỊ ĐA NGÀNH",
+        "cap": "Học vấn Moscow kết hợp kinh tế thị trường tạo năng lực thực thi thần tốc"
       },
       {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "5.2 · TỐ CHẤT DÁM RỜI VÙNG AN TOÀN",
+        "cap": "Tầm nhìn đi trước từ bán Mivina (2010) đến chuyển hẳn sang xe điện (2022)"
       },
       {
-        "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "5.3 · ĐẠO ĐỨC TRỌNG CHỮ TÍN",
+        "cap": "Giữ chữ Tín, nộp ngân sách hàng đầu và đóng góp 46.000 tỷ đồng Quỹ Thiện Tâm"
       },
       {
-        "src": "assets/pnv_3d_executive.jpg",
-        "tag": "TẦM NHÌN LÃNH ĐẠO",
-        "cap": "Chân dung nhà lãnh đạo kiến tạo hệ sinh thái đa ngành Vingroup"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "5.4 · PHONG CÁCH SÂU SÁT THỰC ĐỊA",
+        "cap": "Quyết liệt, kỷ luật cao, sâu sát hiện trường và đời tư giản dị"
       }
     ]
   },
@@ -716,28 +717,28 @@ window.DECK_SLIDES = [
         "sub": "Công nghiệp xe điện toàn cầu, niêm yết Nasdaq và đại học tinh hoa."
       }
     ],
-    "image": "assets/vinpearl_nhatrang.jpg",
-    "imageCaption": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam",
+    "image": "assets/mivina_kharkov.jpg",
+    "imageCaption": "Chiếm 97% thị phần mì ăn liền Ukraine và chuyển nhượng cho Nestlé 150 triệu USD",
     "gallery": [
       {
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "1993–2010 · TECHNOCOM & MIVINA",
+        "cap": "Chiếm 97% thị phần mì ăn liền Ukraine và chuyển nhượng cho Nestlé 150 triệu USD"
+      },
+      {
         "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "tag": "2001–2012 · VINPEARL & VINCOM",
+        "cap": "Trở về Việt Nam kiến tạo du lịch biển Hòn Tre và chuỗi TTTM Vincom"
       },
       {
-        "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
+        "src": "assets/vinhomes_central_park.jpg",
+        "tag": "2013–2016 · ĐẠI ĐÔ THỊ VINHOMES",
+        "cap": "Chuẩn hóa mô hình đại đô thị phức hợp Vinhomes, bệnh viện Vinmec và Vinschool"
       },
       {
-        "src": "assets/vinfast_vfe34.jpg",
-        "tag": "VINFAST VF E34",
-        "cap": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh"
-      },
-      {
-        "src": "assets/pnv_3d_visionary.jpg",
-        "tag": "KHÁT VỌNG VƯƠN TẦM",
-        "cap": "Bản lĩnh đưa thương hiệu công nghiệp - công nghệ Việt Nam ra toàn cầu"
+        "src": "assets/vinfast_vf9.jpg",
+        "tag": "2017–2026 · KỶ NGUYÊN VINFAST",
+        "cap": "Công nghiệp xe điện toàn cầu, niêm yết Nasdaq và Đại học Tinh hoa VinUni"
       }
     ],
     "kicker": "PHẦN II · DÒNG THỜI GIAN"
@@ -752,8 +753,8 @@ window.DECK_SLIDES = [
     "kicker": "1968 – 1992 · HÀ NỘI & MOSCOW",
     "title": "Tuổi thơ Hà Nội & Học bổng Du học Liên Xô",
     "lead": "Xuất phát điểm giản dị của tỷ phú USD đầu tiên Việt Nam.",
-    "image": "assets/moscow_university.jpg",
-    "imageCaption": "Môi trường học thuật tại Moscow (Nga) — nơi ông Phạm Nhật Vượng học tập giai đoạn 1987–1993",
+    "image": "assets/pnv_portrait.jpg",
+    "imageCaption": "Anh cả trong gia đình 3 anh em tại Hà Nội; phụ mẹ bán nước chè rèn tính tự lập",
     "bullets": [
       {
         "bold": "Tuổi thơ phố Lê Duẩn",
@@ -774,24 +775,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "01 · TUỔI THƠ PHỐ LÊ DUẨN (1968)",
+        "cap": "Anh cả trong gia đình 3 anh em tại Hà Nội; phụ mẹ bán nước chè rèn tính tự lập"
+      },
+      {
         "src": "assets/moscow_university.jpg",
-        "tag": "TƯ LIỆU VINGROUP",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nơi ông Phạm Nhật Vượng học tập giai đoạn 1987–1993"
+        "tag": "02–03 · DU HỌC ĐẠI HỌC MGRI MOSCOW",
+        "cap": "Cựu học sinh giỏi Toán THPT Kim Liên nhận học bổng ngành Kinh tế Địa chất tại Liên Xô"
       },
       {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/moscow_grit_backdrop.jpg",
+        "tag": "04 · ĐỒNG HÀNH KHỞI NGHIỆP ĐÔNG ÂU",
+        "cap": "Vừa học chuyên môn vừa tập kinh doanh cùng bạn đời từ những ngày đầu tại Moscow"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
-      },
-      {
-        "src": "assets/xanhsm_vinfast_3d.jpg",
-        "tag": "XANH SM & V-GREEN",
-        "cap": "Hệ sinh thái Taxi điện Xanh SM và mạng lưới 150.000 cổng sạc V-GREEN"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "NỀN MÓNG TƯ DUY QUỐC TẾ",
+        "cap": "Sáu năm tại Liên Xô trui rèn bản lĩnh thích ứng với biến động thị trường"
       }
     ]
   },
@@ -807,7 +808,7 @@ window.DECK_SLIDES = [
     "quote": "“Tôi từng buôn bán nhiều thứ ở Moscow rồi phá sản, nợ hàng chục nghìn USD. Chính thất bại đó dạy tôi phải làm sản xuất thực chất.”",
     "quoteAuthor": "Tư liệu khởi nghiệp Đông Âu (1992–1993)",
     "image": "assets/moscow_grit_backdrop.jpg",
-    "imageCaption": "Bối cảnh kinh tế Đông Âu đầu thập niên 1990 nhiều biến động",
+    "imageCaption": "Biến động kinh tế hậu Xô Viết nơi ông rút ra bài học xương máu đầu đời",
     "points": [
       {
         "title": "Thất bại năm 1992",
@@ -825,23 +826,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/moscow_grit_backdrop.jpg",
-        "tag": "KHỞI NGHIỆP ĐÔNG ÂU",
-        "cap": "Bối cảnh kinh tế Đông Âu đầu thập niên 1990 nhiều biến động"
+        "tag": "BỐI CẢNH MOSCOW 1992–1993",
+        "cap": "Biến động kinh tế hậu Xô Viết nơi ông rút ra bài học xương máu đầu đời"
       },
       {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
+        "src": "assets/moscow_university.jpg",
+        "tag": "01 · THẤT BẠI NĂM 1992 TẠI MOSCOW",
+        "cap": "Thị trường biến động mạnh và lạm phát cao khiến hoạt động buôn bán nhỏ lẻ phá sản"
       },
       {
-        "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "02 · DỊCH CHUYỂN SANG KHARKOV (1993)",
+        "cap": "Chuyển tới thành phố Kharkov (Ukraine) mở nhà hàng Thăng Long và lập Technocom"
       },
       {
-        "src": "assets/vinbus_green.jpg",
-        "tag": "XE BUÝT ĐIỆN VINBUS",
-        "cap": "Xe buýt điện VinBus vận hành năng lượng sạch"
+        "src": "assets/mivina_noodles.jpg",
+        "tag": "03 · CHUYỂN HƯỚNG SẢN XUẤT MIVINA",
+        "cap": "Nhận thấy nhu cầu thực phẩm nhanh giá rẻ nên quyết định đi vào sản xuất mì ăn liền"
       }
     ]
   },
@@ -856,7 +857,7 @@ window.DECK_SLIDES = [
     "title": "Technocom & Mivina: 10.000 USD → 150 Triệu USD",
     "lead": "Nền móng tài chính và kinh nghiệm sản xuất công nghiệp đầu tiên tại Đông Âu.",
     "image": "assets/mivina_kharkov.jpg",
-    "imageCaption": "Nhà máy Technocom tại Kharkov (Ukraine) — nơi sản xuất thương hiệu mì ăn liền Mivina",
+    "imageCaption": "Vay 10.000 USD với lãi suất 8%/tháng nhập dây chuyền sản xuất mì ăn liền Mivina",
     "kpis": [
       {
         "num": "08/08/1993",
@@ -888,23 +889,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "KHARKOV (UKRAINE)",
-        "cap": "Nhà máy Technocom tại Kharkov (Ukraine) — nơi sản xuất thương hiệu mì ăn liền Mivina"
+        "tag": "01 · NHÀ MÁY TECHNOCOM KHARKOV",
+        "cap": "Vay 10.000 USD với lãi suất 8%/tháng nhập dây chuyền sản xuất mì ăn liền Mivina"
       },
       {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
+        "src": "assets/mivina_noodles.jpg",
+        "tag": "02 · MIVINA CHIẾM 97% THỊ PHẦN",
+        "cap": "Giá hợp lý, chất lượng ổn định giúp Mivina thành danh từ chung chỉ mì ăn liền tại Ukraine"
       },
       {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "VINFAST VF 8 TẠI MỸ",
-        "cap": "Mẫu SUV điện VinFast VF 8 trưng bày tại TTTM Hoa Kỳ"
+        "src": "assets/pnv_diplomatic_handshake.jpg",
+        "tag": "03 · THƯƠNG VỤ M&A NESTLÉ (2010)",
+        "cap": "Chuyển nhượng Technocom cho tập đoàn Nestlé (150 triệu USD) để dồn vốn về Việt Nam"
       },
       {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "GIẢI THƯỞNG VINFUTURE",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm"
+        "src": "assets/vinpearl_nhatrang.jpg",
+        "tag": "BỆ PHÓNG ĐẦU TƯ VỀ QUÊ HƯƠNG",
+        "cap": "Tích lũy tài chính và quản trị công nghiệp từ Đông Âu làm nền móng cho Vingroup"
       }
     ]
   },
@@ -919,7 +920,7 @@ window.DECK_SLIDES = [
     "title": "Vinpearl (2001) & Vincom (2002): Khởi đầu Quê hương",
     "lead": "Hai viên gạch đầu tiên kiến tạo du lịch biển đảo và thương mại đô thị Việt Nam.",
     "image": "assets/vinpearl_nhatrang.jpg",
-    "imageCaption": "Quần thể du lịch nghỉ dưỡng Vinpearl trên đảo Hòn Tre (Vịnh Nha Trang)",
+    "imageCaption": "Biến đảo Hòn Tre hoang sơ thành quần thể nghỉ dưỡng 5 sao và cáp treo vượt biển",
     "kpis": [
       {
         "num": "2001",
@@ -951,23 +952,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể du lịch nghỉ dưỡng Vinpearl trên đảo Hòn Tre (Vịnh Nha Trang)"
+        "tag": "01 · VINPEARL NHA TRANG (2001)",
+        "cap": "Biến đảo Hòn Tre hoang sơ thành quần thể nghỉ dưỡng 5 sao và cáp treo vượt biển"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
+        "src": "assets/vincom_ba_trieu.jpg",
+        "tag": "02 · VINCOM CENTER BÀ TRIỆU (2002)",
+        "cap": "Mở đầu mô hình trung tâm thương mại hiện đại kết hợp tháp văn phòng hạng A tại Hà Nội"
       },
       {
-        "src": "assets/vinfast_vfe34.jpg",
-        "tag": "VINFAST VF E34",
-        "cap": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh"
+        "src": "assets/vinpearl_phuquoc.jpg",
+        "tag": "03 · CHUỖI DU LỊCH & BÁN LẺ TOÀN QUỐC",
+        "cap": "Vận hành hệ thống Vinpearl khắp biển đảo và hơn 80 TTTM Vincom gần 50 tỉnh thành"
       },
       {
-        "src": "assets/pnv_3d_visionary.jpg",
-        "tag": "KHÁT VỌNG VƯƠN TẦM",
-        "cap": "Bản lĩnh đưa thương hiệu công nghiệp - công nghệ Việt Nam ra toàn cầu"
+        "src": "assets/vincom_timescity.jpg",
+        "tag": "HỆ THỐNG VINCOM MEGA MALL",
+        "cap": "Tổ hợp thương mại – giải trí quy mô lớn gắn liền các khu đô thị Vinhomes"
       }
     ]
   },
@@ -1016,28 +1017,28 @@ window.DECK_SLIDES = [
         "desc": "Hoạt động phi lợi nhuận phục vụ y tế, giáo dục, khoa học và an sinh."
       }
     ],
-    "image": "assets/vinhomes_central_park.jpg",
-    "imageCaption": "Không gian đô thị hiện đại tại Vinhomes Central Park TP.HCM",
+    "image": "assets/vinfast_ev_factory.jpg",
+    "imageCaption": "VinFast, V-GREEN, VinAI, VinBigdata, VinRobotics — động lực tăng trưởng toàn cầu",
     "gallery": [
       {
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "TRỤ CỘT 1 · CÔNG NGHỆ – CÔNG NGHIỆP",
+        "cap": "VinFast, V-GREEN, VinAI, VinBigdata, VinRobotics — động lực tăng trưởng toàn cầu"
+      },
+      {
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "TRỤ CỘT 2 · THƯƠNG MẠI DỊCH VỤ",
+        "cap": "Vinhomes, Vincom Retail, Vinpearl — trụ cột tạo dòng tiền chủ lực dẫn đầu thị trường"
+      },
+      {
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "TRỤ CỘT 3 · THIỆN NGUYỆN XÃ HỘI",
+        "cap": "Vinmec, Vinschool, VinUni, Quỹ Thiện Tâm & VinFuture — phụng sự xã hội phi lợi nhuận"
+      },
+      {
         "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
-      },
-      {
-        "src": "assets/xanhsm_vinfast_3d.jpg",
-        "tag": "XANH SM & V-GREEN",
-        "cap": "Hệ sinh thái Taxi điện Xanh SM và mạng lưới 150.000 cổng sạc V-GREEN"
-      },
-      {
-        "src": "assets/vingroup_ecosystem_3d.jpg",
-        "tag": "HỆ SINH THÁI VINGROUP",
-        "cap": "Mô hình 3 trụ cột Công nghệ - Công nghiệp, Thương mại Dịch vụ & Thiện nguyện"
-      },
-      {
-        "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "ĐỐI NGOẠI CẤP CAO",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
+        "tag": "HỢP NHẤT VINGROUP (2012)",
+        "cap": "Sáp nhập Vinpearl và Vincom thành Tập đoàn Vingroup, tái cấu trúc 3 trụ cột từ năm 2018"
       }
     ]
   },
@@ -1052,7 +1053,7 @@ window.DECK_SLIDES = [
     "title": "Vinhomes: Đại đô thị Phức hợp & Landmark 81",
     "lead": "Doanh nghiệp bất động sản hàng đầu kiến tạo mô hình sống All-in-One.",
     "image": "assets/landmark81_vingroup.jpg",
-    "imageCaption": "Tòa tháp Landmark 81 (cao 461,2m) nằm trong khu đô thị Vinhomes Central Park (TP.HCM)",
+    "imageCaption": "Royal City, Times City (Hà Nội) và Vinhomes Central Park – Landmark 81 (461,2m tại TP.HCM)",
     "kpis": [
       {
         "num": "461,2 m",
@@ -1084,23 +1085,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 (cao 461,2m) nằm trong khu đô thị Vinhomes Central Park (TP.HCM)"
+        "tag": "01 · DỰ ÁN TIÊN PHONG & LANDMARK 81",
+        "cap": "Royal City, Times City (Hà Nội) và Vinhomes Central Park – Landmark 81 (461,2m tại TP.HCM)"
       },
       {
-        "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "PARIS MOTOR SHOW",
-        "cap": "VinFast LUX SA2.0 tại Triển lãm Ô tô Paris 2018"
+        "src": "assets/vinhomes_ocean_park.jpg",
+        "tag": "02 · THẾ HỆ ĐẠI ĐÔ THỊ (2018–NAY)",
+        "cap": "Quần thể đại đô thị biển hồ Vinhomes Ocean Park 1-2-3 (1.200 ha) và Grand Park"
       },
       {
-        "src": "assets/vinbus_green.jpg",
-        "tag": "XE BUÝT ĐIỆN VINBUS",
-        "cap": "Xe buýt điện VinBus vận hành năng lượng sạch"
+        "src": "assets/vinhomes_smart_city.jpg",
+        "tag": "03 · HỆ SINH THÁI SỐNG KHÉP KÍN",
+        "cap": "Đại đô thị thông minh tích hợp đồng bộ công viên, Vinschool, Vinmec, Vincom và VinBus"
       },
       {
-        "src": "assets/vid01_thumb.jpg",
-        "tag": "TƯ LIỆU PHẠM NHẬT VƯỢNG",
-        "cap": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp"
+        "src": "assets/vinhomes_royal_city.jpg",
+        "tag": "VINHOMES ROYAL CITY HÀ NỘI",
+        "cap": "Quần thể đô thị phức hợp định hình chuẩn mực sống hiện đại tại Việt Nam"
       }
     ]
   },
@@ -1114,8 +1115,8 @@ window.DECK_SLIDES = [
     "kicker": "DOANH NGHIỆP #6 · VINFAST (NASDAQ: VFS)",
     "title": "VinFast (2017–nay): Công nghiệp Xe điện Toàn cầu",
     "lead": "Khởi công tổ hợp Cát Hải năm 2017, vươn thành hãng xe thuần điện trên sàn Nasdaq.",
-    "image": "assets/vinfast_vf8_us.jpg",
-    "imageCaption": "Mẫu SUV điện thông minh VinFast VF 8 trên hành trình mở rộng thị trường quốc tế",
+    "image": "assets/vinfast_ev_factory.jpg",
+    "imageCaption": "Tổ hợp sản xuất VinFast Cát Hải chuyển đổi hoàn toàn sang xe điện thông minh (EV)",
     "kpis": [
       {
         "num": "21 Tháng",
@@ -1146,24 +1147,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "01 · THUẦN ĐIỆN 100% TỪ NĂM 2022",
+        "cap": "Tổ hợp sản xuất VinFast Cát Hải chuyển đổi hoàn toàn sang xe điện thông minh (EV)"
+      },
+      {
+        "src": "assets/vinfast_vf9.jpg",
+        "tag": "02 · HỆ SINH THÁI SẢN PHẨM ĐỦ DẢI",
+        "cap": "Phủ kín các phân khúc từ VF 3, VF 5, VF 6, VF 7, VF 8, VF 9 đến xe máy điện và xe buýt điện"
+      },
+      {
         "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "VINFAST VF 8 TẠI MỸ",
-        "cap": "Mẫu SUV điện thông minh VinFast VF 8 trên hành trình mở rộng thị trường quốc tế"
+        "tag": "03 · NIÊM YẾT NASDAQ & MỞ RỘNG QUỐC TẾ",
+        "cap": "Niêm yết sàn chứng khoán Mỹ Nasdaq (VFS) và triển khai nhà máy tại Ấn Độ, Indonesia, Mỹ"
       },
       {
-        "src": "assets/vinmec_hospital.jpg",
-        "tag": "BỆNH VIỆN VINMEC",
-        "cap": "Hệ thống Bệnh viện Đa khoa Quốc tế Vinmec đạt chuẩn JCI toàn cầu"
-      },
-      {
-        "src": "assets/vid03_thumb.jpg",
-        "tag": "TOÀN CẢNH VINGROUP",
-        "cap": "Quy mô hệ sinh thái Vingroup qua góc nhìn phân tích trực quan"
-      },
-      {
-        "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "HỘI ĐÀM CHIẾN LƯỢC",
-        "cap": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế"
+        "src": "assets/pnv_joko_vinfast.jpg",
+        "tag": "HỢP TÁC CÔNG NGHIỆP CHÂU Á",
+        "cap": "Tổng thống Indonesia Joko Widodo thăm dây chuyền sản xuất ô tô điện VinFast"
       }
     ]
   },
@@ -1221,28 +1222,28 @@ window.DECK_SLIDES = [
       }
     ],
     "note": "GSM mở rộng sang Lào, Indonesia; V-GREEN quy hoạch 150.000 cổng sạc toàn quốc.",
-    "image": "assets/vinfast_vf9.jpg",
-    "imageCaption": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt",
+    "image": "assets/xanhsm_vinfast_3d.jpg",
+    "imageCaption": "Hệ sinh thái di chuyển xanh GSM (2023) và hạ tầng 150.000 cổng sạc V-GREEN (2024)",
     "gallery": [
       {
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "tag": "TAXI XANH SM (GSM) & TRẠM SẠC V-GREEN",
+        "cap": "Hệ sinh thái di chuyển xanh GSM (2023) và hạ tầng 150.000 cổng sạc V-GREEN (2024)"
+      },
+      {
+        "src": "assets/vinfast_vfe34.jpg",
+        "tag": "196.919 Ô TÔ ĐIỆN BÀN GIAO (2025)",
+        "cap": "Doanh số ô tô điện năm 2025 tăng +102% so với 2024, giữ vững vị trí số 1 thị trường"
+      },
+      {
+        "src": "assets/vinbus_green.jpg",
+        "tag": "406.498 XE MÁY ĐIỆN & GIAO THÔNG XANH",
+        "cap": "Doanh số xe máy điện tăng +473% cùng mạng lưới xe buýt điện VinBus vận hành sạch"
+      },
+      {
         "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
-      },
-      {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "GIẢI THƯỞNG VINFUTURE",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm"
-      },
-      {
-        "src": "assets/vid05_thumb.jpg",
-        "tag": "QUỸ THIỆN TÂM",
-        "cap": "Hành trình 20 năm Quỹ Thiện Tâm với 46.000 tỷ đồng phụng sự cộng đồng"
-      },
-      {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
+        "tag": "DOANH THU 90.427,6 TỶ VNĐ (+105,4%)",
+        "cap": "Doanh thu mảng sản xuất tăng gấp đôi năm 2025 nhờ chiến lược chuyển đổi xanh"
       }
     ]
   },
@@ -1276,28 +1277,28 @@ window.DECK_SLIDES = [
         "desc": "Vốn đầu tư 6.500 tỷ đồng, hợp tác Ivy League, đạt chuẩn QS 5 Sao trẻ tuổi nhất."
       }
     ],
-    "image": "assets/vinfast_vfe34.jpg",
-    "imageCaption": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh",
+    "image": "assets/vinmec_hospital.jpg",
+    "imageCaption": "Hệ thống Y tế hàn lâm phi lợi nhuận đạt chuẩn JCI toàn cầu, làm chủ ghép tạng và tế bào gốc",
     "gallery": [
       {
-        "src": "assets/vinfast_vfe34.jpg",
-        "tag": "VINFAST VF E34",
-        "cap": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh"
+        "src": "assets/vinmec_hospital.jpg",
+        "tag": "VINMEC · CHUẨN BỆNH VIỆN JCI QUỐC TẾ",
+        "cap": "Hệ thống Y tế hàn lâm phi lợi nhuận đạt chuẩn JCI toàn cầu, làm chủ ghép tạng và tế bào gốc"
       },
       {
-        "src": "assets/pnv_3d_executive.jpg",
-        "tag": "TẦM NHÌN LÃNH ĐẠO",
-        "cap": "Chân dung nhà lãnh đạo kiến tạo hệ sinh thái đa ngành Vingroup"
+        "src": "assets/vinschool_campus.jpg",
+        "tag": "VINSCHOOL · 50+ CƠ SỞ CHUẨN CIS",
+        "cap": "Hệ thống giáo dục liên cấp lớn nhất Việt Nam đạt giám định quốc tế CIS và chương trình Cambridge"
       },
       {
-        "src": "assets/pnv_portrait.jpg",
-        "tag": "CHỦ TỊCH VINGROUP",
-        "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "VINUNI · HỢP TÁC CORNELL & UPENN",
+        "cap": "Đại học tinh hoa vốn đầu tư 6.500 tỷ đồng, hợp tác Ivy League, đạt chuẩn QS 5 Sao"
       },
       {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "TÁI ĐẦU TƯ 100% CHO XÃ HỘI",
+        "cap": "Tái đầu tư toàn bộ thặng dư từ y tế và giáo dục cho học bổng và nghiên cứu khoa học"
       }
     ]
   },
@@ -1383,28 +1384,28 @@ window.DECK_SLIDES = [
         "rank": "Số 1 Việt Nam và nhóm dẫn đầu Đông Nam Á."
       }
     ],
-    "image": "assets/vinbus_green.jpg",
-    "imageCaption": "Hệ thống xe buýt điện thông minh VinBus vận hành năng lượng sạch",
+    "image": "assets/pnv_portrait.jpg",
+    "imageCaption": "Ông Phạm Nhật Vượng trở thành tỷ phú USD đầu tiên của Việt Nam trên bảng xếp hạng Forbes",
     "gallery": [
       {
-        "src": "assets/vinbus_green.jpg",
-        "tag": "XE BUÝT ĐIỆN VINBUS",
-        "cap": "Xe buýt điện VinBus vận hành năng lượng sạch"
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "2013 · 1,5 TỶ USD (HẠNG 974 FORBES)",
+        "cap": "Ông Phạm Nhật Vượng trở thành tỷ phú USD đầu tiên của Việt Nam trên bảng xếp hạng Forbes"
       },
       {
-        "src": "assets/vingroup_ecosystem_3d.jpg",
-        "tag": "HỆ SINH THÁI VINGROUP",
-        "cap": "Mô hình 3 trụ cột Công nghệ - Công nghiệp, Thương mại Dịch vụ & Thiện nguyện"
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "2018 · 6,6 TỶ USD (LANDMARK 81 & VHM)",
+        "cap": "Vinhomes niêm yết và khánh thành tòa tháp Landmark 81 đưa quy mô tài sản lên 6,6 tỷ USD"
       },
       {
-        "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "ĐỐI NGOẠI CẤP CAO",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "2025–2026 · 23,6 – 27,7+ TỶ USD (TOP 100)",
+        "cap": "Đà bứt phá của VinFast đưa ông vào nhóm Top 100 tỷ phú giàu nhất thế giới"
       },
       {
-        "src": "assets/mivina_noodles.jpg",
-        "tag": "BIỂU TƯỢNG MIBIHA",
-        "cap": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine"
+        "src": "assets/vinhomes_central_park.jpg",
+        "tag": "DẪN ĐẦU ĐÔNG NAM Á",
+        "cap": "Quy mô tài sản phản ánh sự mở rộng vốn hóa của hệ sinh thái công nghiệp – đô thị"
       }
     ]
   },
@@ -1452,28 +1453,28 @@ window.DECK_SLIDES = [
         "practice": "Tốc độ, sâu sát hiện trường và 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
       }
     ],
-    "image": "assets/vinmec_hospital.jpg",
-    "imageCaption": "Hệ thống Bệnh viện Đa khoa Quốc tế Vinmec đạt chuẩn JCI toàn cầu",
+    "image": "assets/pnv_vinfast_tour.jpg",
+    "imageCaption": "Xây dựng chuỗi cung ứng, điều hành đa ngành và chuyển đổi công nghiệp xe điện thần tốc",
     "gallery": [
       {
-        "src": "assets/vinmec_hospital.jpg",
-        "tag": "BỆNH VIỆN VINMEC",
-        "cap": "Hệ thống Bệnh viện Đa khoa Quốc tế Vinmec đạt chuẩn JCI toàn cầu"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "5.1 · NĂNG LỰC ĐIỀU HÀNH THỰC TIỄN",
+        "cap": "Xây dựng chuỗi cung ứng, điều hành đa ngành và chuyển đổi công nghiệp xe điện thần tốc"
       },
       {
-        "src": "assets/vid01_thumb.jpg",
-        "tag": "TƯ LIỆU PHẠM NHẬT VƯỢNG",
-        "cap": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "5.2 · TỐ CHẤT RỜI VÙNG AN TOÀN",
+        "cap": "Ba quyết định bước ngoặt năm 1993 (Kharkov), 2010 (về Việt Nam) và 2017–2022 (xe điện)"
+      },
+      {
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "5.3 · ĐẠO ĐỨC & PHỤNG SỰ XÃ HỘI",
+        "cap": "Hậu mãi xe 10 năm, 46.000 tỷ đồng Quỹ Thiện Tâm và Giải thưởng Khoa học VinFuture"
       },
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "HỢP TÁC QUỐC TẾ",
-        "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
-      },
-      {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
+        "tag": "5.4 · PHONG CÁCH TỐC ĐỘ & KỶ LUẬT",
+        "cap": "Sâu sát hiện trường và kết tinh hệ giá trị TÍN – TÂM – TRÍ – TỐC – TINH – NHÂN"
       }
     ]
   },
@@ -1512,28 +1513,28 @@ window.DECK_SLIDES = [
         "desc": "Làm chủ công nghệ mới và kiến tạo mô hình kinh doanh dẫn dắt thị trường."
       }
     ],
-    "image": "assets/vinfuture_thientam.jpg",
-    "imageCaption": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm",
+    "image": "assets/moscow_university.jpg",
+    "imageCaption": "Kiến thức kỹ thuật, tài chính, pháp luật, ngoại ngữ và quy luật cung – cầu thị trường",
     "gallery": [
       {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "GIẢI THƯỞNG VINFUTURE",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm"
+        "src": "assets/moscow_university.jpg",
+        "tag": "5.1.1 · CHUYÊN MÔN & TRI THỨC",
+        "cap": "Kiến thức kỹ thuật, tài chính, pháp luật, ngoại ngữ và quy luật cung – cầu thị trường"
       },
       {
-        "src": "assets/vid03_thumb.jpg",
-        "tag": "TOÀN CẢNH VINGROUP",
-        "cap": "Quy mô hệ sinh thái Vingroup qua góc nhìn phân tích trực quan"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "5.1.2 · QUẢN LÝ & ĐIỀU HÀNH",
+        "cap": "Lập kế hoạch, thiết kế bộ máy, phân bổ nguồn vốn và kiểm soát tiến độ dự án"
       },
       {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "HỘI ĐÀM CHIẾN LƯỢC",
-        "cap": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế"
+        "tag": "5.1.3 · LÃNH ĐẠO & DÙNG NGƯỜI",
+        "cap": "Xác lập tầm nhìn chiến lược, truyền lửa và quy tụ nhân tài quốc tế cùng chung mục tiêu"
       },
       {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "src": "assets/vinfast_vf9.jpg",
+        "tag": "5.1.4 · ĐỔI MỚI SÁNG TẠO",
+        "cap": "Làm chủ công nghệ mới và kiến tạo mô hình kinh doanh dẫn dắt thị trường"
       }
     ]
   },
@@ -1551,7 +1552,7 @@ window.DECK_SLIDES = [
     "title": "Phân tích Thị trường & Chuẩn hóa Kỹ thuật",
     "lead": "Quyết định kinh doanh dựa trên khảo sát thực nghiệm và chuẩn quốc tế.",
     "image": "assets/mivina_kharkov.jpg",
-    "imageCaption": "Dây chuyền sản xuất công nghiệp chuẩn hóa ngay từ thời kỳ Technocom tại Ukraine",
+    "imageCaption": "Nền tảng Kinh tế Địa chất MGRI giúp ông tính chuẩn sức mua và chi phí tại Đông Âu",
     "bullets": [
       {
         "bold": "Khảo sát bằng toán kinh tế",
@@ -1569,23 +1570,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "5.1",
-        "cap": "Dây chuyền sản xuất công nghiệp chuẩn hóa ngay từ thời kỳ Technocom tại Ukraine"
+        "tag": "01 · KHẢO SÁT BẰNG TOÁN KINH TẾ",
+        "cap": "Nền tảng Kinh tế Địa chất MGRI giúp ông tính chuẩn sức mua và chi phí tại Đông Âu"
       },
       {
-        "src": "assets/pnv_3d_executive.jpg",
-        "tag": "TẦM NHÌN LÃNH ĐẠO",
-        "cap": "Chân dung nhà lãnh đạo kiến tạo hệ sinh thái đa ngành Vingroup"
+        "src": "assets/vinfast_lux_paris.jpg",
+        "tag": "02 · HỌC TỪ CHUẨN MỰC THẾ GIỚI",
+        "cap": "Khảo sát Phuket, Singapore làm Vinpearl; bắt tay BMW, Magna Steyr, Pininfarina làm VinFast"
       },
       {
-        "src": "assets/vid05_thumb.jpg",
-        "tag": "QUỸ THIỆN TÂM",
-        "cap": "Hành trình 20 năm Quỹ Thiện Tâm với 46.000 tỷ đồng phụng sự cộng đồng"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "03 · TỰ HỌC SÂU TỪNG NGÀNH MỚI",
+        "cap": "Trực tiếp nắm chắc thông số kỹ thuật lõi và cấu trúc giá thành (BOM) tại nhà máy"
       },
       {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
+        "src": "assets/vinpearl_hotel.jpg",
+        "tag": "CHUẨN HÓA DỊCH VỤ 5 SAO",
+        "cap": "Áp dụng tiêu chuẩn vận hành quốc tế vào chuỗi nghỉ dưỡng và thương mại trong nước"
       }
     ]
   },
@@ -1602,8 +1603,8 @@ window.DECK_SLIDES = [
     "kicker": "THỰC CHỨNG 5.1 (2/3) · ĐIỀU HÀNH & VỐN",
     "title": "Quản trị Đa ngành & Tiến độ Kỷ lục 21 Tháng",
     "lead": "Triển khai siêu dự án vượt tiến độ kết hợp huy động vốn quốc tế.",
-    "image": "assets/pnv_vinfast_tour.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng trực tiếp kiểm tra tiến độ và vận hành tại nhà máy VinFast Hải Phòng",
+    "image": "assets/vinfast_ev_factory.jpg",
+    "imageCaption": "San lấp 335 ha đầm lầy, dựng 5 xưởng tự động hóa — nhanh gần gấp đôi chuẩn 3–5 năm",
     "bullets": [
       {
         "bold": "Nhà máy Cát Hải trong 21 tháng",
@@ -1620,24 +1621,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "01 · NHÀ MÁY CÁT HẢI TRONG 21 THÁNG",
+        "cap": "San lấp 335 ha đầm lầy, dựng 5 xưởng tự động hóa — nhanh gần gấp đôi chuẩn 3–5 năm"
+      },
+      {
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "02 · QUẢN TRỊ ĐA CÔNG TY NIÊM YẾT",
+        "cap": "Điều phối nhịp nhàng Tập đoàn Vingroup (VIC) cùng các pháp nhân VHM, VRE, VFS"
+      },
+      {
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "03 · CẤU TRÚC TÀI CHÍNH & NASDAQ",
+        "cap": "Từ thương vụ M&A Nestlé (2010) đến huy động vốn quốc tế và niêm yết Nasdaq (2023)"
+      },
+      {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "5.1",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra tiến độ và vận hành tại nhà máy VinFast Hải Phòng"
-      },
-      {
-        "src": "assets/pnv_3d_visionary.jpg",
-        "tag": "KHÁT VỌNG VƯƠN TẦM",
-        "cap": "Bản lĩnh đưa thương hiệu công nghiệp - công nghệ Việt Nam ra toàn cầu"
-      },
-      {
-        "src": "assets/pnv_portrait.jpg",
-        "tag": "CHỦ TỊCH VINGROUP",
-        "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup"
-      },
-      {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "tag": "KIỂM SOÁT TIẾN ĐỘ THỰC ĐỊA",
+        "cap": "Trực tiếp bám sát công trường để tháo gỡ điểm nghẽn kỹ thuật ngay tại chỗ"
       }
     ]
   },
@@ -1674,28 +1675,28 @@ window.DECK_SLIDES = [
         "desc": "Đầu tư trợ lý ảo tiếng Việt, lái nâng cao ADAS và robotics công nghiệp (VinRobotics)."
       }
     ],
-    "image": "assets/vingroup_ecosystem_3d.jpg",
-    "imageCaption": "Mô hình 3 trụ cột Công nghệ - Công nghiệp, Thương mại Dịch vụ & Thiện nguyện",
+    "image": "assets/pnv_diplomatic_handshake.jpg",
+    "imageCaption": "Chiêu mộ lãnh đạo từ GM, BMW, Toyota và quy tụ các nhà khoa học lỗi lạc tại VinFuture",
     "gallery": [
       {
-        "src": "assets/vingroup_ecosystem_3d.jpg",
-        "tag": "HỆ SINH THÁI VINGROUP",
-        "cap": "Mô hình 3 trụ cột Công nghệ - Công nghiệp, Thương mại Dịch vụ & Thiện nguyện"
+        "src": "assets/pnv_diplomatic_handshake.jpg",
+        "tag": "01 · CHUYÊN GIA QUỐC TẾ & TRÍ THỨC VIỆT",
+        "cap": "Chiêu mộ lãnh đạo từ GM, BMW, Toyota và quy tụ các nhà khoa học lỗi lạc tại VinFuture"
       },
       {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "tag": "02 · HỆ SINH THÁI VINFAST + V-GREEN + XANH SM",
+        "cap": "Phủ trạm sạc V-GREEN toàn quốc và vận hành đội taxi điện Xanh SM tạo thói quen di chuyển xanh"
       },
       {
-        "src": "assets/vid02_thumb.jpg",
-        "tag": "THƯƠNG HIỆU MIVINA",
-        "cap": "Mivina chiếm 97% thị phần tại Ukraine trước thương vụ M&A 150 triệu USD với Nestlé"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "03 · PHẦN MỀM, AI & TỰ ĐỘNG HÓA",
+        "cap": "Đầu tư trợ lý ảo tiếng Việt, hệ thống lái ADAS và tự động hóa công nghiệp (VinRobotics)"
       },
       {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "ƯƠM MẦM NHÂN TÀI CÔNG NGHỆ",
+        "cap": "Đào tạo thế hệ kỹ sư AI và khoa học máy tính kế cận tại Đại học VinUni"
       }
     ]
   },
@@ -1739,28 +1740,28 @@ window.DECK_SLIDES = [
         "Hệ sinh thái kiềng 3 chân: Xe điện (VinFast) – Trạm sạc (V-GREEN) – GSM."
       ]
     ],
-    "image": "assets/vid01_thumb.jpg",
-    "imageCaption": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp",
+    "image": "assets/moscow_university.jpg",
+    "imageCaption": "Kỹ sư Kinh tế Địa chất MGRI; thông thạo chuỗi giá trị từ FMCG đến công nghiệp xe điện",
     "gallery": [
       {
-        "src": "assets/vid01_thumb.jpg",
-        "tag": "TƯ LIỆU PHẠM NHẬT VƯỢNG",
-        "cap": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp"
+        "src": "assets/moscow_university.jpg",
+        "tag": "1 · CHUYÊN MÔN KINH TẾ – KỸ THUẬT",
+        "cap": "Kỹ sư Kinh tế Địa chất MGRI; thông thạo chuỗi giá trị từ FMCG đến công nghiệp xe điện"
       },
       {
-        "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "ĐỐI NGOẠI CẤP CAO",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu dây chuyền xe điện VinFast với Tổng thống Indonesia"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "2 · QUẢN LÝ & ĐIỀU HÀNH TIẾN ĐỘ",
+        "cap": "Xây nhà máy VinFast trong 21 tháng; vận hành hơn 30 đại đô thị, bàn giao 196.919 xe năm 2025"
       },
       {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "tag": "3 · LÃNH ĐẠO HƠN 100.000 NHÂN SỰ",
+        "cap": "Trực tiếp làm Tổng Giám đốc VinFast dẫn dắt chiến dịch mở rộng toàn cầu"
       },
       {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "tag": "4 · ĐỔI MỚI KIỀNG 3 CHÂN XE ĐIỆN",
+        "cap": "Kết hợp đồng bộ Xe điện (VinFast) – Trạm sạc (V-GREEN) – Vận tải xanh (GSM)"
       }
     ]
   },
@@ -1799,28 +1800,28 @@ window.DECK_SLIDES = [
         "desc": "Không dừng ở lợi nhuận thuần túy mà muốn để lại thương hiệu tầm vóc."
       }
     ],
-    "image": "assets/vid03_thumb.jpg",
-    "imageCaption": "Quy mô hệ sinh thái Vingroup qua góc nhìn phân tích trực quan",
+    "image": "assets/landmark81_vingroup.jpg",
+    "imageCaption": "Nhìn ra cơ hội dài hạn 10–20 năm trước khi thị trường định hình rõ",
     "gallery": [
       {
-        "src": "assets/vid03_thumb.jpg",
-        "tag": "TOÀN CẢNH VINGROUP",
-        "cap": "Quy mô hệ sinh thái Vingroup qua góc nhìn phân tích trực quan"
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "5.2.1 · TẦM NHÌN CHIẾN LƯỢC DÀI HẠN",
+        "cap": "Nhìn ra cơ hội dài hạn 10–20 năm trước khi thị trường định hình rõ"
       },
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "HỢP TÁC QUỐC TẾ",
-        "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
+        "tag": "5.2.2 · QUYẾT ĐOÁN & ĐỘC LẬP",
+        "cap": "Chốt quyết định dứt khoát tại thời điểm bước ngoặt và tự chịu trách nhiệm"
       },
       {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "5.2.3 · BẢN LĨNH CHẤP NHẬN RỦI RO",
+        "cap": "Sẵn sàng rời vùng an toàn để bước vào ngành công nghiệp công nghệ rào cản cao"
       },
       {
-        "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
+        "src": "assets/vinfast_lux_paris.jpg",
+        "tag": "5.2.4 · KHÁT VỌNG THƯƠNG HIỆU VIỆT",
+        "cap": "Không dừng ở lợi nhuận thuần túy mà quyết tâm xây dựng thương hiệu tầm vóc quốc tế"
       }
     ]
   },
@@ -1857,28 +1858,28 @@ window.DECK_SLIDES = [
         "desc": "Làm ô tô (2017) rồi chuyển 100% xe điện (2022) đón đúng xu thế Net Zero toàn cầu."
       }
     ],
-    "image": "assets/vid05_thumb.jpg",
-    "imageCaption": "Hành trình 20 năm Quỹ Thiện Tâm với 46.000 tỷ đồng phụng sự cộng đồng",
+    "image": "assets/mivina_kharkov.jpg",
+    "imageCaption": "Nhận ra khoảng trống thực phẩm tiện lợi của 50 triệu dân Ukraine để lập Mivina",
     "gallery": [
       {
-        "src": "assets/vid05_thumb.jpg",
-        "tag": "QUỸ THIỆN TÂM",
-        "cap": "Hành trình 20 năm Quỹ Thiện Tâm với 46.000 tỷ đồng phụng sự cộng đồng"
-      },
-      {
-        "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "HỘI ĐÀM CHIẾN LƯỢC",
-        "cap": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế"
+        "src": "assets/mivina_kharkov.jpg",
+        "tag": "1993 · NHU CẦU TIÊU DÙNG NHANH",
+        "cap": "Nhận ra khoảng trống thực phẩm tiện lợi của 50 triệu dân Ukraine để lập Mivina"
       },
       {
         "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "tag": "2001 · ĐÔ THỊ HÓA & DU LỊCH",
+        "cap": "Đầu tư Vinpearl Hòn Tre và Vincom Bà Triệu đón đầu sự lớn mạnh của tầng lớp trung lưu"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
+        "src": "assets/vinfast_vf9.jpg",
+        "tag": "2017 · KỶ NGUYÊN CHUYỂN ĐỔI XANH",
+        "cap": "Khởi công VinFast (2017) rồi chuyển 100% xe điện (2022) đón đúng xu thế Net Zero toàn cầu"
+      },
+      {
+        "src": "assets/vinhomes_ocean_park.jpg",
+        "tag": "ĐÔ THỊ SINH THÁI THÔNG MINH",
+        "cap": "Tích hợp hạ tầng giao thông xanh vào các đại đô thị Vinhomes thế hệ mới"
       }
     ]
   },
@@ -1915,28 +1916,28 @@ window.DECK_SLIDES = [
         "outcome": "Niêm yết Nasdaq (2023), dẫn đầu ô tô VN 2024–2025."
       }
     ],
-    "image": "assets/pnv_portrait.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup",
+    "image": "assets/mivina_noodles.jpg",
+    "imageCaption": "Vay lãi 8%/tháng làm sản xuất sau cú ngã Moscow → Mivina chiếm 97% thị phần Ukraine",
     "gallery": [
       {
-        "src": "assets/pnv_portrait.jpg",
-        "tag": "CHỦ TỊCH VINGROUP",
-        "cap": "Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup"
+        "src": "assets/mivina_noodles.jpg",
+        "tag": "BƯỚC NGOẶT 1 (1993) · LẬP TECHNOCOM",
+        "cap": "Vay lãi 8%/tháng làm sản xuất sau cú ngã Moscow → Mivina chiếm 97% thị phần Ukraine"
       },
       {
-        "src": "assets/moscow_university.jpg",
-        "tag": "DU HỌC MOSCOW",
-        "cap": "Môi trường học thuật tại Moscow (Nga) — nền tảng tư duy Kinh tế Địa chất"
+        "src": "assets/vinhomes_royal_city.jpg",
+        "tag": "BƯỚC NGOẶT 2 (2010) · VỀ VIỆT NAM",
+        "cap": "Bán Technocom (150 triệu USD) dồn lực về nước → Lập Vingroup, Vinhomes – Vincom dẫn đầu"
       },
       {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "BƯỚC NGOẶT 3 (2017–2022) · THUẦN ĐIỆN",
+        "cap": "Làm ô tô và dừng xe xăng sang 100% xe điện → Niêm yết Nasdaq (2023), số 1 thị trường VN"
       },
       {
-        "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "VƯƠN RA BIỂN LỚN NASDAQ",
+        "cap": "Đưa thương hiệu công nghiệp Việt Nam niêm yết trên sàn chứng khoán Mỹ"
       }
     ]
   },
@@ -1955,7 +1956,7 @@ window.DECK_SLIDES = [
     "quote": "“VinFast không chỉ là dự án kinh doanh mà là sứ mệnh và danh dự. Khó khăn đến mấy chúng tôi cũng làm bằng được.”",
     "quoteAuthor": "Phát biểu tại ĐHĐCĐ Tập đoàn Vingroup",
     "image": "assets/pnv_joko_vinfast.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng giới thiệu xe điện VinFast với Tổng thống Indonesia Joko Widodo tại nhà máy Hải Phòng",
+    "imageCaption": "Ông Phạm Nhật Vượng giới thiệu công nghệ ô tô điện Việt Nam với Tổng thống Indonesia",
     "points": [
       {
         "title": "1. Vượt trên tích lũy cá nhân",
@@ -1973,23 +1974,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "5.2",
-        "cap": "Ông Phạm Nhật Vượng giới thiệu xe điện VinFast với Tổng thống Indonesia Joko Widodo tại nhà máy Hải Phòng"
+        "tag": "KHÁT VỌNG THƯƠNG HIỆU VIỆT NAM",
+        "cap": "Ông Phạm Nhật Vượng giới thiệu công nghệ ô tô điện Việt Nam với Tổng thống Indonesia"
       },
       {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "src": "assets/vinfast_lux_paris.jpg",
+        "tag": "1 · VƯỢT TRÊN TÍCH LŨY CÁ NHÂN",
+        "cap": "Không chọn nghỉ ngơi sau thành công bất động sản mà dấn thân xây dựng hãng ô tô Việt"
       },
       {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "2 · TÀI TRỢ BẰNG TÀI SẢN RIÊNG",
+        "cap": "Cam kết hàng chục nghìn tỷ đồng vốn cá nhân cho R&D và mở rộng VinFast (2023–2026)"
       },
       {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "3 · KIÊN ĐỊNH MỞ RỘNG NHÀ MÁY",
+        "cap": "Triển khai nhà máy tại Hải Phòng, Hà Tĩnh, Ấn Độ, Indonesia; đạt 196.919 ô tô điện năm 2025"
       }
     ]
   },
@@ -2028,28 +2029,28 @@ window.DECK_SLIDES = [
         "desc": "Đóng góp nguồn lực cho y tế, giáo dục, giảm nghèo, môi trường và khoa học."
       }
     ],
-    "image": "assets/pnv_vingroup_meeting.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực",
+    "image": "assets/vinhomes_central_park.jpg",
+    "imageCaption": "Trung thực, chính trực và giữ cam kết tiến độ – chất lượng với khách hàng, đối tác",
     "gallery": [
       {
-        "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "HỢP TÁC QUỐC TẾ",
-        "cap": "Ông Phạm Nhật Vượng tại sự kiện đối thoại hợp tác chiến lược khu vực"
+        "src": "assets/vinhomes_central_park.jpg",
+        "tag": "5.3.1–5.3.2 · CHỮ TÍN KINH DOANH",
+        "cap": "Trung thực, chính trực và giữ cam kết tiến độ – chất lượng với khách hàng, đối tác"
       },
       {
-        "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "src": "assets/pnv_diplomatic_handshake.jpg",
+        "tag": "5.3.3 · THƯỢNG TÔN PHÁP LUẬT",
+        "cap": "Tuân thủ pháp luật, nộp ngân sách hàng đầu và minh bạch chuẩn mực với cổ đông"
       },
       {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "5.3.4 · TRÁCH NHIỆM XÃ HỘI (CSR)",
+        "cap": "Đóng góp nguồn lực bền bỉ cho y tế, giáo dục, giảm nghèo, môi trường và khoa học"
       },
       {
-        "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
+        "src": "assets/vinfuture_thientam.jpg",
+        "tag": "PHỤNG SỰ KHOA HỌC NHÂN LOẠI",
+        "cap": "Giải thưởng VinFuture tôn vinh các phát minh khoa học vì cuộc sống tốt đẹp hơn"
       }
     ]
   },
@@ -2067,7 +2068,7 @@ window.DECK_SLIDES = [
     "title": "Đặt Chữ “TÍN” Lên Đầu & Bảo vệ Khách hàng",
     "lead": "TÍN đứng vị trí số 1 và TÂM vị trí số 2 trong 6 giá trị cốt lõi Vingroup.",
     "image": "assets/vincom_timescity.jpg",
-    "imageCaption": "Khu đô thị Vinhomes Times City (Hà Nội) — minh chứng cho cam kết chất lượng hạ tầng và dịch vụ",
+    "imageCaption": "Vinhomes bàn giao đúng hạn, cấp sổ hồng nhanh và duy trì chất lượng vận hành đô thị",
     "cards": [
       {
         "tag": "Cam kết Khách hàng",
@@ -2089,23 +2090,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vincom_timescity.jpg",
-        "tag": "5.3",
-        "cap": "Khu đô thị Vinhomes Times City (Hà Nội) — minh chứng cho cam kết chất lượng hạ tầng và dịch vụ"
+        "tag": "01 · GIỮ CHỮ TÍN TIẾN ĐỘ ĐÔ THỊ",
+        "cap": "Vinhomes bàn giao đúng hạn, cấp sổ hồng nhanh và duy trì chất lượng vận hành đô thị"
       },
       {
-        "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "HỘI ĐÀM CHIẾN LƯỢC",
-        "cap": "Ông Phạm Nhật Vượng làm việc cùng các đối tác quốc tế"
+        "src": "assets/vinfast_vfe34.jpg",
+        "tag": "01 · HẬU MÃI BẢO HÀNH 10 NĂM",
+        "cap": "Khi dừng xe xăng (2022), VinFast nâng bảo hành lên 10 năm và cam kết đủ phụ tùng trọn đời"
       },
       {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "02 · ĐÓNG GÓP NGÂN SÁCH & VIỆC LÀM",
+        "cap": "Thuộc nhóm doanh nghiệp tư nhân nộp ngân sách hàng đầu và tạo việc làm cho >100.000 nhân sự"
       },
       {
         "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
+        "tag": "BẢO VỆ QUYỀN LỢI KHÁCH HÀNG",
+        "cap": "Đặt chữ TÍN ở vị trí số 1 và chữ TÂM ở vị trí số 2 trong 6 giá trị cốt lõi Vingroup"
       }
     ]
   },
@@ -2149,27 +2150,27 @@ window.DECK_SLIDES = [
       }
     ],
     "image": "assets/humanitarian_thientam_glow.jpg",
-    "imageCaption": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành",
+    "imageCaption": "Tặng hàng chục nghìn bò giống, vốn và kỹ thuật sản xuất cho hộ nghèo khắp 63 tỉnh thành",
     "gallery": [
       {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "QUỸ THIỆN TÂM",
-        "cap": "Hành trình 20 năm Quỹ Thiện Tâm lan tỏa yêu thương khắp 63 tỉnh thành"
+        "tag": "01 · QUỸ THIỆN TÂM & HỌC BỔNG (46.000 TỶ)",
+        "cap": "Hành trình 20 năm (2006–2026) trao sinh kế, học bổng và hỗ trợ an sinh khắp 63 tỉnh thành"
       },
       {
         "src": "assets/vinmec_hospital.jpg",
-        "tag": "Y TẾ PHI LỢI NHUẬN",
-        "cap": "Bệnh viện Đa khoa Quốc tế Vinmec hỗ trợ khám sàng lọc và mổ tim miễn phí"
+        "tag": "02 · Y TẾ, MỔ TIM & CHĂM SÓC SỨC KHỎE",
+        "cap": "Xây dựng trạm y tế, khám sàng lọc và tài trợ chi phí mổ tim cho hàng chục nghìn bệnh nhân nghèo"
+      },
+      {
+        "src": "assets/vinschool_campus.jpg",
+        "tag": "03 · XÂY TRƯỜNG HỌC & ƯƠM MẦM TRI THỨC",
+        "cap": "Xây hàng trăm điểm trường vùng cao và trao hàng chục nghìn suất học bổng vượt khó"
       },
       {
         "src": "assets/vinuni_campus.jpg",
-        "tag": "GIÁO DỤC & HỌC BỔNG",
-        "cap": "Quần thể Đại học VinUni và chương trình học bổng ươm mầm tài năng Việt"
-      },
-      {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "QUỸ VINFUTURE",
-        "cap": "Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tại Hà Nội"
+        "tag": "04 · GIÁO DỤC PHI LỢI NHUẬN & CỨU TRỢ",
+        "cap": "Ủng hộ hàng nghìn tỷ đồng phòng chống dịch bệnh, cứu trợ bão lũ và phát triển giáo dục"
       }
     ]
   },
@@ -2187,7 +2188,7 @@ window.DECK_SLIDES = [
     "title": "Quỹ VinFuture: Phụng sự Khoa học Nhân loại",
     "lead": "Thành lập năm 2020 bởi vợ chồng ông Phạm Nhật Vượng để vinh danh phát minh vì cộng đồng.",
     "image": "assets/vinfuture_thientam.jpg",
-    "imageCaption": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tổ chức thường niên tại Hà Nội",
+    "imageCaption": "Vinh danh các phát minh vắc-xin mRNA, Internet toàn cầu, pin mặt trời PERC và Deep Learning",
     "kpis": [
       {
         "num": "2.000 Tỷ",
@@ -2219,23 +2220,23 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinfuture_thientam.jpg",
-        "tag": "5.3",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture tổ chức thường niên tại Hà Nội"
+        "tag": "01 · GIẢI THƯỞNG VINFUTURE TOÀN CẦU",
+        "cap": "Vinh danh các phát minh vắc-xin mRNA, Internet toàn cầu, pin mặt trời PERC và Deep Learning"
       },
       {
-        "src": "assets/vid04_thumb.jpg",
-        "tag": "MIVINA ĐẾN VINFAST",
-        "cap": "Bước chuyển lịch sử từ mì ăn liền Mivina (Ukraine) đến hãng xe điện VinFast"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "02 · KẾT NỐI TRÍ TUỆ TẠI HÀ NỘI",
+        "cap": "Quy tụ hàng trăm nhà khoa học lỗi lạc dự Tuần lễ VinFuture, truyền lửa cho sinh viên Việt Nam"
       },
       {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/vinbus_green.jpg",
+        "tag": "03 · QUỸ VÌ TƯƠNG LAI XANH (2023)",
+        "cap": "Trích doanh thu từ mỗi chuyến Xanh SM và xe VinFast bán ra để trồng rừng, bảo vệ môi trường"
       },
       {
-        "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "src": "assets/xanhsm_vinfast_3d.jpg",
+        "tag": "LAN TỎA LỐI SỐNG XANH",
+        "cap": "Kết nối nghiên cứu khoa học với hành động thực tế vì mục tiêu Net Zero"
       }
     ]
   },
@@ -2274,28 +2275,28 @@ window.DECK_SLIDES = [
         "desc": "Phong cách người sáng lập kết tinh thành hệ giá trị chung của toàn tập đoàn."
       }
     ],
-    "image": "assets/mivina_noodles.jpg",
-    "imageCaption": "Thương hiệu thực phẩm quốc dân Mivina của Technocom tại Ukraine",
+    "image": "assets/pnv_vingroup_meeting.jpg",
+    "imageCaption": "Kết hợp quyết đoán chiến lược của người đứng đầu với kỷ luật thực thi của tập thể",
     "gallery": [
       {
+        "src": "assets/pnv_vingroup_meeting.jpg",
+        "tag": "5.4.1 · PHONG CÁCH LÃNH ĐẠO",
+        "cap": "Kết hợp quyết đoán chiến lược của người đứng đầu với kỷ luật thực thi của tập thể"
+      },
+      {
+        "src": "assets/pnv_diplomatic_handshake.jpg",
+        "tag": "5.4.2 · GIAO TIẾP THẲNG THẮN",
+        "cap": "Ngôn từ rõ ràng, đi thẳng vào số liệu thực chất với nhân sự, cổ đông và đối tác"
+      },
+      {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "NHÀ MÁY VINFAST CÁT HẢI",
-        "cap": "Ông Phạm Nhật Vượng kiểm tra dây chuyền nhà máy VinFast Cát Hải"
+        "tag": "5.4.3 · LỐI SỐNG & TÁC PHONG",
+        "cap": "Quản lý thời gian kỷ luật, đời tư giản dị và tinh thần nêu gương sâu sát tại hiện trường"
       },
       {
-        "src": "assets/vincom_ba_trieu.jpg",
-        "tag": "VINCOM CENTER",
-        "cap": "Vincom Center"
-      },
-      {
-        "src": "assets/vinfast_vf8_us.jpg",
-        "tag": "VINFAST VF 8 TẠI MỸ",
-        "cap": "Mẫu SUV điện VinFast VF 8 trưng bày tại TTTM Hoa Kỳ"
-      },
-      {
-        "src": "assets/vinfuture_thientam.jpg",
-        "tag": "GIẢI THƯỞNG VINFUTURE",
-        "cap": "Lễ trao Giải thưởng Khoa học Công nghệ Toàn cầu VinFuture & Quỹ Thiện Tâm"
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "5.4.4 · LAN TỎA THÀNH VĂN HÓA",
+        "cap": "Phong cách người sáng lập kết tinh thành hệ giá trị chung của hơn 100.000 nhân sự"
       }
     ]
   },
@@ -2312,8 +2313,8 @@ window.DECK_SLIDES = [
     "kicker": "THỰC CHỨNG 5.4 (1/2) · KỶ LUẬT & TỐC ĐỘ",
     "title": "Kỷ luật Thép, Tốc độ Thực thi & Sâu sát Hiện trường",
     "lead": "Dấu ấn điều hành theo tôn chỉ “Tốc độ, sáng tạo và hiệu quả”.",
-    "image": "assets/pnv_vingroup_meeting.jpg",
-    "imageCaption": "Ông Phạm Nhật Vượng chủ trì cuộc họp điều hành chiến lược tại Tập đoàn Vingroup",
+    "image": "assets/pnv_vinfast_tour.jpg",
+    "imageCaption": "Trực tiếp làm CEO VinFast, hàng tuần xuống xưởng sản xuất và lái thử duyệt từng mẫu xe",
     "bullets": [
       {
         "bold": "Sâu sát hiện trường (Hands-on)",
@@ -2330,24 +2331,24 @@ window.DECK_SLIDES = [
     ],
     "gallery": [
       {
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "01 · SÂU SÁT HIỆN TRƯỜNG (HANDS-ON)",
+        "cap": "Trực tiếp làm CEO VinFast, hàng tuần xuống xưởng sản xuất và lái thử duyệt từng mẫu xe"
+      },
+      {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "5.4",
-        "cap": "Ông Phạm Nhật Vượng chủ trì cuộc họp điều hành chiến lược tại Tập đoàn Vingroup"
-      },
-      {
-        "src": "assets/vinpearl_hotel.jpg",
-        "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể nghỉ dưỡng 5 sao Vinpearl trên đảo Hòn Tre, Nha Trang"
-      },
-      {
-        "src": "assets/landmark81_vingroup.jpg",
-        "tag": "LANDMARK 81 (461,2M)",
-        "cap": "Tòa tháp Landmark 81 và khu đô thị Vinhomes Central Park bên sông Sài Gòn"
+        "tag": "02 · KỶ LUẬT TIẾN ĐỘ & TỰ HỌC",
+        "cap": "Mọi cấp nhân sự có định mức đào tạo bắt buộc; giao việc rõ người, rõ hạn hoàn thành"
       },
       {
         "src": "assets/vinfast_vf9.jpg",
-        "tag": "SUV ĐIỆN VINFAST VF 9",
-        "cap": "Mẫu SUV điện hạng E VinFast VF 9 — Đỉnh cao công nghệ xe điện Việt"
+        "tag": "03 · KIÊN ĐỊNH MỤC TIÊU, LINH HOẠT",
+        "cap": "Giữ vững mục tiêu xe điện nhưng điều chỉnh nhanh chính sách bán hàng theo thị trường"
+      },
+      {
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "TỐC ĐỘ – SÁNG TẠO – HIỆU QUẢ",
+        "cap": "Vận hành tổ hợp công nghiệp hiện đại theo chuẩn mực kỷ luật cao nhất"
       }
     ]
   },
@@ -2396,28 +2397,28 @@ window.DECK_SLIDES = [
         "desc": "Ứng xử với nhân sự, đối tác bằng thiện chí và tinh thần nhân văn."
       }
     ],
-    "image": "assets/vinpearl_nhatrang.jpg",
-    "imageCaption": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam",
+    "image": "assets/vinhomes_central_park.jpg",
+    "imageCaption": "Bảo vệ chữ Tín như danh dự; thượng tôn pháp luật và phụng sự khách hàng, xã hội",
     "gallery": [
       {
-        "src": "assets/vinpearl_nhatrang.jpg",
-        "tag": "CÁP TREO HÒN TRE",
-        "cap": "Tuyến cáp treo vượt biển Vinpearl Nha Trang — bước ngoặt du lịch Việt Nam"
+        "src": "assets/vinhomes_central_park.jpg",
+        "tag": "TÍN & TÂM · UY TÍN VÀ ĐẠO ĐỨC",
+        "cap": "Bảo vệ chữ Tín như danh dự; thượng tôn pháp luật và phụng sự khách hàng, xã hội"
       },
       {
-        "src": "assets/vinhomes_ocean_park.jpg",
-        "tag": "VINHOMES OCEAN PARK",
-        "cap": "Vinhomes Ocean Park & Quần thể Đại học Tinh hoa VinUni"
+        "src": "assets/vinfast_ev_factory.jpg",
+        "tag": "TRÍ & TỐC · SÁNG TẠO VÀ TỐC ĐỘ",
+        "cap": "Coi sáng tạo là sức sống, ứng dụng công nghệ mới và quyết định – triển khai thần tốc"
       },
       {
-        "src": "assets/vinfast_vfe34.jpg",
-        "tag": "VINFAST VF E34",
-        "cap": "Mẫu ô tô điện thông minh đầu tiên của Việt Nam mở đầu kỷ nguyên di chuyển xanh"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "TINH & NHÂN · TINH HOA VÀ NHÂN VĂN",
+        "cap": "Quy tụ con người tinh hoa, làm ra sản phẩm tinh hoa và ứng xử nhân văn, trọng nghĩa tình"
       },
       {
-        "src": "assets/pnv_3d_visionary.jpg",
-        "tag": "KHÁT VỌNG VƯƠN TẦM",
-        "cap": "Bản lĩnh đưa thương hiệu công nghiệp - công nghệ Việt Nam ra toàn cầu"
+        "src": "assets/pnv_vingroup_meeting.jpg",
+        "tag": "6 CHỮ VÀNG VĂN HÓA VINGROUP",
+        "cap": "Hệ giá trị cốt lõi định hướng hành vi cho toàn bộ hệ sinh thái Vingroup"
       }
     ]
   },
@@ -2467,28 +2468,28 @@ window.DECK_SLIDES = [
         }
       ]
     },
-    "image": "assets/vinpearl_phuquoc.jpg",
-    "imageCaption": "Tổ hợp du lịch giải trí Vinpearl & VinWonders tại Phú Quốc",
+    "image": "assets/pnv_portrait.jpg",
+    "imageCaption": "Hội tụ trọn vẹn 4 cấu phần Năng lực (5.1), Tố chất (5.2), Đạo đức (5.3) và Phong cách (5.4)",
     "gallery": [
       {
-        "src": "assets/vinpearl_phuquoc.jpg",
-        "tag": "VINPEARL PHÚ QUỐC",
-        "cap": "Vinpearl & VinWonders tại Phú Quốc"
+        "src": "assets/pnv_portrait.jpg",
+        "tag": "HÌNH MẪU DOANH NHÂN HIỆN ĐẠI",
+        "cap": "Hội tụ trọn vẹn 4 cấu phần Năng lực (5.1), Tố chất (5.2), Đạo đức (5.3) và Phong cách (5.4)"
       },
       {
-        "src": "assets/vinhomes_royal_city.jpg",
-        "tag": "VINHOMES ROYAL CITY",
-        "cap": "Vinhomes Royal City (Hà Nội)"
+        "src": "assets/landmark81_vingroup.jpg",
+        "tag": "VỊ THẾ DOANH NGHIỆP VIỆT NAM",
+        "cap": "Tập đoàn tư nhân lớn nhất Việt Nam với hệ sinh thái công nghiệp – thương mại – xã hội"
       },
       {
-        "src": "assets/xanhsm_vinfast_3d.jpg",
-        "tag": "XANH SM & V-GREEN",
-        "cap": "Hệ sinh thái Taxi điện Xanh SM và mạng lưới 150.000 cổng sạc V-GREEN"
+        "src": "assets/pnv_joko_vinfast.jpg",
+        "tag": "HỘI TỤ 4 BỘ PHẬN (5.1 – 5.4)",
+        "cap": "Bản lĩnh đưa thương hiệu công nghiệp công nghệ cao Việt Nam bước ra toàn cầu"
       },
       {
-        "src": "assets/vingroup_ecosystem_3d.jpg",
-        "tag": "HỆ SINH THÁI VINGROUP",
-        "cap": "Mô hình 3 trụ cột Công nghệ - Công nghiệp, Thương mại Dịch vụ & Thiện nguyện"
+        "src": "assets/vinfast_vf8_us.jpg",
+        "tag": "THÁCH THỨC VỐN & CẠNH TRANH QUỐC TẾ",
+        "cap": "Áp lực chi phí vốn R&D lớn và cạnh tranh khốc liệt trên thị trường xe điện thế giới"
       }
     ]
   },
@@ -2529,28 +2530,28 @@ window.DECK_SLIDES = [
       }
     ],
     "closing": "Trân trọng cảm ơn Giảng viên và các bạn Sinh viên đã lắng nghe!",
-    "image": "assets/vincom_timescity.jpg",
-    "imageCaption": "Trung tâm thương mại Vincom Mega Mall Times City rực sáng về đêm",
+    "image": "assets/landmark81_vingroup.jpg",
+    "imageCaption": "Biểu tượng tòa tháp Landmark 81 và khát vọng vươn tầm của thế hệ trẻ Việt Nam",
     "gallery": [
       {
-        "src": "assets/vincom_timescity.jpg",
-        "tag": "VINCOM MEGA MALL",
-        "cap": "TTTM Vincom Mega Mall Times City rực sáng về đêm"
+        "src": "assets/vinuni_campus.jpg",
+        "tag": "5.1 · GIỎI CHUYÊN MÔN & CÔNG NGHỆ",
+        "cap": "Xây chắc nền tảng kỹ thuật – kinh tế, ngoại ngữ và làm chủ công nghệ số / AI"
       },
       {
-        "src": "assets/vinhomes_central_park.jpg",
-        "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Vinhomes Central Park TP.HCM"
+        "src": "assets/moscow_university.jpg",
+        "tag": "5.2 · DÁM THỬ & KHÔNG SỢ VẤP NGÃ",
+        "cap": "Tham gia NCKH, khởi nghiệp; xem thất bại đầu đời (như Moscow 1992) là bài học lớn"
       },
       {
-        "src": "assets/vinbus_green.jpg",
-        "tag": "XE BUÝT ĐIỆN VINBUS",
-        "cap": "Xe buýt điện VinBus vận hành năng lượng sạch"
+        "src": "assets/humanitarian_thientam_glow.jpg",
+        "tag": "5.3 · GIỮ CHỮ TÍN & TRÁCH NHIỆM",
+        "cap": "Trung thực trong học tập, giữ đúng cam kết nhóm và tích cực đóng góp cộng đồng"
       },
       {
-        "src": "assets/vid01_thumb.jpg",
-        "tag": "TƯ LIỆU PHẠM NHẬT VƯỢNG",
-        "cap": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp"
+        "src": "assets/pnv_vinfast_tour.jpg",
+        "tag": "5.4 · KỶ LUẬT & LÀM ĐẾN CÙNG",
+        "cap": "Rèn tác phong công nghiệp đúng giờ, lập kế hoạch rõ và theo đuổi sự xuất sắc"
       }
     ]
   },
@@ -3128,14 +3129,15 @@ window.DECK_SLIDES = [
       {
         "src": "assets/vinpearl_nhatrang.jpg",
         "tag": "VINPEARL NHA TRANG",
-        "cap": "Quần thể du lịch Vinpearl Nha Trang"
+        "cap": "Quần thể du lịch nghỉ dưỡng Vinpearl Nha Trang"
       },
       {
         "src": "assets/vinhomes_central_park.jpg",
         "tag": "VINHOMES CENTRAL PARK",
-        "cap": "Đô thị Vinhomes Central Park TP.HCM"
+        "cap": "Đại đô thị Vinhomes Central Park & Landmark 81"
       }
-    ]
+    ],
+    "imageCaption": "Quần thể du lịch nghỉ dưỡng Vinpearl Nha Trang"
   }
 ];
 window.SLIDES_DATA = window.DECK_SLIDES;
