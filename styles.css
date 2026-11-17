@@ -2425,3 +2425,181 @@ body.theme-canva .stage-dark .arch-video-btn {
   gap: 10px;
   min-height: 0;
 }
+
+/* ==========================================================================
+   INTERACTIVE 20 QUIZ SLIDES (Question -> Bold Green Answer Reveal)
+   ========================================================================== */
+.cam-out-quiz {
+  animation: camOutQuiz 520ms var(--morph-ease) forwards;
+}
+.cam-in-quiz {
+  animation: camInQuiz 520ms var(--morph-ease) forwards;
+}
+@keyframes camOutQuiz {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.99); }
+}
+@keyframes camInQuiz {
+  0% { opacity: 0; transform: scale(1.015); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.quiz-slide {
+  padding: 36px 56px 38px;
+  justify-content: center;
+  gap: 28px;
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.quiz-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  background: #132E1B;
+  color: #FAF8F5;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(19, 46, 27, 0.22);
+}
+
+.quiz-eyebrow.is-answer {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.35);
+}
+
+.quiz-question-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.24;
+  color: #132E1B;
+}
+
+body:not(.theme-canva) .quiz-eyebrow {
+  background: linear-gradient(135deg, #FEF08A, #F59E0B);
+  color: #3B0404;
+}
+
+body:not(.theme-canva) .quiz-eyebrow.is-answer {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  color: #FFFFFF;
+}
+
+body:not(.theme-canva) .quiz-question-title {
+  color: #FEF9C3;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  min-height: 0;
+}
+
+.quiz-opt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 28px;
+  min-height: 142px;
+  border-radius: 18px;
+  background: #FFFFFF;
+  border: 2px solid rgba(19, 46, 27, 0.2);
+  box-shadow: 0 10px 26px rgba(19, 46, 27, 0.08);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+body:not(.theme-canva) .quiz-opt {
+  background: linear-gradient(145deg, rgba(138, 18, 18, 0.92) 0%, rgba(65, 7, 7, 0.95) 100%);
+  border: 2px solid var(--gold-border);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.quiz-opt-key {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #E8F0EB;
+  color: #132E1B;
+  font-size: 24px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body:not(.theme-canva) .quiz-opt-key {
+  background: var(--gold-primary);
+  color: #3B0404;
+}
+
+.quiz-opt-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #132E1B;
+  flex: 1;
+}
+
+body:not(.theme-canva) .quiz-opt-text {
+  color: #FFFBEB;
+}
+
+/* BOLD BRIGHT GREEN CORRECT ANSWER HIGHLIGHT */
+.quiz-opt.is-correct {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%) !important;
+  border: 3.5px solid #4ADE80 !important;
+  box-shadow: 0 16px 38px rgba(22, 163, 74, 0.45), 0 0 0 4px rgba(34, 197, 94, 0.22) !important;
+  transform: scale(1.025);
+  animation: quizGreenPop 560ms var(--morph-ease);
+}
+
+@keyframes quizGreenPop {
+  0% { transform: scale(0.96); }
+  55% { transform: scale(1.04); }
+  100% { transform: scale(1.025); }
+}
+
+.quiz-opt.is-correct .quiz-opt-key {
+  background: #FFFFFF !important;
+  color: #15803D !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-opt.is-correct .quiz-opt-text {
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  font-size: 25px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.quiz-correct-tag {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #DCFCE7;
+  color: #14532D;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.quiz-opt.is-dim {
+  opacity: 0.44;
+  filter: saturate(0.45);
+}

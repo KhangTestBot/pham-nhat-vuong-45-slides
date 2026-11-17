@@ -86,8 +86,8 @@ window.DECK_SLIDES = [
     "theme": "light",
     "section": "Phần 1 · Cấu trúc Bài thuyết trình",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "kicker": "LỘ TRÌNH 41 SLIDE",
-    "title": "Cấu trúc 5 Phần & 1 Video Tư liệu",
+    "kicker": "LỘ TRÌNH 61 SLIDE",
+    "title": "Cấu trúc 6 Phần · 41 Nội dung & 20 Câu hỏi",
     "lead": "Kết hợp khung lý thuyết văn hóa doanh nhân với số liệu định lượng và tư liệu thực tế.",
     "chapters": [
       {
@@ -129,6 +129,14 @@ window.DECK_SLIDES = [
         "desc": "Thách thức toàn cầu và 4 định hướng rèn luyện cho sinh viên.",
         "target": 40,
         "color": "#1E293B"
+      },
+      {
+        "num": "Phần VI",
+        "range": "42 – 61",
+        "title": "20 Slide Câu hỏi & Đáp án",
+        "desc": "10 câu trắc nghiệm tương tác: slide câu hỏi đi kèm slide tô xanh đáp án.",
+        "target": 42,
+        "color": "#15803D"
       }
     ],
     "image": "assets/pnv_vinfast_tour.jpg",
@@ -2520,6 +2528,566 @@ window.DECK_SLIDES = [
         "src": "assets/vid01_thumb.jpg",
         "tag": "TƯ LIỆU PHẠM NHẬT VƯỢNG",
         "cap": "Hồ sơ tư liệu về người giàu nhất Việt Nam và hành trình khởi nghiệp"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 01 / 10",
+    "qNum": 1,
+    "title": "Câu 1. Yếu tố nào giúp Vingroup duy trì văn hóa kỷ luật?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Quảng cáo"
+      },
+      {
+        "key": "B",
+        "text": "Quy tắc quản trị"
+      },
+      {
+        "key": "C",
+        "text": "Tăng vốn"
+      },
+      {
+        "key": "D",
+        "text": "Mở rộng thị trường"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 01 · B",
+    "qNum": 1,
+    "title": "Câu 1. Yếu tố nào giúp Vingroup duy trì văn hóa kỷ luật?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Quảng cáo"
+      },
+      {
+        "key": "B",
+        "text": "Quy tắc quản trị"
+      },
+      {
+        "key": "C",
+        "text": "Tăng vốn"
+      },
+      {
+        "key": "D",
+        "text": "Mở rộng thị trường"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 02 / 10",
+    "qNum": 2,
+    "title": "Câu 2. VinFast thể hiện phẩm chất kinh doanh nào của Phạm Nhật Vượng?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Thận trọng"
+      },
+      {
+        "key": "B",
+        "text": "Ngại rủi ro"
+      },
+      {
+        "key": "C",
+        "text": "Tiên phong, đổi mới"
+      },
+      {
+        "key": "D",
+        "text": "Kinh doanh ngắn hạn"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 02 · C",
+    "qNum": 2,
+    "title": "Câu 2. VinFast thể hiện phẩm chất kinh doanh nào của Phạm Nhật Vượng?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Thận trọng"
+      },
+      {
+        "key": "B",
+        "text": "Ngại rủi ro"
+      },
+      {
+        "key": "C",
+        "text": "Tiên phong, đổi mới"
+      },
+      {
+        "key": "D",
+        "text": "Kinh doanh ngắn hạn"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 03 / 10",
+    "qNum": 3,
+    "title": "Câu 3. Nhân viên gian dối với khách hàng vi phạm giá trị nào?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tín"
+      },
+      {
+        "key": "B",
+        "text": "Tốc"
+      },
+      {
+        "key": "C",
+        "text": "Trí"
+      },
+      {
+        "key": "D",
+        "text": "Tinh"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 03 · A",
+    "qNum": 3,
+    "title": "Câu 3. Nhân viên gian dối với khách hàng vi phạm giá trị nào?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tín"
+      },
+      {
+        "key": "B",
+        "text": "Tốc"
+      },
+      {
+        "key": "C",
+        "text": "Trí"
+      },
+      {
+        "key": "D",
+        "text": "Tinh"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 04 / 10",
+    "qNum": 4,
+    "title": "Câu 4. Giá trị nào đề cao trí tuệ và sáng tạo?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tâm"
+      },
+      {
+        "key": "B",
+        "text": "Nhân"
+      },
+      {
+        "key": "C",
+        "text": "Trí"
+      },
+      {
+        "key": "D",
+        "text": "Tín"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 04 · C",
+    "qNum": 4,
+    "title": "Câu 4. Giá trị nào đề cao trí tuệ và sáng tạo?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tâm"
+      },
+      {
+        "key": "B",
+        "text": "Nhân"
+      },
+      {
+        "key": "C",
+        "text": "Trí"
+      },
+      {
+        "key": "D",
+        "text": "Tín"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 05 / 10",
+    "qNum": 5,
+    "title": "Câu 5. Kỷ luật trong quản trị giúp doanh nghiệp?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Giảm sáng tạo"
+      },
+      {
+        "key": "B",
+        "text": "Tăng hiệu quả"
+      },
+      {
+        "key": "C",
+        "text": "Giảm nhân sự"
+      },
+      {
+        "key": "D",
+        "text": "Hạn chế cạnh tranh"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 05 · B",
+    "qNum": 5,
+    "title": "Câu 5. Kỷ luật trong quản trị giúp doanh nghiệp?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Giảm sáng tạo"
+      },
+      {
+        "key": "B",
+        "text": "Tăng hiệu quả"
+      },
+      {
+        "key": "C",
+        "text": "Giảm nhân sự"
+      },
+      {
+        "key": "D",
+        "text": "Hạn chế cạnh tranh"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 06 / 10",
+    "qNum": 6,
+    "title": "Câu 6. Sứ mệnh Vingroup thể hiện điều gì?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tối đa hóa lợi nhuận"
+      },
+      {
+        "key": "B",
+        "text": "Tạo giá trị cho xã hội"
+      },
+      {
+        "key": "C",
+        "text": "Độc quyền thị trường"
+      },
+      {
+        "key": "D",
+        "text": "Giảm chi phí"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 06 · B",
+    "qNum": 6,
+    "title": "Câu 6. Sứ mệnh Vingroup thể hiện điều gì?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tối đa hóa lợi nhuận"
+      },
+      {
+        "key": "B",
+        "text": "Tạo giá trị cho xã hội"
+      },
+      {
+        "key": "C",
+        "text": "Độc quyền thị trường"
+      },
+      {
+        "key": "D",
+        "text": "Giảm chi phí"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 07 / 10",
+    "qNum": 7,
+    "title": "Câu 7. Bài học quản trị lớn nhất từ Phạm Nhật Vượng là gì?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sao chép đối thủ"
+      },
+      {
+        "key": "B",
+        "text": "Đổi mới và kỷ luật"
+      },
+      {
+        "key": "C",
+        "text": "Chạy theo lợi nhuận"
+      },
+      {
+        "key": "D",
+        "text": "Mở rộng bằng mọi giá"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 07 · B",
+    "qNum": 7,
+    "title": "Câu 7. Bài học quản trị lớn nhất từ Phạm Nhật Vượng là gì?",
+    "correct": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sao chép đối thủ"
+      },
+      {
+        "key": "B",
+        "text": "Đổi mới và kỷ luật"
+      },
+      {
+        "key": "C",
+        "text": "Chạy theo lợi nhuận"
+      },
+      {
+        "key": "D",
+        "text": "Mở rộng bằng mọi giá"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 08 / 10",
+    "qNum": 8,
+    "title": "Câu 8. VinFast góp phần thể hiện điều gì?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Khát vọng thương hiệu Việt"
+      },
+      {
+        "key": "B",
+        "text": "Giảm cạnh tranh"
+      },
+      {
+        "key": "C",
+        "text": "Kinh doanh truyền thống"
+      },
+      {
+        "key": "D",
+        "text": "Hạn chế công nghệ"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 08 · A",
+    "qNum": 8,
+    "title": "Câu 8. VinFast góp phần thể hiện điều gì?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Khát vọng thương hiệu Việt"
+      },
+      {
+        "key": "B",
+        "text": "Giảm cạnh tranh"
+      },
+      {
+        "key": "C",
+        "text": "Kinh doanh truyền thống"
+      },
+      {
+        "key": "D",
+        "text": "Hạn chế công nghệ"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 09 / 10",
+    "qNum": 9,
+    "title": "Câu 9. Khi lợi nhuận xung đột với uy tín, doanh nghiệp nên?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chọn lợi nhuận"
+      },
+      {
+        "key": "B",
+        "text": "Che giấu thông tin"
+      },
+      {
+        "key": "C",
+        "text": "Bảo vệ chữ Tín"
+      },
+      {
+        "key": "D",
+        "text": "Bỏ qua khách hàng"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 09 · C",
+    "qNum": 9,
+    "title": "Câu 9. Khi lợi nhuận xung đột với uy tín, doanh nghiệp nên?",
+    "correct": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chọn lợi nhuận"
+      },
+      {
+        "key": "B",
+        "text": "Che giấu thông tin"
+      },
+      {
+        "key": "C",
+        "text": "Bảo vệ chữ Tín"
+      },
+      {
+        "key": "D",
+        "text": "Bỏ qua khách hàng"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "part": 6,
+    "layout": "quiz_question",
+    "theme": "light",
+    "section": "Câu hỏi 10 / 10",
+    "qNum": 10,
+    "title": "Câu 10. Người lãnh đạo ảnh hưởng đến văn hóa doanh nghiệp như thế nào?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Định hình giá trị và phong cách quản trị"
+      },
+      {
+        "key": "B",
+        "text": "Chỉ quản lý tài chính"
+      },
+      {
+        "key": "C",
+        "text": "Chỉ tuyển dụng nhân sự"
+      },
+      {
+        "key": "D",
+        "text": "Không có ảnh hưởng lớn"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "part": 6,
+    "layout": "quiz_answer",
+    "theme": "light",
+    "section": "Đáp án Câu 10 · A",
+    "qNum": 10,
+    "title": "Câu 10. Người lãnh đạo ảnh hưởng đến văn hóa doanh nghiệp như thế nào?",
+    "correct": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "Định hình giá trị và phong cách quản trị"
+      },
+      {
+        "key": "B",
+        "text": "Chỉ quản lý tài chính"
+      },
+      {
+        "key": "C",
+        "text": "Chỉ tuyển dụng nhân sự"
+      },
+      {
+        "key": "D",
+        "text": "Không có ảnh hưởng lớn"
       }
     ]
   }

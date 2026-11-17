@@ -842,11 +842,47 @@
   }
 
   // =========================================================================
-  // MASTER ROUTER: MAPS EACH OF THE 41 SLIDES TO ITS DISTINCT ARCHETYPE
+  // INTERACTIVE QUIZ QUESTION & GREEN ANSWER HIGHLIGHT ARCHETYPE (20 SLIDES)
+  // =========================================================================
+  function renderArchQuiz(s) {
+    const isAnswer = s.layout === "quiz_answer";
+    const opts = s.options || [];
+    return `
+      <div class="fs-slide canva-slide quiz-slide ${isAnswer ? "quiz-is-answer" : "quiz-is-question"}">
+        <div class="quiz-header">
+          <div class="quiz-eyebrow ${isAnswer ? "is-answer" : ""}" data-morph="morph-badge">
+            ${isAnswer ? `✓ ĐÁP ÁN CÂU ${pad2(s.qNum)} / 10 · ĐÚNG: ${esc(s.correct)}` : `CÂU HỎI ${pad2(s.qNum)} / 10`}
+          </div>
+          <h1 class="quiz-question-title" data-morph="morph-title">${esc(s.title)}</h1>
+        </div>
+
+        <div class="quiz-grid">
+          ${opts.map((o, i) => {
+            const isCorrect = isAnswer && o.key === s.correct;
+            const cls = isAnswer ? (isCorrect ? "is-correct" : "is-dim") : "";
+            return `
+              <div class="quiz-opt ${cls}" data-morph="morph-card-${i + 1}">
+                <div class="quiz-opt-key">${isCorrect ? "✓" : esc(o.key)}</div>
+                <div class="quiz-opt-text">${isCorrect ? `${esc(o.key)}. ${esc(o.text)}` : `${esc(o.key)}. ${esc(o.text)}`}</div>
+                ${isCorrect ? `<span class="quiz-correct-tag">ĐÁP ÁN ĐÚNG</span>` : ""}
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  // =========================================================================
+  // MASTER ROUTER: MAPS EACH SLIDE TO ITS DISTINCT ARCHETYPE
   // =========================================================================
   function renderSlideMaster(s, idx, total) {
     const photos = getPhotosForSlide(s);
     const lay = s.layout || "";
+
+    if (lay === "quiz_question" || lay === "quiz_answer") {
+      return renderArchQuiz(s, idx, total);
+    }
 
     if (themeMode === "canva") {
       if (lay === "cover_hero") {
@@ -1007,6 +1043,7 @@
   const btnPrev = document.getElementById("btn-prev");
   const btnNext = document.getElementById("btn-next");
   const btnToc = document.getElementById("btn-toc");
+  const tocBtnLabel = document.getElementById("toc-btn-label");
   const btnFullscreen = document.getElementById("btn-fullscreen");
   const btnAutoplay = document.getElementById("btn-autoplay");
   const autoplayLabel = document.getElementById("autoplay-label");
@@ -1124,6 +1161,8 @@
       slideOutgoing.classList.remove(`cam-out-${i}`);
       slideActive.classList.remove(`cam-in-${i}`);
     }
+    slideOutgoing.classList.remove("cam-out-quiz");
+    slideActive.classList.remove("cam-in-quiz");
   }
 
   function goToSlide(targetIdx, immediate) {
@@ -1141,6 +1180,7 @@
       try { v.pause(); } catch (_) {}
     });
 
+    const prevSlide = activeDeck[currentIndex];
     const slide = activeDeck[nextIdx];
     const html = renderSlideMaster(slide, nextIdx, total);
     if (slideStage && slide) {
@@ -1172,14 +1212,22 @@
     slideOutgoing.innerHTML = slideActive.innerHTML;
     slideActive.innerHTML = html;
 
-    // Measure FLIP start/end positions cleanly BEFORE 3D camera keyframes offset the layer!
-    runFlipMorph(slideOutgoing, slideActive);
+    const isQuizPairReveal = prevSlide && slide &&
+      prevSlide.part === 6 && slide.part === 6 &&
+      prevSlide.qNum === slide.qNum;
 
-    const camMode = nextIdx % 10;
-    slideOutgoing.classList.add(`cam-out-${camMode}`);
-    slideActive.classList.add(`cam-in-${camMode}`);
+    if (isQuizPairReveal) {
+      slideOutgoing.classList.add("cam-out-quiz");
+      slideActive.classList.add("cam-in-quiz");
+    } else {
+      // Measure FLIP start/end positions cleanly BEFORE 3D camera keyframes offset the layer!
+      runFlipMorph(slideOutgoing, slideActive);
+      const camMode = nextIdx % 10;
+      slideOutgoing.classList.add(`cam-out-${camMode}`);
+      slideActive.classList.add(`cam-in-${camMode}`);
+    }
 
-    updateBackgroundStage(nextIdx, true);
+    updateBackgroundStage(nextIdx, !isQuizPairReveal);
 
     updateControlsUI();
     bindSlideInteractions(slideActive);
@@ -1188,7 +1236,7 @@
       slideOutgoing.innerHTML = "";
       clearCamClasses();
       isTransitioning = false;
-    }, 930);
+    }, isQuizPairReveal ? 560 : 930);
   }
 
   function updateControlsUI() {
@@ -1246,9 +1294,15 @@
   function setDeckMode(mode) {
     if (mode === "tiktok14") {
       activeDeck = RAW_SLIDES.filter((s) => TIKTOK_14_IDS.includes(s.id));
+    } else if (mode === "slides41") {
+      activeDeck = RAW_SLIDES.filter((s) => s.part <= 5);
+    } else if (mode === "quiz20") {
+      activeDeck = RAW_SLIDES.filter((s) => s.part === 6);
     } else {
       activeDeck = RAW_SLIDES.slice();
     }
+    if (tocBtnLabel) tocBtnLabel.textContent = `Mục lục (${activeDeck.length})`;
+    if (selDeckMode && selDeckMode.value !== mode) selDeckMode.value = mode;
     goToSlide(0, true);
     renderTocGrid("all");
   }
@@ -1384,5 +1438,6 @@
   });
 
   fitStageToViewport();
-  setDeckMode("full45");
+  const initialMode = (typeof window !== "undefined" && (new URLSearchParams(window.location.search).get("mode") === "quiz" || window.location.hash === "#quiz")) ? "quiz20" : "full45";
+  setDeckMode(initialMode);
 })();

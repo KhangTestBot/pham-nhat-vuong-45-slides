@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tỷ phú Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup — Trọn bộ 41 Slide 3D Morph</title>
+  <title>Tỷ phú Phạm Nhật Vượng &amp; Hệ sinh thái Vingroup — 41 Slide + 20 Câu hỏi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Lora:ital,wght@0,600;0,700;1,600;1,700&family=Oswald:wght@700&display=swap" rel="stylesheet" />
@@ -105,14 +105,16 @@
     <!-- Bottom Presenter Control Bar -->
     <footer class="presenter-bar" role="navigation" aria-label="Điều khiển trình chiếu">
       <div class="bar-left">
-        <button type="button" id="btn-toc" class="ctrl-btn" title="Mục lục 41 Slide (Phím G)">
+        <button type="button" id="btn-toc" class="ctrl-btn" title="Mục lục Slide (Phím G)">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg>
-          <span>Mục lục (41)</span>
+          <span id="toc-btn-label">Mục lục (61)</span>
         </button>
 
         <div class="deck-mode-picker" title="Chế độ trình chiếu">
           <select id="sel-deck-mode" class="ctrl-select">
-            <option value="full45" selected>📚 41 Slide</option>
+            <option value="full45" selected>📚 Đủ 61 Slide</option>
+            <option value="slides41">🎤 41 Slide Bài</option>
+            <option value="quiz20">📝 20 Câu hỏi</option>
             <option value="tiktok14">⚡ 14 Cảnh</option>
           </select>
         </div>
@@ -136,8 +138,8 @@
         </button>
 
         <div class="scrubber-wrap">
-          <span id="slide-counter" class="slide-counter">01 / 41</span>
-          <input type="range" id="slide-scrubber" class="slide-scrubber" min="1" max="41" step="1" value="1" aria-label="Thanh trượt chọn trang slide" />
+          <span id="slide-counter" class="slide-counter">01 / 61</span>
+          <input type="range" id="slide-scrubber" class="slide-scrubber" min="1" max="61" step="1" value="1" aria-label="Thanh trượt chọn trang slide" />
         </div>
 
         <button type="button" id="btn-next" class="nav-btn nav-btn-primary" title="Slide tiếp theo (→, ↓ hoặc Space)">
@@ -147,7 +149,7 @@
       </div>
 
       <div class="bar-right">
-        <span id="section-indicator" class="section-indicator">Slide 01 / 41</span>
+        <span id="section-indicator" class="section-indicator">Slide 01 / 61</span>
         <button type="button" id="btn-fullscreen" class="ctrl-btn" title="Toàn màn hình (Phím F)" aria-label="Toàn màn hình">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
         </button>
@@ -174,19 +176,20 @@
     <div class="toc-dialog">
       <div class="toc-head">
         <div>
-          <span class="toc-kicker">MỤC LỤC TRỌN BỘ 41 SLIDE THUYẾT TRÌNH</span>
-          <h2 id="toc-heading">Phạm Nhật Vượng, Hệ sinh thái Vingroup &amp; Văn hóa Doanh nhân (5.1 – 5.4)</h2>
+          <span class="toc-kicker">MỤC LỤC TRỌN BỘ 61 SLIDE THUYẾT TRÌNH &amp; TRẮC NGHIỆM</span>
+          <h2 id="toc-heading">Phạm Nhật Vượng, Hệ sinh thái Vingroup &amp; 20 Slide Câu hỏi (5.1 – 5.4)</h2>
         </div>
         <button type="button" id="toc-close" class="modal-close" aria-label="Đóng mục lục">✕</button>
       </div>
       <div id="toc-filters" class="toc-filters">
-        <button type="button" class="toc-chip active" data-part="all">Tất cả (41)</button>
+        <button type="button" class="toc-chip active" data-part="all">Tất cả (61)</button>
         <button type="button" class="toc-chip" data-part="1">Phần I · Nhân tố &amp; Tổng quan (01–10)</button>
         <button type="button" class="toc-chip" data-part="2">Phần II · Tiểu sử &amp; Doanh nghiệp (11–22)</button>
         <button type="button" class="toc-chip" data-part="3">Phần III · 5.1 Năng lực &amp; 5.2 Tố chất (23–32)</button>
         <button type="button" class="toc-chip" data-part="4">Phần IV · 5.3 Đạo đức &amp; 5.4 Phong cách (33–39)</button>
         <button type="button" class="toc-chip" data-part="5">Phần V · Tổng kết &amp; Bài học (40–41)</button>
-        <button type="button" class="toc-chip" data-part="video">1 Video Tư liệu (09:57)</button>
+        <button type="button" class="toc-chip" data-part="6">📝 20 Câu hỏi (42–61)</button>
+        <button type="button" class="toc-chip" data-part="video">1 Video (09:57)</button>
       </div>
       <div id="toc-grid" class="toc-grid"></div>
     </div>
