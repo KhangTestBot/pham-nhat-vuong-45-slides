@@ -34,4 +34,5 @@
 
 ## 7. Thêm 1 Slide Mở đầu & 1 Slide Thanks for Watching (63 Slide)
 - [x] Bước 21: Chèn Slide 01 (`pure_opening` — `PHẠM NHẬT VƯỢNG`) và Slide 63 (`pure_thanks` — `THANKS FOR WATCHING`), cập nhật `s.id` +1 trong `app.js`, đồng bộ `index.html` (`63 Slide`, `43 Slide Bài`) & kiểm thử Chrome `1280×720` (`ISSUES: 0` trên mọi chế độ).
-- [x] Bước 22: Đồng bộ bản HTML offline, quét `gitleaks`, đẩy GitHub & xác nhận live trên Vercel.
+- [x] Bước 22: Đồng bộ bản HTML offline, quét `gitleaks`, đẩy GitHub & xác nhận live trên Vercel (`5928dea`).
+- [x] Bước 23: Loại bỏ 3 pill & dòng chữ đáy ở Slide 63 (`THANKS FOR WATCHING`) + Slide 01 (`pure_opening`), chuyển toàn bộ tiêu đề knockout từ `Oswald` sang `Be Vietnam Pro` khắc phục hoàn toàn lỗi dấu `PHẠM NHẬT VƯỢNG`, kiểm thử Chrome `1280×720` (`ISSUES: 0`) & đẩy Vercel.

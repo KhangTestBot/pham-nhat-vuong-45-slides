@@ -883,7 +883,6 @@
     const isClosing = s.layout === "pure_thanks";
     const bgSrc = s.image || (s.gallery && s.gallery[0] && s.gallery[0].src) || "assets/landmark81_vingroup.jpg";
     const secondPhoto = !isClosing && s.gallery && s.gallery[1] ? s.gallery[1] : null;
-    const badges = Array.isArray(s.badges) ? s.badges : [];
 
     return `
       <div class="fs-slide canva-hero-cover pure-hero-slide ${isClosing ? "is-thanks" : "is-opening"}">
@@ -907,16 +906,6 @@
           <h1 class="canva-knockout-title pure-display-title ${isClosing ? "is-thanks" : "is-opening"}">${esc(s.title)}</h1>
           <div class="pure-divider" aria-hidden="true"><span></span></div>
           ${s.subtitle ? `<p class="pure-hero-sub">${esc(s.subtitle)}</p>` : ""}
-          ${badges.length ? `
-            <div class="pure-badges-row">
-              ${badges.map((b) => `<span class="pure-glass-badge">${esc(b)}</span>`).join("")}
-            </div>
-          ` : ""}
-        </div>
-
-        <div class="canva-hero-meta pure-hero-meta">
-          <span>${esc(s.metaLeft || "| Thuyết trình Chuyên đề")}</span>
-          <span>${esc(s.metaRight || "Vingroup · 1993 – 2026 |")}</span>
         </div>
       </div>
     `;

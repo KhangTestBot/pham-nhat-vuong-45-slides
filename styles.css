@@ -2025,23 +2025,24 @@ body.theme-canva .stage-dark .arch-video-btn {
 }
 
 .canva-knockout-title {
-  font-family: 'Oswald', 'Be Vietnam Pro', sans-serif;
-  font-weight: 700;
-  font-size: 74px;
-  line-height: 1.08;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 1.16;
+  padding: 4px 0;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.015em;
   background: linear-gradient(180deg, #FFFFFF 42%, rgba(255, 255, 255, 0.38) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.48));
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .canva-knockout-title.is-closing {
-  font-size: 56px;
-  line-height: 1.06;
+  font-size: 46px;
+  line-height: 1.14;
   margin-bottom: 2px;
 }
 
@@ -2109,11 +2110,11 @@ body.theme-canva .stage-dark .arch-video-btn {
 }
 
 .canva-metric-val {
-  font-family: 'Oswald', sans-serif;
-  font-size: 30px;
-  font-weight: 700;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
   color: #FFFFFF;
-  line-height: 1.05;
+  line-height: 1.12;
 }
 
 .canva-metric-lbl {
@@ -2243,8 +2244,9 @@ body.theme-canva .stage-dark .arch-video-btn {
 }
 
 .canva-kpi-pill strong {
-  font-family: 'Oswald', sans-serif;
-  font-size: 22px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
   color: #E2C275;
   white-space: nowrap;
 }
@@ -2608,7 +2610,7 @@ body:not(.theme-canva) .quiz-opt-text {
    PURE OPENING (SLIDE 01) & THANKS FOR WATCHING (SLIDE 63)
    ========================================================================== */
 .pure-hero-slide {
-  padding: 32px 46px 26px;
+  padding: 34px 46px 46px;
   justify-content: space-between;
 }
 
@@ -2690,15 +2692,17 @@ body:not(.theme-canva) .quiz-opt-text {
 }
 
 .pure-display-title {
-  font-size: 90px;
-  line-height: 1.02;
-  letter-spacing: 0.03em;
+  font-size: 76px;
+  line-height: 1.16;
+  padding: 6px 0;
+  letter-spacing: 0.02em;
   margin: 0;
 }
 
 .pure-display-title.is-thanks {
-  font-size: 80px;
-  letter-spacing: 0.04em;
+  font-size: 72px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
 }
 
 .pure-divider {

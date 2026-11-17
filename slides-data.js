@@ -8,8 +8,6 @@ window.DECK_SLIDES = [
     "kicker": "Chuyên đề Văn hóa Doanh nhân",
     "title": "PHẠM NHẬT VƯỢNG",
     "subtitle": "Hành trình Doanh nhân & Hệ sinh thái Tập đoàn Vingroup",
-    "metaLeft": "| Thuyết trình Chuyên đề",
-    "metaRight": "1993 – 2026 · Technocom → Vingroup |",
     "image": "assets/landmark81_vingroup.jpg",
     "gallery": [
       {
@@ -3125,13 +3123,6 @@ window.DECK_SLIDES = [
     "kicker": "Phạm Nhật Vượng & Hệ sinh thái Vingroup",
     "title": "THANKS FOR WATCHING",
     "subtitle": "Trân trọng cảm ơn Giảng viên và các bạn đã theo dõi & lắng nghe!",
-    "badges": [
-      "41 Slide Nội dung",
-      "Video Tư liệu 09:56",
-      "20 Slide Câu hỏi & Đáp án"
-    ],
-    "metaLeft": "| Tỷ phú Phạm Nhật Vượng & Vingroup",
-    "metaRight": "Q&A · Cảm ơn đã theo dõi |",
     "image": "assets/vinpearl_nhatrang.jpg",
     "gallery": [
       {
