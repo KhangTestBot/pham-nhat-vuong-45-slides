@@ -37,27 +37,27 @@ window.DECK_SLIDES = [
       {
         "num": "01",
         "name": "Đỗ Như Trường Giang",
-        "role": "Thành viên Nhóm thuyết trình"
+        "role": "Biên Tập"
       },
       {
         "num": "02",
         "name": "Vũ Việt Quang",
-        "role": "Thành viên Nhóm thuyết trình"
+        "role": "Thuyết Trình"
       },
       {
         "num": "03",
         "name": "Trương Đức Anh",
-        "role": "Thành viên Nhóm thuyết trình"
+        "role": "Thuyết Trình"
       },
       {
         "num": "04",
         "name": "Nguyễn Duy Khánh",
-        "role": "Thành viên Nhóm thuyết trình"
+        "role": "Làm Bài Thuyết Trình"
       },
       {
         "num": "05",
         "name": "Đỗ Viết Sáng",
-        "role": "Thành viên Nhóm thuyết trình"
+        "role": "Tìm Nội Dung"
       }
     ],
     "gallery": [
