@@ -197,5 +197,48 @@
 
   <script src="slides-data.js"></script>
   <script src="app.js"></script>
+  <!-- Nhạc nền tự động phát ở Slide 64 (Thanks for Watching) -->
+<audio id="outro-music" src="assets/outro.mp3" preload="auto" loop></audio>
+<script>
+  (function () {
+    const audio = document.getElementById('outro-music');
+    if (!audio) return;
+    audio.volume = 1.0; // Mức âm lượng 60% để không át giọng nói kết bài
+
+    // Mở khóa âm thanh cho trình duyệt Safari (iPad/iPhone) ngay lần chạm đầu tiên
+    let unlocked = false;
+    const unlockAudio = () => {
+      if (unlocked) return;
+      unlocked = true;
+      audio.muted = true;
+      audio.play().then(() => {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.muted = false;
+      }).catch(() => { unlocked = false; });
+    };
+    document.addEventListener('pointerdown', unlockAudio, { passive: true });
+    document.addEventListener('keydown', unlockAudio, { passive: true });
+
+    // Tự động phát khi tới Slide 64 và dừng khi chuyển sang slide khác
+    const checkLastSlide = () => {
+      const text = document.body.innerText || '';
+      const isThanksSlide =
+        text.includes('THANKS FOR WATCHING') ||
+        text.includes('64 / 64') ||
+        text.includes('64/64');
+
+      if (isThanksSlide) {
+        if (audio.paused) audio.play().catch(() => {});
+      } else if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+
+    const observer = new MutationObserver(checkLastSlide);
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  })();
+</script>
 </body>
 </html>
