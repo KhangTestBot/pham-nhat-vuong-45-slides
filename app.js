@@ -229,7 +229,7 @@
           <div class="arch-utehy-bars">
             ${bars.map((b, i) => `
               <div class="arch-utehy-pill" data-morph="morph-card-${i + 1}">
-                <div class="arch-utehy-code">${esc(b.code)}</div>
+                ${b.code ? `<div class="arch-utehy-code">${esc(b.code)}</div>` : ""}
                 <div class="arch-utehy-text">
                   <div class="arch-utehy-name">${esc(b.label || b.text)}</div>
                   <div class="arch-utehy-sub">${esc(showPractice ? (b.practice || b.theory) : (b.theory || b.sub || b.practice))}</div>
@@ -650,7 +650,7 @@
               <div class="canva-hero-pillars">
                 ${pillars.slice(0, 4).map((p, i) => `
                   <div class="canva-pillar-chip" data-morph="morph-card-${i + 1}">
-                    <span>${esc(p.code)}</span> ${esc(p.label || p.title)}
+                    ${p.code ? `<span>${esc(p.code)}</span>` : ""} ${esc(p.label || p.title)}
                   </div>
                 `).join("")}
               </div>
@@ -690,7 +690,7 @@
               <div class="canva-closing-card" data-morph="morph-card-${i + 1}">
                 ${renderInlineThumb(photos[i % photos.length], "canva-mini-thumb")}
                 <div>
-                  <div class="canva-closing-title">${esc(l.code)} · ${esc(l.title)}</div>
+                  <div class="canva-closing-title">${l.code ? (esc(l.code) + " · ") : ""}${esc(l.title)}</div>
                   <div class="canva-closing-desc">${esc(l.desc)}</div>
                 </div>
               </div>

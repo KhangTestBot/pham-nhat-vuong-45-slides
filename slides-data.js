@@ -82,8 +82,8 @@ window.DECK_SLIDES = [
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "VĂN HÓA KINH DOANH",
     "title": "DOANH NHÂN PHẠM NHẬT VƯỢNG",
-    "subtitle": "Hệ sinh thái Vingroup & 4 Cấu phần Văn hóa Doanh nhân (5.1 – 5.4)",
-    "lead": "Từ Technocom (Ukraine) đến Vingroup – VinFast qua lăng kính 4 cấu phần văn hóa doanh nhân (5.1 – 5.4).",
+    "subtitle": "Hệ sinh thái Vingroup & 4 Cấu phần Văn hóa Doanh nhân",
+    "lead": "Từ Technocom (Ukraine) đến Vingroup – VinFast qua lăng kính 4 cấu phần văn hóa doanh nhân.",
     "image": "assets/pnv_portrait.jpg",
     "imageCaption": "Ông Phạm Nhật Vượng — Chủ tịch HĐQT Tập đoàn Vingroup, CEO VinFast",
     "metrics": [
@@ -106,25 +106,25 @@ window.DECK_SLIDES = [
     ],
     "pillars": [
       {
-        "code": "5.1",
+        "code": "",
         "label": "Năng lực doanh nhân",
         "color": "#C5A888",
         "target": 24
       },
       {
-        "code": "5.2",
+        "code": "",
         "label": "Tố chất doanh nhân",
         "color": "#9DA6A3",
         "target": 29
       },
       {
-        "code": "5.3",
+        "code": "",
         "label": "Đạo đức doanh nhân",
         "color": "#A3B190",
         "target": 33
       },
       {
-        "code": "5.4",
+        "code": "",
         "label": "Phong cách doanh nhân",
         "color": "#AE9CA8",
         "target": 37
@@ -168,7 +168,7 @@ window.DECK_SLIDES = [
         "num": "Phần I",
         "range": "01 – 12",
         "title": "Mở đầu, Thành viên & 5 Nhân tố",
-        "desc": "Trang mở đầu, danh sách nhóm, 5 nhân tố và tổng quan 4 cấu phần (5.1 – 5.4).",
+        "desc": "Trang mở đầu, danh sách nhóm, 5 nhân tố và tổng quan 4 cấu phần.",
         "target": 6,
         "color": "#5B6E58"
       },
@@ -183,7 +183,7 @@ window.DECK_SLIDES = [
       {
         "num": "Phần III",
         "range": "25 – 34",
-        "title": "5.1 Năng lực & 5.2 Tố chất",
+        "title": "Năng lực & Tố chất Doanh nhân",
         "desc": "Quản trị đa ngành, đổi mới công nghệ và 3 bước ngoặt đặt cược lớn.",
         "target": 25,
         "color": "#C5A888"
@@ -191,7 +191,7 @@ window.DECK_SLIDES = [
       {
         "num": "Phần IV",
         "range": "35 – 41",
-        "title": "5.3 Đạo đức & 5.4 Phong cách",
+        "title": "Đạo đức & Phong cách Lãnh đạo",
         "desc": "Chữ Tín, 46.000 tỷ Quỹ Thiện Tâm, VinFuture và kỷ luật tốc độ.",
         "target": 35,
         "color": "#6B7F5E"
@@ -313,37 +313,37 @@ window.DECK_SLIDES = [
     "section": "Phần 1 · 4 Bộ phận Cấu thành",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "VĂN HÓA DOANH NHÂN · MỤC 5",
-    "title": "5. CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
-    "lead": "Bốn cấu phần cốt lõi (5.1 – 5.4) làm trục phân tích xuyên suốt bài thuyết trình.",
+    "title": "CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
+    "lead": "Bốn cấu phần cốt lõi làm trục phân tích xuyên suốt bài thuyết trình.",
     "bars": [
       {
-        "code": "5.1",
+        "code": "",
         "color": "#C5A888",
-        "label": "5.1. Năng lực của doanh nhân",
+        "label": "Năng lực của doanh nhân",
         "target": 24,
         "theory": "Chuyên môn, quản lý – điều hành, lãnh đạo & đổi mới sáng tạo (Tài & Trí).",
         "practice": "Kỹ sư địa chất lập Mivina (97% thị phần Ukraine) đến Vingroup – VinFast."
       },
       {
-        "code": "5.2",
+        "code": "",
         "color": "#9DA6A3",
-        "label": "5.2. Tố chất của doanh nhân",
+        "label": "Tố chất của doanh nhân",
         "target": 29,
         "theory": "Tầm nhìn chiến lược, quyết đoán, chấp nhận rủi ro & khát vọng lớn.",
         "practice": "Đứng dậy sau phá sản (1992), bán Mivina (2010), chuyển 100% xe điện."
       },
       {
-        "code": "5.3",
+        "code": "",
         "color": "#A3B190",
-        "label": "5.3. Đạo đức của doanh nhân",
+        "label": "Đạo đức của doanh nhân",
         "target": 33,
         "theory": "Đạo đức cá nhân, chữ Tín, thượng tôn pháp luật & trách nhiệm xã hội.",
         "practice": "46.000 tỷ đồng Quỹ Thiện Tâm (20 năm) & Giải thưởng VinFuture."
       },
       {
-        "code": "5.4",
+        "code": "",
         "color": "#AE9CA8",
-        "label": "5.4. Phong cách của doanh nhân",
+        "label": "Phong cách của doanh nhân",
         "target": 37,
         "theory": "Cách thức lãnh đạo, giao tiếp – ứng xử & tác phong kỷ luật.",
         "practice": "Kỷ luật cao, tốc độ, đời tư kín tiếng & 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
@@ -354,22 +354,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinfast_ev_factory.jpg",
-        "tag": "5.1 · NĂNG LỰC DOANH NHÂN",
+        "tag": "NĂNG LỰC DOANH NHÂN",
         "cap": "Tổ chức sản xuất công nghiệp công nghệ cao và quản trị đa ngành"
       },
       {
         "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "5.2 · TỐ CHẤT TIÊN PHONG",
+        "tag": "TỐ CHẤT TIÊN PHONG",
         "cap": "Bản lĩnh quyết đoán rời vùng an toàn, chuyển đổi 100% xe điện"
       },
       {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "5.3 · ĐẠO ĐỨC & TRÁCH NHIỆM",
+        "tag": "ĐẠO ĐỨC & TRÁCH NHIỆM",
         "cap": "46.000 tỷ đồng Quỹ Thiện Tâm (20 năm) và Giải thưởng VinFuture"
       },
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "5.4 · PHONG CÁCH KỶ LUẬT",
+        "tag": "PHONG CÁCH KỶ LUẬT",
         "cap": "Kỷ luật thực thi, tốc độ và 6 giá trị cốt lõi TÍN – TÂM – TRÍ – TỐC – TINH – NHÂN"
       }
     ]
@@ -681,31 +681,31 @@ window.DECK_SLIDES = [
     "section": "Phần 1 · Ma trận Tổng hợp",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "KẾT NỐI LÝ THUYẾT – THỰC TIỄN",
-    "title": "Ma trận 5 Nhân tố → 4 Bộ phận (5.1 – 5.4)",
+    "title": "Ma trận 5 Nhân tố → 4 Bộ phận",
     "lead": "Liên hệ trực tiếp từ nhân tố tác động đến thực tiễn doanh nhân Phạm Nhật Vượng.",
     "headers": [
-      "Bộ phận (Mục 5)",
+      "Bộ phận",
       "Nhân tố chủ đạo",
       "Biểu hiện thực tiễn"
     ],
     "rows": [
       [
-        "5.1. Năng lực",
+        "Năng lực",
         "ĐH Moscow + Kinh tế thị trường",
         "Quản trị đa ngành (BĐS, bán lẻ, y tế, giáo dục) và làm xe điện thần tốc."
       ],
       [
-        "5.2. Tố chất",
+        "Tố chất",
         "Cá nhân + Biến động hậu Xô Viết",
         "Tầm nhìn đi trước, dám rời vùng an toàn (bán Mivina, bỏ xe xăng)."
       ],
       [
-        "5.3. Đạo đức",
+        "Đạo đức",
         "Văn hóa dân tộc + Pháp luật",
         "Giữ chữ Tín, nộp ngân sách lớn, 46.000 tỷ Quỹ Thiện Tâm, VinFuture."
       ],
       [
-        "5.4. Phong cách",
+        "Phong cách",
         "Gia đình + Công nghiệp hiện đại",
         "Quyết liệt, kỷ luật cao, sâu sát thực địa, thẳng thắn và giản dị."
       ]
@@ -715,22 +715,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinfast_ev_factory.jpg",
-        "tag": "5.1 · NĂNG LỰC QUẢN TRỊ ĐA NGÀNH",
+        "tag": "NĂNG LỰC QUẢN TRỊ ĐA NGÀNH",
         "cap": "Học vấn Moscow kết hợp kinh tế thị trường tạo năng lực thực thi thần tốc"
       },
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "5.2 · TỐ CHẤT DÁM RỜI VÙNG AN TOÀN",
+        "tag": "TỐ CHẤT DÁM RỜI VÙNG AN TOÀN",
         "cap": "Tầm nhìn đi trước từ bán Mivina (2010) đến chuyển hẳn sang xe điện (2022)"
       },
       {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "5.3 · ĐẠO ĐỨC TRỌNG CHỮ TÍN",
+        "tag": "ĐẠO ĐỨC TRỌNG CHỮ TÍN",
         "cap": "Giữ chữ Tín, nộp ngân sách hàng đầu và đóng góp 46.000 tỷ đồng Quỹ Thiện Tâm"
       },
       {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "5.4 · PHONG CÁCH SÂU SÁT THỰC ĐỊA",
+        "tag": "PHONG CÁCH SÂU SÁT THỰC ĐỊA",
         "cap": "Quyết liệt, kỷ luật cao, sâu sát hiện trường và đời tư giản dị"
       }
     ]
@@ -1370,7 +1370,7 @@ window.DECK_SLIDES = [
     "takeaways": [
       "Tóm tắt dòng thời gian 1993 – 2025 chỉ trong gần 10 phút trực quan.",
       "Cách dòng tiền BĐS – bán lẻ làm bệ đỡ cho công nghiệp công nghệ cao.",
-      "Bước đệm hệ thống trước khi phân tích 4 mục 5.1 – 5.4."
+      "Bước đệm hệ thống trước khi phân tích 4 cấu phần văn hóa."
     ],
     "localVideo": "assets/vid03.mp4",
     "image": "assets/xanhsm_vinfast_3d.jpg",
@@ -1464,40 +1464,40 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "utehy_slide_replica",
     "theme": "utehy",
-    "section": "Phần 3 · Mục 5.1 & 5.2",
+    "section": "Phần 3 · ",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "PHÂN TÍCH MỤC 5",
-    "title": "5. CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
-    "lead": "Ánh xạ trực tiếp từng cấu phần (5.1 → 5.4) vào thực chứng Phạm Nhật Vượng.",
+    "title": "CÁC BỘ PHẬN CẤU THÀNH VĂN HÓA DOANH NHÂN",
+    "lead": "Ánh xạ trực tiếp từng cấu phần vào thực chứng Phạm Nhật Vượng.",
     "bars": [
       {
-        "code": "5.1",
+        "code": "",
         "color": "#C5A888",
-        "label": "5.1. Năng lực của doanh nhân",
+        "label": "Năng lực của doanh nhân",
         "target": 24,
         "theory": "Chuyên môn, quản lý, lãnh đạo & đổi mới sáng tạo.",
         "practice": "Xây chuỗi cung ứng, điều hành đa ngành và chuyển đổi xe điện."
       },
       {
-        "code": "5.2",
+        "code": "",
         "color": "#9DA6A3",
-        "label": "5.2. Tố chất của doanh nhân",
+        "label": "Tố chất của doanh nhân",
         "target": 29,
         "theory": "Tầm nhìn, quyết đoán, chấp nhận rủi ro & khát vọng.",
         "practice": "3 quyết định rời vùng an toàn (1993, 2010, 2017–2022)."
       },
       {
-        "code": "5.3",
+        "code": "",
         "color": "#A3B190",
-        "label": "5.3. Đạo đức của doanh nhân",
+        "label": "Đạo đức của doanh nhân",
         "target": 33,
         "theory": "Đạo đức cá nhân, chữ Tín, pháp luật & trách nhiệm CSR.",
         "practice": "Hậu mãi xe xăng 10 năm, 46.000 tỷ Quỹ Thiện Tâm, VinFuture."
       },
       {
-        "code": "5.4",
+        "code": "",
         "color": "#AE9CA8",
-        "label": "5.4. Phong cách của doanh nhân",
+        "label": "Phong cách của doanh nhân",
         "target": 37,
         "theory": "Lãnh đạo, giao tiếp ứng xử & tác phong kỷ luật.",
         "practice": "Tốc độ, sâu sát hiện trường và 6 chữ TÍN-TÂM-TRÍ-TỐC-TINH-NHÂN."
@@ -1508,22 +1508,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "5.1 · NĂNG LỰC ĐIỀU HÀNH THỰC TIỄN",
+        "tag": "NĂNG LỰC ĐIỀU HÀNH THỰC TIỄN",
         "cap": "Xây dựng chuỗi cung ứng, điều hành đa ngành và chuyển đổi công nghiệp xe điện thần tốc"
       },
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "5.2 · TỐ CHẤT RỜI VÙNG AN TOÀN",
+        "tag": "TỐ CHẤT RỜI VÙNG AN TOÀN",
         "cap": "Ba quyết định bước ngoặt năm 1993 (Kharkov), 2010 (về Việt Nam) và 2017–2022 (xe điện)"
       },
       {
         "src": "assets/vinfuture_thientam.jpg",
-        "tag": "5.3 · ĐẠO ĐỨC & PHỤNG SỰ XÃ HỘI",
+        "tag": "ĐẠO ĐỨC & PHỤNG SỰ XÃ HỘI",
         "cap": "Hậu mãi xe 10 năm, 46.000 tỷ đồng Quỹ Thiện Tâm và Giải thưởng Khoa học VinFuture"
       },
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "5.4 · PHONG CÁCH TỐC ĐỘ & KỶ LUẬT",
+        "tag": "PHONG CÁCH TỐC ĐỘ & KỶ LUẬT",
         "cap": "Sâu sát hiện trường và kết tinh hệ giá trị TÍN – TÂM – TRÍ – TỐC – TINH – NHÂN"
       }
     ]
@@ -1533,32 +1533,32 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
-    "section": "Phần 3 · 5.1 Năng lực (Lý thuyết)",
+    "section": "Phần 3 · Năng lực (Lý thuyết)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.1",
-    "pillLabel": "5.1. Năng lực của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Năng lực của doanh nhân",
     "pillColor": "#C5A888",
-    "kicker": "5.1 · PHẦN “TÀI” & “TRÍ”",
-    "title": "5.1. Năng lực của Doanh nhân — Cơ sở Lý thuyết",
+    "kicker": "PHẦN “TÀI” & “TRÍ”",
+    "title": "Năng lực của Doanh nhân — Cơ sở Lý thuyết",
     "lead": "Khả năng huy động tri thức, kỹ năng quản trị doanh nghiệp gồm 4 cấu phần.",
     "components": [
       {
-        "num": "5.1.1",
+        "num": "",
         "title": "Chuyên môn & Tri thức",
         "desc": "Kiến thức kỹ thuật, tài chính, pháp luật, ngoại ngữ và quy luật cung – cầu."
       },
       {
-        "num": "5.1.2",
+        "num": "",
         "title": "Quản lý & Điều hành",
         "desc": "Lập kế hoạch, thiết kế bộ máy, phân bổ vốn và kiểm soát tiến độ."
       },
       {
-        "num": "5.1.3",
+        "num": "",
         "title": "Lãnh đạo & Dùng người",
         "desc": "Xác lập tầm nhìn, truyền lửa và quy tụ nhân tài cùng chung mục tiêu."
       },
       {
-        "num": "5.1.4",
+        "num": "",
         "title": "Đổi mới Sáng tạo",
         "desc": "Làm chủ công nghệ mới và kiến tạo mô hình kinh doanh dẫn dắt thị trường."
       }
@@ -1568,22 +1568,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/moscow_university.jpg",
-        "tag": "5.1.1 · CHUYÊN MÔN & TRI THỨC",
+        "tag": "CHUYÊN MÔN & TRI THỨC",
         "cap": "Kiến thức kỹ thuật, tài chính, pháp luật, ngoại ngữ và quy luật cung – cầu thị trường"
       },
       {
         "src": "assets/vinfast_ev_factory.jpg",
-        "tag": "5.1.2 · QUẢN LÝ & ĐIỀU HÀNH",
+        "tag": "QUẢN LÝ & ĐIỀU HÀNH",
         "cap": "Lập kế hoạch, thiết kế bộ máy, phân bổ nguồn vốn và kiểm soát tiến độ dự án"
       },
       {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "5.1.3 · LÃNH ĐẠO & DÙNG NGƯỜI",
+        "tag": "LÃNH ĐẠO & DÙNG NGƯỜI",
         "cap": "Xác lập tầm nhìn chiến lược, truyền lửa và quy tụ nhân tài quốc tế cùng chung mục tiêu"
       },
       {
         "src": "assets/vinfast_vf9.jpg",
-        "tag": "5.1.4 · ĐỔI MỚI SÁNG TẠO",
+        "tag": "ĐỔI MỚI SÁNG TẠO",
         "cap": "Làm chủ công nghệ mới và kiến tạo mô hình kinh doanh dẫn dắt thị trường"
       }
     ]
@@ -1593,12 +1593,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
-    "section": "Phần 3 · 5.1 Năng lực (1/3)",
+    "section": "Phần 3 · Năng lực (1/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.1",
-    "pillLabel": "5.1. Năng lực của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Năng lực của doanh nhân",
     "pillColor": "#C5A888",
-    "kicker": "THỰC CHỨNG 5.1 (1/3) · CHUYÊN MÔN",
+    "kicker": "THỰC CHỨNG (1/3) · CHUYÊN MÔN",
     "title": "Phân tích Thị trường & Chuẩn hóa Kỹ thuật",
     "lead": "Quyết định kinh doanh dựa trên khảo sát thực nghiệm và chuẩn quốc tế.",
     "image": "assets/mivina_kharkov.jpg",
@@ -1645,12 +1645,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "photo_story",
     "theme": "light",
-    "section": "Phần 3 · 5.1 Năng lực (2/3)",
+    "section": "Phần 3 · Năng lực (2/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.1",
-    "pillLabel": "5.1. Năng lực của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Năng lực của doanh nhân",
     "pillColor": "#C5A888",
-    "kicker": "THỰC CHỨNG 5.1 (2/3) · ĐIỀU HÀNH & VỐN",
+    "kicker": "THỰC CHỨNG (2/3) · ĐIỀU HÀNH & VỐN",
     "title": "Quản trị Đa ngành & Tiến độ Kỷ lục 21 Tháng",
     "lead": "Triển khai siêu dự án vượt tiến độ kết hợp huy động vốn quốc tế.",
     "image": "assets/vinfast_ev_factory.jpg",
@@ -1697,12 +1697,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
-    "section": "Phần 3 · 5.1 Năng lực (3/3)",
+    "section": "Phần 3 · Năng lực (3/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.1",
-    "pillLabel": "5.1. Năng lực của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Năng lực của doanh nhân",
     "pillColor": "#C5A888",
-    "kicker": "THỰC CHỨNG 5.1 (3/3) · LÃNH ĐẠO & ĐỔI MỚI",
+    "kicker": "THỰC CHỨNG (3/3) · LÃNH ĐẠO & ĐỔI MỚI",
     "title": "Thu hút Nhân tài & Hệ sinh thái Xe điện Xanh",
     "lead": "Ba đột phá trong dùng người và đổi mới mô hình kinh doanh.",
     "columns": [
@@ -1755,16 +1755,16 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "matrix_table",
     "theme": "light",
-    "section": "Phần 3 · Tổng kết 5.1",
+    "section": "Phần 3 · Tổng kết Năng lực",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.1",
-    "pillLabel": "5.1. Năng lực của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Năng lực của doanh nhân",
     "pillColor": "#C5A888",
-    "kicker": "TỔNG KẾT BỘ PHẬN 5.1",
-    "title": "Bảng Đối chiếu 4 Tiêu chí Năng lực (5.1)",
+    "kicker": "TỔNG KẾT BỘ PHẬN NĂNG LỰC",
+    "title": "Bảng Đối chiếu 4 Tiêu chí Năng lực",
     "lead": "Minh chứng định lượng đầy đủ cho 4 cấu phần Năng lực.",
     "headers": [
-      "Tiêu chí 5.1",
+      "Tiêu chí",
       "Yêu cầu Lý thuyết",
       "Minh chứng Phạm Nhật Vượng"
     ],
@@ -1820,32 +1820,32 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "pillar_section_intro",
     "theme": "light",
-    "section": "Phần 3 · 5.2 Tố chất (Lý thuyết)",
+    "section": "Phần 3 · Tố chất (Lý thuyết)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.2",
-    "pillLabel": "5.2. Tố chất của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Tố chất của doanh nhân",
     "pillColor": "#9DA6A3",
-    "kicker": "5.2 · BẢN LĨNH & PHẨM CHẤT",
-    "title": "5.2. Tố chất của Doanh nhân — Cơ sở Lý thuyết",
+    "kicker": "BẢN LĨNH & PHẨM CHẤT",
+    "title": "Tố chất của Doanh nhân — Cơ sở Lý thuyết",
     "lead": "Lý giải vì sao doanh nhân dám bước vào con đường người khác ngại đi.",
     "components": [
       {
-        "num": "5.2.1",
+        "num": "",
         "title": "Tầm nhìn chiến lược",
         "desc": "Nhìn ra cơ hội dài hạn 10–20 năm trước khi thị trường định hình rõ."
       },
       {
-        "num": "5.2.2",
+        "num": "",
         "title": "Quyết đoán & Độc lập",
         "desc": "Chốt quyết định dứt khoát tại thời điểm bước ngoặt và tự chịu trách nhiệm."
       },
       {
-        "num": "5.2.3",
+        "num": "",
         "title": "Chấp nhận rủi ro",
         "desc": "Sẵn sàng rời vùng an toàn để bước vào ngành công nghệ rào cản cao."
       },
       {
-        "num": "5.2.4",
+        "num": "",
         "title": "Khát vọng thành đạt",
         "desc": "Không dừng ở lợi nhuận thuần túy mà muốn để lại thương hiệu tầm vóc."
       }
@@ -1855,22 +1855,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/landmark81_vingroup.jpg",
-        "tag": "5.2.1 · TẦM NHÌN CHIẾN LƯỢC DÀI HẠN",
+        "tag": "TẦM NHÌN CHIẾN LƯỢC DÀI HẠN",
         "cap": "Nhìn ra cơ hội dài hạn 10–20 năm trước khi thị trường định hình rõ"
       },
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "5.2.2 · QUYẾT ĐOÁN & ĐỘC LẬP",
+        "tag": "QUYẾT ĐOÁN & ĐỘC LẬP",
         "cap": "Chốt quyết định dứt khoát tại thời điểm bước ngoặt và tự chịu trách nhiệm"
       },
       {
         "src": "assets/mivina_kharkov.jpg",
-        "tag": "5.2.3 · BẢN LĨNH CHẤP NHẬN RỦI RO",
+        "tag": "BẢN LĨNH CHẤP NHẬN RỦI RO",
         "cap": "Sẵn sàng rời vùng an toàn để bước vào ngành công nghiệp công nghệ rào cản cao"
       },
       {
         "src": "assets/vinfast_lux_paris.jpg",
-        "tag": "5.2.4 · KHÁT VỌNG THƯƠNG HIỆU VIỆT",
+        "tag": "KHÁT VỌNG THƯƠNG HIỆU VIỆT",
         "cap": "Không dừng ở lợi nhuận thuần túy mà quyết tâm xây dựng thương hiệu tầm vóc quốc tế"
       }
     ]
@@ -1880,12 +1880,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "three_columns",
     "theme": "light",
-    "section": "Phần 3 · 5.2 Tố chất (1/3)",
+    "section": "Phần 3 · Tố chất (1/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.2",
-    "pillLabel": "5.2. Tố chất của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Tố chất của doanh nhân",
     "pillColor": "#9DA6A3",
-    "kicker": "THỰC CHỨNG 5.2 (1/3) · TẦM NHÌN",
+    "kicker": "THỰC CHỨNG (1/3) · TẦM NHÌN",
     "title": "Tầm nhìn Đi trước qua 3 Thập kỷ (1993–2026)",
     "lead": "Luôn nhận diện làn sóng mới trước khi thị trường bão hòa.",
     "columns": [
@@ -1938,12 +1938,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "staircase_decisions",
     "theme": "light",
-    "section": "Phần 3 · 5.2 Tố chất (2/3)",
+    "section": "Phần 3 · Tố chất (2/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.2",
-    "pillLabel": "5.2. Tố chất của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Tố chất của doanh nhân",
     "pillColor": "#9DA6A3",
-    "kicker": "THỰC CHỨNG 5.2 (2/3) · BẢN LĨNH RỦI RO",
+    "kicker": "THỰC CHỨNG (2/3) · BẢN LĨNH RỦI RO",
     "title": "Ba Quyết định Rời bỏ “Vùng An toàn” Lịch sử",
     "lead": "Chủ động rời lĩnh vực sinh lời ổn định để bước vào bài toán lớn hơn.",
     "steps": [
@@ -1996,12 +1996,12 @@ window.DECK_SLIDES = [
     "part": 3,
     "layout": "quote_analysis",
     "theme": "light",
-    "section": "Phần 3 · 5.2 Tố chất (3/3)",
+    "section": "Phần 3 · Tố chất (3/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.2",
-    "pillLabel": "5.2. Tố chất của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Tố chất của doanh nhân",
     "pillColor": "#9DA6A3",
-    "kicker": "THỰC CHỨNG 5.2 (3/3) · KHÁT VỌNG",
+    "kicker": "THỰC CHỨNG (3/3) · KHÁT VỌNG",
     "title": "Khát vọng Thương hiệu Công nghiệp Việt Nam",
     "quote": "“VinFast không chỉ là dự án kinh doanh mà là sứ mệnh và danh dự. Khó khăn đến mấy chúng tôi cũng làm bằng được.”",
     "quoteAuthor": "Phát biểu tại ĐHĐCĐ Tập đoàn Vingroup",
@@ -2049,32 +2049,32 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
-    "section": "Phần 4 · 5.3 Đạo đức (Lý thuyết)",
+    "section": "Phần 4 · Đạo đức (Lý thuyết)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.3",
-    "pillLabel": "5.3. Đạo đức của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Đạo đức của doanh nhân",
     "pillColor": "#A3B190",
-    "kicker": "5.3 · PHẦN “TÂM” & CSR",
-    "title": "5.3. Đạo đức của Doanh nhân — Cơ sở Lý thuyết",
+    "kicker": "PHẦN “TÂM” & CSR",
+    "title": "Đạo đức của Doanh nhân — Cơ sở Lý thuyết",
     "lead": "Cái gốc giữ tài năng đi đúng hướng qua 4 chuẩn mực đạo đức.",
     "components": [
       {
-        "num": "5.3.1",
+        "num": "",
         "title": "Đạo đức cá nhân",
         "desc": "Trung thực, chính trực, nhân ái và trọng nghĩa tình trong ứng xử."
       },
       {
-        "num": "5.3.2",
+        "num": "",
         "title": "Chữ Tín kinh doanh",
         "desc": "Giữ cam kết tiến độ – chất lượng và bảo đảm phúc lợi cho người lao động."
       },
       {
-        "num": "5.3.3",
+        "num": "",
         "title": "Thượng tôn pháp luật",
         "desc": "Tuân thủ luật pháp, nộp ngân sách đầy đủ và minh bạch với cổ đông."
       },
       {
-        "num": "5.3.4",
+        "num": "",
         "title": "Trách nhiệm xã hội (CSR)",
         "desc": "Đóng góp nguồn lực cho y tế, giáo dục, giảm nghèo, môi trường và khoa học."
       }
@@ -2084,17 +2084,17 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinhomes_central_park.jpg",
-        "tag": "5.3.1–5.3.2 · CHỮ TÍN KINH DOANH",
+        "tag": "CHỮ TÍN KINH DOANH",
         "cap": "Trung thực, chính trực và giữ cam kết tiến độ – chất lượng với khách hàng, đối tác"
       },
       {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "5.3.3 · THƯỢNG TÔN PHÁP LUẬT",
+        "tag": "THƯỢNG TÔN PHÁP LUẬT",
         "cap": "Tuân thủ pháp luật, nộp ngân sách hàng đầu và minh bạch chuẩn mực với cổ đông"
       },
       {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "5.3.4 · TRÁCH NHIỆM XÃ HỘI (CSR)",
+        "tag": "TRÁCH NHIỆM XÃ HỘI (CSR)",
         "cap": "Đóng góp nguồn lực bền bỉ cho y tế, giáo dục, giảm nghèo, môi trường và khoa học"
       },
       {
@@ -2109,12 +2109,12 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "two_cards_image",
     "theme": "light",
-    "section": "Phần 4 · 5.3 Đạo đức (1/3)",
+    "section": "Phần 4 · Đạo đức (1/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.3",
-    "pillLabel": "5.3. Đạo đức của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Đạo đức của doanh nhân",
     "pillColor": "#A3B190",
-    "kicker": "THỰC CHỨNG 5.3 (1/3) · CHỮ TÍN & PHÁP LUẬT",
+    "kicker": "THỰC CHỨNG (1/3) · CHỮ TÍN & PHÁP LUẬT",
     "title": "Đặt Chữ “TÍN” Lên Đầu & Bảo vệ Khách hàng",
     "lead": "TÍN đứng vị trí số 1 và TÂM vị trí số 2 trong 6 giá trị cốt lõi Vingroup.",
     "image": "assets/vincom_timescity.jpg",
@@ -2165,12 +2165,12 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "charity_showcase",
     "theme": "light",
-    "section": "Phần 4 · 5.3 Đạo đức (2/3)",
+    "section": "Phần 4 · Đạo đức (2/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.3",
-    "pillLabel": "5.3. Đạo đức của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Đạo đức của doanh nhân",
     "pillColor": "#A3B190",
-    "kicker": "THỰC CHỨNG 5.3 (2/3) · QUỸ THIỆN TÂM",
+    "kicker": "THỰC CHỨNG (2/3) · QUỸ THIỆN TÂM",
     "title": "20 Năm Quỹ Thiện Tâm: 46.000 Tỷ đồng An sinh",
     "lead": "Hoạt động bền bỉ 2006–2026 khắp 63 tỉnh thành — Forbes vinh danh “Anh hùng từ thiện châu Á”.",
     "heroMetric": {
@@ -2229,12 +2229,12 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "enterprise_deep_dive",
     "theme": "light",
-    "section": "Phần 4 · 5.3 Đạo đức (3/3)",
+    "section": "Phần 4 · Đạo đức (3/3)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.3",
-    "pillLabel": "5.3. Đạo đức của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Đạo đức của doanh nhân",
     "pillColor": "#A3B190",
-    "kicker": "THỰC CHỨNG 5.3 (3/3) · VINFUTURE",
+    "kicker": "THỰC CHỨNG (3/3) · VINFUTURE",
     "title": "Quỹ VinFuture: Phụng sự Khoa học Nhân loại",
     "lead": "Thành lập năm 2020 bởi vợ chồng ông Phạm Nhật Vượng để vinh danh phát minh vì cộng đồng.",
     "image": "assets/vinfuture_thientam.jpg",
@@ -2295,32 +2295,32 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "pillar_section_intro",
     "theme": "light",
-    "section": "Phần 4 · 5.4 Phong cách (Lý thuyết)",
+    "section": "Phần 4 · Phong cách (Lý thuyết)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.4",
-    "pillLabel": "5.4. Phong cách của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Phong cách của doanh nhân",
     "pillColor": "#AE9CA8",
-    "kicker": "5.4 · HÀNH VI & TÁC PHONG",
-    "title": "5.4. Phong cách của Doanh nhân — Cơ sở Lý thuyết",
+    "kicker": "HÀNH VI & TÁC PHONG",
+    "title": "Phong cách của Doanh nhân — Cơ sở Lý thuyết",
     "lead": "Dấu ấn đặc trưng trong cách lãnh đạo, giao tiếp và nếp làm việc hàng ngày.",
     "components": [
       {
-        "num": "5.4.1",
+        "num": "",
         "title": "Phong cách Lãnh đạo",
         "desc": "Cách định hướng, phân quyền, kiểm tra và kết hợp quyết đoán cá nhân với tập thể."
       },
       {
-        "num": "5.4.2",
+        "num": "",
         "title": "Giao tiếp & Ứng xử",
         "desc": "Ngôn từ rõ ràng, chuẩn mực với nhân sự, cổ đông, đối tác và công chúng."
       },
       {
-        "num": "5.4.3",
+        "num": "",
         "title": "Lối sống & Tác phong",
         "desc": "Quản lý thời gian kỷ luật, đời tư giản dị và tinh thần nêu gương người đứng đầu."
       },
       {
-        "num": "5.4.4",
+        "num": "",
         "title": "Lan tỏa thành Văn hóa",
         "desc": "Phong cách người sáng lập kết tinh thành hệ giá trị chung của toàn tập đoàn."
       }
@@ -2330,22 +2330,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/pnv_vingroup_meeting.jpg",
-        "tag": "5.4.1 · PHONG CÁCH LÃNH ĐẠO",
+        "tag": "PHONG CÁCH LÃNH ĐẠO",
         "cap": "Kết hợp quyết đoán chiến lược của người đứng đầu với kỷ luật thực thi của tập thể"
       },
       {
         "src": "assets/pnv_diplomatic_handshake.jpg",
-        "tag": "5.4.2 · GIAO TIẾP THẲNG THẮN",
+        "tag": "GIAO TIẾP THẲNG THẮN",
         "cap": "Ngôn từ rõ ràng, đi thẳng vào số liệu thực chất với nhân sự, cổ đông và đối tác"
       },
       {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "5.4.3 · LỐI SỐNG & TÁC PHONG",
+        "tag": "LỐI SỐNG & TÁC PHONG",
         "cap": "Quản lý thời gian kỷ luật, đời tư giản dị và tinh thần nêu gương sâu sát tại hiện trường"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
-        "tag": "5.4.4 · LAN TỎA THÀNH VĂN HÓA",
+        "tag": "LAN TỎA THÀNH VĂN HÓA",
         "cap": "Phong cách người sáng lập kết tinh thành hệ giá trị chung của hơn 100.000 nhân sự"
       }
     ]
@@ -2355,12 +2355,12 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "photo_story",
     "theme": "light",
-    "section": "Phần 4 · 5.4 Phong cách (1/2)",
+    "section": "Phần 4 · Phong cách (1/2)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.4",
-    "pillLabel": "5.4. Phong cách của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Phong cách của doanh nhân",
     "pillColor": "#AE9CA8",
-    "kicker": "THỰC CHỨNG 5.4 (1/2) · KỶ LUẬT & TỐC ĐỘ",
+    "kicker": "THỰC CHỨNG (1/2) · KỶ LUẬT & TỐC ĐỘ",
     "title": "Kỷ luật Thép, Tốc độ Thực thi & Sâu sát Hiện trường",
     "lead": "Dấu ấn điều hành theo tôn chỉ “Tốc độ, sáng tạo và hiệu quả”.",
     "image": "assets/pnv_vinfast_tour.jpg",
@@ -2407,33 +2407,33 @@ window.DECK_SLIDES = [
     "part": 4,
     "layout": "six_core_values",
     "theme": "light",
-    "section": "Phần 4 · 5.4 Phong cách (2/2)",
+    "section": "Phần 4 · Phong cách (2/2)",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
-    "pillCode": "5.4",
-    "pillLabel": "5.4. Phong cách của doanh nhân",
+    "pillCode": "",
+    "pillLabel": "Phong cách của doanh nhân",
     "pillColor": "#AE9CA8",
-    "kicker": "THỰC CHỨNG 5.4 (2/2) · 6 GIÁ TRỊ CỐT LÕI",
+    "kicker": "THỰC CHỨNG (2/2) · 6 GIÁ TRỊ CỐT LÕI",
     "title": "Hệ giá trị: TÍN – TÂM – TRÍ – TỐC – TINH – NHÂN",
     "lead": "Giao tiếp thẳng thắn vào số liệu, đời tư kín tiếng và 6 chữ vàng Vingroup.",
     "values": [
       {
         "word": "TÍN",
-        "sub": "Đạo đức (5.3)",
+        "sub": "Đạo đức",
         "desc": "Bảo vệ chữ Tín như danh dự; chuẩn bị đủ năng lực thực thi đúng cam kết."
       },
       {
         "word": "TÂM",
-        "sub": "Đạo đức (5.3)",
+        "sub": "Đạo đức",
         "desc": "Thượng tôn pháp luật, giữ đạo đức nghề nghiệp và phụng sự xã hội."
       },
       {
         "word": "TRÍ",
-        "sub": "Năng lực (5.1)",
+        "sub": "Năng lực",
         "desc": "Coi sáng tạo là sức sống; dám nghĩ dám làm và ứng dụng công nghệ mới."
       },
       {
         "word": "TỐC",
-        "sub": "Phong cách (5.4)",
+        "sub": "Phong cách",
         "desc": "Quyết nhanh, đầu tư nhanh, triển khai nhanh và thích ứng kịp thời."
       },
       {
@@ -2480,18 +2480,18 @@ window.DECK_SLIDES = [
     "section": "Phần 5 · Đánh giá Khách quan",
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "GÓC NHÌN HỌC THUẬT ĐA CHIỀU",
-    "title": "Tổng hợp 4 Bộ phận (5.1 – 5.4) & Thách thức",
+    "title": "Tổng hợp 4 Bộ phận & Thách thức",
     "lead": "Nhìn nhận song hành thành tựu nổi bật và áp lực cạnh tranh thực tế.",
     "leftCol": {
-      "badge": "Hội tụ 5.1 – 5.4",
+      "badge": "Hội tụ 4 Cấu phần",
       "title": "Hình mẫu Doanh nhân Hiện đại",
       "items": [
         {
-          "bold": "Năng lực (5.1) & Tố chất (5.2)",
+          "bold": "Năng lực & Tố chất",
           "text": "Quản trị bài bản cùng bản lĩnh đặt cược giúp chuyển dịch từ mì ăn liền sang xe điện."
         },
         {
-          "bold": "Đạo đức (5.3) & Phong cách (5.4)",
+          "bold": "Đạo đức & Phong cách",
           "text": "Chữ Tín, 46.000 tỷ Quỹ Thiện Tâm và kỷ luật tốc độ tạo uy tín thương hiệu vững chắc."
         },
         {
@@ -2519,12 +2519,12 @@ window.DECK_SLIDES = [
       ]
     },
     "image": "assets/pnv_portrait.jpg",
-    "imageCaption": "Hội tụ trọn vẹn 4 cấu phần Năng lực (5.1), Tố chất (5.2), Đạo đức (5.3) và Phong cách (5.4)",
+    "imageCaption": "Hội tụ trọn vẹn 4 cấu phần Năng lực, Tố chất, Đạo đức và Phong cách",
     "gallery": [
       {
         "src": "assets/pnv_portrait.jpg",
         "tag": "HÌNH MẪU DOANH NHÂN HIỆN ĐẠI",
-        "cap": "Hội tụ trọn vẹn 4 cấu phần Năng lực (5.1), Tố chất (5.2), Đạo đức (5.3) và Phong cách (5.4)"
+        "cap": "Hội tụ trọn vẹn 4 cấu phần Năng lực, Tố chất, Đạo đức và Phong cách"
       },
       {
         "src": "assets/landmark81_vingroup.jpg",
@@ -2533,7 +2533,7 @@ window.DECK_SLIDES = [
       },
       {
         "src": "assets/pnv_joko_vinfast.jpg",
-        "tag": "HỘI TỤ 4 BỘ PHẬN (5.1 – 5.4)",
+        "tag": "HỘI TỤ 4 BỘ PHẬN",
         "cap": "Bản lĩnh đưa thương hiệu công nghiệp công nghệ cao Việt Nam bước ra toàn cầu"
       },
       {
@@ -2552,28 +2552,28 @@ window.DECK_SLIDES = [
     "headerTitle": "Văn hóa Doanh nhân · Phạm Nhật Vượng",
     "kicker": "KẾT LUẬN",
     "title": "4 Bài học Rèn luyện dành cho Sinh viên",
-    "lead": "Định hướng hành động từ 4 bộ phận cấu thành văn hóa doanh nhân (5.1 – 5.4).",
+    "lead": "Định hướng hành động từ 4 bộ phận cấu thành văn hóa doanh nhân.",
     "lessons": [
       {
-        "code": "5.1",
+        "code": "",
         "color": "#C5A888",
         "title": "Năng lực: Giỏi Chuyên môn & Công nghệ",
         "desc": "Chắc nền tảng kỹ thuật – kinh tế, ngoại ngữ và làm chủ công nghệ số/AI."
       },
       {
-        "code": "5.2",
+        "code": "",
         "color": "#9DA6A3",
         "title": "Tố chất: Dám Thử & Không Sợ Vấp ngã",
         "desc": "Tham gia NCKH, khởi nghiệp; xem thất bại đầu đời (như Moscow 1992) là bài học lớn."
       },
       {
-        "code": "5.3",
+        "code": "",
         "color": "#A3B190",
         "title": "Đạo đức: Giữ Chữ Tín & Trách nhiệm",
         "desc": "Trung thực trong học tập, giữ đúng cam kết nhóm và tích cực đóng góp cộng đồng."
       },
       {
-        "code": "5.4",
+        "code": "",
         "color": "#AE9CA8",
         "title": "Phong cách: Kỷ luật & Làm Đến cùng",
         "desc": "Rèn tác phong công nghiệp đúng giờ, lập kế hoạch rõ và theo đuổi xuất sắc."
@@ -2585,22 +2585,22 @@ window.DECK_SLIDES = [
     "gallery": [
       {
         "src": "assets/vinuni_campus.jpg",
-        "tag": "5.1 · GIỎI CHUYÊN MÔN & CÔNG NGHỆ",
+        "tag": "GIỎI CHUYÊN MÔN & CÔNG NGHỆ",
         "cap": "Xây chắc nền tảng kỹ thuật – kinh tế, ngoại ngữ và làm chủ công nghệ số / AI"
       },
       {
         "src": "assets/moscow_university.jpg",
-        "tag": "5.2 · DÁM THỬ & KHÔNG SỢ VẤP NGÃ",
+        "tag": "DÁM THỬ & KHÔNG SỢ VẤP NGÃ",
         "cap": "Tham gia NCKH, khởi nghiệp; xem thất bại đầu đời (như Moscow 1992) là bài học lớn"
       },
       {
         "src": "assets/humanitarian_thientam_glow.jpg",
-        "tag": "5.3 · GIỮ CHỮ TÍN & TRÁCH NHIỆM",
+        "tag": "GIỮ CHỮ TÍN & TRÁCH NHIỆM",
         "cap": "Trung thực trong học tập, giữ đúng cam kết nhóm và tích cực đóng góp cộng đồng"
       },
       {
         "src": "assets/pnv_vinfast_tour.jpg",
-        "tag": "5.4 · KỶ LUẬT & LÀM ĐẾN CÙNG",
+        "tag": "KỶ LUẬT & LÀM ĐẾN CÙNG",
         "cap": "Rèn tác phong công nghiệp đúng giờ, lập kế hoạch rõ và theo đuổi sự xuất sắc"
       }
     ]
